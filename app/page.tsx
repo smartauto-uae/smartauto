@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, ReactNode } from 'react'
 import Link from 'next/link'
-import { motion, useInView } from 'framer-motion'
+import { motion, Variants, useInView } from 'framer-motion'
 import {
   Star, CheckCircle, ArrowRight, Phone, ChevronDown,
   Shield, Sparkles, Layers, Car, Paintbrush, Settings,
@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+
 
 // ─── DESIGN TOKENS ──────────────────────────────────────────────────────────
 const GOLD  = '#C9A84C'
@@ -275,16 +276,26 @@ const contactItems = [
 
 // ─── ANIMATION VARIANTS ──────────────────────────────────────────────────────
 
-const fadeUp = {
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
+
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 32 },
-  show: (i = 0) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] },
+  show: (i: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.1, ease: EASE },
   }),
 }
-const fadeLeft  = { hidden: { opacity: 0, x: -32 }, show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } }
-const fadeRight = { hidden: { opacity: 0, x: 32 },  show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } }
 
+const fadeLeft: Variants = {
+  hidden: { opacity: 0, x: -32 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: EASE } },
+}
+
+const fadeRight: Variants = {
+  hidden: { opacity: 0, x: 32 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: EASE } },
+}
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
