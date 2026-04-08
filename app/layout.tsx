@@ -2,6 +2,9 @@ import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
+import Navbar from "@/components/Navbar"
+import ChatbotWrapper from "@/components/ChatbotWrapper"
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -23,7 +26,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Smart Auto UAE — Dubai & Sharjah's most trusted car protection centre. Premium window tinting, paint protection film (PPF), ceramic coating, car detailing, vinyl wrapping & accessories. Trusted by 50,000+ car owners. Free inspection. Call +971 567 269 666.",
+    "Smart Auto UAE — Dubai & Sharjah's most trusted car protection centre. Premium window tinting, paint protection film (PPF), ceramic coating, car detailing, vinyl wrapping & residential tinting. Trusted by 50,000+ customers. Free inspection. Call +971 52 440 3677.",
 
   keywords: [
     "window tinting Dubai", "car tinting Dubai", "nano ceramic tint Dubai",
@@ -31,14 +34,16 @@ export const metadata: Metadata = {
     "ceramic coating Dubai", "9H ceramic coating Dubai",
     "car detailing Dubai", "car polishing Dubai", "paint correction Dubai",
     "car wrapping Dubai", "vinyl wrap Dubai", "matte wrap Dubai",
-    "car accessories Dubai", "car accessories fitting Dubai",
+    "commercial window tinting Dubai", "residential window tinting Dubai",
+    "marine window tinting Dubai", "villa window tinting Dubai",
+    "home window tinting Dubai", "flat glass tinting Dubai",
     "window tinting Sharjah", "car tinting Sharjah",
     "paint protection film Sharjah", "PPF Sharjah",
     "ceramic coating Sharjah", "car detailing Sharjah",
-    "car wrapping Sharjah", "car polishing Sharjah",
     "car tinting UAE", "PPF UAE", "ceramic coating UAE",
     "best car detailing UAE", "car protection UAE",
     "window film UAE", "Smart Auto UAE", "Smart Auto Dubai", "Smart Auto Sharjah",
+    "3M window film Dubai", "TotalGard window film UAE",
   ],
 
   authors:   [{ name: "Smart Auto UAE", url: "https://smartautouae.ae" }],
@@ -93,31 +98,33 @@ export const metadata: Metadata = {
 }
 
 const structuredData = [
+  // ── Branch 1: MotorCity ──
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
-    "name": "Smart Auto UAE - Dubai",
+    "name": "Smart Auto UAE - MotorCity Dubai",
     "image": "https://smartautouae.ae/og-image.jpg",
-    "description": "Dubai's premier car protection centre specialising in window tinting, paint protection film (PPF), ceramic coating, car detailing, vinyl wrapping and accessories fitting.",
+    "description": "Dubai's premier car protection centre specialising in window tinting, paint protection film (PPF), nano ceramic coating, car detailing, vinyl wrapping, commercial tinting, marine tinting and residential tinting.",
     "url": "https://smartautouae.ae",
-    "telephone": "+971567269666",
+    "telephone": "+971524403677",
     "email": "info@smartautouae.ae",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "MotorCity",
       "addressLocality": "Dubai",
-      "addressRegion":   "Dubai",
-      "addressCountry":  "AE",
+      "addressRegion": "Dubai",
+      "addressCountry": "AE",
     },
     "geo": {
       "@type":     "GeoCoordinates",
-      "latitude":  "25.2048",
-      "longitude": "55.2708",
+      "latitude":  "25.0367",
+      "longitude": "55.2272",
     },
     "openingHoursSpecification": [
       {
         "@type":     "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens":  "09:00",
+        "opens":  "11:00",
         "closes": "21:00",
       },
     ],
@@ -132,47 +139,105 @@ const structuredData = [
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name":  "Car Protection Services",
+      "name":  "Car & Surface Protection Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Window Tinting Dubai",        "description": "Nano ceramic & premium window tinting for all vehicles in Dubai." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paint Protection Film Dubai", "description": "Self-healing PPF installation by certified technicians in Dubai." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceramic Coating Dubai",       "description": "Professional 9H ceramic coating for long-lasting gloss & protection." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Detailing Dubai",         "description": "Full interior & exterior car detailing and paint correction." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Wrapping Dubai",          "description": "Custom vinyl car wrapping — matte, gloss, satin & colour change." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Accessories Dubai",       "description": "Expert fitting of dashcams, parking sensors, ambient lighting & more." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Window Tinting Dubai",              "description": "3M, TotalGard & Global USA nano ceramic window tinting for all vehicles in Dubai." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paint Protection Film Dubai",       "description": "Self-healing PPF installation by certified technicians in Dubai. Partial and full car packages." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nano Ceramic Coating Dubai",       "description": "Professional 9H nano ceramic coating for long-lasting gloss, UV resistance & hydrophobic protection." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Detailing Dubai",              "description": "Full interior & exterior car detailing, machine polishing and paint correction in Dubai." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Wrapping Dubai",               "description": "Custom vinyl car wrapping — matte, gloss, satin, colour PPF & chrome finishes." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Window Tinting Dubai",  "description": "Solar control, privacy & safety window films for offices, retail & commercial buildings in Dubai." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Window Tinting Dubai", "description": "Heat-rejection, privacy & UV-blocking window film for villas, apartments & homes in Dubai." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marine Window Tinting Dubai",      "description": "Marine-grade window tinting for yachts, boats & vessels. On-site installation at Dubai marinas." }},
       ],
     },
     "sameAs": [
       "https://instagram.com/smartautouae",
-      "https://wa.me/971567269666",
+      "https://wa.me/971524403677",
     ],
   },
+  // ── Branch 2: Al Quoz ──
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
-    "name": "Smart Auto UAE - Sharjah",
+    "name": "Smart Auto UAE - Al Quoz Dubai",
     "image": "https://smartautouae.ae/og-image.jpg",
-    "description": "Sharjah's trusted car protection centre for window tinting, PPF, ceramic coating, car detailing and vinyl wrapping.",
+    "description": "Smart Auto UAE Al Quoz branch — window tinting, PPF, ceramic coating, car detailing and car wrapping in Dubai.",
     "url": "https://smartautouae.ae",
-    "telephone": "+971567269666",
-    "email": "info@smartautouae.ae",
+    "telephone": "+971524403677",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Sharjah",
-      "addressRegion":   "Sharjah",
-      "addressCountry":  "AE",
+      "streetAddress": "Al Quoz Industrial Area 4, D16 Road",
+      "addressLocality": "Dubai",
+      "addressRegion": "Dubai",
+      "addressCountry": "AE",
     },
     "openingHoursSpecification": [
       {
         "@type":     "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens":  "09:00",
-        "closes": "21:00",
+        "opens":  "11:00",
+        "closes": "21:30",
+      },
+    ],
+    "priceRange": "$$",
+    "areaServed": ["Dubai", "UAE"],
+  },
+  // ── Branch 3: Mirdif ──
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Smart Auto UAE - Mirdif Uptown Mall Dubai",
+    "image": "https://smartautouae.ae/og-image.jpg",
+    "description": "Smart Auto UAE Mirdif branch inside Uptown Mall — window tinting, PPF, ceramic coating, car detailing and car wrapping.",
+    "url": "https://smartautouae.ae",
+    "telephone": "+971524403677",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Uptown Mall, Mirdif",
+      "addressLocality": "Dubai",
+      "addressRegion": "Dubai",
+      "addressCountry": "AE",
+    },
+    "openingHoursSpecification": [
+      {
+        "@type":     "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens":  "11:00",
+        "closes": "22:00",
+      },
+    ],
+    "priceRange": "$$",
+    "areaServed": ["Dubai", "UAE"],
+  },
+  // ── Branch 4: Sharjah ──
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Smart Auto UAE - Central Mall Sharjah",
+    "image": "https://smartautouae.ae/og-image.jpg",
+    "description": "Smart Auto UAE Sharjah branch at Central Mall — window tinting, PPF, ceramic coating, car detailing and car wrapping in Sharjah.",
+    "url": "https://smartautouae.ae",
+    "telephone": "+971524403677",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Central Mall",
+      "addressLocality": "Sharjah",
+      "addressRegion": "Sharjah",
+      "addressCountry": "AE",
+    },
+    "openingHoursSpecification": [
+      {
+        "@type":     "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens":  "10:00",
+        "closes": "22:00",
       },
     ],
     "priceRange": "$$",
     "areaServed": ["Sharjah", "UAE"],
   },
+  // ── FAQ Schema ──
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -180,27 +245,32 @@ const structuredData = [
       {
         "@type": "Question",
         "name":  "How much does window tinting cost in Dubai?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Window tinting prices in Dubai start from AED 299 depending on the type of film and vehicle size. Smart Auto UAE offers nano ceramic, carbon, and dyed films with UAE traffic law-compliant VLT levels." },
+        "acceptedAnswer": { "@type": "Answer", "text": "Window tinting at Smart Auto UAE starts from AED 200 for basic films and up to AED 2,500+ for full nano ceramic packages on large SUVs. Prices depend on the film brand (3M, TotalGard, Global USA), number of windows, and vehicle size." },
+      },
+      {
+        "@type": "Question",
+        "name":  "What is the legal tint percentage in Dubai?",
+        "acceptedAnswer": { "@type": "Answer", "text": "UAE traffic law requires front side windows to have at least 70% VLT (max 30% tint), and rear windows at least 30% VLT (max 70% tint). No aftermarket tint is permitted on the front windshield. Smart Auto UAE installs only RTA-compliant films." },
       },
       {
         "@type": "Question",
         "name":  "What is the best PPF for cars in UAE?",
-        "acceptedAnswer": { "@type": "Answer", "text": "For UAE's extreme heat and harsh driving conditions, self-healing TPU-based Paint Protection Films like 3M and TotalGard are the best choice. Smart Auto UAE is an authorised installer for these premium brands." },
+        "acceptedAnswer": { "@type": "Answer", "text": "For UAE's extreme heat and harsh driving conditions, self-healing TPU-based Paint Protection Films like 3M and TotalGard are the best choice. Smart Auto UAE is an authorised installer for these premium brands with 5–10 year warranties." },
       },
       {
         "@type": "Question",
         "name":  "How long does ceramic coating last in Dubai?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A professional-grade ceramic coating in Dubai typically lasts 2–5 years depending on the product tier and maintenance. Smart Auto UAE uses 9H hardness coatings from Gyeon, Gtechniq, and IGL for maximum durability in UAE's climate." },
+        "acceptedAnswer": { "@type": "Answer", "text": "A professional-grade ceramic coating in Dubai typically lasts 2–5 years depending on the product tier and maintenance habits. Smart Auto UAE applies 3M and TotalGard nano ceramic coatings with multi-year manufacturer warranties." },
       },
       {
         "@type": "Question",
-        "name":  "Does Smart Auto UAE have a branch in Sharjah?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Smart Auto UAE has branches in both Dubai and Sharjah, offering the full range of car protection services including window tinting, PPF, ceramic coating, detailing, and car wrapping." },
+        "name":  "Does Smart Auto UAE offer residential window tinting?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Smart Auto UAE provides residential window tinting for villas and apartments across Dubai and Sharjah. Films block up to 90% solar heat, 99% UV, and can reduce AC bills by up to 30%. Free site survey included." },
       },
       {
         "@type": "Question",
-        "name":  "How long does a full car wrap take?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A full vinyl car wrap typically takes 2–4 days depending on the vehicle size and complexity. Partial wraps and accents can be completed in 1 day at our Dubai or Sharjah branch." },
+        "name":  "Where are Smart Auto UAE branches located?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Smart Auto UAE has 4 branches: MotorCity Dubai (11AM–9PM), Al Quoz Dubai (11AM–9:30PM), Mirdif Uptown Mall Dubai (11AM–10PM), and Central Mall Sharjah (10AM–10PM). All open every day including weekends." },
       },
     ],
   },
@@ -221,7 +291,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${inter.variable} ${playfair.variable}`}
         style={{ backgroundColor: "#0A0A0A" }}
       >
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager (noscript fallback) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-537ZKNVG"
@@ -231,9 +301,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
 
+        {/* Global Navbar */}
+        <Navbar />
+
+        {/* Page content */}
         {children}
 
-        {/* Google Tag Manager — loaded after page is interactive */}
+        {/* Floating Chatbot — client-only, no SSR */}
+        <ChatbotWrapper />
+
+        {/* Google Tag Manager */}
         <Script
           id="gtm-head"
           strategy="afterInteractive"

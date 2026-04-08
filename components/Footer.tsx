@@ -35,7 +35,7 @@ const socials = [
   { label: 'Email',     href: 'mailto:info@smartautouae.ae',         icon: Mail },
 ]
 
-const brands = ['3M', 'TotalGard', 'XPEL', 'Gyeon', 'Gtechniq', 'IGL Coatings', 'Avery Dennison']
+const brands = ['3M', 'Totalgard', 'XPEL', 'Gyeon', 'Gtechniq', 'IGL Coatings', 'Avery Dennison']
 
 export default function Footer() {
   return (
@@ -65,7 +65,7 @@ export default function Footer() {
             </div>
 
             <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.8, maxWidth: '26ch', marginBottom: 20 }}>
-              Dubai &amp; Sharjah&apos;s most trusted car protection centre since 2014. Authorised installer for 3M, TotalGard, XPEL, Gyeon &amp; Gtechniq.
+              Dubai &amp; Sharjah&apos;s most trusted car protection centre since 2014. Authorised installer for 3M, Totalgard, XPEL, Gyeon &amp; Gtechniq.
             </p>
 
             {/* Social icons */}

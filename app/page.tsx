@@ -115,15 +115,15 @@ const stripItems = [
   'Window Tinting Dubai', 'PPF Dubai', 'Ceramic Coating Dubai',
   'Car Detailing Dubai', 'Car Wrapping Dubai', 'Car Accessories Dubai',
   'Window Tinting Sharjah', 'PPF Sharjah', 'Ceramic Coating Sharjah',
-  '3M Authorised Installer UAE', 'TotalGard UAE', 'XPEL Installer Dubai',
+  '3M Authorised Installer UAE', 'Totalgard UAE', 'XPEL Installer Dubai',
 ]
 
 const services = [
   {
     title: 'Car Window Tinting',
     slug: 'window-tinting',
-    description: 'Premium 3M, XPEL, and TotalGard nano ceramic window films. Block up to 99% UV rays and reduce heat by up to 60%. RTA law compliant for all UAE vehicles.',
-    features: ['3M · XPEL · TotalGard Films', 'UAE RTA Law Compliant', '5-Year Warranty', 'Same-Day Service Available'],
+    description: 'Premium 3M, XPEL, and Totalgard nano ceramic window films. Block up to 99% UV rays and reduce heat by up to 60%. RTA law compliant for all UAE vehicles.',
+    features: ['3M · XPEL · Totalgard Films', 'UAE RTA Law Compliant', '5-Year Warranty', 'Same-Day Service Available'],
     image: '/images/services/window-tinting-1.webp',
     href: '/services/window-tinting',
     icon: Layers,
@@ -131,8 +131,8 @@ const services = [
   {
     title: 'Paint Protection Film',
     slug: 'ppf',
-    description: 'Self-healing TPU-based PPF from TotalGard, 3M, and XPEL. Invisible shield against stone chips, scratches, and UV damage. Certified installation.',
-    features: ['TotalGard · 3M · XPEL PPF', 'Self-Healing Technology', '10-Year Warranty', 'Full & Partial Coverage'],
+    description: 'Self-healing TPU-based PPF from Totalgard, 3M, and XPEL. Invisible shield against stone chips, scratches, and UV damage. Certified installation.',
+    features: ['Totalgard · 3M · XPEL PPF', 'Self-Healing Technology', '10-Year Warranty', 'Full & Partial Coverage'],
     image: '/images/services/PPF-1.webp',
     href: '/services/ppf',
     icon: Shield,
@@ -176,7 +176,7 @@ const services = [
 ]
 
 const whyFeatures = [
-  { title: '3M Authorised Dealer', description: 'Official UAE distributor and certified installer for 3M, TotalGard, XPEL, Gyeon, and Gtechniq.', icon: Shield },
+  { title: '3M Authorised Dealer', description: 'Official UAE distributor and certified installer for 3M, Totalgard, XPEL, Gyeon, and Gtechniq.', icon: Shield },
   { title: '5-Year Warranty', description: 'All window tinting and PPF installations are backed by a comprehensive manufacturer warranty.', icon: CheckCircle },
   { title: '4 Branches UAE', description: 'MotorCity, Al Quoz, Mirdif, and Sharjah Central Mall. Always close to you.', icon: MapPin },
   { title: 'Open Every Day', description: 'All 4 branches open 7 days a week, 10 AM to 10 PM. No appointment needed.', icon: Clock },
@@ -190,7 +190,7 @@ const steps = [
 ]
 
 const brands = [
-  '3M', 'TotalGard', 'XPEL', 'Gyeon', 'Gtechniq', 'IGL Coatings',
+  '3M', 'Totalgard', 'XPEL', 'Gyeon', 'Gtechniq', 'IGL Coatings',
   'Avery Dennison', 'Llumar', 'SunTek', 'Hexis',
 ]
 
@@ -260,7 +260,7 @@ const branches = [
 
 const faqs = [
   { q: 'How much does window tinting cost in Dubai?', a: 'Window tinting prices at Smart Auto UAE start from AED 299 depending on film type and vehicle size. We offer nano ceramic, carbon, and dyed films — all UAE RTA law compliant. Contact us for a free quote.' },
-  { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from TotalGard, 3M, or XPEL offers the best protection. Smart Auto UAE is an authorised installer for all three brands, ensuring genuine product and certified installation.' },
+  { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from Totalgard, 3M, or XPEL offers the best protection. Smart Auto UAE is an authorised installer for all three brands, ensuring genuine product and certified installation.' },
   { q: 'How long does ceramic coating last in Dubai?', a: 'A professional 9H ceramic coating lasts 2–5 years in Dubai\'s climate, depending on the product tier. We use Gyeon, Gtechniq, and IGL coatings — all formulated for high UV and heat environments.' },
   { q: 'Does Smart Auto UAE have a branch in Sharjah?', a: 'Yes. Smart Auto UAE has a branch at Central Mall, Sharjah, offering window tinting, PPF, ceramic coating, car detailing, and car wrapping services.' },
   { q: 'How long does a full car wrap take?', a: 'A full vinyl car wrap takes 2–4 days depending on vehicle size and finish complexity. Partial wraps and accents can be completed in a single day.' },
@@ -518,7 +518,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-3.5 mb-9">
                 {[
-                  'TotalGard, 3M & XPEL authorised installer in UAE',
+                  'Totalgard, 3M & XPEL authorised installer in UAE',
                   'Ceramic coating price Dubai — competitive & transparent',
                   'All PPF, tinting & coating work backed by warranty',
                   '4 branches — MotorCity, Al Quoz, Mirdif & Sharjah',
@@ -539,12 +539,12 @@ export default function Home() {
             <motion.div variants={fadeRight} initial="hidden" animate={wInView ? 'show' : 'hidden'}>
               <div className="grid grid-cols-2 gap-3.5" style={{ gridTemplateRows: '260px 260px' }}>
                 <div className="rounded-2xl overflow-hidden relative row-span-2 group" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img src="/images/services/PPF-1.webp" alt="TotalGard PPF installation by Smart Auto UAE — best PPF installer Dubai"
+                  <img src="/images/services/PPF-1.webp" alt="Totalgard PPF installation by Smart Auto UAE — best PPF installer Dubai"
                     width={400} height={520} loading="lazy" decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <span className="absolute bottom-3.5 left-3.5 text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-md backdrop-blur-sm"
                     style={{ color: GOLD, border: '1px solid rgba(201,168,76,0.2)', background: 'rgba(0,0,0,0.8)' }}>
-                    TotalGard PPF
+                    Totalgard PPF
                   </span>
                 </div>
                 <div className="rounded-2xl overflow-hidden relative group" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
@@ -557,7 +557,7 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="rounded-2xl overflow-hidden relative group" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img src="/images/services/window-tinting-1.webp" alt="Car window tinting Dubai — 3M and TotalGard film by Smart Auto UAE"
+                  <img src="/images/services/window-tinting-1.webp" alt="Car window tinting Dubai — 3M and Totalgard film by Smart Auto UAE"
                     width={400} height={260} loading="lazy" decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <span className="absolute bottom-3.5 left-3.5 text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-md backdrop-blur-sm"
@@ -881,7 +881,7 @@ export default function Home() {
                 Premium Car Protection
               </p>
               <p className="text-white/40 text-sm leading-[1.8] max-w-xs">
-                Dubai &amp; Sharjah&apos;s most trusted car protection centre since 2014. Authorised installer for 3M, TotalGard, XPEL, Gyeon &amp; Gtechniq.
+                Dubai &amp; Sharjah&apos;s most trusted car protection centre since 2014. Authorised installer for 3M, Totalgard, XPEL, Gyeon &amp; Gtechniq.
               </p>
             </div>
             <div>
@@ -902,7 +902,7 @@ export default function Home() {
           </div>
           <div className="pt-6 flex flex-wrap justify-between items-center gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}>
             <p className="text-white/25 text-[12px]">&copy; {new Date().getFullYear()} Smart Auto UAE. All rights reserved.</p>
-            <p className="text-white/25 text-[12px] tracking-wide">UAE Authorised · 3M · TotalGard · XPEL · Gyeon · Gtechniq</p>
+            <p className="text-white/25 text-[12px] tracking-wide">UAE Authorised · 3M · Totalgard · XPEL · Gyeon · Gtechniq</p>
           </div>
         </div>
       </footer>

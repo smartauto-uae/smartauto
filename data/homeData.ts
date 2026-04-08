@@ -5,7 +5,7 @@ export const services = [
     title: 'Window Tinting',
     slug: 'window-tinting',
     description:
-      'UAE authorised 3M, XPEL, and TotalGard film installation. Block heat, UV, and glare — fully compliant with UAE RTA regulations. 15-year warranty on every job.',
+      'UAE authorised 3M, XPEL, and Totalgard film installation. Block heat, UV, and glare — fully compliant with UAE RTA regulations. 15-year warranty on every job.',
     tag: 'Most Popular' as string | null,
   },
   {
@@ -90,7 +90,7 @@ export const services = [
 export const whyFeatures = [
   {
     title: 'UAE Authorised Applicator',
-    body: 'Official distributor and installer for 3M, XPEL, and TotalGard. Genuine products, certified installation — every time.',
+    body: 'Official distributor and installer for 3M, XPEL, and Totalgard. Genuine products, certified installation — every time.',
   },
   {
     title: '15-Year Warranty',
@@ -140,7 +140,7 @@ export const steps = [
 export const brands = [
   { name: '3M',        slug: '3m' },
   { name: 'XPEL',      slug: 'xpel' },
-  { name: 'TotalGard', slug: 'totalgard' },
+  { name: 'Totalgard', slug: 'Totalgard' },
   { name: 'Gtechniq',  slug: 'gtechniq' },
   { name: 'Gyeon',     slug: 'gyeon' },
   { name: 'IGL',       slug: 'igl' },
