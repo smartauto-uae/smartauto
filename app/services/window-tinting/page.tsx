@@ -6,6 +6,8 @@ import {
   CheckCircle, ArrowRight, Phone, Shield, Sun, Eye,
   Thermometer, Lock, Zap, Car, Star, MapPin
 } from 'lucide-react'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const GOLD = '#C9A84C'
 const GOLD2 = '#E8C96A'
@@ -63,7 +65,7 @@ const benefits = [
 const films = [
   {
     name: 'Nano Ceramic Film',
-    brand: '3M · TotalGard · XPEL',
+    brand: '3M · Totalgard · XPEL',
     tag: 'Best Performer',
     features: [
       'Blocks up to 99% UV rays',
@@ -78,7 +80,7 @@ const films = [
   },
   {
     name: 'Carbon Film',
-    brand: '3M · TotalGard',
+    brand: '3M · Totalgard',
     tag: 'Most Popular',
     features: [
       'Superior heat rejection',
@@ -93,7 +95,7 @@ const films = [
   },
   {
     name: 'Dyed / Standard Film',
-    brand: 'TotalGard · SunTek',
+    brand: 'Totalgard · SunTek',
     tag: 'Budget Friendly',
     features: [
       'UAE RTA law compliant',
@@ -140,7 +142,7 @@ const faqs = [
   },
   {
     q: 'Which is the best car tinting option for Dubai\'s climate?',
-    a: 'For Dubai\'s intense heat and UV conditions, nano ceramic film is the highest-performing option. It uses hybrid nanotechnology to reject both UV and infrared rays without affecting visibility or GPS signals. 3M Crystalline and TotalGard Nano Ceramic are our top recommendations for UAE conditions.',
+    a: 'For Dubai\'s intense heat and UV conditions, nano ceramic film is the highest-performing option. It uses hybrid nanotechnology to reject both UV and infrared rays without affecting visibility or GPS signals. 3M Crystalline and Totalgard Nano Ceramic are our top recommendations for UAE conditions.',
   },
   {
     q: 'How much heat does car window tinting reduce?',
@@ -152,7 +154,7 @@ const faqs = [
   },
   {
     q: 'How long does car window tinting last?',
-    a: 'Our nano ceramic films from 3M and TotalGard carry warranties of up to 15 years. Standard and carbon films carry 3–10 year warranties. Film longevity depends on the product grade, care routine, and whether the vehicle is parked indoors or outdoors.',
+    a: 'Our nano ceramic films from 3M and Totalgard carry warranties of up to 15 years. Standard and carbon films carry 3–10 year warranties. Film longevity depends on the product grade, care routine, and whether the vehicle is parked indoors or outdoors.',
   },
   {
     q: 'How long does the car tinting installation take?',
@@ -164,7 +166,7 @@ const faqs = [
   },
   {
     q: 'Why choose Smart Auto UAE for car window tinting in Dubai?',
-    a: 'Smart Auto UAE is a UAE authorised distributor and installer for 3M, TotalGard, and XPEL window films. We have 4 branches across Dubai and Sharjah, over 600 verified Google reviews, certified technicians, and offer warranties of up to 15 years. We also offer mobile doorstep tinting across Dubai.',
+    a: 'Smart Auto UAE is a UAE authorised distributor and installer for 3M, Totalgard, and XPEL window films. We have 4 branches across Dubai and Sharjah, over 600 verified Google reviews, certified technicians, and offer warranties of up to 15 years. We also offer mobile doorstep tinting across Dubai.',
   },
   {
     q: 'Do you offer car tinting services across Dubai?',
@@ -229,7 +231,7 @@ function FAQItem({ q, a, i }: { q: string; a: string; i: number }) {
 export default function WindowTintingPage() {
   return (
     <main style={{ background: '#0A0A0A', paddingTop: '80px' }}>
-
+<Navbar/>
       {/* ── HERO ── */}
       <section
         className="relative py-28 overflow-hidden"
@@ -253,7 +255,7 @@ export default function WindowTintingPage() {
               style={{ border: '1px solid rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.06)', color: GOLD }}
             >
               <Star size={10} fill={GOLD} aria-hidden="true" />
-              UAE Authorised 3M · TotalGard · XPEL Installer
+              UAE Authorised 3M · Totalgard · XPEL Installer
               <Star size={10} fill={GOLD} aria-hidden="true" />
             </div>
             <h1
@@ -286,7 +288,7 @@ export default function WindowTintingPage() {
             <div className="flex flex-col gap-2.5 mb-8">
               {[
                 'UAE RTA law compliant — all vehicle types',
-                '3M, TotalGard & XPEL authorised installer',
+                '3M, Totalgard & XPEL authorised installer',
                 'Up to 15-year warranty on nano ceramic films',
                 'Same-day service · Mobile doorstep tinting available',
                 'Free inspection before every installation',
@@ -322,7 +324,7 @@ export default function WindowTintingPage() {
             <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.15)' }}>
               <img
                 src="/images/services/window-tinting-1.webp"
-                alt="Professional car window tinting Dubai — 3M, TotalGard and XPEL nano ceramic film installation by Smart Auto UAE"
+                alt="Professional car window tinting Dubai — 3M, Totalgard and XPEL nano ceramic film installation by Smart Auto UAE"
                 width={700}
                 height={500}
                 loading="eager"
@@ -400,7 +402,7 @@ export default function WindowTintingPage() {
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>
-              3M · TotalGard · XPEL · SunTek
+              3M · Totalgard · XPEL · SunTek
             </p>
             <h2
               className="font-bold text-white"
@@ -528,7 +530,7 @@ export default function WindowTintingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
               <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-                Why 3M &amp; TotalGard
+                Why 3M &amp; Totalgard
               </p>
               <h2
                 className="font-bold text-white leading-[1.15] mb-6"
@@ -540,13 +542,13 @@ export default function WindowTintingPage() {
                 </span>
               </h2>
               <p className="text-white/50 text-base leading-[1.85] mb-5">
-                Smart Auto UAE is a <strong className="text-white/70 font-medium">UAE authorised distributor and applicator</strong> for 3M, TotalGard, XPEL, and SunTek window films. Our automotive products are manufactured using hybrid nanotechnology, specifically engineered to perform in extreme climates like the UAE — where UV index regularly exceeds 11 and cabin temperatures can reach 70°C+ in parked vehicles.
+                Smart Auto UAE is a <strong className="text-white/70 font-medium">UAE authorised distributor and applicator</strong> for 3M, Totalgard, XPEL, and SunTek window films. Our automotive products are manufactured using hybrid nanotechnology, specifically engineered to perform in extreme climates like the UAE — where UV index regularly exceeds 11 and cabin temperatures can reach 70°C+ in parked vehicles.
               </p>
               <p className="text-white/50 text-base leading-[1.85] mb-7">
                 All Smart Auto UAE window films are <strong className="text-white/70 font-medium">highly durable, warranted from 3 to 15 years</strong>, and combine leading-edge thermal insulation technology with a range of styles and tint shades suited to every vehicle type and personal preference.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['3M', 'TotalGard', 'XPEL', 'SunTek', 'Llumar'].map((brand) => (
+                {['3M', 'Totalgard', 'XPEL', 'SunTek', 'Llumar'].map((brand) => (
                   <span
                     key={brand}
                     className="px-5 py-2 rounded-full text-[12px] font-semibold tracking-wide"
@@ -574,7 +576,7 @@ export default function WindowTintingPage() {
                 <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
                   <img
                     src="/images/services/window-tinting-3.webp"
-                    alt="TotalGard window film applied at Smart Auto UAE Dubai"
+                    alt="Totalgard window film applied at Smart Auto UAE Dubai"
                     width={350}
                     height={280}
                     loading="lazy"
@@ -860,7 +862,7 @@ export default function WindowTintingPage() {
           </div>
         </div>
       </section>
-
+<Footer/>
     </main>
   )
 }

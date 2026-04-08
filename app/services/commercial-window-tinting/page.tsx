@@ -34,7 +34,7 @@ const benefits = [
   {
     icon: Thermometer,
     title: 'Solar Heat Control',
-    desc: 'Dubai\'s commercial glass facades face extreme solar heat radiation for most of the year. TotalGard and 3M architectural window films reject up to 79% of excess solar heat — eliminating hot spots near windows, reducing workstation discomfort, and allowing your HVAC system to operate at designed capacity rather than running constantly at maximum load.',
+    desc: 'Dubai\'s commercial glass facades face extreme solar heat radiation for most of the year. Totalgard and 3M architectural window films reject up to 79% of excess solar heat — eliminating hot spots near windows, reducing workstation discomfort, and allowing your HVAC system to operate at designed capacity rather than running constantly at maximum load.',
   },
   {
     icon: Zap,
@@ -54,7 +54,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Safety & Security Film',
-    desc: 'TotalGard safety and security window films hold glass together on breakage — dramatically reducing the injury risk from accidental glass failure, extreme weather events, or forced entry attempts. Essential for ground-floor retail, shopping malls, schools, and any commercial space with high foot traffic.',
+    desc: 'Totalgard safety and security window films hold glass together on breakage — dramatically reducing the injury risk from accidental glass failure, extreme weather events, or forced entry attempts. Essential for ground-floor retail, shopping malls, schools, and any commercial space with high foot traffic.',
   },
   {
     icon: Building2,
@@ -66,42 +66,42 @@ const benefits = [
 const filmTypes = [
   {
     name: 'Solar Control Film',
-    brand: 'TotalGard · 3M',
+    brand: 'Totalgard · 3M',
     best: 'Offices, towers, and commercial buildings with sun-facing facades',
     features: ['Up to 79% solar heat rejection', 'High visible light transmission maintained', 'No disruption to natural daylight', 'Reduces HVAC operating costs', '10-year commercial warranty'],
     price: 'From AED 20/sqft',
   },
   {
     name: 'Privacy Film (One-Way)',
-    brand: 'TotalGard · Llumar',
+    brand: 'Totalgard · Llumar',
     best: 'Meeting rooms, executive offices, reception areas, glass partitions',
     features: ['Daytime one-way visibility', 'Full view retained from inside', 'Multiple opacity levels available', 'Compatible with existing glass', '5-year warranty'],
     price: 'From AED 18/sqft',
   },
   {
     name: 'Decorative & Frosted Film',
-    brand: 'TotalGard · 3M',
+    brand: 'Totalgard · 3M',
     best: 'Glass partitions, entrance lobbies, bathroom glass, branding applications',
     features: ['Frosted, etched & patterned options', 'Custom cut logos and graphics', 'Permanent privacy solution', 'Easy to clean and maintain', '5-year warranty'],
     price: 'From AED 16/sqft',
   },
   {
     name: 'Safety & Security Film',
-    brand: '3M Safety Series · TotalGard',
+    brand: '3M Safety Series · Totalgard',
     best: 'Shopping malls, schools, banks, retail stores, ground-floor glazing',
     features: ['Holds glass on breakage', 'Slows forced entry attempts', 'Meets international safety standards', 'Optically clear — no visible change', '10-year warranty'],
     price: 'From AED 30/sqft',
   },
   {
     name: 'Anti-Graffiti Film',
-    brand: 'TotalGard',
+    brand: 'Totalgard',
     best: 'Ground-floor retail, public-facing glass, transit facilities',
     features: ['Sacrificial surface protection', 'Absorbs scratching and etching', 'Replace film, not glass', 'Rapid replacement service', '2-year warranty'],
     price: 'From AED 22/sqft',
   },
   {
     name: 'Graphically Printed Film',
-    brand: 'TotalGard · 3M',
+    brand: 'Totalgard · 3M',
     best: 'Shop windows, brand activations, showrooms, event spaces',
     features: ['Full custom design capability', 'High-resolution print quality', 'Temporary or permanent options', 'Single-colour to full photographic print', 'Project-based pricing'],
     price: 'Custom quote',
@@ -143,7 +143,7 @@ const faqs = [
   },
   {
     q: 'Does window film qualify for LEED or energy certification credits?',
-    a: "Yes. TotalGard and 3M architectural films contribute to LEED energy efficiency credits when documented correctly. Smart Auto UAE can provide the technical data sheets required for your building's sustainability certification submission.",
+    a: "Yes. Totalgard and 3M architectural films contribute to LEED energy efficiency credits when documented correctly. Smart Auto UAE can provide the technical data sheets required for your building's sustainability certification submission.",
   },
   {
     q: 'Can you tint an entire building facade?',
@@ -151,7 +151,7 @@ const faqs = [
   },
   {
     q: 'Do you provide anti-graffiti film for retail stores?',
-    a: 'Yes. Our TotalGard anti-graffiti sacrificial film protects ground-floor retail glass from scratching, etching, and surface damage. When the film is damaged, it is replaced at a fraction of the cost of glass resurfacing — keeping your storefront looking pristine.',
+    a: 'Yes. Our Totalgard anti-graffiti sacrificial film protects ground-floor retail glass from scratching, etching, and surface damage. When the film is damaged, it is replaced at a fraction of the cost of glass resurfacing — keeping your storefront looking pristine.',
   },
 ]
 
@@ -182,7 +182,7 @@ export default function CommercialTintingPage() {
         <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeLeft} initial="hidden" animate="show">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-              TotalGard · 3M · Llumar — UAE Authorised Commercial Installer
+              Totalgard · 3M · Llumar — UAE Authorised Commercial Installer
             </p>
             <h1
               className="font-bold text-white leading-[1.1] mb-5"
@@ -195,11 +195,11 @@ export default function CommercialTintingPage() {
               </span>
             </h1>
             <p className="text-white/50 text-base leading-[1.85] mb-8 max-w-xl">
-              Smart Auto UAE provides professional <strong className="text-white/75 font-medium">commercial window film installation</strong> for office buildings, retail stores, shopping malls, hotels, schools, and all commercial properties across Dubai and Sharjah. As a UAE authorised distributor and installer for TotalGard, 3M, and Llumar — we deliver energy-saving, comfort-enhancing, and safety-compliant window film solutions backed by full manufacturer warranties.
+              Smart Auto UAE provides professional <strong className="text-white/75 font-medium">commercial window film installation</strong> for office buildings, retail stores, shopping malls, hotels, schools, and all commercial properties across Dubai and Sharjah. As a UAE authorised distributor and installer for Totalgard, 3M, and Llumar — we deliver energy-saving, comfort-enhancing, and safety-compliant window film solutions backed by full manufacturer warranties.
             </p>
             <div className="flex flex-col gap-2.5 mb-8">
               {[
-                'UAE authorised TotalGard, 3M & Llumar installer',
+                'UAE authorised Totalgard, 3M & Llumar installer',
                 'Offices, retail, hotels, malls & industrial buildings',
                 'After-hours installation — zero business disruption',
                 'Full building facade capability',
@@ -238,7 +238,7 @@ export default function CommercialTintingPage() {
           >
             <img
               src="/images/services/commercial-tinting-hero.webp"
-              alt="Commercial office building window tinting Dubai — TotalGard and 3M film installation by Smart Auto UAE"
+              alt="Commercial office building window tinting Dubai — Totalgard and 3M film installation by Smart Auto UAE"
               width={700} height={500} loading="eager" decoding="async"
               className="w-full h-full object-cover" style={{ maxHeight: '480px' }}
             />
@@ -373,7 +373,7 @@ export default function CommercialTintingPage() {
             >
               <img
                 src="/images/services/office-tinting.webp"
-                alt="Office building window tinting Dubai — TotalGard solar control film by Smart Auto UAE"
+                alt="Office building window tinting Dubai — Totalgard solar control film by Smart Auto UAE"
                 width={700} height={460} loading="lazy" decoding="async"
                 className="w-full h-full object-cover" style={{ maxHeight: '420px' }}
               />
@@ -592,13 +592,13 @@ export default function CommercialTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto">
-              Since 2014, Smart Auto UAE has delivered commercial window film installations across offices, retail, hospitality, and industrial buildings throughout Dubai and Sharjah. Authorised by TotalGard, 3M, and Llumar.
+              Since 2014, Smart Auto UAE has delivered commercial window film installations across offices, retail, hospitality, and industrial buildings throughout Dubai and Sharjah. Authorised by Totalgard, 3M, and Llumar.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Authorised Installer',    body: 'UAE authorised distributor and installer for TotalGard, 3M, and Llumar. All products are genuine — no grey-market films.' },
+              { title: 'Authorised Installer',    body: 'UAE authorised distributor and installer for Totalgard, 3M, and Llumar. All products are genuine — no grey-market films.' },
               { title: 'Zero Business Disruption', body: 'We schedule installations after hours, at weekends, or floor by floor — so your operations continue without interruption.' },
               { title: 'Full Building Capability', body: 'From a single office window to a full tower facade — our team and equipment handle projects of any scale across Dubai and Sharjah.' },
               { title: 'Itemised Quotation',       body: 'Detailed per-window, per-floor pricing after a free site survey. No vague estimates or surprise additions on invoice.' },
@@ -716,7 +716,7 @@ export default function CommercialTintingPage() {
               </span>
             </h2>
             <p className="text-white/50 text-base mb-8 max-w-lg mx-auto relative z-10">
-              Our team surveys your building, specifies the right film for each area, and delivers a detailed itemised quotation — all at no cost. Authorised TotalGard and 3M installer. Full manufacturer warranties on every job.
+              Our team surveys your building, specifies the right film for each area, and delivers a detailed itemised quotation — all at no cost. Authorised Totalgard and 3M installer. Full manufacturer warranties on every job.
             </p>
             <div className="flex gap-4 justify-center flex-wrap relative z-10">
               <a

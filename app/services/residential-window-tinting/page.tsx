@@ -1,5 +1,7 @@
 'use client'
 
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight, Phone, Shield, Sun, Eye, Zap, Thermometer, Home } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -35,7 +37,7 @@ const benefits = [
   {
     icon: Sun,
     title: 'UV Protection',
-    desc: 'UAE has one of the world\'s highest UV indices. Our 3M and TotalGard residential films block 99% of harmful UV-A and UV-B radiation — protecting your skin during daily indoor exposure and preventing furniture, flooring, artwork, and fabrics from fading and yellowing.',
+    desc: 'UAE has one of the world\'s highest UV indices. Our 3M and Totalgard residential films block 99% of harmful UV-A and UV-B radiation — protecting your skin during daily indoor exposure and preventing furniture, flooring, artwork, and fabrics from fading and yellowing.',
   },
   {
     icon: Eye,
@@ -62,21 +64,21 @@ const benefits = [
 const filmTypes = [
   {
     name: 'Solar Control Film',
-    brand: '3M · TotalGard',
+    brand: '3M · Totalgard',
     best: 'Villas, apartments, offices with direct sun exposure',
     features: ['Maximum heat rejection', 'High clarity — no visible tint', 'Reduces glare on screens', 'Energy savings from day one', '5–10 year warranty'],
     price: 'From AED 25/sqft',
   },
   {
     name: 'Privacy Film',
-    brand: 'TotalGard · Llumar',
+    brand: 'Totalgard · Llumar',
     best: 'Ground-floor rooms, bathrooms, street-facing windows',
     features: ['One-way daytime privacy', 'Full outward visibility retained', 'Available in multiple opacities', 'No adhesive marks on removal', '3–5 year warranty'],
     price: 'From AED 20/sqft',
   },
   {
     name: 'Decorative Film',
-    brand: 'TotalGard · 3M',
+    brand: 'Totalgard · 3M',
     best: 'Bathrooms, glass partitions, entrance doors',
     features: ['Frosted, patterned & etched options', 'Permanent privacy solution', 'Easy to clean', 'No alteration to glass structure', '5-year warranty'],
     price: 'From AED 18/sqft',
@@ -90,7 +92,7 @@ const filmTypes = [
   },
   {
     name: 'Anti-Glare Film',
-    brand: '3M · TotalGard',
+    brand: '3M · Totalgard',
     best: 'Home offices, living rooms with TV screens',
     features: ['95% glare reduction', 'Diffuses bright light evenly', 'Reduces eye strain', 'UV protection included', '5-year warranty'],
     price: 'From AED 22/sqft',
@@ -126,7 +128,7 @@ const faqs = [
   },
   {
     q: 'How long does home window tinting last in Dubai?',
-    a: 'Premium 3M and TotalGard residential films are rated for 10–15 years in UAE conditions. They are UV-stabilised and tested specifically for high-heat, high-sun environments like the Gulf. Our films carry a 5–10 year manufacturer warranty.',
+    a: 'Premium 3M and Totalgard residential films are rated for 10–15 years in UAE conditions. They are UV-stabilised and tested specifically for high-heat, high-sun environments like the Gulf. Our films carry a 5–10 year manufacturer warranty.',
   },
   {
     q: 'Will window film make my home too dark?',
@@ -162,7 +164,7 @@ const serviceAreas = [
 export default function ResidentialWindowTintingPage() {
   return (
     <main style={{ background: '#0A0A0A', paddingTop: '80px' }}>
-
+<Navbar/>
       {/* ── HERO ── */}
       <section
         className="relative py-24 overflow-hidden"
@@ -176,7 +178,7 @@ export default function ResidentialWindowTintingPage() {
         <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeLeft} initial="hidden" animate="show">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-              3M · TotalGard · Llumar — Authorised UAE Installer
+              3M · Totalgard · Llumar — Authorised UAE Installer
             </p>
             <h1
               className="font-bold text-white leading-[1.1] mb-5"
@@ -189,12 +191,12 @@ export default function ResidentialWindowTintingPage() {
               </span>
             </h1>
             <p className="text-white/50 text-base leading-[1.85] mb-8 max-w-xl">
-              Smart Auto UAE installs premium <strong className="text-white/75 font-medium">residential window tinting</strong> for homes, villas, apartments, and flat glass across Dubai and Sharjah. Our 3M and TotalGard films block up to 99% UV rays, reject 90% of solar heat, and reduce energy bills by up to 30% — while maintaining your view and filling your home with natural light. UAE authorised installer. Free site survey included.
+              Smart Auto UAE installs premium <strong className="text-white/75 font-medium">residential window tinting</strong> for homes, villas, apartments, and flat glass across Dubai and Sharjah. Our 3M and Totalgard films block up to 99% UV rays, reject 90% of solar heat, and reduce energy bills by up to 30% — while maintaining your view and filling your home with natural light. UAE authorised installer. Free site survey included.
             </p>
             <div className="flex flex-col gap-2.5 mb-8">
               {[
                 'Free site survey & film consultation',
-                '3M, TotalGard & Llumar authorised installer',
+                '3M, Totalgard & Llumar authorised installer',
                 'No VLT restrictions — full range of tints',
                 'Villas, apartments, flat glass & skylights',
                 'Marble & surface protection film also available',
@@ -229,7 +231,7 @@ export default function ResidentialWindowTintingPage() {
             className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.15)' }}>
             <img
               src="/images/services/residential-tinting-hero.webp"
-              alt="Residential window tinting Dubai — 3M and TotalGard home window film installation by Smart Auto UAE"
+              alt="Residential window tinting Dubai — 3M and Totalgard home window film installation by Smart Auto UAE"
               width={700} height={500} loading="eager" decoding="async"
               className="w-full h-full object-cover" style={{ maxHeight: '480px' }}
             />
@@ -496,14 +498,14 @@ export default function ResidentialWindowTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto leading-relaxed">
-              Smart Auto UAE has been installing window film in Dubai and Sharjah homes since 2014. We are an authorised distributor and installer for 3M, TotalGard, and Llumar — using only genuine manufacturer products backed by full warranties.
+              Smart Auto UAE has been installing window film in Dubai and Sharjah homes since 2014. We are an authorised distributor and installer for 3M, Totalgard, and Llumar — using only genuine manufacturer products backed by full warranties.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: 'Free Site Survey', body: 'We visit your home before any commitment — measure every window, assess sun exposure and privacy needs, and present honest recommendations.' },
-              { title: 'Authorised Installer', body: 'Smart Auto UAE is an authorised dealer and installer for 3M, TotalGard, and Llumar residential film products. No grey-market products, ever.' },
+              { title: 'Authorised Installer', body: 'Smart Auto UAE is an authorised dealer and installer for 3M, Totalgard, and Llumar residential film products. No grey-market products, ever.' },
               { title: 'Manufacturer Warranty', body: 'All residential films carry 3–10 year manufacturer warranties. We provide full documentation at handover — not just a receipt.' },
               { title: 'Minimal Disruption', body: 'Our installers work efficiently and respectfully in your home. Most residential installations are completed in a single day with no mess left behind.' },
               { title: 'Same-Day Quotation', body: 'After the site survey, you receive a detailed itemised quote the same day — broken down by room and film type. No vague estimates.' },
@@ -659,7 +661,7 @@ export default function ResidentialWindowTintingPage() {
           </motion.div>
         </div>
       </section>
-
+<Footer/>
     </main>
   )
 }

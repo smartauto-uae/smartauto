@@ -1,5 +1,7 @@
 'use client'
 
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight, Phone, Shield, Droplets, Thermometer, Zap, Sun, Sparkles } from 'lucide-react'
 
@@ -174,7 +176,7 @@ const relatedServices = [
 export default function NanoCeramicCoatingPage() {
   return (
     <main style={{ background: '#0A0A0A', paddingTop: '80px' }}>
-
+<Navbar/>
       {/* ── HERO ── */}
       <section
         className="relative py-28 overflow-hidden"
@@ -930,7 +932,7 @@ export default function NanoCeramicCoatingPage() {
           </div>
         </div>
       </section>
-
+<Footer/>
     </main>
   )
 }
