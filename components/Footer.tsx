@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { Phone, Mail, MapPin, AtSign, MessageCircle } from 'lucide-react'
 
@@ -154,24 +156,6 @@ export default function Footer() {
           </div>
 
         </div>
-
-        {/* Brands strip */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: 24, marginBottom: 24 }}>
-          <p style={{ fontSize: '0.625rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.2)', marginBottom: 14 }}>
-            Authorised Brands
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.625rem' }}>
-            {brands.map((b) => (
-              <span
-                key={b}
-                style={{ padding: '0.3rem 0.875rem', borderRadius: 999, fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.35)', border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.02)' }}
-              >
-                {b}
-              </span>
-            ))}
-          </div>
-        </div>
-
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: 20, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
           <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.22)' }}>
