@@ -146,23 +146,26 @@ export default async function BlogPostPage({
   const post     = await getPost(slug)
   if (!post) notFound()
 
-  // Related posts — same category, exclude current
-  let related: typeof allPosts = []
-  try {
-    const allPosts = await getAllPosts()
-    related = allPosts
-      .filter((p) => p.slug !== slug && p.meta.category === post.meta.category)
-      .slice(0, 3)
-    // If not enough from same category, fill with recent posts
-    if (related.length < 3) {
-      const others = allPosts
-        .filter((p) => p.slug !== slug && !related.find((r) => r.slug === p.slug))
-        .slice(0, 3 - related.length)
-      related = [...related, ...others]
-    }
-  } catch {
-    // related stays empty — non-critical
+  // Replace the related posts block (lines ~148–165) with this:
+
+type PostType = NonNullable<Awaited<ReturnType<typeof getPost>>>
+
+let related: PostType[] = []
+try {
+  const allPosts = await getAllPosts()
+  related = allPosts
+    .filter((p) => p.slug !== slug && p.meta.category === post.meta.category)
+    .slice(0, 3)
+
+  if (related.length < 3) {
+    const others = allPosts
+      .filter((p) => p.slug !== slug && !related.find((r) => r.slug === p.slug))
+      .slice(0, 3 - related.length)
+    related = [...related, ...others]
   }
+} catch {
+  // related stays empty — non-critical
+}
 
   return (
     <>
