@@ -22,7 +22,8 @@ export async function verifySession(token: string): Promise<boolean> {
 }
 
 export async function getSession(): Promise<boolean> {
-  const token = cookies().get(COOKIE)?.value
+  const cookieStore = await cookies()
+  const token = cookieStore.get(COOKIE)?.value
   if (!token) return false
   return verifySession(token)
 }
