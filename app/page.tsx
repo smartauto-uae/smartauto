@@ -151,7 +151,7 @@ const services = [
     slug: 'car-detailing',
     description: 'Professional interior and exterior detailing. Paint decontamination, leather conditioning, engine bay cleaning, and full paint correction services.',
     features: ['Interior & Exterior', 'Paint Correction', 'Engine Bay Cleaning', 'Headlight Restoration'],
-    image: '/images/services/car-detailing.webp',
+    image: '/images/detailing.webp',
     href: '/services/car-detailing',
     icon: Car,
   },
@@ -160,18 +160,9 @@ const services = [
     slug: 'car-wrapping',
     description: 'Full colour-change and partial vinyl wraps. Matte, gloss, satin, chrome, and custom finishes. Full RTA documentation support for Dubai colour-change registrations.',
     features: ['Full & Partial Wraps', 'Matte · Gloss · Satin · Chrome', 'RTA Colour Change Support', '3M & Avery Dennison Vinyl'],
-    image: '/images/services/car-wrapping.webp',
+    image: '/images/car-wrapping.webp',
     href: '/services/car-wrapping',
     icon: Paintbrush,
-  },
-  {
-    title: 'Car Accessories',
-    slug: 'car-accessories',
-    description: 'Professional fitting of dashcams, parking sensors, ambient lighting, remote starters, reverse cameras, and a full range of premium car accessories.',
-    features: ['Dashcam Installation', 'Parking Sensors', 'Ambient Lighting', 'Reverse Cameras'],
-    image: '/images/services/car-accessories.webp',
-    href: '/services/car-accessories',
-    icon: Settings,
   },
 ]
 
@@ -324,7 +315,7 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section id="home" className="relative min-h-screen flex items-center justify-center text-center overflow-hidden" style={{ background: '#050505' }}>
-        <div className="absolute inset-0 bg-cover bg-center pointer-events-none" style={{ backgroundImage: "url('/images/nano-ceramic-2.webp')", opacity: 0.18 }} aria-hidden="true" />
+        <div className="absolute inset-0 bg-cover bg-center pointer-events-none" style={{ backgroundImage: "url('/images/detailing.webp')", opacity: 0.18 }} aria-hidden="true" />
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true" style={{ background: 'radial-gradient(ellipse at center,transparent 20%,rgba(0,0,0,0.85) 100%)' }} />
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true" style={{ background: 'radial-gradient(ellipse at center,rgba(201,168,76,0.07) 0%,transparent 65%)' }} />
         <div className="absolute top-0 left-0 right-0 h-px pointer-events-none" aria-hidden="true" style={{ background: 'linear-gradient(to right,transparent,rgba(201,168,76,0.25),transparent)' }} />
@@ -906,8 +897,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-      <Footer />
-
     </main>
   )
 }
