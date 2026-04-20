@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Smart Auto UAE — Dubai & Sharjah's most trusted car protection centre. Premium window tinting, paint protection film (PPF), ceramic coating, car detailing, vinyl wrapping & residential tinting. Trusted by 50,000+ customers. Free inspection. Call +971 52 440 3677.",
+    "Smart Auto UAE — Dubai & Sharjah's most trusted car protection centre. Premium window tinting, paint protection film (PPF), ceramic coating, car detailing, vinyl wrapping & residential tinting. Trusted by 50,000+ customers. Free inspection. Call +971 56 726 9666.",
 
   keywords: [
     "window tinting Dubai", "car tinting Dubai", "nano ceramic tint Dubai",
@@ -106,7 +106,7 @@ const structuredData = [
     "image": "https://smartautouae.ae/og-image.jpg",
     "description": "Dubai's premier car protection centre specialising in window tinting, paint protection film (PPF), nano ceramic coating, car detailing, vinyl wrapping, commercial tinting, marine tinting and residential tinting.",
     "url": "https://smartautouae.ae",
-    "telephone": "+971524403677",
+    "telephone": "+971567269666",
     "email": "info@smartautouae.ae",
     "address": {
       "@type": "PostalAddress",
@@ -153,7 +153,7 @@ const structuredData = [
     },
     "sameAs": [
       "https://instagram.com/smartautouae",
-      "https://wa.me/971524403677",
+      "https://wa.me/971567269666",
     ],
   },
   // ── Branch 2: Al Quoz ──
@@ -164,7 +164,7 @@ const structuredData = [
     "image": "https://smartautouae.ae/og-image.jpg",
     "description": "Smart Auto UAE Al Quoz branch — window tinting, PPF, ceramic coating, car detailing and car wrapping in Dubai.",
     "url": "https://smartautouae.ae",
-    "telephone": "+971524403677",
+    "telephone": "+971567269666",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Al Quoz Industrial Area 4, D16 Road",
@@ -191,7 +191,7 @@ const structuredData = [
     "image": "https://smartautouae.ae/og-image.jpg",
     "description": "Smart Auto UAE Mirdif branch inside Uptown Mall — window tinting, PPF, ceramic coating, car detailing and car wrapping.",
     "url": "https://smartautouae.ae",
-    "telephone": "+971524403677",
+    "telephone": "+971567269666",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Uptown Mall, Mirdif",
@@ -218,7 +218,7 @@ const structuredData = [
     "image": "https://smartautouae.ae/og-image.jpg",
     "description": "Smart Auto UAE Sharjah branch at Central Mall — window tinting, PPF, ceramic coating, car detailing and car wrapping in Sharjah.",
     "url": "https://smartautouae.ae",
-    "telephone": "+971524403677",
+    "telephone": "+971567269666",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Central Mall",

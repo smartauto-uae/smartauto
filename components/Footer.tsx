@@ -31,9 +31,9 @@ const branches = [
 ]
 
 const socials = [
-  { label: 'WhatsApp',  href: 'https://wa.me/971524403677',         icon: MessageCircle },
+  { label: 'WhatsApp',  href: 'https://wa.me/971567269666',         icon: MessageCircle },
   { label: 'Instagram', href: 'https://instagram.com/smartautouae', icon: AtSign },
-  { label: 'Call',      href: 'tel:+971524403677',                   icon: Phone },
+  { label: 'Call',      href: 'tel:+971567269666',                   icon: Phone },
   { label: 'Email',     href: 'mailto:info@smartautouae.ae',         icon: Mail },
 ]
 
@@ -145,8 +145,8 @@ export default function Footer() {
             <p style={{ fontSize: '0.625rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.28)', marginBottom: 12 }}>
               Contact
             </p>
-            <a href="tel:+971524403677" style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.9375rem', color: GOLD, fontWeight: 600, textDecoration: 'none', marginBottom: 8 }}>
-              <Phone size={14} aria-hidden="true" /> +971 52 440 3677
+            <a href="tel:+971567269666" style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.9375rem', color: GOLD, fontWeight: 600, textDecoration: 'none', marginBottom: 8 }}>
+              <Phone size={14} aria-hidden="true" /> +971 56 726 9666
             </a>
             <a href="mailto:info@smartautouae.ae" style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.8125rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 150ms ease' }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = GOLD }}

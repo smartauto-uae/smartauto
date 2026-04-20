@@ -75,14 +75,14 @@ const filmTypes = [
     name: 'Privacy Film (One-Way)',
     brand: 'Totalgard · Llumar',
     best: 'Meeting rooms, executive offices, reception areas, glass partitions',
-    features: ['Daytime one-way visibility', 'Full view retained from inside', 'Multiple opacity levels available', 'Compatible with existing glass', '5-year warranty'],
+    features: ['Daytime one-way visibility', 'Full view retained from inside', 'Multiple opacity levels available', 'Compatible with existing glass', '15-Year warranty'],
     price: 'From AED 18/sqft',
   },
   {
     name: 'Decorative & Frosted Film',
     brand: 'Totalgard · 3M',
     best: 'Glass partitions, entrance lobbies, bathroom glass, branding applications',
-    features: ['Frosted, etched & patterned options', 'Custom cut logos and graphics', 'Permanent privacy solution', 'Easy to clean and maintain', '5-year warranty'],
+    features: ['Frosted, etched & patterned options', 'Custom cut logos and graphics', 'Permanent privacy solution', 'Easy to clean and maintain', '15-Year warranty'],
     price: 'From AED 16/sqft',
   },
   {
@@ -213,7 +213,7 @@ export default function CommercialTintingPage() {
             </div>
             <div className="flex gap-3 flex-wrap">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -222,11 +222,11 @@ export default function CommercialTintingPage() {
                 Request Free Survey <ArrowRight size={15} />
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border"
                 style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
               >
-                <Phone size={14} /> +971 52 440 3677
+                <Phone size={14} /> +971 56 726 9666
               </a>
             </div>
           </motion.div>
@@ -237,7 +237,7 @@ export default function CommercialTintingPage() {
             style={{ border: '1px solid rgba(201,168,76,0.15)' }}
           >
             <img
-              src="/images/services/commercial-tinting-hero.webp"
+              src="/images/office-commercial-window-tinting.webp"
               alt="Commercial office building window tinting Dubai — Totalgard and 3M film installation by Smart Auto UAE"
               width={700} height={500} loading="eager" decoding="async"
               className="w-full h-full object-cover" style={{ maxHeight: '480px' }}
@@ -372,7 +372,7 @@ export default function CommercialTintingPage() {
               style={{ border: '1px solid rgba(201,168,76,0.12)' }}
             >
               <img
-                src="/images/services/office-tinting.webp"
+                src="/images/commercial-tint.webp"
                 alt="Office building window tinting Dubai — Totalgard solar control film by Smart Auto UAE"
                 width={700} height={460} loading="lazy" decoding="async"
                 className="w-full h-full object-cover" style={{ maxHeight: '420px' }}
@@ -388,7 +388,7 @@ export default function CommercialTintingPage() {
               style={{ border: '1px solid rgba(201,168,76,0.12)' }}
             >
               <img
-                src="/images/services/shop-tinting.webp"
+                src="/images/shop-tint.jpeg"
                 alt="Retail shop window tinting Dubai — storefront privacy and UV protection by Smart Auto UAE"
                 width={700} height={460} loading="lazy" decoding="async"
                 className="w-full h-full object-cover" style={{ maxHeight: '420px' }}
@@ -720,7 +720,7 @@ export default function CommercialTintingPage() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap relative z-10">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-black"
@@ -729,11 +729,11 @@ export default function CommercialTintingPage() {
                 Request Survey on WhatsApp <ArrowRight size={16} />
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm border"
                 style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
               >
-                <Phone size={16} /> +971 52 440 3677
+                <Phone size={16} /> +971 56 726 9666
               </a>
             </div>
           </motion.div>

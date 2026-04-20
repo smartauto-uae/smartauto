@@ -80,7 +80,7 @@ const filmTypes = [
     name: 'Decorative Film',
     brand: 'Totalgard · 3M',
     best: 'Bathrooms, glass partitions, entrance doors',
-    features: ['Frosted, patterned & etched options', 'Permanent privacy solution', 'Easy to clean', 'No alteration to glass structure', '5-year warranty'],
+    features: ['Frosted, patterned & etched options', 'Permanent privacy solution', 'Easy to clean', 'No alteration to glass structure', '15-Year warranty'],
     price: 'From AED 18/sqft',
   },
   {
@@ -94,7 +94,7 @@ const filmTypes = [
     name: 'Anti-Glare Film',
     brand: '3M · Totalgard',
     best: 'Home offices, living rooms with TV screens',
-    features: ['95% glare reduction', 'Diffuses bright light evenly', 'Reduces eye strain', 'UV protection included', '5-year warranty'],
+    features: ['95% glare reduction', 'Diffuses bright light evenly', 'Reduces eye strain', 'UV protection included', '15-Year warranty'],
     price: 'From AED 22/sqft',
   },
   {
@@ -209,7 +209,7 @@ export default function ResidentialWindowTintingPage() {
             </div>
             <div className="flex gap-3 flex-wrap">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -218,11 +218,11 @@ export default function ResidentialWindowTintingPage() {
                 Book Free Survey <ArrowRight size={15} />
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border"
                 style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
               >
-                <Phone size={14} /> +971 52 440 3677
+                <Phone size={14} /> +971 56 726 9666
               </a>
             </div>
           </motion.div>
@@ -230,7 +230,7 @@ export default function ResidentialWindowTintingPage() {
           <motion.div variants={fadeRight} initial="hidden" animate="show"
             className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.15)' }}>
             <img
-              src="/images/services/residential-tinting-hero.webp"
+              src="/images/villa-window-tint.webp"
               alt="Residential window tinting Dubai — 3M and Totalgard home window film installation by Smart Auto UAE"
               width={700} height={500} loading="eager" decoding="async"
               className="w-full h-full object-cover" style={{ maxHeight: '480px' }}
@@ -460,7 +460,7 @@ export default function ResidentialWindowTintingPage() {
                 ))}
               </ul>
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -473,7 +473,7 @@ export default function ResidentialWindowTintingPage() {
             <motion.div variants={fadeRight} initial="hidden" whileInView="show" viewport={{ once: true }}
               className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.15)' }}>
               <img
-                src="/images/services/marble-protection.webp"
+                src="/images/surface-protection.webp"
                 alt="Marble and stone countertop protection film Dubai — Smart Auto UAE"
                 width={700} height={480} loading="lazy" decoding="async"
                 className="w-full h-full object-cover" style={{ maxHeight: '440px' }}
@@ -642,7 +642,7 @@ export default function ResidentialWindowTintingPage() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap relative z-10">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-black"
@@ -651,11 +651,11 @@ export default function ResidentialWindowTintingPage() {
                 Book Free Survey on WhatsApp <ArrowRight size={16} />
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm border"
                 style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
               >
-                <Phone size={16} /> +971 52 440 3677
+                <Phone size={16} /> +971 56 726 9666
               </a>
             </div>
           </motion.div>

@@ -304,7 +304,7 @@ export default function CarDetailingPage() {
 
             <div className="flex gap-3 flex-wrap">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -313,7 +313,7 @@ export default function CarDetailingPage() {
                 Book Now <ArrowRight size={15} />
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border transition-all"
                 style={{
                   color: GOLD,
@@ -321,7 +321,7 @@ export default function CarDetailingPage() {
                   background: 'rgba(201,168,76,0.05)',
                 }}
               >
-                <Phone size={14} /> +971 52 440 3677
+                <Phone size={14} /> +971 56 726 9666
               </a>
             </div>
           </motion.div>
@@ -335,7 +335,7 @@ export default function CarDetailingPage() {
             style={{ border: '1px solid rgba(201,168,76,0.15)' }}
           >
             <img
-              src="/images/services/car-detailing.webp"
+              src="/images/nano-ceramic-2.webp"
               alt="Professional car detailing in Dubai — Smart Auto UAE car polishing and interior cleaning services"
               width={700}
               height={500}
@@ -476,7 +476,7 @@ export default function CarDetailingPage() {
                   </ul>
 
                   <a
-                    href="https://wa.me/971524403677"
+                    href="https://wa.me/971567269666"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-semibold text-black transition-all mt-auto"
@@ -503,7 +503,7 @@ export default function CarDetailingPage() {
             style={{ border: '1px solid rgba(201,168,76,0.12)' }}
           >
             <img
-              src="/images/services/car-polishing.webp"
+              src="/images/detailing.webp"
               alt="Car polishing and swirl mark removal in Dubai — 3-stage machine polish by Smart Auto UAE"
               width={650}
               height={480}
@@ -573,7 +573,7 @@ export default function CarDetailingPage() {
               ))}
             </ul>
             <a
-              href="https://wa.me/971524403677"
+              href="https://wa.me/971567269666"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -676,7 +676,7 @@ export default function CarDetailingPage() {
             </div>
 
             <a
-              href="https://wa.me/971524403677"
+              href="https://wa.me/971567269666"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -696,7 +696,7 @@ export default function CarDetailingPage() {
             style={{ border: '1px solid rgba(201,168,76,0.12)' }}
           >
             <img
-              src="/images/services/headlight-restoration.webp"
+              src="/images/headlight-restoration.jpeg"
               alt="Headlight restoration Dubai — yellowed and cloudy headlight lens restored by Smart Auto UAE"
               width={650}
               height={480}
@@ -721,7 +721,7 @@ export default function CarDetailingPage() {
             style={{ border: '1px solid rgba(201,168,76,0.12)' }}
           >
             <img
-              src="/images/services/exterior-detailing.webp"
+              src="/images/ceramic-coating-2.webp"
               alt="Exterior car detailing Dubai — paint decontamination and Power Shine by Smart Auto UAE"
               width={650}
               height={480}
@@ -825,7 +825,7 @@ export default function CarDetailingPage() {
             </div>
 
             <a
-              href="https://wa.me/971524403677"
+              href="https://wa.me/971567269666"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -935,7 +935,7 @@ export default function CarDetailingPage() {
             </div>
 
             <a
-              href="https://wa.me/971524403677"
+              href="https://wa.me/971567269666"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -955,7 +955,7 @@ export default function CarDetailingPage() {
             style={{ border: '1px solid rgba(201,168,76,0.12)' }}
           >
             <img
-              src="/images/services/interior-detailing.webp"
+              src="/images/detailing-2.webp"
               alt="Interior car cleaning Dubai — full interior detailing and upholstery cleaning by Smart Auto UAE"
               width={650}
               height={480}
@@ -1090,11 +1090,11 @@ export default function CarDetailingPage() {
             </h2>
             <p className="text-white/45 text-base mb-8 max-w-xl mx-auto">
               Packages from AED 299 · 4 branches across Dubai &amp; Sharjah · Free inspection ·
-              No hidden charges · Open every day 10 AM – 10 PM
+              No hidden charges · Open every day
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-black"
@@ -1103,7 +1103,7 @@ export default function CarDetailingPage() {
                 Book on WhatsApp <ArrowRight size={15} />
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm border"
                 style={{
                   color: GOLD,
@@ -1111,7 +1111,7 @@ export default function CarDetailingPage() {
                   background: 'rgba(201,168,76,0.05)',
                 }}
               >
-                <Phone size={14} /> +971 52 440 3677
+                <Phone size={14} /> +971 56 726 9666
               </a>
             </div>
           </motion.div>

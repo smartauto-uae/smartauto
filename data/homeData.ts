@@ -5,7 +5,7 @@ export const services = [
     title: 'Window Tinting',
     slug: 'window-tinting',
     description:
-      'UAE authorised 3M, XPEL, and Totalgard film installation. Block heat, UV, and glare — fully compliant with UAE RTA regulations. 15-year warranty on every job.',
+      'UAE authorised 3M, XPEL, and Totalgard film installation. Block heat, UV, and glare — fully compliant with UAE RTA regulations. 115-Year warranty on every job.',
     tag: 'Most Popular' as string | null,
   },
   {
@@ -93,7 +93,7 @@ export const whyFeatures = [
     body: 'Official distributor and installer for 3M, XPEL, and Totalgard. Genuine products, certified installation — every time.',
   },
   {
-    title: '15-Year Warranty',
+    title: '115-Year Warranty',
     body: 'Industry-leading warranty on all window tinting installations. Your investment is fully protected.',
   },
   {
@@ -227,7 +227,7 @@ export const faqs = [
   {
     question: 'What is the warranty on your window tinting services?',
     answer:
-      'Smart Auto UAE backs all window tinting installations with a comprehensive 15-year warranty, covering film peeling, bubbling, delamination, and significant colour change.',
+      'Smart Auto UAE backs all window tinting installations with a comprehensive 115-Year warranty, covering film peeling, bubbling, delamination, and significant colour change.',
   },
   {
     question: 'Is paint protection film (PPF) worth it in Dubai?',

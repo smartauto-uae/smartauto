@@ -124,7 +124,7 @@ export default function ContactPage() {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -133,11 +133,11 @@ export default function ContactPage() {
                 <MessageCircle size={16} aria-hidden="true" /> WhatsApp Us
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl font-semibold text-sm border"
                 style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
               >
-                <Phone size={15} aria-hidden="true" /> +971 52 440 3677
+                <Phone size={15} aria-hidden="true" /> +971 56 726 9666
               </a>
               <a
                 href="mailto:info@smartautouae.ae"
@@ -166,18 +166,18 @@ export default function ContactPage() {
               {
                 icon: MessageCircle,
                 label: 'WhatsApp',
-                value: '+971 52 440 3677',
+                value: '+971 56 726 9666',
                 note: 'Fastest response · Chat instantly',
-                href: 'https://wa.me/971524403677',
+                href: 'https://wa.me/971567269666',
                 cta: 'Message on WhatsApp',
                 primary: true,
               },
               {
                 icon: Phone,
                 label: 'Phone',
-                value: '+971 52 440 3677',
+                value: '+971 56 726 9666',
                 note: 'Call us · Any day 11AM – 9PM',
-                href: 'tel:+971524403677',
+                href: 'tel:+971567269666',
                 cta: 'Call Now',
                 primary: false,
               },
@@ -643,7 +643,7 @@ export default function ContactPage() {
 </div>
               {/* WhatsApp CTA */}
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank" rel="noopener noreferrer"
                 className="rounded-2xl p-7 flex flex-col gap-3 relative overflow-hidden"
                 style={{

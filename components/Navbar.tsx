@@ -223,7 +223,7 @@ export default function Navbar() {
           {isDesktop && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 style={{
                   display: 'flex', alignItems: 'center', gap: 6,
                   fontSize: '0.8125rem', color: GOLD, fontWeight: 500,
@@ -234,10 +234,10 @@ export default function Navbar() {
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = '1' }}
               >
                 <Phone size={13} aria-hidden="true" />
-                +971 52 440 3677
+                +971 56 726 9666
               </a>
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -349,15 +349,15 @@ export default function Navbar() {
                   Need help?
                 </p>
                 <a
-                  href="tel:+971524403677"
+                  href="tel:+971567269666"
                   style={{ fontSize: '0.875rem', color: GOLD, fontWeight: 600, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6 }}
                 >
                   <Phone size={13} aria-hidden="true" />
-                  +971 52 440 3677
+                  +971 56 726 9666
                 </a>
               </div>
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -481,7 +481,7 @@ export default function Navbar() {
             {/* Bottom CTAs */}
             <div style={{ display: 'flex', gap: 10, marginTop: 24 }}>
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -499,7 +499,7 @@ export default function Navbar() {
                 WhatsApp
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 style={{
                   flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
                   padding: '14px',

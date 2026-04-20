@@ -165,7 +165,7 @@ const faqs: {
     id: 'ceramic-what',
     category: 'ceramic',
     q: 'What is nano ceramic coating and how does it work?',
-    a: 'Nano ceramic coating is a liquid polymer infused with silicon dioxide (SiO2) or titanium dioxide (TiO2) nanoparticles that chemically bonds to your vehicle\'s paint. Once cured, it forms a hard, semi-permanent layer (9H hardness on premium grades) that is hydrophobic, UV-resistant, and chemically inert. Water, dirt, bird droppings, tree sap, and road grime bead off the surface and are easier to remove. Smart Auto UAE applies 3M and TotalGard nano ceramic coatings with 2 to 5-year warranties.',
+    a: 'Nano ceramic coating is a liquid polymer infused with silicon dioxide (SiO2) or titanium dioxide (TiO2) nanoparticles that chemically bonds to your vehicle\'s paint. Once cured, it forms a hard, semi-permanent layer (9H hardness on premium grades) that is hydrophobic, UV-resistant, and chemically inert. Water, dirt, bird droppings, tree sap, and road grime bead off the surface and are easier to remove. Smart Auto UAE applies 3M and TotalGard nano ceramic coatings with 2 to 15-Year warranties.',
     tags: ['nano ceramic', 'SiO2', '9H', 'hydrophobic'],
   },
   {
@@ -299,7 +299,7 @@ const faqs: {
     id: 'general-quote',
     category: 'general',
     q: 'How do I get a quote from Smart Auto UAE?',
-    a: 'The fastest way to get a quote is to WhatsApp us at +971 52 440 3677 with your vehicle make, model, and year (for automotive services) or a brief description of your requirements (for residential, commercial, or marine). We typically provide a quote within a few hours. For complex jobs (full PPF, large villas, yachts), we offer a free on-site assessment before quoting.',
+    a: 'The fastest way to get a quote is to WhatsApp us at +971 56 726 9666 with your vehicle make, model, and year (for automotive services) or a brief description of your requirements (for residential, commercial, or marine). We typically provide a quote within a few hours. For complex jobs (full PPF, large villas, yachts), we offer a free on-site assessment before quoting.',
     tags: ['quote', 'estimate', 'WhatsApp'],
   },
   {
@@ -467,7 +467,7 @@ export default function FAQPage() {
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <a
-                  href="https://wa.me/971524403677"
+                  href="https://wa.me/971567269666"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-black"
@@ -476,7 +476,7 @@ export default function FAQPage() {
                   <MessageCircle size={15} aria-hidden="true" /> Ask on WhatsApp
                 </a>
                 <a
-                  href="tel:+971524403677"
+                  href="tel:+971567269666"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm border"
                   style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
                 >
@@ -654,7 +654,7 @@ export default function FAQPage() {
               </p>
               <div className="flex gap-3 justify-center flex-wrap relative z-10">
                 <a
-                  href="https://wa.me/971524403677"
+                  href="https://wa.me/971567269666"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"

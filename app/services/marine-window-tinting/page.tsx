@@ -72,7 +72,7 @@ const filmTypes = [
     name: 'Marine Solar Control',
     brand: '3M · Totalgard',
     best: 'All vessel types — primary heat and UV rejection',
-    features: ['90% solar heat rejection', '99% UV blockage', 'High visible light transmission', 'Resistant to salt spray and humidity', '5-year marine warranty'],
+    features: ['90% solar heat rejection', '99% UV blockage', 'High visible light transmission', 'Resistant to salt spray and humidity', '15-Year marine warranty'],
     price: 'From AED 35/sqft',
   },
   {
@@ -100,14 +100,14 @@ const filmTypes = [
     name: 'Mirror / Reflective Film',
     brand: 'Totalgard',
     best: 'Exterior-facing cabin windows for maximum privacy',
-    features: ['One-way mirror effect', 'Maximum privacy from all angles', 'Strong heat rejection', 'High-impact aesthetic', '5-year warranty'],
+    features: ['One-way mirror effect', 'Maximum privacy from all angles', 'Strong heat rejection', 'High-impact aesthetic', '15-Year warranty'],
     price: 'From AED 40/sqft',
   },
   {
     name: 'Anti-Glare Film',
     brand: '3M · Llumar',
     best: 'Helm stations, navigation desks, instrument areas',
-    features: ['95% glare reduction', 'Diffuses bright reflections evenly', 'Improves screen legibility on instruments', 'UV protection included', '5-year warranty'],
+    features: ['95% glare reduction', 'Diffuses bright reflections evenly', 'Improves screen legibility on instruments', 'UV protection included', '15-Year warranty'],
     price: 'From AED 38/sqft',
   },
 ]
@@ -235,7 +235,7 @@ export default function MarineTintingPage() {
             </div>
             <div className="flex gap-3 flex-wrap">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -244,11 +244,11 @@ export default function MarineTintingPage() {
                 Book Marine Survey <ArrowRight size={15} />
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border"
                 style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
               >
-                <Phone size={14} /> +971 52 440 3677
+                <Phone size={14} /> +971 56 726 9666
               </a>
             </div>
           </motion.div>
@@ -707,7 +707,7 @@ export default function MarineTintingPage() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap relative z-10">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-black"
@@ -716,11 +716,11 @@ export default function MarineTintingPage() {
                 Book on WhatsApp <ArrowRight size={16} />
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm border"
                 style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
               >
-                <Phone size={16} /> +971 52 440 3677
+                <Phone size={16} /> +971 56 726 9666
               </a>
             </div>
           </motion.div>

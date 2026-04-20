@@ -8,8 +8,8 @@ import { X, MessageCircle, Send, Phone, ChevronRight, Zap } from "lucide-react";
 
 const gold     = "#C9A84C";
 const goldGrad = "linear-gradient(135deg,#C9A84C,#E8C96A)";
-const WA_NUM   = "971524403677";
-const PHONE    = "+971 52 440 3677";
+const WA_NUM   = "971567269666";
+const PHONE    = "+971 56 726 9666";
 const waLink   = (msg: string) =>
   `https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`;
 
@@ -648,7 +648,7 @@ export default function FloatingChatbot() {
                         </a>
                         {/* Call */}
                         <a
-                          href="tel:+971524403677"
+                          href="tel:+971567269666"
                           style={{
                             display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
                             padding: "10px 16px", borderRadius: 12,

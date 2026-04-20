@@ -201,7 +201,7 @@ export default function CarWrappingPage() {
             </div>
             <div className="flex gap-3 flex-wrap">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-black"
@@ -210,11 +210,11 @@ export default function CarWrappingPage() {
                 Book Now <ArrowRight size={15} />
               </a>
               <a
-                href="tel:+971524403677"
+                href="tel:+971567269666"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border transition-all"
                 style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
               >
-                <Phone size={14} /> +971 52 440 3677
+                <Phone size={14} /> +971 56 726 9666
               </a>
             </div>
           </motion.div>
@@ -228,7 +228,7 @@ export default function CarWrappingPage() {
             style={{ border: '1px solid rgba(201,168,76,0.15)' }}
           >
             <img
-              src="/images/services/car-wrapping.webp"
+              src="/images/car-wrap.webp"
               alt="Professional vinyl car wrapping Dubai — matte, gloss, chrome and colour-change wraps by Smart Auto UAE"
               width={700}
               height={500}
@@ -496,7 +496,7 @@ export default function CarWrappingPage() {
           </p>
           <div className="flex gap-4 justify-center flex-wrap relative z-10">
             <a
-              href="https://wa.me/971524403677"
+              href="https://wa.me/971567269666"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-black transition-all hover:opacity-90 active:scale-[0.98]"
@@ -505,11 +505,11 @@ export default function CarWrappingPage() {
               Book on WhatsApp <ArrowRight size={15} />
             </a>
             <a
-              href="tel:+971524403677"
+              href="tel:+971567269666"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm border transition-all"
               style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
             >
-              <Phone size={14} /> +971 52 440 3677
+              <Phone size={14} /> +971 56 726 9666
             </a>
           </div>
         </div>

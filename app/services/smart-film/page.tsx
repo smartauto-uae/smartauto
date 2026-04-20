@@ -425,7 +425,7 @@ export default function SmartFilmPage() {
 
                 <div className="flex items-center gap-4 flex-wrap">
                   <a
-                    href="https://wa.me/971524403677"
+                    href="https://wa.me/971567269666"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-sm text-black no-underline"
@@ -434,7 +434,7 @@ export default function SmartFilmPage() {
                     Get a Free Quote <ArrowRight size={15} />
                   </a>
                   <a
-                    href="tel:+971524403677"
+                    href="tel:+971567269666"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm no-underline border"
                     style={{ borderColor: "rgba(201,168,76,0.3)", color: gold, background: "rgba(201,168,76,0.04)" }}
                   >
@@ -450,7 +450,7 @@ export default function SmartFilmPage() {
                   style={{ border: "1px solid rgba(201,168,76,0.15)", height: "480px" }}
                 >
                   <img
-                    src="/images/smartfilm-hero.webp"
+                    src="/images/smart-film.webp"
                     alt="SmartFilm window film installation Dubai Sharjah - frosted decorative safety films - Smart Auto UAE"
                     className="w-full h-full object-cover"
                   />
@@ -903,7 +903,7 @@ export default function SmartFilmPage() {
                 </div>
                 <div className="flex items-center gap-4 flex-wrap">
                   <a
-                    href="https://wa.me/971524403677"
+                    href="https://wa.me/971567269666"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-sm text-black no-underline"
@@ -912,11 +912,11 @@ export default function SmartFilmPage() {
                     Book Free Site Visit <ArrowRight size={15} />
                   </a>
                   <a
-                    href="tel:+971524403677"
+                    href="tel:+971567269666"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm no-underline border"
                     style={{ borderColor: "rgba(201,168,76,0.3)", color: gold, background: "rgba(201,168,76,0.04)" }}
                   >
-                    <Phone size={14} /> +971 52 440 3677
+                    <Phone size={14} /> +971 56 726 9666
                   </a>
                 </div>
               </div>
@@ -1015,7 +1015,7 @@ export default function SmartFilmPage() {
           {/* Actions */}
           <div className="flex gap-2 mt-auto pt-2">
             <a
-              href={`tel:+971524403677`}
+              href={`tel:+971567269666`}
               className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[12px] font-semibold no-underline border transition-all"
               style={{ borderColor: "rgba(201,168,76,0.2)", color: gold, background: "rgba(201,168,76,0.05)" }}
             >
@@ -1088,7 +1088,7 @@ export default function SmartFilmPage() {
 
                 <div className="flex items-center justify-center gap-4 flex-wrap">
                   <a
-                    href="https://wa.me/971524403677"
+                    href="https://wa.me/971567269666"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-bold text-sm text-black no-underline"
@@ -1101,11 +1101,11 @@ export default function SmartFilmPage() {
                     <ArrowRight size={15} />
                   </a>
                   <a
-                    href="tel:+971524403677"
+                    href="tel:+971567269666"
                     className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-sm no-underline border"
                     style={{ borderColor: "rgba(201,168,76,0.3)", color: gold, background: "rgba(201,168,76,0.04)" }}
                   >
-                    <Phone size={14} /> +971 52 440 3677
+                    <Phone size={14} /> +971 56 726 9666
                   </a>
                 </div>
 

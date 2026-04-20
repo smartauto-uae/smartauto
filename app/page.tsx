@@ -123,7 +123,7 @@ const services = [
     title: 'Car Window Tinting',
     slug: 'window-tinting',
     description: 'Premium 3M, XPEL, and Totalgard nano ceramic window films. Block up to 99% UV rays and reduce heat by up to 60%. RTA law compliant for all UAE vehicles.',
-    features: ['3M · XPEL · Totalgard Films', 'UAE RTA Law Compliant', '5-Year Warranty', 'Same-Day Service Available'],
+    features: ['3M · XPEL · Totalgard Films', 'UAE RTA Law Compliant', '15-Year Warranty', 'Same-Day Service Available'],
     image: '/images/services/window-tinting-1.webp',
     href: '/services/window-tinting',
     icon: Layers,
@@ -140,7 +140,7 @@ const services = [
   {
     title: 'Nano Ceramic Coating',
     slug: 'ceramic-coating',
-    description: '9H hardness ceramic coatings from Gyeon, Gtechniq, and IGL. Hydrophobic protection, deep gloss, and UV resistance lasting 2–5 years.',
+    description: '9H hardness ceramic coatings from Sirus USA, Jade, Puris & Gyeon. Hydrophobic protection, deep gloss, and UV resistance lasting 2–5 years.',
     features: ['Gyeon · Gtechniq · IGL Coatings', '9H Hardness Rating', 'Hydrophobic Protection', 'Paint Correction Included'],
     image: '/images/services/ceramic-coating-1.webp',
     href: '/services/ceramic-coating',
@@ -168,9 +168,9 @@ const services = [
 
 const whyFeatures = [
   { title: '3M Authorised Dealer', description: 'Official UAE distributor and certified installer for 3M, Totalgard, XPEL, Gyeon, and Gtechniq.', icon: Shield },
-  { title: '5-Year Warranty', description: 'All window tinting and PPF installations are backed by a comprehensive manufacturer warranty.', icon: CheckCircle },
+  { title: 'Upto 15-Year Warranty', description: 'Window tinting and PPF installations are backed by a comprehensive manufacturer warranty.', icon: CheckCircle },
   { title: '4 Branches UAE', description: 'MotorCity, Al Quoz, Mirdif, and Sharjah Central Mall. Always close to you.', icon: MapPin },
-  { title: 'Open Every Day', description: 'All 4 branches open 7 days a week, 10 AM to 10 PM. No appointment needed.', icon: Clock },
+  { title: 'Open Every Day', description: 'All 4 branches open 7 days a week, 11 AM to 10 PM & Sharjah Branch 10 AM to 10 PM. No appointment needed.', icon: Clock },
 ]
 
 const steps = [
@@ -181,8 +181,8 @@ const steps = [
 ]
 
 const brands = [
-  '3M', 'Totalgard', 'XPEL', 'Gyeon', 'Gtechniq', 'IGL Coatings',
-  'Avery Dennison', 'Llumar', 'SunTek', 'Hexis',
+  '3M', 'Totalgard',
+  'Global USA', 'Sirus USA', 'Jade', 'Puris',
 ]
 
 const testimonials = [
@@ -222,28 +222,28 @@ const branches = [
   {
     city: 'Dubai', name: 'Smart Auto MotorCity',
     address: 'MotorCity, Dubai — near Dubai Autodrome',
-    phone: '+971 52 440 3677',
+    phone: '+971 56 726 9666',
     mapUrl: 'https://maps.google.com/?q=Smart+Auto+MotorCity+Dubai',
     hours: '10:00 AM – 10:00 PM · Every Day',
   },
   {
     city: 'Dubai', name: 'Smart Auto Al Quoz',
     address: 'Al Quoz Industrial Area, Dubai',
-    phone: '+971 52 440 3677',
+    phone: '+971 56 726 9666',
     mapUrl: 'https://maps.google.com/?q=Smart+Auto+Al+Quoz+Dubai',
     hours: '10:00 AM – 10:00 PM · Every Day',
   },
   {
     city: 'Dubai', name: 'Smart Auto Mirdif',
     address: 'Uptown Mirdif Mall, Mirdif, Dubai',
-    phone: '+971 52 440 3677',
+    phone: '+971 56 726 9666',
     mapUrl: 'https://maps.google.com/?q=Smart+Auto+Mirdif+Dubai',
     hours: '10:00 AM – 10:00 PM · Every Day',
   },
   {
     city: 'Sharjah', name: 'Smart Auto Sharjah',
     address: 'Central Mall, Sharjah',
-    phone: '+971 52 440 3677',
+    phone: '+971 56 726 9666',
     mapUrl: 'https://maps.google.com/?q=Smart+Auto+Sharjah+Central+Mall',
     hours: '10:00 AM – 10:00 PM · Every Day',
   },
@@ -259,8 +259,8 @@ const faqs = [
 ]
 
 const contactItems = [
-  { label: 'Phone / WhatsApp', value: '+971 52 440 3677', href: 'tel:+971524403677', icon: Phone },
-  { label: 'WhatsApp Chat', value: 'Chat with us directly', href: 'https://wa.me/971524403677', icon: MessageCircle },
+  { label: 'Phone / WhatsApp', value: '+971 56 726 9666', href: 'tel:+971567269666', icon: Phone },
+  { label: 'WhatsApp Chat', value: 'Chat with us directly', href: 'https://wa.me/971567269666', icon: MessageCircle },
   { label: 'Email', value: 'info@smartautouae.ae', href: 'mailto:info@smartautouae.ae', icon: Mail },
   { label: 'Instagram', value: '@smartautouae', href: 'https://instagram.com/smartautouae', icon: AtSign },
 ]
@@ -374,7 +374,7 @@ export default function Home() {
             className="flex items-center justify-center gap-6 mb-8 flex-wrap"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }}
           >
-            {['3M Authorised Dealer', '5-Year Warranty', 'RTA Law Compliant'].map((t) => (
+            {['3M Authorised Dealer', '15-Year Warranty', 'RTA Law Compliant'].map((t) => (
               <div key={t} className="flex items-center gap-1.5">
                 <CheckCircle size={13} style={{ color: GOLD }} aria-hidden="true" />
                 <span className="text-[11px] text-white/50 tracking-wide">{t}</span>
@@ -395,7 +395,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
           >
             <GoldBtn href="#services">Explore Services <ArrowRight size={15} /></GoldBtn>
-            <OutlineBtn href="https://wa.me/971524403677"><Phone size={14} /> WhatsApp Us</OutlineBtn>
+            <OutlineBtn href="https://wa.me/971567269666"><Phone size={14} /> WhatsApp Us</OutlineBtn>
           </motion.div>
 
           <motion.div
@@ -523,7 +523,7 @@ export default function Home() {
               </div>
               <div className="flex gap-3 flex-wrap">
                 <GoldBtn href="/contact">Get a Free Quote <ArrowRight size={16} /></GoldBtn>
-                <OutlineBtn href="https://wa.me/971524403677"><Phone size={15} /> WhatsApp</OutlineBtn>
+                <OutlineBtn href="https://wa.me/971567269666"><Phone size={15} /> WhatsApp</OutlineBtn>
               </div>
             </motion.div>
 
@@ -757,8 +757,8 @@ export default function Home() {
               <StatusBadge hours="10:00 AM – 10:00 PM" />
             </div>
             <div className="flex gap-4 justify-center flex-wrap relative z-10">
-              <GoldBtn href="https://wa.me/971524403677">Book on WhatsApp <ArrowRight size={16} /></GoldBtn>
-              <OutlineBtn href="tel:+971524403677"><Phone size={16} /> +971 52 440 3677</OutlineBtn>
+              <GoldBtn href="https://wa.me/971567269666">Book on WhatsApp <ArrowRight size={16} /></GoldBtn>
+              <OutlineBtn href="tel:+971567269666"><Phone size={16} /> +971 56 726 9666</OutlineBtn>
             </div>
           </motion.div>
         </div>
@@ -886,8 +886,8 @@ export default function Home() {
             <div>
               <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-4">Branches</p>
               {branches.map((b) => <p key={b.name} className="text-white/40 text-sm mb-2.5">{b.name}</p>)}
-              <a href="tel:+971524403677" className="text-sm font-semibold mt-4 block hover:opacity-80 transition-opacity" style={{ color: GOLD }}>
-                +971 52 440 3677
+              <a href="tel:+971567269666" className="text-sm font-semibold mt-4 block hover:opacity-80 transition-opacity" style={{ color: GOLD }}>
+                +971 56 726 9666
               </a>
             </div>
           </div>

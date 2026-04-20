@@ -74,7 +74,7 @@ const films = [
       'Crystal clarity, no colour shift',
       'Hybrid nanotechnology',
     ],
-    warranty: 'Up to 15-year warranty',
+    warranty: 'Up to 115-Year warranty',
     price: 'From AED 799',
     best: 'Best for: Luxury, performance & daily drivers',
   },
@@ -104,7 +104,7 @@ const films = [
       'Available in multiple shades',
       'Quick same-day install',
     ],
-    warranty: 'Up to 5-year warranty',
+    warranty: 'Up to 15-Year warranty',
     price: 'From AED 299',
     best: 'Best for: Budget-conscious owners',
   },
@@ -179,10 +179,10 @@ const faqs = [
 ]
 
 const branches = [
-  { name: 'Smart Auto MotorCity', address: 'MotorCity, Dubai', phone: '+971 52 440 3677' },
-  { name: 'Smart Auto Al Quoz', address: 'Al Quoz Industrial Area, Dubai', phone: '+971 52 440 3677' },
-  { name: 'Smart Auto Mirdif', address: 'Uptown Mirdif Mall, Dubai', phone: '+971 52 440 3677' },
-  { name: 'Smart Auto Sharjah', address: 'Central Mall, Sharjah', phone: '+971 52 440 3677' },
+  { name: 'Smart Auto MotorCity', address: 'MotorCity, Dubai', phone: '+971 56 726 9666' },
+  { name: 'Smart Auto Al Quoz', address: 'Al Quoz Industrial Area, Dubai', phone: '+971 56 726 9666' },
+  { name: 'Smart Auto Mirdif', address: 'Uptown Mirdif Mall, Dubai', phone: '+971 56 726 9666' },
+  { name: 'Smart Auto Sharjah', address: 'Central Mall, Sharjah', phone: '+971 56 726 9666' },
 ]
 
 const relatedServices = [
@@ -289,7 +289,7 @@ export default function WindowTintingPage() {
               {[
                 'UAE RTA law compliant — all vehicle types',
                 '3M, Totalgard & XPEL authorised installer',
-                'Up to 15-year warranty on nano ceramic films',
+                'Up to 115-Year warranty on nano ceramic films',
                 'Same-day service · Mobile doorstep tinting available',
                 'Free inspection before every installation',
               ].map((p) => (
@@ -302,7 +302,7 @@ export default function WindowTintingPage() {
 
             <div className="flex gap-3 flex-wrap">
               <a
-                href="https://wa.me/971524403677"
+                href="https://wa.me/971567269666"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-black transition-all duration-300 hover:opacity-90"
@@ -840,11 +840,11 @@ export default function WindowTintingPage() {
             </span>
           </h2>
           <p className="text-white/45 text-base mb-8 max-w-lg mx-auto">
-            4 branches across Dubai &amp; Sharjah — or book our mobile doorstep tinting service at your home or office. Free inspection. No hidden charges. Up to 15-year warranty.
+            4 branches across Dubai &amp; Sharjah — or book our mobile doorstep tinting service at your home or office. Free inspection. No hidden charges. Up to 115-Year warranty.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a
-              href="https://wa.me/971524403677"
+              href="https://wa.me/971567269666"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm text-black transition-all duration-300 hover:opacity-90"
