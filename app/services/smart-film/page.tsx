@@ -866,7 +866,7 @@ export default function SmartFilmPage() {
                 </h2>
                 <p className="text-[13px] leading-[1.85] mb-8" style={{ color: "rgba(255,255,255,0.45)" }}>
                   Smart Auto UAE has been installing architectural window films across Dubai and Sharjah for
-                  over 20 years. We are authorised installers for SmartFilm, 3M, TotalGard, and Llumar —
+                  over 20 years. We are Applicators for SmartFilm, 3M, TotalGard, and Llumar —
                   using only genuine manufacturer products backed by full warranties. Our certified installation
                   team handles everything from the free site visit to final handover, with no subcontracting.
                 </p>
@@ -878,7 +878,7 @@ export default function SmartFilmPage() {
                     },
                     {
                       title: "Authorised SmartFilm Installer",
-                      body: "Smart Auto UAE is an authorised dealer and installer for SmartFilm, 3M, TotalGard, and Llumar. All products are genuine — never grey market.",
+                      body: "Smart Auto UAE is an Applicator and installer for SmartFilm, 3M, TotalGard, and Llumar. All products are genuine — never grey market.",
                     },
                     {
                       title: "Manufacturer Warranty on All Products",
@@ -1116,7 +1116,7 @@ export default function SmartFilmPage() {
                 >
                   {[
                     { icon: Clock,    label: "Free site visit" },
-                    { icon: Award,    label: "Authorised installer" },
+                    { icon: Award,    label: "Applicator" },
                     { icon: Shield,   label: "Manufacturer warranty" },
                     { icon: Star,     label: "600+ five-star reviews" },
                   ].map((t) => (

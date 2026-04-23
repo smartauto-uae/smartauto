@@ -598,7 +598,7 @@ export default function CommercialTintingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Authorised Installer',    body: 'UAE authorised distributor and installer for Totalgard, 3M, and Llumar. All products are genuine — no grey-market films.' },
+              { title: 'Applicator',    body: 'UAE authorised distributor and installer for Totalgard, 3M, and Llumar. All products are genuine — no grey-market films.' },
               { title: 'Zero Business Disruption', body: 'We schedule installations after hours, at weekends, or floor by floor — so your operations continue without interruption.' },
               { title: 'Full Building Capability', body: 'From a single office window to a full tower facade — our team and equipment handle projects of any scale across Dubai and Sharjah.' },
               { title: 'Itemised Quotation',       body: 'Detailed per-window, per-floor pricing after a free site survey. No vague estimates or surprise additions on invoice.' },

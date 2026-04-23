@@ -70,7 +70,7 @@ const brands = [
   },
   {
     name: 'Global USA',
-    role: 'Authorised Installer',
+    role: 'Applicator',
     desc: 'Global USA window films are engineered for precision solar control and optical clarity. As an authorised Global USA installer, Smart Auto UAE delivers their performance range for automotive, residential, and commercial applications.',
   },
   {

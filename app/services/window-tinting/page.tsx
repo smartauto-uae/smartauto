@@ -288,7 +288,7 @@ export default function WindowTintingPage() {
             <div className="flex flex-col gap-2.5 mb-8">
               {[
                 'UAE RTA law compliant — all vehicle types',
-                '3M, Totalgard & XPEL authorised installer',
+                '3M, Totalgard & XPEL Applicator',
                 'Up to 115-Year warranty on nano ceramic films',
                 'Same-day service · Mobile doorstep tinting available',
                 'Free inspection before every installation',

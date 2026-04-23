@@ -115,7 +115,7 @@ const stripItems = [
   'Window Tinting Dubai', 'PPF Dubai', 'Ceramic Coating Dubai',
   'Car Detailing Dubai', 'Car Wrapping Dubai', 'Car Accessories Dubai',
   'Window Tinting Sharjah', 'PPF Sharjah', 'Ceramic Coating Sharjah',
-  '3M Authorised Installer UAE', 'Totalgard UAE', 'XPEL Installer Dubai',
+  '3M Applicator UAE', 'Totalgard UAE', 'XPEL Installer Dubai',
 ]
 
 const services = [
@@ -167,7 +167,7 @@ const services = [
 ]
 
 const whyFeatures = [
-  { title: '3M Authorised Dealer', description: 'Official UAE distributor and certified installer for 3M, Totalgard, XPEL, Gyeon, and Gtechniq.', icon: Shield },
+  { title: '3M Applicator', description: 'Official UAE distributor and certified installer for 3M, Totalgard, XPEL, Gyeon, and Gtechniq.', icon: Shield },
   { title: 'Upto 15-Year Warranty', description: 'Window tinting and PPF installations are backed by a comprehensive manufacturer warranty.', icon: CheckCircle },
   { title: '4 Branches UAE', description: 'MotorCity, Al Quoz, Mirdif, and Sharjah Central Mall. Always close to you.', icon: MapPin },
   { title: 'Open Every Day', description: 'All 4 branches open 7 days a week, 11 AM to 10 PM & Sharjah Branch 10 AM to 10 PM. No appointment needed.', icon: Clock },
@@ -251,7 +251,7 @@ const branches = [
 
 const faqs = [
   { q: 'How much does window tinting cost in Dubai?', a: 'Window tinting prices at Smart Auto UAE start from AED 299 depending on film type and vehicle size. We offer nano ceramic, carbon, and dyed films — all UAE RTA law compliant. Contact us for a free quote.' },
-  { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from Totalgard, 3M, or XPEL offers the best protection. Smart Auto UAE is an authorised installer for all three brands, ensuring genuine product and certified installation.' },
+  { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from Totalgard, 3M, or XPEL offers the best protection. Smart Auto UAE is an Applicator for all three brands, ensuring genuine product and certified installation.' },
   { q: 'How long does ceramic coating last in Dubai?', a: 'A professional 9H ceramic coating lasts 2–5 years in Dubai\'s climate, depending on the product tier. We use Gyeon, Gtechniq, and IGL coatings — all formulated for high UV and heat environments.' },
   { q: 'Does Smart Auto UAE have a branch in Sharjah?', a: 'Yes. Smart Auto UAE has a branch at Central Mall, Sharjah, offering window tinting, PPF, ceramic coating, car detailing, and car wrapping services.' },
   { q: 'How long does a full car wrap take?', a: 'A full vinyl car wrap takes 2–4 days depending on vehicle size and finish complexity. Partial wraps and accents can be completed in a single day.' },
@@ -374,7 +374,7 @@ export default function Home() {
             className="flex items-center justify-center gap-6 mb-8 flex-wrap"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }}
           >
-            {['3M Authorised Dealer', '15-Year Warranty', 'RTA Law Compliant'].map((t) => (
+            {['3M Applicator', '15-Year Warranty', 'RTA Law Compliant'].map((t) => (
               <div key={t} className="flex items-center gap-1.5">
                 <CheckCircle size={13} style={{ color: GOLD }} aria-hidden="true" />
                 <span className="text-[11px] text-white/50 tracking-wide">{t}</span>
@@ -509,7 +509,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-3.5 mb-9">
                 {[
-                  'Totalgard, 3M & XPEL authorised installer in UAE',
+                  'Totalgard, 3M & XPEL Applicator in UAE',
                   'Ceramic coating price Dubai — competitive & transparent',
                   'All PPF, tinting & coating work backed by warranty',
                   '4 branches — MotorCity, Al Quoz, Mirdif & Sharjah',
@@ -613,7 +613,7 @@ export default function Home() {
           <motion.div ref={brandsRef} variants={fadeUp} initial="hidden" animate={bInView ? 'show' : 'hidden'}>
             <SectionHeader eyebrow="Authorised UAE Installer" title="Premium Brands We" highlight="Install Across the UAE" />
             <p className="text-center text-white/40 text-sm -mt-10 mb-12 max-w-xl mx-auto">
-              We are authorised dealers and certified installers for the world&apos;s leading PPF, window film, and ceramic coating brands in Dubai, Sharjah and across the UAE.
+              We are Applicators and certified installers for the world&apos;s leading PPF, window film, and ceramic coating brands in Dubai, Sharjah and across the UAE.
             </p>
           </motion.div>
           <div className="flex items-center justify-center flex-wrap gap-3">
@@ -872,7 +872,7 @@ export default function Home() {
                 Premium Car Protection
               </p>
               <p className="text-white/40 text-sm leading-[1.8] max-w-xs">
-                Dubai &amp; Sharjah&apos;s most trusted car protection centre since 2014. Authorised installer for 3M, Totalgard, XPEL, Gyeon &amp; Gtechniq.
+                Dubai &amp; Sharjah&apos;s most trusted car protection centre since 2014. Applicator for 3M, Totalgard, XPEL, Gyeon &amp; Gtechniq.
               </p>
             </div>
             <div>

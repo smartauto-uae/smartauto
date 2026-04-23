@@ -191,12 +191,12 @@ export default function ResidentialWindowTintingPage() {
               </span>
             </h1>
             <p className="text-white/50 text-base leading-[1.85] mb-8 max-w-xl">
-              Smart Auto UAE installs premium <strong className="text-white/75 font-medium">residential window tinting</strong> for homes, villas, apartments, and flat glass across Dubai and Sharjah. Our 3M and Totalgard films block up to 99% UV rays, reject 90% of solar heat, and reduce energy bills by up to 30% — while maintaining your view and filling your home with natural light. UAE authorised installer. Free site survey included.
+              Smart Auto UAE installs premium <strong className="text-white/75 font-medium">residential window tinting</strong> for homes, villas, apartments, and flat glass across Dubai and Sharjah. Our 3M and Totalgard films block up to 99% UV rays, reject 90% of solar heat, and reduce energy bills by up to 30% — while maintaining your view and filling your home with natural light. UAE Applicator. Free site survey included.
             </p>
             <div className="flex flex-col gap-2.5 mb-8">
               {[
                 'Free site survey & film consultation',
-                '3M, Totalgard & Llumar authorised installer',
+                '3M, Totalgard & Llumar Applicator',
                 'No VLT restrictions — full range of tints',
                 'Villas, apartments, flat glass & skylights',
                 'Marble & surface protection film also available',
@@ -505,7 +505,7 @@ export default function ResidentialWindowTintingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: 'Free Site Survey', body: 'We visit your home before any commitment — measure every window, assess sun exposure and privacy needs, and present honest recommendations.' },
-              { title: 'Authorised Installer', body: 'Smart Auto UAE is an authorised dealer and installer for 3M, Totalgard, and Llumar residential film products. No grey-market products, ever.' },
+              { title: 'Applicator', body: 'Smart Auto UAE is an Applicator and installer for 3M, Totalgard, and Llumar residential film products. No grey-market products, ever.' },
               { title: 'Manufacturer Warranty', body: 'All residential films carry 3–10 year manufacturer warranties. We provide full documentation at handover — not just a receipt.' },
               { title: 'Minimal Disruption', body: 'Our installers work efficiently and respectfully in your home. Most residential installations are completed in a single day with no mess left behind.' },
               { title: 'Same-Day Quotation', body: 'After the site survey, you receive a detailed itemised quote the same day — broken down by room and film type. No vague estimates.' },

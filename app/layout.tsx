@@ -255,7 +255,7 @@ const structuredData = [
       {
         "@type": "Question",
         "name":  "What is the best PPF for cars in UAE?",
-        "acceptedAnswer": { "@type": "Answer", "text": "For UAE's extreme heat and harsh driving conditions, self-healing TPU-based Paint Protection Films like 3M and TotalGard are the best choice. Smart Auto UAE is an authorised installer for these premium brands with 5–10 year warranties." },
+        "acceptedAnswer": { "@type": "Answer", "text": "For UAE's extreme heat and harsh driving conditions, self-healing TPU-based Paint Protection Films like 3M and TotalGard are the best choice. Smart Auto UAE is an Applicator for these premium brands with 5–10 year warranties." },
       },
       {
         "@type": "Question",

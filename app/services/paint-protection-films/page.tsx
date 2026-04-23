@@ -124,8 +124,8 @@ const protectsFrom = [
 ]
 
 const brands = [
-  { name: 'Totalgard', note: 'UAE Authorised Installer' },
-  { name: '3M Scotchgard', note: 'UAE Authorised Installer' },
+  { name: 'Totalgard', note: 'UAE Applicator' },
+  { name: '3M Scotchgard', note: 'UAE Applicator' },
   { name: 'XPEL Ultimate Plus', note: 'Certified Installer' },
   { name: 'SunTek Ultra', note: 'Approved Applicator' },
 ]
