@@ -757,7 +757,7 @@ export default function WindowTintingPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="overflow-hidden rounded-[28px] border" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
               <img
-                src="https://images.unsplash.com/photo-1540947093535-45049e36e1d5?auto=format&fit=crop&w=900&q=80"
+                src="/images/car-window-tinting.webp"
                 alt="Sleek tinted car window finish"
                 width={900}
                 height={600}
