@@ -234,7 +234,7 @@ function getTimeLeft(target: Date) {
 }
 
 function CountdownTimer() {
-  const target = useMemo(() => new Date(Date.now() + 1000 * 60 * 60 * 23 + 1000 * 60 * 44), []);
+  const target = useMemo(() => new Date(Date.now() + 1000 * 60 * 60 * 18 + 1000 * 60 * 44), []);
   const [time, setTime] = useState(getTimeLeft(target));
   useEffect(() => {
     const t = setInterval(() => setTime(getTimeLeft(target)), 1000);

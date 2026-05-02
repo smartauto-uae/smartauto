@@ -1,435 +1,197 @@
-import type { Metadata } from 'next'
+import { getPostBySlug } from '@/lib/actions/blog'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import { listBlogFiles, getBlogFile } from '@/lib/github'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import { Tag, Calendar, ArrowLeft } from 'lucide-react'
 
-const gold = '#C9A84C'
-const goldGrad = 'linear-gradient(135deg,#C9A84C,#E8C96A)'
+type Props = { params: Promise<{ slug: string }> }
 
-// ── Frontmatter parser ──────────────────────────────────────────────────────
-type PostMeta = {
-  title:       string
-  description: string
-  date:        string
-  author:      string
-  category:    string
-  tags:        string[]
-  image:       string
-  published:   boolean
-  readingTime: string
-}
-
-function parseFrontmatter(raw: string): { meta: PostMeta; body: string } {
-  const match = raw.match(/^---\n([\s\S]*?)\n---\n+/)
-  const body  = raw.replace(/^---[\s\S]*?---\n+/, '')
-
-  if (!match) {
-    return {
-      meta: { title: '', description: '', date: '', author: 'Smart Auto UAE', category: '', tags: [], image: '', published: true, readingTime: '1 min read' },
-      body,
-    }
-  }
-
-  const lines  = match[1].split('\n')
-  const fields: Record<string, string> = {}
-  for (const line of lines) {
-    const idx = line.indexOf(':')
-    if (idx === -1) continue
-    const key = line.slice(0, idx).trim()
-    const val = line.slice(idx + 1).trim().replace(/^"(.*)"$/, '$1')
-    fields[key] = val
-  }
-
-  const tags = fields.tags
-    ? fields.tags.replace(/^\[|\]$/g, '').split(',').map((t) => t.trim().replace(/^"|"$/g, '')).filter(Boolean)
-    : []
-
-  // Estimate reading time from HTML word count
-  const words        = body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length
-  const readingTime  = `${Math.max(1, Math.ceil(words / 200))} min read`
-
-  return {
-    meta: {
-      title:       fields.title       ?? '',
-      description: fields.description ?? '',
-      date:        fields.date        ?? '',
-      author:      fields.author      ?? 'Smart Auto UAE',
-      category:    fields.category    ?? '',
-      tags,
-      image:       fields.image       ?? '/images/blog/default.webp',
-      published:   fields.published !== 'false',
-      readingTime,
-    },
-    body,
-  }
-}
-
-// ── Data fetchers ───────────────────────────────────────────────────────────
-
-async function getPost(slug: string) {
-  const file = await getBlogFile(slug)
-  if (!file) return null
-  const { meta, body } = parseFrontmatter(file.content)
-  if (!meta.published) return null
-  return { slug, meta, body, sha: file.sha }
-}
-
-async function getAllPosts() {
-  const files = await listBlogFiles()
-  const posts = await Promise.all(
-    files.map(async (f) => {
-      const slug = f.name.replace('.mdx', '').replace('.md', '')
-      return getPost(slug)
-    })
-  )
-  return posts.filter(Boolean) as NonNullable<Awaited<ReturnType<typeof getPost>>>[]
-}
-
-// ── Static params ───────────────────────────────────────────────────────────
-
-export async function generateStaticParams() {
-  try {
-    const files = await listBlogFiles()
-    return files.map((f) => ({
-      slug: f.name.replace('.mdx', '').replace('.md', ''),
-    }))
-  } catch {
-    return []
-  }
-}
-
-// ── Metadata ────────────────────────────────────────────────────────────────
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}): Promise<Metadata> {
+// ── Metadata ─────────────────────────────────────────────────────────────────
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = await getPost(slug)
-  if (!post) return {}
+  const post = await getPostBySlug(slug).catch(() => null)
+  if (!post) return { title: 'Post Not Found' }
 
   return {
-    title:       `${post.meta.title} | Smart Auto UAE Blog`,
-    description: post.meta.description,
-    keywords:    post.meta.tags.join(', '),
-    authors:     [{ name: post.meta.author }],
+    title:       post.meta_title   || post.title,
+    description: post.meta_desc    || post.excerpt || '',
     openGraph: {
-      title:         post.meta.title,
-      description:   post.meta.description,
-      images:        [{ url: post.meta.image, width: 1200, height: 630 }],
+      title:         post.meta_title  || post.title,
+      description:   post.meta_desc   || post.excerpt || '',
       type:          'article',
-      publishedTime: post.meta.date,
+      publishedTime: post.published_at ?? undefined,
+      tags:          post.tags ?? [],
+      images:        post.og_image || post.cover_image
+        ? [{ url: post.og_image || post.cover_image! }]
+        : [],
     },
     twitter: {
       card:        'summary_large_image',
-      title:       post.meta.title,
-      description: post.meta.description,
-      images:      [post.meta.image],
-    },
-    alternates: {
-      canonical: `https://smartautouae.ae/blog/${slug}`,
+      title:       post.meta_title || post.title,
+      description: post.meta_desc  || post.excerpt || '',
+      images:      post.og_image || post.cover_image
+        ? [post.og_image || post.cover_image!]
+        : [],
     },
   }
 }
 
 // ── Page ─────────────────────────────────────────────────────────────────────
-
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
-  const post     = await getPost(slug)
-  if (!post) notFound()
+  const post = await getPostBySlug(slug).catch(() => null)
 
-  // Replace the related posts block (lines ~148–165) with this:
-
-type PostType = NonNullable<Awaited<ReturnType<typeof getPost>>>
-
-let related: PostType[] = []
-try {
-  const allPosts = await getAllPosts()
-  related = allPosts
-    .filter((p) => p.slug !== slug && p.meta.category === post.meta.category)
-    .slice(0, 3)
-
-  if (related.length < 3) {
-    const others = allPosts
-      .filter((p) => p.slug !== slug && !related.find((r) => r.slug === p.slug))
-      .slice(0, 3 - related.length)
-    related = [...related, ...others]
-  }
-} catch {
-  // related stays empty — non-critical
-}
+  if (!post || post.status !== 'published') notFound()
 
   return (
     <>
-      <Navbar />
-      <main style={{ backgroundColor: '#080808', color: '#fff', paddingTop: '80px' }}>
+      {/* ── Schema injection ── */}
+      {post.schema_custom && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: post.schema_custom }}
+        />
+      )}
 
-        {/* ── Hero ── */}
-        <section className="relative py-20 overflow-hidden" style={{ backgroundColor: '#050505' }}>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse at 60% 0%,rgba(201,168,76,0.06) 0%,transparent 60%)' }}
-            aria-hidden="true"
-          />
-          <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <main style={{ background: '#f7f6f2', minHeight: '100vh' }}>
 
-            {/* Breadcrumb */}
-            <nav
-              aria-label="Breadcrumb"
-              className="flex items-center gap-2 text-[12px] mb-8"
-              style={{ color: 'rgba(255,255,255,0.3)' }}
-            >
-              <Link href="/" style={{ color: 'rgba(255,255,255,0.3)' }} className="no-underline hover:text-white/60 transition-colors">Home</Link>
-              <span aria-hidden="true">/</span>
-              <Link href="/blog" style={{ color: 'rgba(255,255,255,0.3)' }} className="no-underline hover:text-white/60 transition-colors">Blog</Link>
-              <span aria-hidden="true">/</span>
-              <span style={{ color: gold }}>{post.meta.category || slug}</span>
-            </nav>
+        {/* ── Cover image ── */}
+        {post.cover_image && (
+          <div style={{ width: '100%', maxHeight: 480, overflow: 'hidden' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.cover_image}
+              alt={post.title}
+              width={1200}
+              height={480}
+              style={{ width: '100%', height: 480, objectFit: 'cover', display: 'block' }}
+            />
+          </div>
+        )}
 
-            {/* Category + reading time */}
-            <div className="flex items-center gap-3 mb-5">
-              <span
-                className="px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-[0.1em]"
-                style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.2)', color: gold }}
-              >
-                {post.meta.category}
-              </span>
-              <span className="text-[12px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-                {post.meta.readingTime}
-              </span>
+        <div style={{ maxWidth: 760, margin: '0 auto', padding: '3rem 1.5rem 5rem' }}>
+
+          {/* ── Back link ── */}
+          <Link
+            href="/blog"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              fontSize: '0.78rem', fontWeight: 500, color: '#7a7264',
+              textDecoration: 'none', marginBottom: '2rem',
+            }}
+          >
+            <ArrowLeft size={13} aria-hidden="true" />
+            Back to Blog
+          </Link>
+
+          {/* ── Header ── */}
+          <header style={{ marginBottom: '2.5rem' }}>
+
+            {/* Category + Date */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+              {post.category && (
+                <span style={{
+                  fontSize: '0.68rem', fontWeight: 700,
+                  textTransform: 'uppercase', letterSpacing: '0.12em',
+                  color: '#b8860b', background: '#fdf8ee',
+                  border: '1px solid #e8d48a',
+                  padding: '0.2rem 0.65rem', borderRadius: 999,
+                }}>
+                  {post.category}
+                </span>
+              )}
+              {post.published_at && (
+                <time
+                  dateTime={post.published_at}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: '0.78rem', color: '#7a7264' }}
+                >
+                  <Calendar size={12} aria-hidden="true" />
+                  {new Date(post.published_at).toLocaleDateString('en-AE', {
+                    year: 'numeric', month: 'long', day: 'numeric',
+                  })}
+                </time>
+              )}
             </div>
 
             {/* Title */}
-            <h1
-              className="font-bold leading-[1.1] mb-5"
-              style={{
-                fontFamily: 'var(--font-playfair),serif',
-                fontSize: 'clamp(2rem,4vw,3.2rem)',
-                color: '#fff',
-              }}
-            >
-              {post.meta.title}
+            <h1 style={{
+              fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
+              fontWeight: 800, color: '#1a1814',
+              lineHeight: 1.2, marginBottom: '1rem',
+            }}>
+              {post.title}
             </h1>
 
-            {/* Description */}
-            <p className="text-base leading-[1.8] mb-8 max-w-2xl" style={{ color: 'rgba(255,255,255,0.5)' }}>
-              {post.meta.description}
-            </p>
+            {/* Excerpt */}
+            {post.excerpt && (
+              <p style={{
+                fontSize: '1.05rem', color: '#7a7264',
+                lineHeight: 1.7, maxWidth: '65ch',
+              }}>
+                {post.excerpt}
+              </p>
+            )}
 
-            {/* Author + Date */}
-            <div
-              className="flex items-center gap-6 pb-8"
-              style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
-            >
-              <div
-                className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-[13px] text-black flex-shrink-0"
-                style={{ background: goldGrad }}
-                aria-hidden="true"
-              >
-                {post.meta.author.charAt(0)}
-              </div>
-              <div>
-                <div className="text-[13px] font-semibold" style={{ color: '#fff' }}>
-                  {post.meta.author}
-                </div>
-                {post.meta.date && (
-                  <div className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-                    {new Date(post.meta.date).toLocaleDateString('en-AE', {
-                      day: 'numeric', month: 'long', year: 'numeric',
-                    })}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Cover image ── */}
-        {post.meta.image && (
-          <div className="max-w-4xl mx-auto px-6 -mt-1 mb-2">
-            <div className="rounded-2xl overflow-hidden" style={{ height: 420 }}>
-              <img
-                src={post.meta.image}
-                alt={post.meta.title}
-                width={896}
-                height={420}
-                loading="eager"
-                decoding="async"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        )}
-
-        {/* ── HTML Content ── */}
-        <article className="max-w-4xl mx-auto px-6 py-16">
-          <div
-            className="blog-content"
-            dangerouslySetInnerHTML={{ __html: post.body }}
-          />
-        </article>
-
-        {/* ── Tags ── */}
-        {post.meta.tags.length > 0 && (
-          <div className="max-w-4xl mx-auto px-6 pb-12">
-            <div className="flex flex-wrap gap-2">
-              {post.meta.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1.5 rounded-full text-[11px]"
-                  style={{
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    color: 'rgba(255,255,255,0.4)',
-                  }}
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* ── Share strip ── */}
-        <div
-          className="max-w-4xl mx-auto px-6 pb-14"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2rem' }}
-        >
-          <p className="text-[11px] uppercase tracking-[0.2em] mb-3" style={{ color: 'rgba(255,255,255,0.3)' }}>
-            Share this article
-          </p>
-          <div className="flex gap-3 flex-wrap">
-            {[
-              {
-                label: 'WhatsApp',
-                href: `https://wa.me/?text=${encodeURIComponent(`${post.meta.title} — https://smartautouae.ae/blog/${slug}`)}`,
-                color: '#25D366',
-              },
-              {
-                label: 'Twitter / X',
-                href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.meta.title)}&url=${encodeURIComponent(`https://smartautouae.ae/blog/${slug}`)}`,
-                color: '#1DA1F2',
-              },
-              {
-                label: 'Copy Link',
-                href: `https://smartautouae.ae/blog/${slug}`,
-                color: gold,
-              },
-            ].map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl text-[12px] font-semibold border no-underline transition-all hover:opacity-80"
-                style={{
-                  borderColor: `${s.color}30`,
-                  color: s.color,
-                  background: `${s.color}08`,
-                }}
-              >
-                {s.label}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* ── Related posts ── */}
-        {related.length > 0 && (
-          <section
-            className="py-16"
-            style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
-          >
-            <div className="max-w-7xl mx-auto px-6">
-              <h2
-                className="font-bold text-[22px] mb-8"
-                style={{ fontFamily: 'var(--font-playfair),serif', color: '#fff' }}
-              >
-                Related Articles
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {related.map((r) => (
-                  <Link
-                    key={r.slug}
-                    href={`/blog/${r.slug}`}
-                    className="group rounded-2xl border overflow-hidden no-underline transition-all duration-300 hover:-translate-y-1"
-                    style={{ border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}
+            {/* Tags */}
+            {post.tags && post.tags.length > 0 && (
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: '1rem' }}>
+                {post.tags.map((tag: string) => (
+                  <span
+                    key={tag}
+                    style={{
+                      display: 'inline-flex', alignItems: 'center', gap: 4,
+                      fontSize: '0.7rem', padding: '0.2rem 0.55rem', borderRadius: 999,
+                      background: '#f5f3ef', border: '1px solid #e8e3d8', color: '#7a7264',
+                    }}
                   >
-                    <div style={{ height: 160, overflow: 'hidden' }}>
-                      <img
-                        src={r.meta.image}
-                        alt={r.meta.title}
-                        width={400}
-                        height={160}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        onError={undefined}
-                      />
-                    </div>
-                    <div className="p-5">
-                      <span
-                        className="text-[10px] uppercase tracking-[0.1em] font-semibold"
-                        style={{ color: gold }}
-                      >
-                        {r.meta.category}
-                      </span>
-                      <h3
-                        className="font-bold text-[15px] leading-snug mt-1 text-white"
-                        style={{ fontFamily: 'var(--font-playfair),serif' }}
-                      >
-                        {r.meta.title}
-                      </h3>
-                      <p className="text-[12px] mt-1.5 line-clamp-2" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                        {r.meta.description}
-                      </p>
-                    </div>
-                  </Link>
+                    <Tag size={9} aria-hidden="true" />
+                    {tag}
+                  </span>
                 ))}
               </div>
-            </div>
-          </section>
-        )}
+            )}
+          </header>
 
+          {/* ── Divider ── */}
+          <div style={{ height: 1, background: '#e8e3d8', marginBottom: '2.5rem' }} />
+
+          {/* ── Content ── */}
+          <article
+            className="blog-content"
+            dangerouslySetInnerHTML={{ __html: post.content ?? '' }}
+          />
+
+          {/* ── Footer ── */}
+          <div style={{
+            marginTop: '4rem', paddingTop: '2rem',
+            borderTop: '1px solid #e8e3d8',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            flexWrap: 'wrap', gap: '1rem',
+          }}>
+            <Link
+              href="/blog"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                fontSize: '0.82rem', fontWeight: 600, color: '#b8860b',
+                textDecoration: 'none',
+                padding: '0.5rem 1rem', borderRadius: 999,
+                border: '1px solid #e8d48a', background: '#fdf8ee',
+              }}
+            >
+              <ArrowLeft size={13} aria-hidden="true" />
+              Back to Blog
+            </Link>
+
+            <p style={{ fontSize: '0.75rem', color: '#b8b0a0' }}>
+              Smart Auto UAE
+              {post.published_at && (
+                <> · {new Date(post.published_at).toLocaleDateString('en-AE', { year: 'numeric', month: 'long' })}</>
+              )}
+            </p>
+          </div>
+
+        </div>
       </main>
-
-      {/* ── Blog content styles ── */}
-      <style>{`
-        .blog-content { color: rgba(255,255,255,0.72); font-size: 16px; line-height: 1.9; }
-        .blog-content h2 { font-family: var(--font-playfair),serif; font-size: clamp(1.4rem,2.5vw,1.8rem); font-weight: 700; color: #fff; margin: 2.5rem 0 0.75rem; line-height: 1.2; }
-        .blog-content h3 { font-family: var(--font-playfair),serif; font-size: clamp(1.15rem,2vw,1.35rem); font-weight: 600; color: #fff; margin: 2rem 0 0.6rem; }
-        .blog-content h4 { font-size: 1.05rem; font-weight: 600; color: rgba(255,255,255,0.9); margin: 1.5rem 0 0.5rem; }
-        .blog-content p  { margin-bottom: 1.15rem; }
-        .blog-content strong { color: #fff; font-weight: 700; }
-        .blog-content em { font-style: italic; color: rgba(255,255,255,0.65); }
-        .blog-content u  { text-decoration-color: rgba(201,168,76,0.5); }
-        .blog-content mark { background: rgba(201,168,76,0.2); color: ${gold}; border-radius: 3px; padding: 0 4px; }
-        .blog-content a  { color: ${gold}; text-decoration: underline; text-decoration-color: rgba(201,168,76,0.35); transition: opacity 0.15s; }
-        .blog-content a:hover { opacity: 0.75; }
-        .blog-content ul { list-style: disc; padding-left: 1.6rem; margin: 0.75rem 0 1rem; }
-        .blog-content ol { list-style: decimal; padding-left: 1.6rem; margin: 0.75rem 0 1rem; }
-        .blog-content li { margin-bottom: 0.4rem; }
-        .blog-content blockquote { border-left: 3px solid ${gold}; padding: 0.5rem 0 0.5rem 1.25rem; margin: 1.5rem 0; color: rgba(255,255,255,0.5); font-style: italic; background: rgba(201,168,76,0.03); border-radius: 0 8px 8px 0; }
-        .blog-content code { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 2px 7px; font-size: 0.84em; color: #e8c96a; font-family: 'Fira Code',monospace; }
-        .blog-content pre { background: rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.25rem 0; overflow-x: auto; }
-        .blog-content pre code { background: none; border: none; padding: 0; font-size: 13px; color: rgba(255,255,255,0.8); }
-        .blog-content img { border-radius: 12px; max-width: 100%; margin: 1.5rem 0; display: block; }
-        .blog-content hr  { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 2rem 0; }
-        .blog-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
-        .blog-content th  { padding: 10px 14px; text-align: left; font-weight: 600; color: #fff; background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .blog-content td  { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .blog-content tr:last-child td { border-bottom: none; }
-      `}</style>
-
-      <Footer />
     </>
   )
 }

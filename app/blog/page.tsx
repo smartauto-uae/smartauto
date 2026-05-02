@@ -1,194 +1,82 @@
-import type { Metadata } from 'next'
+import { getPosts } from '@/lib/actions/blog'
 import Link from 'next/link'
-import { getAllBlogPosts, getAllCategories } from '@/lib/blog'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Blog — Window Tinting & Smart Film Tips | Smart Auto UAE',
-  description:
-    'Expert guides on window tinting, smart film, PPF, and car care in Dubai and Sharjah from the Smart Auto UAE team.',
-  alternates: { canonical: 'https://smartautouae.ae/blog' },
+  title: 'Blog',
+  description: 'Read our latest articles and updates.',
 }
 
-const gold     = '#C9A84C'
-const goldGrad = 'linear-gradient(135deg,#C9A84C,#E8C96A)'
-
-export default function BlogPage() {
-  const posts      = getAllBlogPosts()
-  const categories = getAllCategories()
+export default async function BlogPage() {
+  const posts = await getPosts()
+  const published = posts.filter((p) => p.status === 'published')
 
   return (
-    <>
-      <Navbar />
-      <main style={{ backgroundColor: '#080808', color: '#fff', paddingTop: '80px' }}>
+    <main className="max-w-4xl mx-auto px-4 py-16">
+      <h1 className="text-4xl font-bold mb-2">Blog</h1>
+      <p className="text-muted-foreground mb-12">Latest articles and updates.</p>
 
-        {/* Hero */}
-        <section className="py-20" style={{ backgroundColor: '#050505' }}>
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <span
-              className="text-[11px] tracking-[0.35em] uppercase mb-4 block"
-              style={{ color: gold }}
+      {published.length === 0 ? (
+        <p className="text-muted-foreground">No posts published yet.</p>
+      ) : (
+        <div className="grid gap-8">
+          {published.map((post) => (
+            <article
+              key={post.id}
+              className="border border-border rounded-xl p-6 hover:shadow-md transition-shadow"
             >
-              Expert Guides & Tips
-            </span>
-            <h1
-              className="font-bold mb-4"
-              style={{
-                fontFamily: 'var(--font-playfair),serif',
-                fontSize: 'clamp(2rem,4vw,3.5rem)',
-                color: '#fff',
-              }}
-            >
-              Smart Auto UAE{' '}
-              <span
-                style={{
-                  background: goldGrad,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-              >
-                Blog
-              </span>
-            </h1>
-            <p
-              className="max-w-xl mx-auto text-sm leading-relaxed"
-              style={{ color: 'rgba(255,255,255,0.4)' }}
-            >
-              Window tinting, smart glass, PPF, detailing and car care — expert advice
-              from Dubai's most trusted auto accessories specialists.
-            </p>
-          </div>
-        </section>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                {post.published_at && (
+                  <time dateTime={post.published_at}>
+                    {new Date(post.published_at).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                )}
+                {post.tags && post.tags.length > 0 && (
+                  <>
+                    <span>·</span>
+                    <div className="flex gap-1 flex-wrap">
+                      {post.tags.map((tag: string) => (
+                        <span
+                          key={tag}
+                          className="bg-secondary text-secondary-foreground text-xs px-2 py-0.5 rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
 
-        {/* Category filter */}
-        {categories.length > 0 && (
-          <section
-            className="py-6 sticky top-20 z-30"
-            style={{
-              backgroundColor: 'rgba(8,8,8,0.95)',
-              borderBottom: '1px solid rgba(255,255,255,0.06)',
-              backdropFilter: 'blur(12px)',
-            }}
-          >
-            <div className="max-w-7xl mx-auto px-6 flex items-center gap-3 flex-wrap">
-              <span className="text-[11px] uppercase tracking-[0.2em]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-                Filter:
-              </span>
-              {categories.map((cat) => (
-                <span
-                  key={cat}
-                  className="px-4 py-1.5 rounded-full text-[12px] font-medium border cursor-pointer"
-                  style={{
-                    borderColor: 'rgba(201,168,76,0.2)',
-                    color: 'rgba(255,255,255,0.5)',
-                    background: 'rgba(201,168,76,0.04)',
-                  }}
+              <h2 className="text-2xl font-semibold mb-2 leading-snug">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="hover:text-primary transition-colors"
                 >
-                  {cat}
-                </span>
-              ))}
-            </div>
-          </section>
-        )}
+                  {post.title}
+                </Link>
+              </h2>
 
-        {/* Posts grid */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-6">
-            {posts.length === 0 ? (
-              <div className="text-center py-24">
-                <p style={{ color: 'rgba(255,255,255,0.3)' }}>No posts yet. Check back soon.</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {posts.map((post) => (
-                  <Link
-                    key={post.slug}
-                    href={`/blog/${post.slug}`}
-                    className="group rounded-2xl border overflow-hidden no-underline flex flex-col transition-all duration-300 hover:-translate-y-1"
-                    style={{
-                      border: '1px solid rgba(255,255,255,0.06)',
-                      background: 'rgba(255,255,255,0.02)',
-                    }}
-                  >
-                    {/* Thumbnail */}
-                    <div
-                      className="overflow-hidden"
-                      style={{ height: 200, background: 'rgba(255,255,255,0.04)' }}
-                    >
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        width={600}
-                        height={200}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
+              {post.excerpt && (
+                <p className="text-muted-foreground line-clamp-3 mb-4">
+                  {post.excerpt}
+                </p>
+              )}
 
-                    {/* Content */}
-                    <div className="p-6 flex flex-col flex-1">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span
-                          className="px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-[0.1em]"
-                          style={{
-                            background: 'rgba(201,168,76,0.08)',
-                            border: '1px solid rgba(201,168,76,0.2)',
-                            color: gold,
-                          }}
-                        >
-                          {post.category}
-                        </span>
-                        <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.25)' }}>
-                          {post.readingTime}
-                        </span>
-                      </div>
-
-                      <h2
-                        className="font-bold text-[17px] leading-snug mb-2 flex-1"
-                        style={{
-                          fontFamily: 'var(--font-playfair),serif',
-                          color: '#fff',
-                        }}
-                      >
-                        {post.title}
-                      </h2>
-
-                      <p
-                        className="text-[13px] leading-[1.65] mb-4"
-                        style={{ color: 'rgba(255,255,255,0.4)' }}
-                      >
-                        {post.description}
-                      </p>
-
-                      <div
-                        className="flex items-center justify-between pt-4 mt-auto"
-                        style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
-                      >
-                        <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-                          {new Date(post.date).toLocaleDateString('en-AE', {
-                            day: 'numeric',
-                            month: 'short',
-                            year: 'numeric',
-                          })}
-                        </span>
-                        <span
-                          className="text-[12px] font-semibold transition-colors duration-200"
-                          style={{ color: gold }}
-                        >
-                          Read more →
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-
-      </main>
-      <Footer />
-    </>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="text-sm font-medium text-primary hover:underline"
+              >
+                Read more →
+              </Link>
+            </article>
+          ))}
+        </div>
+      )}
+    </main>
   )
 }

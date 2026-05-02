@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Menu, X, ChevronDown } from 'lucide-react'
+import { usePathname } from 'next/navigation'         
 
 const GOLD = '#C9A84C'
 const goldGrad = 'linear-gradient(135deg,#C9A84C,#E8C96A,#A07830)'
@@ -20,7 +21,7 @@ const navLinks = [
       { label: 'Car Detailing',         href: '/services/car-detailing' },
       { label: 'Car Wrapping',          href: '/services/car-wrapping' },
       { label: 'Commercial Tinting',    href: '/services/commercial-window-tinting' },
-      { label: 'Smart Film',    href: '/services/smart-film' },
+      { label: 'Smart Film',            href: '/services/smart-film' },
       { label: 'Marine Tinting',        href: '/services/marine-window-tinting' },
       { label: 'Residential Tinting',   href: '/services/residential-window-tinting' },
     ],
@@ -32,11 +33,15 @@ const navLinks = [
 ]
 
 export default function Navbar() {
+  const pathname = usePathname()                       
+
   const [scrolled,     setScrolled]     = useState(false)
   const [mobileOpen,   setMobileOpen]   = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [isDesktop,    setIsDesktop]    = useState(false)
+
+  if (pathname.startsWith('/admin')) return null        
 
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 1024px)')

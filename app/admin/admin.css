@@ -1,0 +1,208 @@
+/* ── Admin Gold Theme ─────────────────────────────── */
+:root {
+  --admin-bg:             #ffffff;
+  --admin-surface:        #fafaf9;
+  --admin-surface-2:      #f5f3ef;
+  --admin-border:         #e8e3d8;
+  --admin-divider:        #ede8de;
+
+  --admin-text:           #1a1814;
+  --admin-text-muted:     #7a7264;
+  --admin-text-faint:     #b8b0a0;
+
+  --admin-gold:           #b8860b;
+  --admin-gold-hover:     #9a6f09;
+  --admin-gold-active:    #7d5a07;
+  --admin-gold-subtle:    #fdf8ee;
+  --admin-gold-border:    #e8d48a;
+  --admin-gold-highlight: #fef3c7;
+
+  --admin-radius:         0.5rem;
+  --admin-radius-lg:      0.75rem;
+  --admin-shadow-sm:      0 1px 3px rgba(184, 134, 11, 0.08);
+  --admin-shadow-md:      0 4px 16px rgba(184, 134, 11, 0.10);
+}
+
+/* Reusable admin component styles */
+.admin-card {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--admin-shadow-sm);
+}
+
+.admin-btn-primary {
+  background: var(--admin-gold);
+  color: #fff;
+  border: none;
+  border-radius: var(--admin-radius);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 150ms;
+}
+.admin-btn-primary:hover { background: var(--admin-gold-hover); }
+
+.admin-btn-outline {
+  background: transparent;
+  color: var(--admin-text-muted);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 150ms, color 150ms;
+}
+.admin-btn-outline:hover {
+  border-color: var(--admin-gold-border);
+  color: var(--admin-gold);
+}
+
+.admin-input {
+  width: 100%;
+  background: var(--admin-bg);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--admin-text);
+  outline: none;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+.admin-input:focus {
+  border-color: var(--admin-gold-border);
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
+}
+
+.admin-badge-draft {
+  background: var(--admin-surface-2);
+  color: var(--admin-text-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+.admin-badge-published {
+  background: var(--admin-gold-highlight);
+  color: var(--admin-gold-active);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* Table */
+.admin-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.admin-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--admin-text-muted);
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--admin-border);
+}
+.admin-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--admin-divider);
+  color: var(--admin-text);
+}
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: var(--admin-gold-subtle); }
+
+.admin-nav-link:hover {
+  background: var(--admin-gold-subtle) !important;
+  color: var(--admin-gold) !important;
+}
+
+/* Force all text inside admin to use admin theme colors */
+.admin-layout,
+.admin-layout * {
+  color: var(--admin-text);
+}
+
+.admin-layout h1,
+.admin-layout h2,
+.admin-layout h3,
+.admin-layout h4 {
+  color: var(--admin-text);
+}
+
+.admin-layout p,
+.admin-layout span,
+.admin-layout li,
+.admin-layout td,
+.admin-layout th,
+.admin-layout label {
+  color: var(--admin-text-muted);
+}
+
+.admin-layout a {
+  color: var(--admin-gold);
+}
+
+.admin-quick-link:hover {
+  border-color: var(--admin-gold-border) !important;
+  background: var(--admin-gold-subtle) !important;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.admin-sidebar-link:hover {
+  background: var(--admin-gold-subtle) !important;
+  color: var(--admin-gold) !important;
+}
+
+/* Tiptap editor styles inside admin */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #b8b0a0;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+.ProseMirror { outline: none; }
+.ProseMirror img { max-width: 100%; border-radius: 0.4rem; }
+.ProseMirror a { color: var(--admin-gold); text-decoration: underline; }
+.ProseMirror blockquote {
+  border-left: 3px solid var(--admin-gold-border);
+  padding-left: 1rem;
+  color: #7a7264;
+  font-style: italic;
+}
+.ProseMirror code {
+  background: #f5f3ef;
+  border: 1px solid #e8e3d8;
+  border-radius: 0.25rem;
+  padding: 0.1em 0.35em;
+  font-size: 0.85em;
+}
+.ProseMirror pre {
+  background: #1a1814;
+  color: #e8e3d8;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}

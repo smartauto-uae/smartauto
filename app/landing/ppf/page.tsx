@@ -284,7 +284,6 @@ function getTimeLeft(target: Date) {
     seconds: String(seconds).padStart(2, "0"),
   };
 }
-
 function CTAButtons({ stacked = false }: { stacked?: boolean }) {
   return (
     <div

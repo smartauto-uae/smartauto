@@ -1,33 +1,14 @@
-import { SignJWT, jwtVerify } from 'jose'
-import { cookies } from 'next/headers'
+import { jwtVerify } from 'jose'
 
-const SECRET = new TextEncoder().encode(process.env.NEXTAUTH_SECRET!)
-const COOKIE  = 'cms_session'
-
-export async function createSession(): Promise<string> {
-  return new SignJWT({ admin: true })
-    .setProtectedHeader({ alg: 'HS256' })
-    .setIssuedAt()
-    .setExpirationTime('12h')
-    .sign(SECRET)
-}
+const JWT_SECRET = new TextEncoder().encode(
+  process.env.JWT_SECRET ?? 'change-this-secret-min-32-chars!!'
+)
 
 export async function verifySession(token: string): Promise<boolean> {
   try {
-    await jwtVerify(token, SECRET)
+    await jwtVerify(token, JWT_SECRET)
     return true
   } catch {
     return false
   }
-}
-
-export async function getSession(): Promise<boolean> {
-  const cookieStore = await cookies()
-  const token = cookieStore.get(COOKIE)?.value
-  if (!token) return false
-  return verifySession(token)
-}
-
-export function checkPassword(password: string): boolean {
-  return password === process.env.ADMIN_PASSWORD
 }
