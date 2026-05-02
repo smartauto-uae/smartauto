@@ -1,4 +1,4 @@
-import { supabase, supabaseAdmin } from './supabase'
+import { supabase } from './supabase'
 
 export type SeoPage = {
   id:                  string
@@ -36,7 +36,7 @@ export async function getSeoForRoute(route: string): Promise<SeoPage | null> {
 
 // Read all — used in admin dashboard
 export async function getAllSeoPages(): Promise<SeoPage[]> {
-  const { data } = await supabaseAdmin
+  const { data } = await supabase
     .from('seo_pages')
     .select('*')
     .order('page_label')
@@ -48,7 +48,7 @@ export async function upsertSeoPage(
   route: string,
   payload: Partial<SeoPage>
 ): Promise<{ ok: boolean; error?: string }> {
-  const { error } = await supabaseAdmin
+  const { error } = await supabase
     .from('seo_pages')
     .upsert({ route, ...payload }, { onConflict: 'route' })
 

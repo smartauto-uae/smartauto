@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/metadata'
-import WindowTintingPage from './ResedentialWindowTintingPage'
+import ResidentialWindowTintingPage from './ResidentialWindowTintingPage'
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata('/services/residential-window-tinting', {

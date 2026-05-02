@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/metadata'
-import WindowTintingPage from './CarWrappingPage'
+import CarWrappingPage from './CarWrappingPage'
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata('/services/car-wrapping', {

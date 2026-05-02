@@ -2,11 +2,16 @@ import { NextRequest, NextResponse } from 'next/server'
 import { verifySession } from '@/lib/auth'
 import { getSeoForRoute, upsertSeoPage } from '@/lib/seo'
 
+async function isAuthorized(req: NextRequest): Promise<boolean> {
+  const token = req.cookies.get('cms_session')?.value ?? ''
+  return verifySession(token)
+}
+
 export async function GET(
-  _: NextRequest,
+  req: NextRequest,
   { params }: { params: Promise<{ route: string }> }
 ) {
-  if (!(await verifySession())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  if (!(await isAuthorized(req))) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   const { route } = await params
   const decoded = '/' + decodeURIComponent(route).replace(/^\//, '')
   const data = await getSeoForRoute(decoded)
@@ -17,7 +22,7 @@ export async function PUT(
   req: NextRequest,
   { params }: { params: Promise<{ route: string }> }
 ) {
-  if (!(await verifySession())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  if (!(await isAuthorized(req))) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   const { route } = await params
   const decoded = '/' + decodeURIComponent(route).replace(/^\//, '')
   const body = await req.json()
