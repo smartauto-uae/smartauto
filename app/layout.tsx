@@ -279,51 +279,42 @@ const structuredData = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
-          }}
-        />
-      </head>
-      <body
-        className={`${inter.variable} ${playfair.variable}`}
-        style={{ backgroundColor: "#0A0A0A" }}
-      >
-        {/* Google Tag Manager (noscript fallback) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-537ZKNVG"
-            height="0"
-            
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-
-        {/* Global Navbar */}
-        <Navbar />
-
-        {/* Page content */}
-        {children}
-
-        {/* Floating Chatbot — client-only, no SSR */}
-        <ChatbotWrapper />
-
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm-head"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <head>
+    {/* Google Tag Manager */}
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-537ZKNVG');`,
-          }}
-        />
-      </body>
-    </html>
+})(window,document,'script','dataLayer','GTM-WNC3VHF');`,
+      }}
+    />
+    {/* End Google Tag Manager */}
+
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  </head>
+  <body
+    className={`${inter.variable} ${playfair.variable}`}
+    style={{ backgroundColor: '#0A0A0A' }}
+  >
+    {/* Google Tag Manager (noscript) */}
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WNC3VHF"
+        height="0"
+        width="0"
+        style={{ display: 'none', visibility: 'hidden' }}
+      />
+    </noscript>
+
+    <Navbar />
+    {children}
+    <ChatbotWrapper />
+  </body>
+</html>
   )
 }
