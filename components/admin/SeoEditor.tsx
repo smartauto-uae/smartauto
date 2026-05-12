@@ -4,8 +4,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import type { SeoPage } from '@/lib/seo'
 
-const gold     = '#C9A84C'
-const goldGrad = 'linear-gradient(135deg,#C9A84C,#E8C96A)'
+const gold       = '#b8860b'
+const goldBg     = '#fdf8ee'
+const goldBorder = '#e8d48a'
 
 const SCHEMA_TEMPLATES: Record<string, (route: string) => Record<string, unknown>> = {
   LocalBusiness: (route) => ({
@@ -51,17 +52,41 @@ const SCHEMA_TEMPLATES: Record<string, (route: string) => Record<string, unknown
 }
 
 type Props = {
-  route:      string
-  pageLabel:  string
+  route:       string
+  pageLabel:   string
   initialData: SeoPage | null
 }
 
 type Tab = 'basic' | 'og' | 'twitter' | 'schema' | 'advanced'
 
+// ── Shared styles ─────────────────────────────────────────────────────────────
+const inputSt: React.CSSProperties = {
+  width: '100%', padding: '0.6rem 0.875rem',
+  border: '1px solid #e8e3d8', borderRadius: '0.5rem',
+  fontSize: '0.875rem', color: '#1a1814',
+  background: '#fafaf9', outline: 'none',
+}
+
+const labelSt: React.CSSProperties = {
+  display: 'block', fontSize: '0.65rem', fontWeight: 700,
+  textTransform: 'uppercase', letterSpacing: '0.14em',
+  color: '#7a7264', marginBottom: '0.4rem',
+}
+
+const cardSt: React.CSSProperties = {
+  background: '#ffffff', border: '1px solid #e8e3d8',
+  borderRadius: '0.75rem', padding: '1.5rem',
+  display: 'flex', flexDirection: 'column', gap: '1.25rem',
+}
+
+const hintSt: React.CSSProperties = {
+  fontSize: '0.7rem', color: '#b8b0a0', marginTop: '0.3rem',
+}
+
 export default function SeoEditor({ route, pageLabel, initialData }: Props) {
   const init = initialData
 
-  const [tab, setTab] = useState<Tab>('basic')
+  const [tab,    setTab]    = useState<Tab>('basic')
   const [saving, setSaving] = useState(false)
   const [saved,  setSaved]  = useState(false)
   const [error,  setError]  = useState('')
@@ -83,80 +108,48 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
     schema_type:         init?.schema_type         ?? 'LocalBusiness',
   })
 
-  const [schemaJson, setSchemaJson] = useState(
+  const [schemaJson,  setSchemaJson]  = useState(
     init?.structured_data
       ? JSON.stringify(init.structured_data, null, 2)
       : JSON.stringify(SCHEMA_TEMPLATES['LocalBusiness'](route), null, 2)
   )
   const [schemaError, setSchemaError] = useState('')
 
-  const set = (key: string, value: string) => setFields((f) => ({ ...f, [key]: value }))
+  const set = (key: string, value: string) => setFields(f => ({ ...f, [key]: value }))
 
   const loadTemplate = (type: string) => {
     const fn = SCHEMA_TEMPLATES[type]
-    if (fn) {
-      setSchemaJson(JSON.stringify(fn(route), null, 2))
-      setSchemaError('')
-    }
+    if (fn) { setSchemaJson(JSON.stringify(fn(route), null, 2)); setSchemaError('') }
     set('schema_type', type)
   }
 
   const save = async () => {
-    setSaving(true)
-    setError('')
-
+    setSaving(true); setError('')
     let structured_data = null
     if (schemaJson.trim()) {
-      try {
-        structured_data = JSON.parse(schemaJson)
-        setSchemaError('')
-      } catch {
-        setSchemaError('Invalid JSON — fix the structured data before saving')
-        setSaving(false)
-        setTab('schema')
-        return
-      }
+      try { structured_data = JSON.parse(schemaJson); setSchemaError('') }
+      catch { setSchemaError('Invalid JSON — fix before saving'); setSaving(false); setTab('schema'); return }
     }
-
     const res = await fetch(`/api/admin/seo/${encodeURIComponent(route)}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...fields, structured_data }),
     })
-
-    if (res.ok) {
-      setSaved(true)
-      setTimeout(() => setSaved(false), 2500)
-    } else {
-      setError('Failed to save. Please try again.')
-    }
+    if (res.ok) { setSaved(true); setTimeout(() => setSaved(false), 2500) }
+    else setError('Failed to save. Please try again.')
     setSaving(false)
   }
 
-  const inputStyle: React.CSSProperties = {
-    background: 'rgba(255,255,255,0.03)',
-    border: '1px solid rgba(255,255,255,0.08)',
-    borderRadius: '0.75rem',
-    color: '#fff',
-    padding: '0.75rem 1rem',
-    fontSize: '0.875rem',
-    width: '100%',
-    outline: 'none',
-  }
-
-  const labelStyle: React.CSSProperties = {
-    display: 'block',
-    fontSize: '10px',
-    textTransform: 'uppercase',
-    letterSpacing: '0.15em',
-    color: 'rgba(255,255,255,0.4)',
-    marginBottom: 6,
-  }
-
   const counter = (val: string, max: number) => (
-    <span style={{ float: 'right', color: val.length > max ? '#f87171' : 'rgba(255,255,255,0.2)' }}>
+    <span style={{ float: 'right', fontSize: '0.68rem', color: val.length > max ? '#dc2626' : '#b8b0a0', fontVariantNumeric: 'tabular-nums' }}>
       {val.length}/{max}
     </span>
+  )
+
+  const infoBox = (text: string) => (
+    <div style={{ padding: '0.65rem 0.875rem', borderRadius: '0.5rem', background: goldBg, border: `1px solid ${goldBorder}`, fontSize: '0.78rem', color: '#7a7264' }}>
+      {text}
+    </div>
   )
 
   const tabs: { key: Tab; label: string }[] = [
@@ -168,143 +161,134 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
   ]
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10">
+    <div style={{ maxWidth: 860, margin: '0 auto', padding: '2.5rem 1.5rem' }}>
 
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+      {/* ── Header ── */}
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <div>
-          <Link href="/admin/seo" className="text-[11px] no-underline transition-colors"
-            style={{ color: 'rgba(255,255,255,0.3)' }}>← All Pages</Link>
-          <p className="text-[11px] tracking-[0.3em] uppercase mt-2 mb-1" style={{ color: gold }}>
+          <Link href="/admin/seo" style={{ fontSize: '0.72rem', color: '#b8b0a0', textDecoration: 'none' }}>
+            ← All Pages
+          </Link>
+          <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.18em', color: gold, marginTop: '0.75rem', marginBottom: '0.25rem' }}>
             SEO Editor
           </p>
-          <h1 className="font-bold text-[24px] text-white" style={{ fontFamily: 'var(--font-playfair),serif' }}>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1a1814', fontFamily: 'var(--font-playfair),serif', marginBottom: '0.25rem' }}>
             {pageLabel}
           </h1>
-          <code className="text-[12px]" style={{ color: 'rgba(255,255,255,0.3)' }}>{route}</code>
+          <code style={{ fontSize: '0.75rem', color: '#b8b0a0' }}>{route}</code>
         </div>
-        <div className="flex items-center gap-3">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <a href={route} target="_blank" rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-xl text-[13px] font-semibold border no-underline"
-            style={{ borderColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.4)' }}>
+            style={{ padding: '0.5rem 1rem', borderRadius: 999, fontSize: '0.78rem', fontWeight: 500, border: '1px solid #e8e3d8', color: '#7a7264', background: '#fff', textDecoration: 'none' }}>
             View Page ↗
           </a>
           <button onClick={save} disabled={saving}
-            className="px-6 py-2.5 rounded-xl text-[13px] font-bold text-black transition-all"
-            style={{ background: saved ? '#4ade80' : goldGrad, opacity: saving ? 0.7 : 1 }}>
-            {saving ? 'Saving...' : saved ? '✓ Saved!' : 'Save SEO'}
+            style={{
+              padding: '0.5rem 1.25rem', borderRadius: 999,
+              fontSize: '0.82rem', fontWeight: 700, border: 'none', cursor: saving ? 'not-allowed' : 'pointer',
+              background: saved ? '#16a34a' : gold,
+              color: '#fff', opacity: saving ? 0.7 : 1,
+            }}>
+            {saving ? 'Saving…' : saved ? '✓ Saved!' : 'Save SEO'}
           </button>
         </div>
       </div>
 
+      {/* Error */}
       {error && (
-        <div className="mb-5 px-5 py-3 rounded-xl text-[13px]"
-          style={{ background: 'rgba(248,113,113,0.08)', border: '1px solid rgba(248,113,113,0.2)', color: '#f87171' }}>
+        <div style={{ marginBottom: '1rem', padding: '0.65rem 1rem', borderRadius: '0.5rem', background: '#fef2f2', border: '1px solid #fca5a5', color: '#dc2626', fontSize: '0.82rem' }}>
           {error}
         </div>
       )}
 
-      {/* SERP Preview */}
-      <div className="rounded-2xl p-6 mb-6 border"
-        style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-        <p className="text-[10px] uppercase tracking-[0.2em] mb-3" style={{ color: 'rgba(255,255,255,0.3)' }}>
+      {/* ── SERP Preview ── */}
+      <div style={{ background: '#ffffff', border: '1px solid #e8e3d8', borderRadius: '0.75rem', padding: '1.25rem', marginBottom: '1.25rem' }}>
+        <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#b8b0a0', marginBottom: '0.75rem' }}>
           Google Search Preview
         </p>
-        <div style={{ fontFamily: 'Arial,sans-serif' }}>
-          <div className="text-[12px] mb-0.5" style={{ color: 'rgba(255,255,255,0.3)' }}>
+        <div style={{ fontFamily: 'Arial, sans-serif' }}>
+          <div style={{ fontSize: '0.72rem', color: '#16a34a', marginBottom: 2 }}>
             smartautouae.ae{route}
           </div>
-          <div className="text-[18px] font-medium mb-1" style={{ color: '#8ab4f8' }}>
-            {fields.title || <em style={{ opacity: 0.4 }}>Page title not set</em>}
+          <div style={{ fontSize: '1.1rem', fontWeight: 500, color: '#1a6ef5', marginBottom: 4 }}>
+            {fields.title || <em style={{ color: '#b8b0a0', fontStyle: 'italic' }}>Page title not set</em>}
           </div>
-          <div className="text-[13px] leading-snug" style={{ color: '#bdc1c6', maxWidth: 560 }}>
-            {fields.description || <em style={{ opacity: 0.4 }}>Meta description not set</em>}
+          <div style={{ fontSize: '0.82rem', color: '#4a4a4a', lineHeight: 1.5, maxWidth: 560 }}>
+            {fields.description || <em style={{ color: '#b8b0a0', fontStyle: 'italic' }}>Meta description not set</em>}
           </div>
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="flex gap-1 mb-6 flex-wrap">
-        {tabs.map((t) => (
+      {/* ── Tabs ── */}
+      <div style={{ display: 'flex', gap: '0.375rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+        {tabs.map(t => (
           <button key={t.key} onClick={() => setTab(t.key)}
-            className="px-4 py-2 rounded-xl text-[12px] font-semibold transition-all"
             style={{
-              background: tab === t.key ? 'rgba(201,168,76,0.1)' : 'rgba(255,255,255,0.03)',
-              border: `1px solid ${tab === t.key ? 'rgba(201,168,76,0.3)' : 'rgba(255,255,255,0.07)'}`,
-              color: tab === t.key ? gold : 'rgba(255,255,255,0.4)',
+              padding: '0.4rem 0.875rem', borderRadius: 999,
+              fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer',
+              background: tab === t.key ? goldBg     : '#ffffff',
+              border:     tab === t.key ? `1px solid ${goldBorder}` : '1px solid #e8e3d8',
+              color:      tab === t.key ? gold        : '#7a7264',
             }}>
             {t.label}
           </button>
         ))}
       </div>
 
-      {/* Tab content */}
-      <div className="rounded-2xl p-7 border flex flex-col gap-5"
-        style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+      {/* ── Tab content ── */}
+      <div style={cardSt}>
 
-        {/* ── BASIC SEO ── */}
+        {/* BASIC SEO */}
         {tab === 'basic' && <>
           <div>
-            <label style={labelStyle}>Title Tag {counter(fields.title, 60)}</label>
-            <input style={inputStyle} value={fields.title}
-              onChange={(e) => set('title', e.target.value)}
+            <label style={labelSt}>Title Tag {counter(fields.title, 60)}</label>
+            <input style={inputSt} value={fields.title} onChange={e => set('title', e.target.value)}
               placeholder="Car Window Tinting Dubai | Smart Auto UAE" />
-            <p className="text-[11px] mt-1.5" style={{ color: 'rgba(255,255,255,0.25)' }}>
-              Recommended: 50–60 characters. Appears in Google results and browser tabs.
-            </p>
+            <p style={hintSt}>Recommended: 50–60 characters. Appears in Google results and browser tabs.</p>
           </div>
           <div>
-            <label style={labelStyle}>Meta Description {counter(fields.description, 160)}</label>
-            <textarea style={{ ...inputStyle, resize: 'none', lineHeight: 1.6 }} rows={3}
-              value={fields.description} onChange={(e) => set('description', e.target.value)}
-              placeholder="Premium car window tinting in Dubai. 3M and TotalGard films. UAE RTA compliant. 5-year warranty. 4 branches..." />
-            <p className="text-[11px] mt-1.5" style={{ color: 'rgba(255,255,255,0.25)' }}>
-              Recommended: 150–160 characters. Shown below the title in search results.
-            </p>
+            <label style={labelSt}>Meta Description {counter(fields.description, 160)}</label>
+            <textarea style={{ ...inputSt, resize: 'none', lineHeight: 1.6 }} rows={3}
+              value={fields.description} onChange={e => set('description', e.target.value)}
+              placeholder="Premium car window tinting in Dubai. 3M and TotalGard films. UAE RTA compliant. 5-year warranty…" />
+            <p style={hintSt}>Recommended: 150–160 characters. Shown below the title in search results.</p>
           </div>
           <div>
-            <label style={labelStyle}>Keywords (comma separated)</label>
-            <input style={inputStyle} value={fields.keywords}
-              onChange={(e) => set('keywords', e.target.value)}
+            <label style={labelSt}>Keywords (comma separated)</label>
+            <input style={inputSt} value={fields.keywords} onChange={e => set('keywords', e.target.value)}
               placeholder="car window tinting dubai, 3m window film uae, window tint dubai" />
           </div>
         </>}
 
-        {/* ── OPEN GRAPH ── */}
+        {/* OPEN GRAPH */}
         {tab === 'og' && <>
-          <div className="text-[12px] px-4 py-3 rounded-xl" style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.15)', color: 'rgba(255,255,255,0.5)' }}>
-            Open Graph tags control how your page appears when shared on WhatsApp, Facebook, LinkedIn, etc. Leave blank to inherit from Basic SEO.
-          </div>
+          {infoBox('Open Graph tags control how your page appears when shared on WhatsApp, Facebook, LinkedIn, etc. Leave blank to inherit from Basic SEO.')}
           <div>
-            <label style={labelStyle}>OG Title {counter(fields.og_title, 60)}</label>
-            <input style={inputStyle} value={fields.og_title}
-              onChange={(e) => set('og_title', e.target.value)}
+            <label style={labelSt}>OG Title {counter(fields.og_title, 60)}</label>
+            <input style={inputSt} value={fields.og_title} onChange={e => set('og_title', e.target.value)}
               placeholder={fields.title || 'Inherits from title if blank'} />
           </div>
           <div>
-            <label style={labelStyle}>OG Description {counter(fields.og_description, 160)}</label>
-            <textarea style={{ ...inputStyle, resize: 'none', lineHeight: 1.6 }} rows={3}
-              value={fields.og_description} onChange={(e) => set('og_description', e.target.value)}
+            <label style={labelSt}>OG Description {counter(fields.og_description, 160)}</label>
+            <textarea style={{ ...inputSt, resize: 'none', lineHeight: 1.6 }} rows={3}
+              value={fields.og_description} onChange={e => set('og_description', e.target.value)}
               placeholder={fields.description || 'Inherits from description if blank'} />
           </div>
           <div>
-            <label style={labelStyle}>OG Image URL</label>
-            <input style={inputStyle} value={fields.og_image}
-              onChange={(e) => set('og_image', e.target.value)}
-              placeholder="/images/og/car-tinting.webp or https://..." />
-            <p className="text-[11px] mt-1.5" style={{ color: 'rgba(255,255,255,0.25)' }}>
-              Recommended size: 1200×630px. Use an absolute URL or /public path.
-            </p>
+            <label style={labelSt}>OG Image URL</label>
+            <input style={inputSt} value={fields.og_image} onChange={e => set('og_image', e.target.value)}
+              placeholder="/images/og/car-tinting.webp or https://…" />
+            <p style={hintSt}>Recommended size: 1200×630px.</p>
             {fields.og_image && (
-              <img src={fields.og_image} alt="OG preview" className="mt-3 rounded-xl w-full object-cover"
-                style={{ maxHeight: 200 }}
-                onError={(e) => ((e.target as HTMLImageElement).style.display = 'none')} />
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={fields.og_image} alt="OG preview"
+                style={{ marginTop: '0.5rem', borderRadius: '0.5rem', width: '100%', maxHeight: 200, objectFit: 'cover', border: '1px solid #e8e3d8' }}
+                onError={e => ((e.target as HTMLImageElement).style.display = 'none')} />
             )}
           </div>
           <div>
-            <label style={labelStyle}>OG Type</label>
-            <select style={{ ...inputStyle, colorScheme: 'dark' }} value={fields.og_type}
-              onChange={(e) => set('og_type', e.target.value)}>
+            <label style={labelSt}>OG Type</label>
+            <select style={inputSt} value={fields.og_type} onChange={e => set('og_type', e.target.value)}>
               <option value="website">website</option>
               <option value="article">article</option>
               <option value="business.business">business.business</option>
@@ -312,51 +296,47 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           </div>
         </>}
 
-        {/* ── TWITTER ── */}
+        {/* TWITTER */}
         {tab === 'twitter' && <>
-          <div className="text-[12px] px-4 py-3 rounded-xl" style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.15)', color: 'rgba(255,255,255,0.5)' }}>
-            Twitter / X card tags. Leave blank to fall back to Open Graph values.
-          </div>
+          {infoBox('Twitter / X card tags. Leave blank to fall back to Open Graph values.')}
           <div>
-            <label style={labelStyle}>Twitter Card Type</label>
-            <select style={{ ...inputStyle, colorScheme: 'dark' }} value={fields.twitter_card}
-              onChange={(e) => set('twitter_card', e.target.value)}>
+            <label style={labelSt}>Twitter Card Type</label>
+            <select style={inputSt} value={fields.twitter_card} onChange={e => set('twitter_card', e.target.value)}>
               <option value="summary_large_image">summary_large_image (recommended)</option>
               <option value="summary">summary</option>
             </select>
           </div>
           <div>
-            <label style={labelStyle}>Twitter Title {counter(fields.twitter_title, 70)}</label>
-            <input style={inputStyle} value={fields.twitter_title}
-              onChange={(e) => set('twitter_title', e.target.value)}
+            <label style={labelSt}>Twitter Title {counter(fields.twitter_title, 70)}</label>
+            <input style={inputSt} value={fields.twitter_title} onChange={e => set('twitter_title', e.target.value)}
               placeholder={fields.og_title || fields.title || 'Inherits from OG / title'} />
           </div>
           <div>
-            <label style={labelStyle}>Twitter Description {counter(fields.twitter_description, 200)}</label>
-            <textarea style={{ ...inputStyle, resize: 'none', lineHeight: 1.6 }} rows={3}
-              value={fields.twitter_description} onChange={(e) => set('twitter_description', e.target.value)}
+            <label style={labelSt}>Twitter Description {counter(fields.twitter_description, 200)}</label>
+            <textarea style={{ ...inputSt, resize: 'none', lineHeight: 1.6 }} rows={3}
+              value={fields.twitter_description} onChange={e => set('twitter_description', e.target.value)}
               placeholder={fields.og_description || fields.description || 'Inherits from OG / description'} />
           </div>
           <div>
-            <label style={labelStyle}>Twitter Image URL</label>
-            <input style={inputStyle} value={fields.twitter_image}
-              onChange={(e) => set('twitter_image', e.target.value)}
+            <label style={labelSt}>Twitter Image URL</label>
+            <input style={inputSt} value={fields.twitter_image} onChange={e => set('twitter_image', e.target.value)}
               placeholder={fields.og_image || '/images/og/default.webp'} />
           </div>
         </>}
 
-        {/* ── STRUCTURED DATA ── */}
+        {/* STRUCTURED DATA */}
         {tab === 'schema' && <>
           <div>
-            <label style={labelStyle}>Schema Type — Load Template</label>
-            <div className="flex flex-wrap gap-2">
-              {Object.keys(SCHEMA_TEMPLATES).map((type) => (
+            <label style={labelSt}>Schema Type — Load Template</label>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+              {Object.keys(SCHEMA_TEMPLATES).map(type => (
                 <button key={type} onClick={() => loadTemplate(type)}
-                  className="px-3 py-1.5 rounded-lg text-[12px] font-semibold border transition-all"
                   style={{
-                    borderColor: fields.schema_type === type ? 'rgba(201,168,76,0.4)' : 'rgba(255,255,255,0.08)',
-                    color: fields.schema_type === type ? gold : 'rgba(255,255,255,0.4)',
-                    background: fields.schema_type === type ? 'rgba(201,168,76,0.08)' : 'transparent',
+                    padding: '0.3rem 0.75rem', borderRadius: 999,
+                    fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer',
+                    background: fields.schema_type === type ? goldBg     : '#fafaf9',
+                    border:     fields.schema_type === type ? `1px solid ${goldBorder}` : '1px solid #e8e3d8',
+                    color:      fields.schema_type === type ? gold        : '#7a7264',
                   }}>
                   {type}
                 </button>
@@ -364,45 +344,41 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
             </div>
           </div>
           <div>
-            <label style={labelStyle}>
+            <label style={labelSt}>
               JSON-LD Structured Data
-              {schemaError && <span style={{ color: '#f87171', float: 'right', textTransform: 'none', fontSize: 11 }}>{schemaError}</span>}
+              {schemaError && <span style={{ color: '#dc2626', float: 'right', textTransform: 'none', fontSize: '0.72rem' }}>{schemaError}</span>}
             </label>
             <textarea
               value={schemaJson}
-              onChange={(e) => { setSchemaJson(e.target.value); setSchemaError('') }}
+              onChange={e => { setSchemaJson(e.target.value); setSchemaError('') }}
               style={{
-                ...inputStyle,
-                fontFamily: "'Fira Code',monospace",
-                fontSize: 12,
-                lineHeight: 1.7,
-                resize: 'vertical',
-                minHeight: 380,
-                borderColor: schemaError ? 'rgba(248,113,113,0.4)' : 'rgba(255,255,255,0.08)',
+                ...inputSt,
+                fontFamily: 'ui-monospace, "Cascadia Code", monospace',
+                fontSize: '0.78rem', lineHeight: 1.7,
+                resize: 'vertical', minHeight: 360,
+                borderColor: schemaError ? '#fca5a5' : '#e8e3d8',
               }}
             />
-            <p className="text-[11px] mt-1.5" style={{ color: 'rgba(255,255,255,0.25)' }}>
+            <p style={hintSt}>
               Valid JSON-LD. Will be injected as{' '}
-              <code style={{ color: gold }}>{`<script type="application/ld+json">`}</code> in the page head.
+              <code style={{ background: '#f5f3ef', padding: '0 4px', borderRadius: 3, color: gold }}>
+                {'<script type="application/ld+json">'}
+              </code>
             </p>
           </div>
         </>}
 
-        {/* ── ADVANCED ── */}
+        {/* ADVANCED */}
         {tab === 'advanced' && <>
           <div>
-            <label style={labelStyle}>Canonical URL</label>
-            <input style={inputStyle} value={fields.canonical}
-              onChange={(e) => set('canonical', e.target.value)}
+            <label style={labelSt}>Canonical URL</label>
+            <input style={inputSt} value={fields.canonical} onChange={e => set('canonical', e.target.value)}
               placeholder={`https://smartautouae.ae${route}`} />
-            <p className="text-[11px] mt-1.5" style={{ color: 'rgba(255,255,255,0.25)' }}>
-              Use this to prevent duplicate content issues. Usually the full URL of this page.
-            </p>
+            <p style={hintSt}>Prevents duplicate content issues. Usually the full URL of this page.</p>
           </div>
           <div>
-            <label style={labelStyle}>Robots</label>
-            <select style={{ ...inputStyle, colorScheme: 'dark' }} value={fields.robots}
-              onChange={(e) => set('robots', e.target.value)}>
+            <label style={labelSt}>Robots</label>
+            <select style={inputSt} value={fields.robots} onChange={e => set('robots', e.target.value)}>
               <option value="index, follow">index, follow (default — recommended)</option>
               <option value="noindex, follow">noindex, follow</option>
               <option value="index, nofollow">index, nofollow</option>
@@ -410,16 +386,22 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
             </select>
           </div>
         </>}
+
       </div>
 
       {/* Bottom save */}
-      <div className="flex justify-end mt-6">
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.25rem' }}>
         <button onClick={save} disabled={saving}
-          className="px-8 py-3 rounded-xl text-[14px] font-bold text-black"
-          style={{ background: saved ? '#4ade80' : goldGrad, opacity: saving ? 0.7 : 1 }}>
-          {saving ? 'Saving...' : saved ? '✓ Saved to Supabase!' : 'Save SEO Changes'}
+          style={{
+            padding: '0.65rem 2rem', borderRadius: 999,
+            fontSize: '0.875rem', fontWeight: 700, border: 'none', cursor: saving ? 'not-allowed' : 'pointer',
+            background: saved ? '#16a34a' : gold,
+            color: '#fff', opacity: saving ? 0.7 : 1,
+          }}>
+          {saving ? 'Saving…' : saved ? '✓ Saved to Supabase!' : 'Save SEO Changes'}
         </button>
       </div>
+
     </div>
   )
 }

@@ -1,34 +1,43 @@
-// middleware.ts
-import { NextRequest, NextResponse } from 'next/server'
-import { verifySession } from '@/lib/auth'
+import { createServerClient } from "@supabase/ssr";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl
+  const res = NextResponse.next();
 
-  // ── 1. ADMIN AUTH PROTECTION ──────────────────────────────────────────────
-  if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
-    const token = req.cookies.get('cms_session')?.value
-    const valid = token ? await verifySession(token) : false
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll()                { return req.cookies.getAll(); },
+        setAll(cookiesToSet)    {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            req.cookies.set(name, value);
+            res.cookies.set(name, value, options);
+          });
+        },
+      },
+    }
+  );
 
-    if (!valid) {
-      return NextResponse.redirect(new URL('/admin/login', req.url))
+  const { data: { session } } = await supabase.auth.getSession();
+
+  // Protect all /admin routes except /admin/login
+  if (req.nextUrl.pathname.startsWith("/admin") &&
+      !req.nextUrl.pathname.startsWith("/admin/login")) {
+    if (!session) {
+      return NextResponse.redirect(new URL("/admin/login", req.url));
     }
   }
 
-  // ── 2. INJECT x-pathname FOR SERVER COMPONENTS ───────────────────────────
-  // Cloned into request headers so layout/page server components can read it
-  // via: import { headers } from 'next/headers'; headers().get('x-pathname')
-  const requestHeaders = new Headers(req.headers)
-  requestHeaders.set('x-pathname', pathname)
+  // Redirect logged-in users away from login page
+  if (req.nextUrl.pathname === "/admin/login" && session) {
+    return NextResponse.redirect(new URL("/admin/dashboard", req.url));
+  }
 
-  return NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  })
+  return res;
 }
 
 export const config = {
-  // Run on all routes except Next.js internals and static files
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|images|fonts|icons).*)'],
-}
+  matcher: ["/admin/:path*"],
+};

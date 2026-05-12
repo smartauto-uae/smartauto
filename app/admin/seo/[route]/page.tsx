@@ -18,7 +18,7 @@ export default async function EditSeoPage({
   const seo = await getSeoForRoute(route)
 
   return (
-    <main style={{ backgroundColor: '#080808', minHeight: '100vh', color: '#fff' }}>
+    <main style={{ backgroundColor: '#ffffff', minHeight: '100vh', color: '#fff' }}>
       <AdminHeader />
       <SeoEditor route={route} pageLabel={page.page_label} initialData={seo} />
     </main>

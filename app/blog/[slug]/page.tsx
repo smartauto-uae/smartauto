@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Tag, Calendar, ArrowLeft } from 'lucide-react'
 
+export const revalidate = 0
+
 type Props = { params: Promise<{ slug: string }> }
 
 // ── Metadata ─────────────────────────────────────────────────────────────────

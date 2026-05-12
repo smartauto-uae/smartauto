@@ -4,58 +4,43 @@ import { usePathname } from 'next/navigation'
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import {
-  Bell,
-  Search,
-  Plus,
-  ExternalLink,
-  FileText,
-  Search as SearchIcon,
-  Layers,
-  MessageSquare,
-  ChevronDown,
-  Check,
-  User,
-  Settings,
-  LogOut,
+  Bell, Search, Plus, ExternalLink, FileText,
+  Search as SearchIcon, Layers, MessageSquare,
+  ChevronDown, Check, User, Settings, LogOut,
 } from 'lucide-react'
 
-const GOLD     = '#C9A84C'
-const GOLD2    = '#E8C96A'
-const GOLD3    = '#A07830'
-const goldGrad = `linear-gradient(135deg,${GOLD},${GOLD2},${GOLD3})`
+const gold       = '#b8860b'
+const goldBg     = '#fdf8ee'
+const goldBorder = '#e8d48a'
 
-// ─── Page title map ───────────────────────────────────────────────────────────
 const PAGE_TITLES: Record<string, { title: string; subtitle?: string }> = {
-  '/admin':              { title: 'Dashboard',   subtitle: 'Overview of your site activity' },
-  '/admin/analytics':    { title: 'Analytics',   subtitle: 'Traffic, sessions and conversions' },
-  '/admin/blog':         { title: 'Blog Posts',  subtitle: 'Manage articles and drafts' },
-  '/admin/media':        { title: 'Media',       subtitle: 'Images and uploaded files' },
-  '/admin/services':     { title: 'Services',    subtitle: 'Manage service pages' },
-  '/admin/seo':          { title: 'SEO',         subtitle: 'Page metadata and rankings' },
-  '/admin/redirects':    { title: 'Redirects',   subtitle: '301 and 302 URL redirects' },
-  '/admin/sitemap':      { title: 'Sitemap',     subtitle: 'XML sitemap management' },
-  '/admin/reviews':      { title: 'Reviews',     subtitle: 'Customer reviews and ratings' },
-  '/admin/messages':     { title: 'Messages',    subtitle: 'Contact form submissions' },
-  '/admin/branches':     { title: 'Branches',    subtitle: 'UAE branch locations' },
-  '/admin/settings':     { title: 'Settings',    subtitle: 'Site configuration' },
+  '/admin':           { title: 'Dashboard',  subtitle: 'Overview of your site activity' },
+  '/admin/analytics': { title: 'Analytics',  subtitle: 'Traffic, sessions and conversions' },
+  '/admin/blog':      { title: 'Blog Posts', subtitle: 'Manage articles and drafts' },
+  '/admin/media':     { title: 'Media',      subtitle: 'Images and uploaded files' },
+  '/admin/services':  { title: 'Services',   subtitle: 'Manage service pages' },
+  '/admin/seo':       { title: 'SEO',        subtitle: 'Page metadata and rankings' },
+  '/admin/redirects': { title: 'Redirects',  subtitle: '301 and 302 URL redirects' },
+  '/admin/sitemap':   { title: 'Sitemap',    subtitle: 'XML sitemap management' },
+  '/admin/reviews':   { title: 'Reviews',    subtitle: 'Customer reviews and ratings' },
+  '/admin/messages':  { title: 'Messages',   subtitle: 'Contact form submissions' },
+  '/admin/branches':  { title: 'Branches',   subtitle: 'UAE branch locations' },
+  '/admin/settings':  { title: 'Settings',   subtitle: 'Site configuration' },
 }
 
-// ─── Quick-create shortcuts ───────────────────────────────────────────────────
 const QUICK_CREATE = [
-  { label: 'New Blog Post',  href: '/admin/blog/new',      icon: FileText },
-  { label: 'New Service',    href: '/admin/services/new',  icon: Layers },
-  { label: 'Add Redirect',   href: '/admin/redirects/new', icon: SearchIcon },
+  { label: 'New Blog Post', href: '/admin/blog/new',      icon: FileText   },
+  { label: 'New Service',   href: '/admin/services/new',  icon: Layers     },
+  { label: 'Add Redirect',  href: '/admin/redirects/new', icon: SearchIcon },
 ]
 
-// ─── Mock notifications ───────────────────────────────────────────────────────
 const NOTIFICATIONS = [
-  { id: 1, text: '3 new contact form messages',  time: '5m ago',  unread: true  },
-  { id: 2, text: 'New review submitted (5★)',     time: '22m ago', unread: true  },
-  { id: 3, text: 'Sitemap regenerated successfully', time: '1h ago', unread: false },
+  { id: 1, text: '3 new contact form messages',         time: '5m ago',  unread: true  },
+  { id: 2, text: 'New review submitted (5★)',            time: '22m ago', unread: true  },
+  { id: 3, text: 'Sitemap regenerated successfully',    time: '1h ago',  unread: false },
   { id: 4, text: 'Blog post published: "Tinting Guide"', time: '3h ago', unread: false },
 ]
 
-// ─── Breadcrumb builder ───────────────────────────────────────────────────────
 function buildCrumbs(pathname: string) {
   const parts  = pathname.split('/').filter(Boolean)
   const crumbs: { label: string; href: string }[] = []
@@ -68,7 +53,6 @@ function buildCrumbs(pathname: string) {
   return crumbs
 }
 
-// ─── Hook: close on outside click ─────────────────────────────────────────────
 function useClickOutside(ref: React.RefObject<HTMLElement | null>, cb: () => void) {
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -79,23 +63,44 @@ function useClickOutside(ref: React.RefObject<HTMLElement | null>, cb: () => voi
   }, [ref, cb])
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
+// Shared dropdown style
+const dropdownStyle: React.CSSProperties = {
+  background:   '#ffffff',
+  border:       '1px solid #e8e3d8',
+  borderRadius: '0.75rem',
+  boxShadow:    '0 8px 32px rgba(0,0,0,0.1)',
+}
+
+const iconBtnStyle: React.CSSProperties = {
+  display:        'flex',
+  alignItems:     'center',
+  justifyContent: 'center',
+  width:          36,
+  height:         36,
+  borderRadius:   '0.5rem',
+  border:         '1px solid #e8e3d8',
+  background:     '#ffffff',
+  color:          '#7a7264',
+  cursor:         'pointer',
+  position:       'relative',
+}
+
 export default function AdminHeader() {
   const pathname = usePathname()
   const page     = PAGE_TITLES[pathname] ?? { title: 'Admin', subtitle: '' }
   const crumbs   = buildCrumbs(pathname)
 
-  const [searchOpen,  setSearchOpen]  = useState(false)
-  const [searchQuery, setSearchQuery] = useState('')
-  const [notifOpen,   setNotifOpen]   = useState(false)
-  const [createOpen,  setCreateOpen]  = useState(false)
-  const [profileOpen, setProfileOpen] = useState(false)
-  const [notifications, setNotifications] = useState(NOTIFICATIONS)
+  const [searchOpen,     setSearchOpen]     = useState(false)
+  const [searchQuery,    setSearchQuery]     = useState('')
+  const [notifOpen,      setNotifOpen]       = useState(false)
+  const [createOpen,     setCreateOpen]      = useState(false)
+  const [profileOpen,    setProfileOpen]     = useState(false)
+  const [notifications,  setNotifications]   = useState(NOTIFICATIONS)
 
-  const notifRef   = useRef<HTMLDivElement>(null)
-  const createRef  = useRef<HTMLDivElement>(null)
-  const profileRef = useRef<HTMLDivElement>(null)
-  const searchRef  = useRef<HTMLDivElement>(null)
+  const notifRef       = useRef<HTMLDivElement>(null)
+  const createRef      = useRef<HTMLDivElement>(null)
+  const profileRef     = useRef<HTMLDivElement>(null)
+  const searchRef      = useRef<HTMLDivElement>(null)
   const searchInputRef = useRef<HTMLInputElement>(null)
 
   useClickOutside(notifRef,   () => setNotifOpen(false))
@@ -104,11 +109,8 @@ export default function AdminHeader() {
   useClickOutside(searchRef,  () => { setSearchOpen(false); setSearchQuery('') })
 
   const unreadCount = notifications.filter(n => n.unread).length
+  const markAllRead = () => setNotifications(prev => prev.map(n => ({ ...n, unread: false })))
 
-  const markAllRead = () =>
-    setNotifications(prev => prev.map(n => ({ ...n, unread: false })))
-
-  // Open search with Cmd/Ctrl+K
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -116,10 +118,7 @@ export default function AdminHeader() {
         setSearchOpen(true)
         setTimeout(() => searchInputRef.current?.focus(), 50)
       }
-      if (e.key === 'Escape') {
-        setSearchOpen(false)
-        setSearchQuery('')
-      }
+      if (e.key === 'Escape') { setSearchOpen(false); setSearchQuery('') }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
@@ -127,36 +126,33 @@ export default function AdminHeader() {
 
   return (
     <header
-      className="sticky top-0 z-20 flex items-center gap-4 px-6 h-16"
       style={{
-        background:   'rgba(8,8,8,0.92)',
+        position:       'sticky',
+        top:            0,
+        zIndex:         20,
+        display:        'flex',
+        alignItems:     'center',
+        gap:            '1rem',
+        padding:        '0 1.5rem',
+        height:         56,
+        background:     'rgba(247,246,242,0.92)',
         backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid rgba(255,255,255,0.05)',
+        borderBottom:   '1px solid #e8e3d8',
       }}
     >
-      {/* ── Left: title + breadcrumb ── */}
-      <div className="flex-1 min-w-0 pl-12 lg:pl-0">
-        {/* Breadcrumb — desktop */}
-        <nav aria-label="Breadcrumb" className="hidden lg:flex items-center gap-1.5 mb-0.5">
+      {/* ── Left ── */}
+      <div style={{ flex: 1, minWidth: 0 }}>
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', marginBottom: 2 }}>
           {crumbs.map((crumb, i) => (
-            <span key={crumb.href} className="flex items-center gap-1.5">
-              {i > 0 && (
-                <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: 12 }}>/</span>
-              )}
+            <span key={crumb.href} style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+              {i > 0 && <span style={{ color: '#d4cfc8', fontSize: 11 }}>/</span>}
               {i === crumbs.length - 1 ? (
-                <span
-                  className="text-[11px] font-medium"
-                  style={{ color: GOLD }}
-                  aria-current="page"
-                >
+                <span style={{ fontSize: '0.68rem', fontWeight: 600, color: gold }} aria-current="page">
                   {crumb.label}
                 </span>
               ) : (
-                <Link
-                  href={crumb.href}
-                  className="text-[11px] transition-colors"
-                  style={{ color: 'rgba(255,255,255,0.3)' }}
-                >
+                <Link href={crumb.href} style={{ fontSize: '0.68rem', color: '#b8b0a0', textDecoration: 'none' }}>
                   {crumb.label}
                 </Link>
               )}
@@ -164,91 +160,64 @@ export default function AdminHeader() {
           ))}
         </nav>
 
-        {/* Page title */}
-        <div className="flex items-baseline gap-3">
-          <h1
-            className="font-bold text-white leading-none truncate"
-            style={{ fontSize: 'clamp(1rem,1.5vw,1.2rem)' }}
-          >
+        {/* Title */}
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem' }}>
+          <h1 style={{ fontWeight: 700, fontSize: '1rem', color: '#1a1814', lineHeight: 1 }}>
             {page.title}
           </h1>
           {page.subtitle && (
-            <span
-              className="hidden lg:block text-[12px] truncate"
-              style={{ color: 'rgba(255,255,255,0.3)' }}
-            >
+            <span style={{ fontSize: '0.75rem', color: '#b8b0a0' }}>
               {page.subtitle}
             </span>
           )}
         </div>
       </div>
 
-      {/* ── Right: actions ── */}
-      <div className="flex items-center gap-2 flex-shrink-0">
+      {/* ── Right ── */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
 
-        {/* Search bar (inline, expands) */}
-        <div ref={searchRef} className="relative">
+        {/* Search */}
+        <div ref={searchRef} style={{ position: 'relative' }}>
           <button
-            onClick={() => {
-              setSearchOpen(true)
-              setTimeout(() => searchInputRef.current?.focus(), 50)
-            }}
-            className="flex items-center gap-2 h-9 rounded-xl px-3 transition-all"
+            onClick={() => { setSearchOpen(true); setTimeout(() => searchInputRef.current?.focus(), 50) }}
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border:     '1px solid rgba(255,255,255,0.07)',
-              color:      'rgba(255,255,255,0.35)',
+              display: 'flex', alignItems: 'center', gap: 6,
+              height: 36, padding: '0 0.75rem', borderRadius: '0.5rem',
+              border: '1px solid #e8e3d8', background: '#ffffff',
+              color: '#7a7264', cursor: 'pointer', fontSize: '0.78rem',
             }}
             aria-label="Search"
           >
-            <Search size={14} aria-hidden="true" />
-            {!searchOpen && (
-              <span className="hidden md:block text-[12px]">Search</span>
-            )}
-            <span
-              className="hidden md:block text-[10px] px-1.5 py-0.5 rounded"
-              style={{
-                background: 'rgba(255,255,255,0.06)',
-                border:     '1px solid rgba(255,255,255,0.1)',
-                color:      'rgba(255,255,255,0.25)',
-              }}
-            >
+            <Search size={13} aria-hidden="true" />
+            <span style={{ display: 'none' }} className="md:block">Search</span>
+            <span style={{
+              fontSize: '0.65rem', padding: '0.1rem 0.4rem', borderRadius: '0.25rem',
+              background: '#f5f3ef', border: '1px solid #e8e3d8', color: '#b8b0a0',
+            }}>
               ⌘K
             </span>
           </button>
 
-          {/* Search dropdown */}
           {searchOpen && (
-            <div
-              className="absolute right-0 top-11 w-80 rounded-2xl overflow-hidden shadow-2xl"
-              style={{
-                background: '#111',
-                border:     '1px solid rgba(201,168,76,0.15)',
-              }}
-            >
-              <div className="flex items-center gap-2 px-4 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                <Search size={14} style={{ color: 'rgba(255,255,255,0.3)', flexShrink: 0 }} aria-hidden="true" />
+            <div style={{ ...dropdownStyle, position: 'absolute', right: 0, top: 44, width: 300 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '0.75rem 1rem', borderBottom: '1px solid #f0ece4' }}>
+                <Search size={13} style={{ color: '#b8b0a0', flexShrink: 0 }} aria-hidden="true" />
                 <input
                   ref={searchInputRef}
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   placeholder="Search pages, posts, services…"
-                  className="flex-1 bg-transparent text-white text-[13px] outline-none placeholder:text-white/25"
+                  style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', fontSize: '0.82rem', color: '#1a1814' }}
                 />
               </div>
-              <div className="px-3 py-2">
-                <p className="text-[10px] uppercase tracking-wider px-2 mb-1.5" style={{ color: 'rgba(255,255,255,0.2)' }}>
+              <div style={{ padding: '0.5rem' }}>
+                <p style={{ fontSize: '0.62rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#b8b0a0', padding: '0.25rem 0.5rem', marginBottom: 2 }}>
                   Quick links
                 </p>
                 {QUICK_CREATE.map(item => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setSearchOpen(false)}
-                    className="flex items-center gap-3 px-2 py-2 rounded-lg text-[13px] transition-colors"
-                    style={{ color: 'rgba(255,255,255,0.55)' }}
-                  >
-                    <item.icon size={13} aria-hidden="true" />
+                  <Link key={item.href} href={item.href} onClick={() => setSearchOpen(false)}
+                    style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '0.5rem 0.75rem', borderRadius: '0.4rem', fontSize: '0.82rem', color: '#2e2c28', textDecoration: 'none' }}>
+                    <item.icon size={13} style={{ color: gold }} aria-hidden="true" />
                     {item.label}
                   </Link>
                 ))}
@@ -262,51 +231,44 @@ export default function AdminHeader() {
           href="https://smartautouae.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex items-center gap-1.5 h-9 px-3 rounded-xl text-[12px] font-medium transition-all"
           style={{
-            background: 'rgba(255,255,255,0.04)',
-            border:     '1px solid rgba(255,255,255,0.07)',
-            color:      'rgba(255,255,255,0.4)',
+            display: 'flex', alignItems: 'center', gap: 5,
+            height: 36, padding: '0 0.75rem', borderRadius: '0.5rem',
+            border: '1px solid #e8e3d8', background: '#ffffff',
+            color: '#7a7264', fontSize: '0.75rem', fontWeight: 500,
+            textDecoration: 'none',
           }}
           aria-label="View live site"
         >
-          <ExternalLink size={13} aria-hidden="true" />
-          <span>Live site</span>
+          <ExternalLink size={12} aria-hidden="true" />
+          Live site
         </a>
 
         {/* Quick create */}
-        <div ref={createRef} className="relative">
+        <div ref={createRef} style={{ position: 'relative' }}>
           <button
             onClick={() => setCreateOpen(!createOpen)}
-            className="flex items-center gap-1.5 h-9 px-3 rounded-xl text-[12px] font-semibold text-black transition-all"
-            style={{ background: goldGrad }}
+            style={{
+              display: 'flex', alignItems: 'center', gap: 5,
+              height: 36, padding: '0 0.875rem', borderRadius: '0.5rem',
+              background: gold, border: 'none', color: '#ffffff',
+              fontSize: '0.78rem', fontWeight: 600, cursor: 'pointer',
+            }}
             aria-expanded={createOpen}
             aria-haspopup="true"
           >
-            <Plus size={15} aria-hidden="true" />
-            <span className="hidden sm:block">Create</span>
-            <ChevronDown size={12} className={`transition-transform ${createOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+            <Plus size={14} aria-hidden="true" />
+            Create
+            <ChevronDown size={11} style={{ transform: createOpen ? 'rotate(180deg)' : 'none', transition: 'transform 150ms' }} aria-hidden="true" />
           </button>
 
           {createOpen && (
-            <div
-              className="absolute right-0 top-11 w-52 rounded-2xl py-2 shadow-2xl"
-              style={{
-                background: '#111',
-                border:     '1px solid rgba(201,168,76,0.15)',
-              }}
-              role="menu"
-            >
+            <div style={{ ...dropdownStyle, position: 'absolute', right: 0, top: 44, width: 200, padding: '0.4rem' }} role="menu">
               {QUICK_CREATE.map(item => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setCreateOpen(false)}
-                  className="flex items-center gap-3 px-4 py-2.5 text-[13px] transition-colors"
-                  style={{ color: 'rgba(255,255,255,0.6)' }}
-                  role="menuitem"
-                >
-                  <item.icon size={14} aria-hidden="true" style={{ color: GOLD }} />
+                <Link key={item.href} href={item.href} onClick={() => setCreateOpen(false)}
+                  style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '0.6rem 0.75rem', borderRadius: '0.4rem', fontSize: '0.82rem', color: '#2e2c28', textDecoration: 'none' }}
+                  role="menuitem">
+                  <item.icon size={13} style={{ color: gold }} aria-hidden="true" />
                   {item.label}
                 </Link>
               ))}
@@ -315,101 +277,53 @@ export default function AdminHeader() {
         </div>
 
         {/* Notifications */}
-        <div ref={notifRef} className="relative">
+        <div ref={notifRef} style={{ position: 'relative' }}>
           <button
             onClick={() => setNotifOpen(!notifOpen)}
-            className="relative flex items-center justify-center w-9 h-9 rounded-xl transition-all"
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border:     '1px solid rgba(255,255,255,0.07)',
-              color:      'rgba(255,255,255,0.5)',
-            }}
+            style={{ ...iconBtnStyle }}
             aria-label={`Notifications${unreadCount ? `, ${unreadCount} unread` : ''}`}
             aria-expanded={notifOpen}
           >
             <Bell size={15} aria-hidden="true" />
             {unreadCount > 0 && (
-              <span
-                className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold text-black"
-                style={{ background: goldGrad }}
-                aria-hidden="true"
-              >
+              <span style={{
+                position: 'absolute', top: -4, right: -4,
+                width: 16, height: 16, borderRadius: '50%',
+                background: gold, color: '#fff',
+                fontSize: '0.6rem', fontWeight: 700,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                border: '2px solid #f7f6f2',
+              }} aria-hidden="true">
                 {unreadCount}
               </span>
             )}
           </button>
 
           {notifOpen && (
-            <div
-              className="absolute right-0 top-11 w-80 rounded-2xl shadow-2xl overflow-hidden"
-              style={{
-                background: '#111',
-                border:     '1px solid rgba(201,168,76,0.15)',
-              }}
-              role="region"
-              aria-label="Notifications"
-            >
-              {/* Header */}
-              <div
-                className="flex items-center justify-between px-4 py-3"
-                style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-              >
-                <p className="text-white font-semibold text-[13px]">Notifications</p>
+            <div style={{ ...dropdownStyle, position: 'absolute', right: 0, top: 44, width: 300, overflow: 'hidden' }} role="region" aria-label="Notifications">
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', borderBottom: '1px solid #f0ece4' }}>
+                <p style={{ fontSize: '0.82rem', fontWeight: 600, color: '#1a1814' }}>Notifications</p>
                 {unreadCount > 0 && (
-                  <button
-                    onClick={markAllRead}
-                    className="flex items-center gap-1 text-[11px] transition-colors"
-                    style={{ color: GOLD }}
-                  >
-                    <Check size={11} aria-hidden="true" />
-                    Mark all read
+                  <button onClick={markAllRead} style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: '0.72rem', color: gold, background: 'none', border: 'none', cursor: 'pointer' }}>
+                    <Check size={11} aria-hidden="true" /> Mark all read
                   </button>
                 )}
               </div>
-
-              {/* Items */}
-              <div className="py-1">
+              <div>
                 {notifications.map(n => (
-                  <div
-                    key={n.id}
-                    className="flex items-start gap-3 px-4 py-3 transition-colors"
-                    style={{
-                      background: n.unread ? 'rgba(201,168,76,0.04)' : 'transparent',
-                    }}
-                  >
-                    {n.unread && (
-                      <div
-                        className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                        style={{ background: GOLD }}
-                        aria-hidden="true"
-                      />
-                    )}
-                    {!n.unread && <div className="mt-1.5 w-1.5 h-1.5 flex-shrink-0" aria-hidden="true" />}
-                    <div className="flex-1 min-w-0">
-                      <p
-                        className="text-[12px] leading-snug"
-                        style={{ color: n.unread ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.4)' }}
-                      >
-                        {n.text}
-                      </p>
-                      <p className="text-[10px] mt-0.5" style={{ color: 'rgba(255,255,255,0.25)' }}>
-                        {n.time}
-                      </p>
+                  <div key={n.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '0.75rem 1rem', background: n.unread ? goldBg : 'transparent', borderBottom: '1px solid #f5f3ef' }}>
+                    <div style={{ marginTop: 5, width: 6, height: 6, borderRadius: '50%', background: n.unread ? gold : 'transparent', flexShrink: 0 }} aria-hidden="true" />
+                    <div style={{ flex: 1 }}>
+                      <p style={{ fontSize: '0.78rem', color: n.unread ? '#1a1814' : '#7a7264', lineHeight: 1.4 }}>{n.text}</p>
+                      <p style={{ fontSize: '0.68rem', color: '#b8b0a0', marginTop: 2 }}>{n.time}</p>
                     </div>
                   </div>
                 ))}
               </div>
-
-              {/* Footer */}
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                <Link
-                  href="/admin/messages"
-                  onClick={() => setNotifOpen(false)}
-                  className="flex items-center justify-center gap-1.5 py-3 text-[12px] transition-colors"
-                  style={{ color: GOLD }}
-                >
-                  <MessageSquare size={12} aria-hidden="true" />
-                  View all messages
+              <div style={{ borderTop: '1px solid #f0ece4' }}>
+                <Link href="/admin/messages" onClick={() => setNotifOpen(false)}
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '0.75rem', fontSize: '0.78rem', color: gold, textDecoration: 'none' }}>
+                  <MessageSquare size={12} aria-hidden="true" /> View all messages
                 </Link>
               </div>
             </div>
@@ -417,81 +331,42 @@ export default function AdminHeader() {
         </div>
 
         {/* Profile */}
-        <div ref={profileRef} className="relative">
+        <div ref={profileRef} style={{ position: 'relative' }}>
           <button
             onClick={() => setProfileOpen(!profileOpen)}
-            className="flex items-center gap-2 h-9 pl-1 pr-2 rounded-xl transition-all"
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border:     '1px solid rgba(255,255,255,0.07)',
-            }}
+            style={{ display: 'flex', alignItems: 'center', gap: 6, height: 36, padding: '0 0.5rem 0 0.25rem', borderRadius: '0.5rem', border: '1px solid #e8e3d8', background: '#ffffff', cursor: 'pointer' }}
             aria-expanded={profileOpen}
             aria-haspopup="true"
             aria-label="Profile menu"
           >
-            <div
-              className="w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold text-black"
-              style={{ background: goldGrad }}
-              aria-hidden="true"
-            >
+            <div style={{ width: 28, height: 28, borderRadius: '0.375rem', background: goldBg, border: `1px solid ${goldBorder}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.65rem', fontWeight: 700, color: gold }}>
               SA
             </div>
-            <ChevronDown
-              size={12}
-              className={`transition-transform hidden sm:block ${profileOpen ? 'rotate-180' : ''}`}
-              style={{ color: 'rgba(255,255,255,0.3)' }}
-              aria-hidden="true"
-            />
+            <ChevronDown size={11} style={{ color: '#b8b0a0', transform: profileOpen ? 'rotate(180deg)' : 'none', transition: 'transform 150ms' }} aria-hidden="true" />
           </button>
 
           {profileOpen && (
-            <div
-              className="absolute right-0 top-11 w-52 rounded-2xl py-2 shadow-2xl"
-              style={{
-                background: '#111',
-                border:     '1px solid rgba(201,168,76,0.15)',
-              }}
-              role="menu"
-            >
-              {/* User info */}
-              <div className="px-4 py-2.5" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                <p className="text-white text-[13px] font-semibold">Admin</p>
-                <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>smartautouae.ae</p>
+            <div style={{ ...dropdownStyle, position: 'absolute', right: 0, top: 44, width: 200, overflow: 'hidden' }} role="menu">
+              <div style={{ padding: '0.75rem 1rem', borderBottom: '1px solid #f0ece4' }}>
+                <p style={{ fontSize: '0.82rem', fontWeight: 600, color: '#1a1814' }}>Admin</p>
+                <p style={{ fontSize: '0.72rem', color: '#b8b0a0' }}>smartautouae.ae</p>
               </div>
-
-              <div className="py-1">
-                <Link
-                  href="/admin/settings"
-                  onClick={() => setProfileOpen(false)}
-                  className="flex items-center gap-3 px-4 py-2.5 text-[13px] transition-colors"
-                  style={{ color: 'rgba(255,255,255,0.55)' }}
-                  role="menuitem"
-                >
-                  <Settings size={14} aria-hidden="true" />
-                  Settings
+              <div style={{ padding: '0.4rem' }}>
+                <Link href="/admin/settings" onClick={() => setProfileOpen(false)}
+                  style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '0.6rem 0.75rem', borderRadius: '0.4rem', fontSize: '0.82rem', color: '#2e2c28', textDecoration: 'none' }} role="menuitem">
+                  <Settings size={13} style={{ color: '#7a7264' }} aria-hidden="true" /> Settings
                 </Link>
-                <Link
-                  href="/admin/settings#profile"
-                  onClick={() => setProfileOpen(false)}
-                  className="flex items-center gap-3 px-4 py-2.5 text-[13px] transition-colors"
-                  style={{ color: 'rgba(255,255,255,0.55)' }}
-                  role="menuitem"
-                >
-                  <User size={14} aria-hidden="true" />
-                  Profile
+                <Link href="/admin/settings#profile" onClick={() => setProfileOpen(false)}
+                  style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '0.6rem 0.75rem', borderRadius: '0.4rem', fontSize: '0.82rem', color: '#2e2c28', textDecoration: 'none' }} role="menuitem">
+                  <User size={13} style={{ color: '#7a7264' }} aria-hidden="true" /> Profile
                 </Link>
               </div>
-
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+              <div style={{ borderTop: '1px solid #f0ece4', padding: '0.4rem' }}>
                 <form action="/api/admin/logout" method="POST">
-                  <button
-                    type="submit"
-                    className="w-full flex items-center gap-3 px-4 py-2.5 text-[13px] transition-colors"
-                    style={{ color: 'rgba(220,80,80,0.7)' }}
-                    role="menuitem"
-                  >
-                    <LogOut size={14} aria-hidden="true" />
-                    Sign out
+                  <button type="submit"
+                    style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '0.6rem 0.75rem', borderRadius: '0.4rem', fontSize: '0.82rem', color: '#dc2626', background: 'none', border: 'none', cursor: 'pointer' }}
+                    role="menuitem">
+                    <LogOut size={13} aria-hidden="true" /> Sign out
                   </button>
                 </form>
               </div>

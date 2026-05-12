@@ -1,22 +1,15 @@
 'use client'
 
-import { useState, useEffect, useCallback, useTransition } from 'react'
+import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
   Loader2, Save, Send, Eye, ArrowLeft, Plus, Trash2, Wand2,
-  Image as ImageIcon, Link2, AlignLeft, AlignCenter, AlignRight, X,
+  Image as ImageIcon, X,
 } from 'lucide-react'
-import { useEditor, EditorContent } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
-import TextAlign from '@tiptap/extension-text-align'
-import Underline from '@tiptap/extension-underline'
-import TiptapImage from '@tiptap/extension-image'
-import TiptapLink from '@tiptap/extension-link'
-import Placeholder from '@tiptap/extension-placeholder'
-import { marked } from 'marked'
 import { createPost, updatePost } from '@/lib/actions/blog'
 import type { BlogPost } from '@/types/blog'
+import RichEditor from '@/components/admin/RichEditor'
 
 // ── Theme tokens ──────────────────────────────────────────────────────────────
 const GOLD        = '#b8860b'
@@ -44,7 +37,6 @@ const SCHEMA_TEMPLATES: Record<string, string> = {
     "dateModified": "",
     "image": ""
   }, null, 2),
-
   BlogPosting: JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -54,24 +46,14 @@ const SCHEMA_TEMPLATES: Record<string, string> = {
     "datePublished": "",
     "image": ""
   }, null, 2),
-
   FAQPage: JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Question 1?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Answer 1." }
-      },
-      {
-        "@type": "Question",
-        "name": "Question 2?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Answer 2." }
-      }
+      { "@type": "Question", "name": "Question 1?", "acceptedAnswer": { "@type": "Answer", "text": "Answer 1." } },
+      { "@type": "Question", "name": "Question 2?", "acceptedAnswer": { "@type": "Answer", "text": "Answer 2." } }
     ]
   }, null, 2),
-
   HowTo: JSON.stringify({
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -82,7 +64,6 @@ const SCHEMA_TEMPLATES: Record<string, string> = {
       { "@type": "HowToStep", "name": "Step 2", "text": "Description of step 2." }
     ]
   }, null, 2),
-
   Service: JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
@@ -92,7 +73,6 @@ const SCHEMA_TEMPLATES: Record<string, string> = {
     "areaServed": { "@type": "City", "name": "Dubai" },
     "serviceType": ""
   }, null, 2),
-
   Product: JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
@@ -100,7 +80,6 @@ const SCHEMA_TEMPLATES: Record<string, string> = {
     "description": "",
     "brand": { "@type": "Brand", "name": "Smart Auto UAE" }
   }, null, 2),
-
   NewsArticle: JSON.stringify({
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -109,7 +88,6 @@ const SCHEMA_TEMPLATES: Record<string, string> = {
     "datePublished": "",
     "author": { "@type": "Organization", "name": "Smart Auto UAE" }
   }, null, 2),
-
   Custom: '{\n  "@context": "https://schema.org",\n  "@type": ""\n}',
 }
 
@@ -117,12 +95,6 @@ const SCHEMA_TEMPLATES: Record<string, string> = {
 function slugify(str: string) {
   return str.toLowerCase().trim()
     .replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
-}
-
-function mdToHtml(md: string): string {
-  if (!md) return ''
-  if (md.trimStart().startsWith('<')) return md
-  return marked.parse(md) as string
 }
 
 async function compressToWebP(file: File): Promise<string> {
@@ -179,47 +151,6 @@ const inpSt: React.CSSProperties = {
   transition: 'border-color 150ms',
 }
 
-// ── Toolbar button ────────────────────────────────────────────────────────────
-function TBtn({
-  onClick, active, title, children,
-}: {
-  onClick: () => void; active?: boolean; title: string; children: React.ReactNode
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      title={title}
-      style={{
-        padding: '0.25rem 0.45rem',
-        borderRadius: '0.375rem',
-        fontSize: '0.75rem',
-        fontWeight: 500,
-        cursor: 'pointer',
-        border: active ? `1px solid ${GOLD_BORDER}` : '1px solid transparent',
-        background: active ? GOLD_BG : 'transparent',
-        color: active ? GOLD : '#7a7264',
-        transition: 'all 150ms',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      {children}
-    </button>
-  )
-}
-
-function Sep() {
-  return (
-    <div style={{
-      width: 1, height: 18,
-      background: '#e8e3d8',
-      margin: '0 4px',
-      flexShrink: 0,
-    }} />
-  )
-}
-
 function CharCount({ value, max }: { value: string; max: number }) {
   const len = value.length
   const color = len > max ? '#dc2626' : len > max - 15 ? GOLD : '#b8b0a0'
@@ -240,23 +171,23 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
   const [preview,      setPreview]      = useState(false)
   const [uploadingImg, setUploadingImg] = useState(false)
   const [error,        setError]        = useState<string | null>(null)
-  const [,             forceUpdate]     = useState(0)
 
   // ── Fields ──────────────────────────────────────────────────────────────────
-  const [title,      setTitle]      = useState(post?.title       ?? '')
-  const [slug,       setSlug]       = useState(post?.slug        ?? '')
-  const [excerpt,    setExcerpt]    = useState(post?.excerpt      ?? '')
-  const [coverImage, setCoverImage] = useState(post?.cover_image  ?? '')
-  const [category,   setCategory]   = useState(post?.category     ?? 'General')
-  const [tags,       setTags]       = useState<string[]>(post?.tags ?? [])
-  const [tagInput,   setTagInput]   = useState('')
-  const [status,     setStatus]     = useState<'draft' | 'published'>(post?.status ?? 'draft')
-  const [metaTitle,  setMetaTitle]  = useState(post?.meta_title   ?? '')
-  const [metaDesc,   setMetaDesc]   = useState(post?.meta_desc    ?? '')
-  const [ogImage,    setOgImage]    = useState(post?.og_image     ?? '')
-  const [schemaType,   setSchemaType]   = useState(post?.schema_type   ?? 'Article')
-const [schemaCustom, setSchemaCustom] = useState(post?.schema_custom ?? '')
-const [schemaOpen,   setSchemaOpen]   = useState(false)
+  const [title,        setTitle]        = useState(post?.title        ?? '')
+  const [slug,         setSlug]         = useState(post?.slug         ?? '')
+  const [excerpt,      setExcerpt]      = useState(post?.excerpt      ?? '')
+  const [content,      setContent]      = useState(post?.content      ?? '')
+  const [coverImage,   setCoverImage]   = useState(post?.cover_image  ?? '')
+  const [category,     setCategory]     = useState(post?.category     ?? 'General')
+  const [tags,         setTags]         = useState<string[]>(post?.tags ?? [])
+  const [tagInput,     setTagInput]     = useState('')
+  const [status,       setStatus]       = useState<'draft' | 'published'>(post?.status ?? 'draft')
+  const [metaTitle,    setMetaTitle]    = useState(post?.meta_title   ?? '')
+  const [metaDesc,     setMetaDesc]     = useState(post?.meta_desc    ?? '')
+  const [ogImage,      setOgImage]      = useState(post?.og_image     ?? '')
+  const [schemaType,   setSchemaType]   = useState(post?.schema_type  ?? 'Article')
+  const [schemaCustom, setSchemaCustom] = useState(post?.schema_custom ?? '')
+  const [schemaOpen,   setSchemaOpen]   = useState(false)
 
   const handleTitleChange = (val: string) => {
     setTitle(val)
@@ -269,63 +200,6 @@ const [schemaOpen,   setSchemaOpen]   = useState(false)
     if (t && !tags.includes(t)) setTags(prev => [...prev, t])
     setTagInput('')
   }
-
-  // ── Editor ──────────────────────────────────────────────────────────────────
-  const editor = useEditor({
-    immediatelyRender: false,
-    extensions: [
-      StarterKit,
-      Underline,
-      TextAlign.configure({ types: ['heading', 'paragraph'] }),
-      TiptapImage.configure({ inline: false, allowBase64: true }),
-      TiptapLink.configure({ openOnClick: false }),
-      Placeholder.configure({ placeholder: 'Start writing your post…' }),
-    ],
-    content: mdToHtml(post?.content ?? ''),
-    editorProps: {
-      attributes: {
-        class: 'prose prose-neutral max-w-none focus:outline-none min-h-[400px] px-5 py-5 text-sm leading-relaxed',
-      },
-    },
-  })
-
-  useEffect(() => {
-    if (!editor) return
-    const up = () => forceUpdate(n => n + 1)
-    editor.on('selectionUpdate', up)
-    editor.on('transaction', up)
-    return () => { editor.off('selectionUpdate', up); editor.off('transaction', up) }
-  }, [editor])
-
-  // ── Toolbar helpers ──────────────────────────────────────────────────────────
-  const isH = (level: 1 | 2 | 3 | 4 | 5) => editor?.isActive('heading', { level }) ?? false
-  const isP = editor
-    ? !isH(1) && !isH(2) && !isH(3) && !isH(4) && !isH(5)
-      && !editor.isActive('bulletList') && !editor.isActive('orderedList')
-      && !editor.isActive('blockquote') && !editor.isActive('codeBlock')
-    : false
-
-  const insertLink = () => {
-    const url = window.prompt('Enter URL:')
-    if (!url || !editor) return
-    if (editor.state.selection.empty) {
-      const text = window.prompt('Link text:') ?? url
-      editor.chain().focus().insertContent(`<a href="${url}">${text}</a>`).run()
-    } else {
-      editor.chain().focus().setLink({ href: url }).run()
-    }
-  }
-
-  const handleInlineImage = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (!file || !editor) return
-    setUploadingImg(true)
-    try {
-      editor.chain().focus().setImage({ src: await compressToWebP(file) }).run()
-    } catch { alert('Image compression failed.') }
-    setUploadingImg(false)
-    e.target.value = ''
-  }, [editor])
 
   const handleFeaturedImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -344,25 +218,25 @@ const [schemaOpen,   setSchemaOpen]   = useState(false)
 
   // ── Save ─────────────────────────────────────────────────────────────────────
   const save = (publishNow?: boolean) => {
-    if (!title.trim())             { setError('Title is required'); return }
-    if (!editor?.getText().trim()) { setError('Content is required'); return }
+    if (!title.trim())   { setError('Title is required'); return }
+    if (!content.trim()) { setError('Content is required'); return }
     setError(null)
 
     const finalStatus: 'draft' | 'published' = publishNow ? 'published' : status
     const payload = {
       title,
       slug,
-      excerpt:     excerpt    || null,
-      content:     editor?.getHTML() || null,
-      cover_image: coverImage || null,
+      excerpt:      excerpt    || null,
+      content:      content    || null,
+      cover_image:  coverImage || null,
       category,
-      status:      finalStatus,
-      meta_title:  metaTitle  || null,
-      meta_desc:   metaDesc   || null,
-      og_image:    ogImage    || null,
-      tags:        tags.length ? tags : null,
-      schema_type:   schemaType   || null,
-schema_custom: schemaCustom || null,
+      status:       finalStatus,
+      meta_title:   metaTitle  || null,
+      meta_desc:    metaDesc   || null,
+      og_image:     ogImage    || null,
+      tags:         tags.length ? tags : null,
+      schema_type:  schemaType   || null,
+      schema_custom: schemaCustom || null,
       published_at: finalStatus === 'published'
         ? (post?.published_at ?? new Date().toISOString())
         : null,
@@ -375,8 +249,8 @@ schema_custom: schemaCustom || null,
         setSaved(true)
         setTimeout(() => setSaved(false), 3000)
         if (mode === 'new') router.push('/admin/blog')
-      } catch (e: any) {
-        setError(e.message ?? 'Something went wrong')
+      } catch (e: unknown) {
+        setError(e instanceof Error ? e.message : 'Something went wrong')
       }
     })
   }
@@ -397,7 +271,6 @@ schema_custom: schemaCustom || null,
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-        {/* Left */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <Link
             href="/admin/blog"
@@ -423,7 +296,6 @@ schema_custom: schemaCustom || null,
           </div>
         </div>
 
-        {/* Right */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <button
             onClick={() => setPreview(v => !v)}
@@ -431,7 +303,9 @@ schema_custom: schemaCustom || null,
               display: 'inline-flex', alignItems: 'center', gap: 5,
               padding: '0.35rem 0.85rem', borderRadius: 999,
               fontSize: '0.75rem', fontWeight: 500, cursor: 'pointer',
-              border: '1px solid #e8e3d8', background: '#fff', color: '#7a7264',
+              border: '1px solid #e8e3d8', background: preview ? GOLD_BG : '#fff',
+              color: preview ? GOLD : '#7a7264',
+              borderColor: preview ? GOLD_BORDER : '#e8e3d8',
             }}
           >
             <Eye size={13} aria-hidden="true" />
@@ -444,7 +318,8 @@ schema_custom: schemaCustom || null,
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 5,
               padding: '0.35rem 0.85rem', borderRadius: 999,
-              fontSize: '0.75rem', fontWeight: 600, cursor: isPending ? 'not-allowed' : 'pointer',
+              fontSize: '0.75rem', fontWeight: 600,
+              cursor: isPending ? 'not-allowed' : 'pointer',
               border: '1px solid #e8e3d8', background: '#f5f3ef', color: '#1a1814',
               opacity: isPending ? 0.6 : 1,
             }}
@@ -463,7 +338,8 @@ schema_custom: schemaCustom || null,
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 5,
                 padding: '0.35rem 0.85rem', borderRadius: 999,
-                fontSize: '0.75rem', fontWeight: 600, cursor: isPending ? 'not-allowed' : 'pointer',
+                fontSize: '0.75rem', fontWeight: 600,
+                cursor: isPending ? 'not-allowed' : 'pointer',
                 background: GOLD, border: 'none', color: '#fff',
                 opacity: isPending ? 0.6 : 1,
               }}
@@ -478,7 +354,6 @@ schema_custom: schemaCustom || null,
       {/* ── Body ── */}
       <main style={{ maxWidth: 1100, margin: '0 auto', padding: '1.5rem' }}>
 
-        {/* Error banner */}
         {error && (
           <div style={{
             display: 'flex', alignItems: 'center', gap: '0.5rem',
@@ -551,118 +426,18 @@ schema_custom: schemaCustom || null,
               />
             </div>
 
-            {/* Rich editor */}
-            <div style={{ ...card, padding: 0, overflow: 'hidden' }}>
-
-              {/* Toolbar */}
-              {!preview && editor && (
-                <div style={{
-                  display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2,
-                  padding: '0.5rem 0.75rem',
-                  borderBottom: '1px solid #e8e3d8',
-                  background: '#fafaf9',
-                }}>
-                  {/* Headings */}
-                  {([1, 2, 3, 4, 5] as const).map(level => (
-                    <TBtn key={level} title={`H${level}`} active={isH(level)}
-                      onClick={() => editor.chain().focus().toggleHeading({ level }).run()}>
-                      H{level}
-                    </TBtn>
-                  ))}
-                  <TBtn title="Paragraph" active={isP}
-                    onClick={() => editor.chain().focus().setParagraph().run()}>¶</TBtn>
-                  <Sep />
-
-                  {/* Format */}
-                  <TBtn title="Bold" active={editor.isActive('bold')}
-                    onClick={() => editor.chain().focus().toggleBold().run()}>
-                    <strong>B</strong>
-                  </TBtn>
-                  <TBtn title="Italic" active={editor.isActive('italic')}
-                    onClick={() => editor.chain().focus().toggleItalic().run()}>
-                    <em>I</em>
-                  </TBtn>
-                  <TBtn title="Underline" active={editor.isActive('underline')}
-                    onClick={() => editor.chain().focus().toggleUnderline().run()}>
-                    <span style={{ textDecoration: 'underline' }}>U</span>
-                  </TBtn>
-                  <TBtn title="Strikethrough" active={editor.isActive('strike')}
-                    onClick={() => editor.chain().focus().toggleStrike().run()}>
-                    <span style={{ textDecoration: 'line-through' }}>S</span>
-                  </TBtn>
-                  <TBtn title="Code" active={editor.isActive('code')}
-                    onClick={() => editor.chain().focus().toggleCode().run()}>
-                    {'<>'}
-                  </TBtn>
-                  <Sep />
-
-                  {/* Align */}
-                  <TBtn title="Align Left" active={editor.isActive({ textAlign: 'left' })}
-                    onClick={() => editor.chain().focus().setTextAlign('left').run()}>
-                    <AlignLeft size={13} aria-hidden="true" />
-                  </TBtn>
-                  <TBtn title="Align Center" active={editor.isActive({ textAlign: 'center' })}
-                    onClick={() => editor.chain().focus().setTextAlign('center').run()}>
-                    <AlignCenter size={13} aria-hidden="true" />
-                  </TBtn>
-                  <TBtn title="Align Right" active={editor.isActive({ textAlign: 'right' })}
-                    onClick={() => editor.chain().focus().setTextAlign('right').run()}>
-                    <AlignRight size={13} aria-hidden="true" />
-                  </TBtn>
-                  <Sep />
-
-                  {/* Lists & blocks */}
-                  <TBtn title="Bullet List" active={editor.isActive('bulletList')}
-                    onClick={() => editor.chain().focus().toggleBulletList().run()}>• List</TBtn>
-                  <TBtn title="Numbered List" active={editor.isActive('orderedList')}
-                    onClick={() => editor.chain().focus().toggleOrderedList().run()}>1. List</TBtn>
-                  <TBtn title="Blockquote" active={editor.isActive('blockquote')}
-                    onClick={() => editor.chain().focus().toggleBlockquote().run()}>"</TBtn>
-                  <TBtn title="Code Block" active={editor.isActive('codeBlock')}
-                    onClick={() => editor.chain().focus().toggleCodeBlock().run()}>{'{ }'}</TBtn>
-                  <TBtn title="Divider"
-                    onClick={() => editor.chain().focus().setHorizontalRule().run()}>—</TBtn>
-                  <Sep />
-
-                  {/* Insert */}
-                  <TBtn title="Link" active={editor.isActive('link')} onClick={insertLink}>
-                    <Link2 size={13} aria-hidden="true" />
-                  </TBtn>
-                  <label
-                    title="Insert Image"
-                    style={{
-                      padding: '0.25rem 0.45rem', borderRadius: '0.375rem', cursor: 'pointer',
-                      color: '#7a7264', fontSize: '0.75rem',
-                      display: 'flex', alignItems: 'center', gap: 3,
-                    }}
-                  >
-                    {uploadingImg
-                      ? <Loader2 size={13} className="animate-spin" />
-                      : <ImageIcon size={13} aria-hidden="true" />
-                    }
-                    <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleInlineImage} />
-                  </label>
-
-                  {/* Undo / Redo */}
-                  <div style={{ marginLeft: 'auto', display: 'flex', gap: 2 }}>
-                    <TBtn title="Undo" onClick={() => editor.chain().focus().undo().run()}>↩</TBtn>
-                    <TBtn title="Redo" onClick={() => editor.chain().focus().redo().run()}>↪</TBtn>
-                  </div>
-                </div>
-              )}
-
-              {/* Content area */}
-              {preview ? (
-                <div style={{ padding: '1.5rem', minHeight: 400 }}>
-                  <div
-                    className="prose prose-neutral max-w-none text-sm"
-                    dangerouslySetInnerHTML={{ __html: editor?.getHTML() ?? '' }}
-                  />
-                </div>
-              ) : (
-                <EditorContent editor={editor} />
-              )}
-            </div>
+            {/* ── Rich editor / Preview ── */}
+            {preview ? (
+              <div style={{ ...card }}>
+                <p style={{ ...labelSt, marginBottom: '1rem' }}>Preview</p>
+                <div
+                  className="prose prose-neutral max-w-none text-sm"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+              </div>
+            ) : (
+              <RichEditor value={content} onChange={setContent} />
+            )}
 
           </div>
 
@@ -674,7 +449,7 @@ schema_custom: schemaCustom || null,
               <label style={labelSt}>Status</label>
               <select
                 value={status}
-                onChange={e => setStatus(e.target.value as any)}
+                onChange={e => setStatus(e.target.value as 'draft' | 'published')}
                 style={{
                   ...inpSt,
                   fontWeight: 600,
@@ -803,192 +578,182 @@ schema_custom: schemaCustom || null,
             </div>
 
             {/* SEO */}
-<div style={{ ...card, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
-  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-    <p style={labelSt}>SEO & Open Graph</p>
-    <button
-      onClick={autoFillSEO}
-      style={{
-        display: 'inline-flex', alignItems: 'center', gap: 4,
-        padding: '0.2rem 0.6rem', borderRadius: 999,
-        fontSize: '0.68rem', fontWeight: 600,
-        border: '1px solid #e8e3d8', background: '#fafaf9',
-        color: '#7a7264', cursor: 'pointer',
-      }}
-    >
-      <Wand2 size={10} aria-hidden="true" /> Auto-fill
-    </button>
-  </div>
+            <div style={{ ...card, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <p style={labelSt}>SEO & Open Graph</p>
+                <button
+                  onClick={autoFillSEO}
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: 4,
+                    padding: '0.2rem 0.6rem', borderRadius: 999,
+                    fontSize: '0.68rem', fontWeight: 600,
+                    border: '1px solid #e8e3d8', background: '#fafaf9',
+                    color: '#7a7264', cursor: 'pointer',
+                  }}
+                >
+                  <Wand2 size={10} aria-hidden="true" /> Auto-fill
+                </button>
+              </div>
 
-  {/* Meta title */}
-  <div>
-    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-      <label style={labelSt}>Meta Title</label>
-      <CharCount value={metaTitle} max={60} />
-    </div>
-    <input
-      value={metaTitle}
-      onChange={e => setMetaTitle(e.target.value)}
-      placeholder={title || 'SEO title…'}
-      style={inpSt}
-    />
-  </div>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                  <label style={labelSt}>Meta Title</label>
+                  <CharCount value={metaTitle} max={60} />
+                </div>
+                <input
+                  value={metaTitle}
+                  onChange={e => setMetaTitle(e.target.value)}
+                  placeholder={title || 'SEO title…'}
+                  style={inpSt}
+                />
+              </div>
 
-  {/* Meta desc */}
-  <div>
-    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-      <label style={labelSt}>Meta Description</label>
-      <CharCount value={metaDesc} max={160} />
-    </div>
-    <textarea
-      value={metaDesc}
-      onChange={e => setMetaDesc(e.target.value)}
-      rows={3}
-      placeholder="SEO description…"
-      style={{ ...inpSt, resize: 'none' }}
-    />
-  </div>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                  <label style={labelSt}>Meta Description</label>
+                  <CharCount value={metaDesc} max={160} />
+                </div>
+                <textarea
+                  value={metaDesc}
+                  onChange={e => setMetaDesc(e.target.value)}
+                  rows={3}
+                  placeholder="SEO description…"
+                  style={{ ...inpSt, resize: 'none' }}
+                />
+              </div>
 
-  {/* OG Image */}
-  <div>
-    <label style={labelSt}>OG Image URL</label>
-    <input
-      value={ogImage}
-      onChange={e => setOgImage(e.target.value)}
-      placeholder="https://… (1200×630)"
-      style={inpSt}
-    />
-  </div>
+              <div>
+                <label style={labelSt}>OG Image URL</label>
+                <input
+                  value={ogImage}
+                  onChange={e => setOgImage(e.target.value)}
+                  placeholder="https://… (1200×630)"
+                  style={inpSt}
+                />
+              </div>
 
-  {/* Google preview */}
-  {(metaTitle || title) && (
-    <div style={{
-      background: '#fafaf9', border: '1px solid #e8e3d8',
-      borderRadius: '0.4rem', padding: '0.75rem',
-    }}>
-      <p style={{ fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#b8b0a0', marginBottom: '0.35rem' }}>
-        Google Preview
-      </p>
-      <p style={{ fontSize: '0.82rem', fontWeight: 500, color: '#1a6ef5', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-        {metaTitle || title}
-      </p>
-      <p style={{ fontSize: '0.68rem', color: '#16a34a' }}>
-        smartautouae.com › blog › {slug || 'post-slug'}
-      </p>
-      <p style={{
-        fontSize: '0.7rem', color: '#7a7264', marginTop: 2, lineHeight: 1.5,
-        display: '-webkit-box', WebkitLineClamp: 2,
-        WebkitBoxOrient: 'vertical', overflow: 'hidden',
-      }}>
-        {metaDesc || excerpt || 'No description set.'}
-      </p>
-    </div>
-  )}
+              {(metaTitle || title) && (
+                <div style={{
+                  background: '#fafaf9', border: '1px solid #e8e3d8',
+                  borderRadius: '0.4rem', padding: '0.75rem',
+                }}>
+                  <p style={{ fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#b8b0a0', marginBottom: '0.35rem' }}>
+                    Google Preview
+                  </p>
+                  <p style={{ fontSize: '0.82rem', fontWeight: 500, color: '#1a6ef5', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    {metaTitle || title}
+                  </p>
+                  <p style={{ fontSize: '0.68rem', color: '#16a34a' }}>
+                    smartautouae.com › blog › {slug || 'post-slug'}
+                  </p>
+                  <p style={{
+                    fontSize: '0.7rem', color: '#7a7264', marginTop: 2, lineHeight: 1.5,
+                    display: '-webkit-box', WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical', overflow: 'hidden',
+                  }}>
+                    {metaDesc || excerpt || 'No description set.'}
+                  </p>
+                </div>
+              )}
 
-  {/* ── Structured Data ── */}
-  <div style={{ borderTop: '1px solid #f0ece4', paddingTop: '0.875rem' }}>
-    <button
-      onClick={() => setSchemaOpen(v => !v)}
-      style={{
-        width: '100%', display: 'flex', alignItems: 'center',
-        justifyContent: 'space-between', background: 'none',
-        border: 'none', cursor: 'pointer', padding: 0,
-      }}
-    >
-      <label style={{ ...labelSt, marginBottom: 0, cursor: 'pointer' }}>
-        Structured Data (Schema)
-      </label>
-      <span style={{ fontSize: '0.68rem', color: '#b8b0a0' }}>
-        {schemaOpen ? '▲ Hide' : '▼ Show'}
-      </span>
-    </button>
+              {/* Structured Data */}
+              <div style={{ borderTop: '1px solid #f0ece4', paddingTop: '0.875rem' }}>
+                <button
+                  onClick={() => setSchemaOpen(v => !v)}
+                  style={{
+                    width: '100%', display: 'flex', alignItems: 'center',
+                    justifyContent: 'space-between', background: 'none',
+                    border: 'none', cursor: 'pointer', padding: 0,
+                  }}
+                >
+                  <label style={{ ...labelSt, marginBottom: 0, cursor: 'pointer' }}>
+                    Structured Data (Schema)
+                  </label>
+                  <span style={{ fontSize: '0.68rem', color: '#b8b0a0' }}>
+                    {schemaOpen ? '▲ Hide' : '▼ Show'}
+                  </span>
+                </button>
 
-    {schemaOpen && (
-      <div style={{ marginTop: '0.75rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {schemaOpen && (
+                  <div style={{ marginTop: '0.75rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    <div>
+                      <label style={labelSt}>Schema Type</label>
+                      <select
+                        value={schemaType}
+                        onChange={e => {
+                          setSchemaType(e.target.value)
+                          if (!schemaCustom) setSchemaCustom(SCHEMA_TEMPLATES[e.target.value] ?? '')
+                        }}
+                        style={inpSt}
+                      >
+                        <option value="Article">Article</option>
+                        <option value="BlogPosting">Blog Posting</option>
+                        <option value="NewsArticle">News Article</option>
+                        <option value="FAQPage">FAQ Page</option>
+                        <option value="HowTo">HowTo</option>
+                        <option value="Product">Product</option>
+                        <option value="Service">Service</option>
+                        <option value="Custom">Custom JSON-LD</option>
+                      </select>
+                    </div>
 
-        {/* Schema type picker */}
-        <div>
-          <label style={labelSt}>Schema Type</label>
-          <select
-            value={schemaType}
-            onChange={e => {
-              setSchemaType(e.target.value)
-              // Auto-populate a starter template when switching type
-              if (!schemaCustom) setSchemaCustom(SCHEMA_TEMPLATES[e.target.value] ?? '')
-            }}
-            style={inpSt}
-          >
-            <option value="Article">Article</option>
-            <option value="BlogPosting">Blog Posting</option>
-            <option value="NewsArticle">News Article</option>
-            <option value="FAQPage">FAQ Page</option>
-            <option value="HowTo">HowTo</option>
-            <option value="Product">Product</option>
-            <option value="Service">Service</option>
-            <option value="Custom">Custom JSON-LD</option>
-          </select>
-        </div>
+                    <button
+                      onClick={() => setSchemaCustom(SCHEMA_TEMPLATES[schemaType] ?? '')}
+                      style={{
+                        display: 'inline-flex', alignItems: 'center', gap: 4,
+                        padding: '0.3rem 0.75rem', borderRadius: 999, width: 'fit-content',
+                        fontSize: '0.68rem', fontWeight: 600, cursor: 'pointer',
+                        border: `1px solid ${GOLD_BORDER}`, background: GOLD_BG, color: GOLD,
+                      }}
+                    >
+                      <Wand2 size={10} aria-hidden="true" /> Load template
+                    </button>
 
-        {/* Template loader */}
-        <button
-          onClick={() => setSchemaCustom(SCHEMA_TEMPLATES[schemaType] ?? '')}
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: 4,
-            padding: '0.3rem 0.75rem', borderRadius: 999, width: 'fit-content',
-            fontSize: '0.68rem', fontWeight: 600, cursor: 'pointer',
-            border: `1px solid ${GOLD_BORDER}`, background: GOLD_BG, color: GOLD,
-          }}
-        >
-          <Wand2 size={10} aria-hidden="true" /> Load template
-        </button>
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                        <label style={labelSt}>JSON-LD Code</label>
+                        {schemaCustom && (
+                          <button
+                            onClick={() => {
+                              try { JSON.parse(schemaCustom); alert('✓ Valid JSON') }
+                              catch (e: unknown) { alert(`Invalid JSON: ${e instanceof Error ? e.message : 'Parse error'}`) }
+                            }}
+                            style={{
+                              fontSize: '0.65rem', color: '#7a7264', background: 'none',
+                              border: '1px solid #e8e3d8', borderRadius: 999,
+                              padding: '0.15rem 0.5rem', cursor: 'pointer',
+                            }}
+                          >
+                            Validate
+                          </button>
+                        )}
+                      </div>
+                      <textarea
+                        value={schemaCustom}
+                        onChange={e => setSchemaCustom(e.target.value)}
+                        rows={10}
+                        spellCheck={false}
+                        placeholder={'{\n  "@context": "https://schema.org",\n  "@type": "Article",\n  ...\n}'}
+                        style={{
+                          ...inpSt,
+                          fontFamily: 'ui-monospace, "Cascadia Code", monospace',
+                          fontSize: '0.72rem',
+                          lineHeight: 1.7,
+                          resize: 'vertical',
+                        }}
+                      />
+                      <p style={{ fontSize: '0.65rem', color: '#b8b0a0', marginTop: '0.3rem' }}>
+                        Paste or edit raw JSON-LD. Will be injected as{' '}
+                        <code style={{ background: '#f5f3ef', padding: '0 3px', borderRadius: 3 }}>
+                          {'<script type="application/ld+json">'}
+                        </code>
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
 
-        {/* JSON-LD editor */}
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-            <label style={labelSt}>JSON-LD Code</label>
-            {schemaCustom && (
-              <button
-                onClick={() => {
-                  try { JSON.parse(schemaCustom); alert('✓ Valid JSON') }
-                  catch (e: any) { alert(`Invalid JSON: ${e.message}`) }
-                }}
-                style={{
-                  fontSize: '0.65rem', color: '#7a7264', background: 'none',
-                  border: '1px solid #e8e3d8', borderRadius: 999,
-                  padding: '0.15rem 0.5rem', cursor: 'pointer',
-                }}
-              >
-                Validate
-              </button>
-            )}
-          </div>
-          <textarea
-            value={schemaCustom}
-            onChange={e => setSchemaCustom(e.target.value)}
-            rows={10}
-            spellCheck={false}
-            placeholder={'{\n  "@context": "https://schema.org",\n  "@type": "Article",\n  ...\n}'}
-            style={{
-              ...inpSt,
-              fontFamily: 'ui-monospace, "Cascadia Code", monospace',
-              fontSize: '0.72rem',
-              lineHeight: 1.7,
-              resize: 'vertical',
-            }}
-          />
-          <p style={{ fontSize: '0.65rem', color: '#b8b0a0', marginTop: '0.3rem' }}>
-            Paste or edit raw JSON-LD. Will be injected as{' '}
-            <code style={{ background: '#f5f3ef', padding: '0 3px', borderRadius: 3 }}>
-              {'<script type="application/ld+json">'}
-            </code>
-          </p>
-        </div>
-
-      </div>
-    )}
-  </div>
-
-</div>
           </div>
         </div>
       </main>
