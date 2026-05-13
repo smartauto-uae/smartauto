@@ -95,7 +95,6 @@ export const metadata: Metadata = {
 }
 
 const structuredData = [
-  // ── Branch 1: MotorCity ──
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
@@ -113,15 +112,15 @@ const structuredData = [
       "addressCountry": "AE",
     },
     "geo": {
-      "@type":     "GeoCoordinates",
-      "latitude":  "25.0367",
+      "@type": "GeoCoordinates",
+      "latitude": "25.0367",
       "longitude": "55.2272",
     },
     "openingHoursSpecification": [
       {
-        "@type":     "OpeningHoursSpecification",
+        "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens":  "11:00",
+        "opens": "11:00",
         "closes": "21:00",
       },
     ],
@@ -130,22 +129,22 @@ const structuredData = [
     "paymentAccepted": "Cash, Credit Card",
     "areaServed": ["Dubai", "Sharjah", "UAE"],
     "aggregateRating": {
-      "@type":       "AggregateRating",
+      "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "1284",
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name":  "Car & Surface Protection Services",
+      "name": "Car & Surface Protection Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Window Tinting Dubai",              "description": "3M, TotalGard & Global USA nano ceramic window tinting for all vehicles in Dubai." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paint Protection Film Dubai",       "description": "Self-healing PPF installation by certified technicians in Dubai. Partial and full car packages." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nano Ceramic Coating Dubai",       "description": "Professional 9H nano ceramic coating for long-lasting gloss, UV resistance & hydrophobic protection." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Detailing Dubai",              "description": "Full interior & exterior car detailing, machine polishing and paint correction in Dubai." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Wrapping Dubai",               "description": "Custom vinyl car wrapping — matte, gloss, satin, colour PPF & chrome finishes." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Window Tinting Dubai",  "description": "Solar control, privacy & safety window films for offices, retail & commercial buildings in Dubai." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Window Tinting Dubai", "description": "3M, TotalGard & Global USA nano ceramic window tinting for all vehicles in Dubai." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paint Protection Film Dubai", "description": "Self-healing PPF installation by certified technicians in Dubai. Partial and full car packages." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nano Ceramic Coating Dubai", "description": "Professional 9H nano ceramic coating for long-lasting gloss, UV resistance & hydrophobic protection." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Detailing Dubai", "description": "Full interior & exterior car detailing, machine polishing and paint correction in Dubai." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Wrapping Dubai", "description": "Custom vinyl car wrapping — matte, gloss, satin, colour PPF & chrome finishes." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Window Tinting Dubai", "description": "Solar control, privacy & safety window films for offices, retail & commercial buildings in Dubai." }},
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Window Tinting Dubai", "description": "Heat-rejection, privacy & UV-blocking window film for villas, apartments & homes in Dubai." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marine Window Tinting Dubai",      "description": "Marine-grade window tinting for yachts, boats & vessels. On-site installation at Dubai marinas." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marine Window Tinting Dubai", "description": "Marine-grade window tinting for yachts, boats & vessels. On-site installation at Dubai marinas." }},
       ],
     },
     "sameAs": [
@@ -153,7 +152,6 @@ const structuredData = [
       "https://wa.me/971567269666",
     ],
   },
-  // ── Branch 2: Al Quoz ──
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
@@ -171,16 +169,15 @@ const structuredData = [
     },
     "openingHoursSpecification": [
       {
-        "@type":     "OpeningHoursSpecification",
+        "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens":  "11:00",
+        "opens": "11:00",
         "closes": "21:30",
       },
     ],
     "priceRange": "$$",
     "areaServed": ["Dubai", "UAE"],
   },
-  // ── Branch 3: Mirdif ──
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
@@ -198,16 +195,15 @@ const structuredData = [
     },
     "openingHoursSpecification": [
       {
-        "@type":     "OpeningHoursSpecification",
+        "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens":  "11:00",
+        "opens": "11:00",
         "closes": "22:00",
       },
     ],
     "priceRange": "$$",
     "areaServed": ["Dubai", "UAE"],
   },
-  // ── Branch 4: Sharjah ──
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
@@ -225,48 +221,47 @@ const structuredData = [
     },
     "openingHoursSpecification": [
       {
-        "@type":     "OpeningHoursSpecification",
+        "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens":  "10:00",
+        "opens": "10:00",
         "closes": "22:00",
       },
     ],
     "priceRange": "$$",
     "areaServed": ["Sharjah", "UAE"],
   },
-  // ── FAQ Schema ──
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name":  "How much does window tinting cost in Dubai?",
+        "name": "How much does window tinting cost in Dubai?",
         "acceptedAnswer": { "@type": "Answer", "text": "Window tinting at Smart Auto UAE starts from AED 200 for basic films and up to AED 2,500+ for full nano ceramic packages on large SUVs. Prices depend on the film brand (3M, TotalGard, Global USA), number of windows, and vehicle size." },
       },
       {
         "@type": "Question",
-        "name":  "What is the legal tint percentage in Dubai?",
+        "name": "What is the legal tint percentage in Dubai?",
         "acceptedAnswer": { "@type": "Answer", "text": "UAE traffic law requires front side windows to have at least 70% VLT (max 30% tint), and rear windows at least 30% VLT (max 70% tint). No aftermarket tint is permitted on the front windshield. Smart Auto UAE installs only RTA-compliant films." },
       },
       {
         "@type": "Question",
-        "name":  "What is the best PPF for cars in UAE?",
+        "name": "What is the best PPF for cars in UAE?",
         "acceptedAnswer": { "@type": "Answer", "text": "For UAE's extreme heat and harsh driving conditions, self-healing TPU-based Paint Protection Films like 3M and TotalGard are the best choice. Smart Auto UAE is an Applicator for these premium brands with 5–10 year warranties." },
       },
       {
         "@type": "Question",
-        "name":  "How long does ceramic coating last in Dubai?",
+        "name": "How long does ceramic coating last in Dubai?",
         "acceptedAnswer": { "@type": "Answer", "text": "A professional-grade ceramic coating in Dubai typically lasts 2–5 years depending on the product tier and maintenance habits. Smart Auto UAE applies 3M and TotalGard nano ceramic coatings with multi-year manufacturer warranties." },
       },
       {
         "@type": "Question",
-        "name":  "Does Smart Auto UAE offer residential window tinting?",
+        "name": "Does Smart Auto UAE offer residential window tinting?",
         "acceptedAnswer": { "@type": "Answer", "text": "Yes. Smart Auto UAE provides residential window tinting for villas and apartments across Dubai and Sharjah. Films block up to 90% solar heat, 99% UV, and can reduce AC bills by up to 30%. Free site survey included." },
       },
       {
         "@type": "Question",
-        "name":  "Where are Smart Auto UAE branches located?",
+        "name": "Where are Smart Auto UAE branches located?",
         "acceptedAnswer": { "@type": "Answer", "text": "Smart Auto UAE has 4 branches: MotorCity Dubai (11AM–9PM), Al Quoz Dubai (11AM–9:30PM), Mirdif Uptown Mall Dubai (11AM–10PM), and Central Mall Sharjah (10AM–10PM). All open every day including weekends." },
       },
     ],
@@ -276,42 +271,42 @@ const structuredData = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-  <head>
-    {/* Google Tag Manager */}
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+     <body
+  className={`${inter.variable} ${playfair.variable}`}
+  style={{ backgroundColor: '#0A0A0A' }}
+>
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-WNC3VHF"
+      height="0"
+      width="0"
+      style={{ display: 'none', visibility: 'hidden' }}
+    />
+  </noscript>
+
+  {/* GTM — Next.js Script component */}
+  <Script
+    id="gtm-script"
+    strategy="afterInteractive"
+    dangerouslySetInnerHTML={{
+      __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WNC3VHF');`,
-      }}
-    />
-    {/* End Google Tag Manager */}
+    }}
+  />
 
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-    />
-  </head>
-  <body
-    className={`${inter.variable} ${playfair.variable}`}
-    style={{ backgroundColor: '#0A0A0A' }}
-  >
-    {/* Google Tag Manager (noscript) */}
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-WNC3VHF"
-        height="0"
-        width="0"
-        style={{ display: 'none', visibility: 'hidden' }}
-      />
-    </noscript>
+  {/* JSON-LD — plain script tag, server component only */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+  />
 
-    <Navbar />
-    {children}
-    <ChatbotWrapper />
-  </body>
-</html>
+  <Navbar />
+  {children}
+  <ChatbotWrapper />
+</body>
+    </html>
   )
 }

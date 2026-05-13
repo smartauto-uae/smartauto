@@ -5,12 +5,11 @@ import Link from 'next/link'
 import { motion, Variants, useInView } from 'framer-motion'
 import {
   Star, CheckCircle, ArrowRight, Phone, ChevronDown,
-  Shield, Sparkles, Layers, Car, Paintbrush, Settings,
+  Shield, Sparkles, Layers, Car, Paintbrush,
   MapPin, Clock, Mail, AtSign, MessageCircle,
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-
 
 // ─── DESIGN TOKENS ──────────────────────────────────────────────────────────
 const GOLD  = '#C9A84C'
@@ -252,7 +251,7 @@ const branches = [
 const faqs = [
   { q: 'How much does window tinting cost in Dubai?', a: 'Window tinting prices at Smart Auto UAE start from AED 299 depending on film type and vehicle size. We offer nano ceramic, carbon, and dyed films — all UAE RTA law compliant. Contact us for a free quote.' },
   { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from Totalgard, 3M, or XPEL offers the best protection. Smart Auto UAE is an Applicator for all three brands, ensuring genuine product and certified installation.' },
-  { q: 'How long does ceramic coating last in Dubai?', a: 'A professional 9H ceramic coating lasts 2–5 years in Dubai\'s climate, depending on the product tier. We use Gyeon, Gtechniq, and IGL coatings — all formulated for high UV and heat environments.' },
+  { q: 'How long does ceramic coating last in Dubai?', a: "A professional 9H ceramic coating lasts 2–5 years in Dubai's climate, depending on the product tier. We use Gyeon, Gtechniq, and IGL coatings — all formulated for high UV and heat environments." },
   { q: 'Does Smart Auto UAE have a branch in Sharjah?', a: 'Yes. Smart Auto UAE has a branch at Central Mall, Sharjah, offering window tinting, PPF, ceramic coating, car detailing, and car wrapping services.' },
   { q: 'How long does a full car wrap take?', a: 'A full vinyl car wrap takes 2–4 days depending on vehicle size and finish complexity. Partial wraps and accents can be completed in a single day.' },
   { q: 'Is Smart Auto UAE an authorised 3M installer?', a: 'Yes. Smart Auto UAE is an authorised UAE dealer and certified installer for 3M window film and paint protection products.' },
@@ -288,36 +287,28 @@ const fadeRight: Variants = {
   show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: EASE } },
 }
 
-// ––––– METADATA ─────────────────────────────────────────────────────────────────
+// ─── HOME CLIENT ─────────────────────────────────────────────────────────────
 
-import { buildMetadata } from '@/lib/metadata'
-export async function generateMetadata() {
-  return buildMetadata('/')
-}
-
-// ─── PAGE ─────────────────────────────────────────────────────────────────────
-
-export default function Home() {
-  const servicesRef    = useRef(null)
-  const whyUsRef       = useRef(null)
-  const processRef     = useRef(null)
-  const brandsRef      = useRef(null)
+export default function HomeClient() {
+  const servicesRef     = useRef(null)
+  const whyUsRef        = useRef(null)
+  const processRef      = useRef(null)
+  const brandsRef       = useRef(null)
   const testimonialsRef = useRef(null)
-  const branchesRef    = useRef(null)
-  const ctaRef         = useRef(null)
-  const contactRef     = useRef(null)
+  const branchesRef     = useRef(null)
+  const ctaRef          = useRef(null)
+  const contactRef      = useRef(null)
 
-  const sInView  = useInView(servicesRef,    { once: true, margin: '-80px' })
-  const wInView  = useInView(whyUsRef,       { once: true, margin: '-80px' })
-  const pInView  = useInView(processRef,     { once: true, margin: '-80px' })
-  const bInView  = useInView(brandsRef,      { once: true, margin: '-80px' })
-  const tInView  = useInView(testimonialsRef,{ once: true, margin: '-80px' })
-  const brInView = useInView(branchesRef,    { once: true, margin: '-80px' })
-  const ctaInView = useInView(ctaRef,        { once: true, margin: '-80px' })
-  const cInView  = useInView(contactRef,     { once: true, margin: '-80px' })
+  const sInView   = useInView(servicesRef,     { once: true, margin: '-80px' })
+  const wInView   = useInView(whyUsRef,        { once: true, margin: '-80px' })
+  const pInView   = useInView(processRef,      { once: true, margin: '-80px' })
+  const bInView   = useInView(brandsRef,       { once: true, margin: '-80px' })
+  const tInView   = useInView(testimonialsRef, { once: true, margin: '-80px' })
+  const brInView  = useInView(branchesRef,     { once: true, margin: '-80px' })
+  const ctaInView = useInView(ctaRef,          { once: true, margin: '-80px' })
+  const cInView   = useInView(contactRef,      { once: true, margin: '-80px' })
 
   return (
-    
     <main style={{ background: '#0A0A0A' }}>
       <Navbar />
 
@@ -470,13 +461,11 @@ export default function Home() {
                     <img src={s.image} alt={s.title} width={400} height={256} loading="lazy" decoding="async"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:border-gold/50"
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-all duration-300"
                     style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.2)', color: GOLD }}>
                     <s.icon size={24} aria-hidden="true" />
                   </div>
-                  <h3 className="text-white font-semibold text-lg mb-2.5 transition-colors duration-300 group-hover:text-gold leading-snug" style={{}}>
-                    {s.title}
-                  </h3>
+                  <h3 className="text-white font-semibold text-lg mb-2.5 leading-snug">{s.title}</h3>
                   <p className="text-white/45 text-[13px] leading-[1.7] mb-4">{s.description}</p>
                   <ul className="flex flex-col gap-2 mb-5" role="list">
                     {s.features.map((f) => (
@@ -627,7 +616,7 @@ export default function Home() {
           <div className="flex items-center justify-center flex-wrap gap-3">
             {brands.map((brand, i) => (
               <motion.div key={brand}
-                className="px-6 py-2.5 rounded-full border text-[13px] font-semibold tracking-wide transition-all duration-300 hover:text-gold cursor-default"
+                className="px-6 py-2.5 rounded-full border text-[13px] font-semibold tracking-wide transition-all duration-300 cursor-default"
                 style={{ borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(255,255,255,0.03)', color: 'rgba(255,255,255,0.45)' }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={bInView ? { opacity: 1, scale: 1 } : {}}
@@ -709,7 +698,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-3">
                       <Phone size={15} style={{ color: GOLD, flexShrink: 0 }} aria-hidden="true" />
-                      <a href={`tel:${branch.phone}`} className="text-white/50 text-sm hover:text-gold transition-colors">{branch.phone}</a>
+                      <a href={`tel:${branch.phone}`} className="text-white/50 text-sm hover:text-white/80 transition-colors">{branch.phone}</a>
                     </div>
                     <div className="flex items-center gap-3">
                       <Clock size={15} style={{ color: GOLD, flexShrink: 0 }} aria-hidden="true" />
@@ -738,173 +727,66 @@ export default function Home() {
             </p>
           </motion.div>
           <div className="flex flex-col gap-3">
-            {faqs.map((faq, i) => <FAQItem key={i} question={faq.q} answer={faq.a} index={i} />)}
+            {faqs.map((faq, i) => (
+              <FAQItem key={i} question={faq.q} answer={faq.a} index={i} />
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24" style={{ backgroundColor: '#060606' }}>
-        <div className="w-full max-w-7xl mx-auto px-6">
-          <motion.div ref={ctaRef} variants={fadeUp} initial="hidden" animate={ctaInView ? 'show' : 'hidden'}
-            className="relative rounded-3xl p-16 md:p-20 text-center overflow-hidden backdrop-blur-sm"
-            style={{ border: '1px solid rgba(201,168,76,0.2)', background: 'linear-gradient(135deg,rgba(201,168,76,0.1) 0%,rgba(201,168,76,0.04) 50%,rgba(201,168,76,0.08) 100%)' }}>
-            <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center,rgba(201,168,76,0.06) 0%,transparent 60%)' }} aria-hidden="true" />
-            <p className="text-[11px] tracking-[0.3em] uppercase mb-4 relative z-10" style={{ color: GOLD }}>
-              Premium Car Protection · Dubai &amp; Sharjah · Open Every Day 10AM – 10PM
-            </p>
-            <h2 className="text-white font-bold mb-4 relative z-10"
-              style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(2rem,4vw,3rem)' }}>
-              Book Your Car Protection Service<br />
-              <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Today</span>
+      <section ref={ctaRef} className="py-24" style={{ backgroundColor: '#060606' }}>
+        <div className="w-full max-w-4xl mx-auto px-6 text-center">
+          <motion.div variants={fadeUp} initial="hidden" animate={ctaInView ? 'show' : 'hidden'}>
+            <p className="text-[11px] tracking-[0.35em] uppercase mb-4" style={{ color: GOLD }}>Get Started Today</p>
+            <h2 className="font-bold text-white mb-5 leading-[1.15]"
+              style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(2rem,3.5vw,3rem)' }}>
+              Protect Your Car with{' '}
+              <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                Smart Auto UAE
+              </span>
             </h2>
-            <p className="text-white/50 text-base mb-6 max-w-lg mx-auto relative z-10">
-              Window tinting, PPF, ceramic coating, detailing, car wrapping — book at any of our 4 branches across Dubai &amp; Sharjah. Free inspection. No hidden charges.
+            <p className="text-white/45 text-base leading-[1.8] mb-10 max-w-2xl mx-auto">
+              Visit any of our 4 branches across Dubai and Sharjah — or contact us to book your free vehicle inspection today.
             </p>
-            <div className="flex justify-center mb-9 relative z-10">
-              <StatusBadge hours="10:00 AM – 10:00 PM" />
-            </div>
-            <div className="flex gap-4 justify-center flex-wrap relative z-10">
-              <GoldBtn href="https://wa.me/971567269666">Book on WhatsApp <ArrowRight size={16} /></GoldBtn>
-              <OutlineBtn href="tel:+971567269666"><Phone size={16} /> +971 56 726 9666</OutlineBtn>
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <GoldBtn href="https://wa.me/971567269666"><MessageCircle size={16} /> WhatsApp Us</GoldBtn>
+              <OutlineBtn href="/contact"><Phone size={15} /> Contact Us</OutlineBtn>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* ── CONTACT ── */}
-      <section id="contact" className="py-24" style={{ backgroundColor: '#0A0A0A' }}>
-        <div className="w-full max-w-7xl mx-auto px-6">
-          <motion.div ref={contactRef} variants={fadeUp} initial="hidden" animate={cInView ? 'show' : 'hidden'}>
-            <SectionHeader eyebrow="Get In Touch" title="Book Your Car Care" highlight="Appointment Today" />
-            <p className="text-center text-white/40 text-sm -mt-10 mb-12 max-w-xl mx-auto">
-              Call, WhatsApp, or fill the form — our team at any Dubai or Sharjah branch responds within the hour.
-            </p>
+      <section id="contact" ref={contactRef} className="py-24" style={{ backgroundColor: '#080808' }}>
+        <div className="w-full max-w-4xl mx-auto px-6">
+          <motion.div variants={fadeUp} initial="hidden" animate={cInView ? 'show' : 'hidden'}>
+            <SectionHeader eyebrow="Reach Us" title="Get in" highlight="Touch" />
           </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 items-start">
-            <motion.div variants={fadeLeft} initial="hidden" animate={cInView ? 'show' : 'hidden'}>
-              <p className="text-white/50 text-base leading-[1.8] mb-8">
-                Reach out via any channel — walk-ins welcome at all 4 branches across Dubai &amp; Sharjah. No appointment needed.
-              </p>
-              <div className="flex flex-col gap-3.5">
-                {contactItems.map((item) => (
-                  <a key={item.label} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-4 p-5 rounded-2xl no-underline transition-all duration-200"
-                    style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)' }}>
-                    <div className="w-12 h-12 min-w-[48px] rounded-xl flex items-center justify-center"
-                      style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.2)', color: GOLD }}>
-                      <item.icon size={18} aria-hidden="true" />
-                    </div>
-                    <div>
-                      <div className="text-[10px] uppercase tracking-[0.12em] text-white/35 mb-0.5">{item.label}</div>
-                      <div className="text-white text-[15px]">{item.value}</div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeRight} initial="hidden" animate={cInView ? 'show' : 'hidden'}>
-              <form className="rounded-2xl p-10" style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)' }}
-                onSubmit={(e) => e.preventDefault()} noValidate>
-                <div className="grid grid-cols-2 gap-4 mb-5">
-                  {[
-                    { label: 'Full Name', type: 'text', name: 'name', placeholder: 'Full Name' },
-                    { label: 'Phone Number', type: 'tel', name: 'phone', placeholder: 'Phone Number' },
-                  ].map((f) => (
-                    <div key={f.label}>
-                      <label htmlFor={f.name} className="block text-[10px] uppercase tracking-[0.12em] text-white/35 mb-2">{f.label}</label>
-                      <input id={f.name} type={f.type} name={f.name} placeholder={f.placeholder}
-                        className="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 focus:border-gold/45"
-                        style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }} />
-                    </div>
-                  ))}
-                </div>
-                {[
-                  { label: 'Email Address', id: 'email', type: 'email', placeholder: 'your@email.com' },
-                  { label: 'Your Car Model', id: 'carModel', type: 'text', placeholder: 'e.g. Toyota Camry 2024' },
-                ].map((f) => (
-                  <div key={f.label} className="mb-5">
-                    <label htmlFor={f.id} className="block text-[10px] uppercase tracking-[0.12em] text-white/35 mb-2">{f.label}</label>
-                    <input id={f.id} type={f.type} name={f.id} placeholder={f.placeholder}
-                      className="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300"
-                      style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {contactItems.map((item, i) => (
+              <motion.div key={item.label} variants={fadeUp} custom={i} initial="hidden" animate={cInView ? 'show' : 'hidden'}>
+                <a href={item.href}
+                  target={item.href.startsWith('http') || item.href.startsWith('https://wa') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="flex items-center gap-4 p-6 rounded-2xl no-underline transition-all duration-300 group"
+                  style={{ border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}>
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                    style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.15)', color: GOLD }}>
+                    <item.icon size={18} aria-hidden="true" />
                   </div>
-                ))}
-                <div className="mb-5">
-                  <label htmlFor="branch" className="block text-[10px] uppercase tracking-[0.12em] text-white/35 mb-2">Preferred Branch</label>
-                  <select id="branch" name="branch" style={{ colorScheme: 'dark', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
-                    className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none transition-all duration-300">
-                    <option value="">Select Branch</option>
-                    <option>MotorCity - Dubai</option>
-                    <option>Al Quoz - Dubai</option>
-                    <option>Mirdif (Uptown Mall) - Dubai</option>
-                    <option>Central Mall - Sharjah</option>
-                  </select>
-                </div>
-                <div className="mb-5">
-                  <label htmlFor="service" className="block text-[10px] uppercase tracking-[0.12em] text-white/35 mb-2">Service Needed</label>
-                  <select id="service" name="service" style={{ colorScheme: 'dark', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
-                    className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none transition-all duration-300">
-                    <option value="">Select a Service</option>
-                    {services.map((s) => <option key={s.title}>{s.title}</option>)}
-                  </select>
-                </div>
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-[10px] uppercase tracking-[0.12em] text-white/35 mb-2">Message</label>
-                  <textarea id="message" name="message" rows={4} placeholder="Tell us more about your requirements..."
-                    className="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 resize-none"
-                    style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }} />
-                </div>
-                <button type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-black transition-all duration-300 hover:opacity-90 active:scale-[0.98]"
-                  style={{ background: goldGrad }}>
-                  Send Message <ArrowRight size={16} />
-                </button>
-              </form>
-            </motion.div>
+                  <div>
+                    <p className="text-[10px] tracking-[0.15em] uppercase mb-0.5" style={{ color: 'rgba(201,168,76,0.6)' }}>{item.label}</p>
+                    <p className="text-white/70 text-sm font-medium group-hover:text-white transition-colors">{item.value}</p>
+                  </div>
+                </a>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer role="contentinfo" className="py-14" style={{ backgroundColor: '#060606', borderTop: '1px solid rgba(201,168,76,0.1)' }}>
-        <div className="w-full max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-            <div className="md:col-span-2">
-              <p className="font-bold text-white text-xl mb-1" style={{ fontFamily: 'var(--font-playfair),serif' }}>Smart Auto UAE</p>
-              <p className="text-[11px] tracking-[0.2em] uppercase mb-4"
-                style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                Premium Car Protection
-              </p>
-              <p className="text-white/40 text-sm leading-[1.8] max-w-xs">
-                Dubai &amp; Sharjah&apos;s most trusted car protection centre since 2014. Applicator for 3M, Totalgard, XPEL, Gyeon &amp; Gtechniq.
-              </p>
-            </div>
-            <div>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-4">Services</p>
-              <nav aria-label="Footer services">
-                {services.map((s) => (
-                  <Link key={s.slug} href={s.href} className="block text-white/40 text-sm mb-2.5 hover:text-gold transition-colors">{s.title}</Link>
-                ))}
-              </nav>
-            </div>
-            <div>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-4">Branches</p>
-              {branches.map((b) => <p key={b.name} className="text-white/40 text-sm mb-2.5">{b.name}</p>)}
-              <a href="tel:+971567269666" className="text-sm font-semibold mt-4 block hover:opacity-80 transition-opacity" style={{ color: GOLD }}>
-                +971 56 726 9666
-              </a>
-            </div>
-          </div>
-          <div className="pt-6 flex flex-wrap justify-between items-center gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-            <p className="text-white/25 text-[12px]">&copy; {new Date().getFullYear()} Smart Auto UAE. All rights reserved.</p>
-            <p className="text-white/25 text-[12px] tracking-wide">UAE Authorised · 3M · Totalgard · XPEL · Gyeon · Gtechniq</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }
