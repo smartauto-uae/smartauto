@@ -206,3 +206,151 @@
   padding: 1rem;
   overflow-x: auto;
 }
+
+/* ── Tiptap Editor Styles ─────────────────────────────────────────────────── */
+.tiptap {
+  outline: none;
+}
+
+.tiptap h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
+  color: #1a1814;
+}
+
+.tiptap h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.625rem;
+  margin-top: 1.25rem;
+  color: #1a1814;
+}
+
+.tiptap h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  color: #1a1814;
+}
+
+.tiptap p {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  color: #3a3630;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tiptap li {
+  margin-bottom: 0.25rem;
+  line-height: 1.6;
+  color: #3a3630;
+}
+
+.tiptap li p {
+  margin-bottom: 0;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid #e8d48a;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #7a7264;
+  font-style: italic;
+}
+
+.tiptap code {
+  background: #f5f3ef;
+  border: 1px solid #e8e3d8;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.85em;
+  font-family: ui-monospace, monospace;
+  color: #b8860b;
+}
+
+.tiptap pre {
+  background: #1a1814;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.tiptap pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #f5f3ef;
+  font-size: 0.82rem;
+}
+
+.tiptap hr {
+  border: none;
+  border-top: 1px solid #e8e3d8;
+  margin: 1.5rem 0;
+}
+
+.tiptap a {
+  color: #b8860b;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.tiptap img {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+/* Table styles */
+.tiptap table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+
+.tiptap th,
+.tiptap td {
+  border: 1px solid #e8e3d8;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tiptap th {
+  background: #fdf8ee;
+  font-weight: 600;
+  color: #1a1814;
+}
+
+.tiptap td {
+  color: #3a3630;
+}
+
+/* Placeholder */
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #b8b0a0;
+  pointer-events: none;
+  height: 0;
+}

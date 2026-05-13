@@ -2,13 +2,15 @@ import { notFound } from 'next/navigation'
 import { supabaseAdmin } from '@/lib/supabase'
 import PostEditor from '@/components/admin/PostEditor'
 
-export default async function EditPostPage({ params }: { params: { id: string } }) {
-  const supabase = supabaseAdmin
+type Props = { params: Promise<{ id: string }> }
 
-  const { data: post, error } = await supabase
+export default async function EditPostPage({ params }: Props) {
+  const { id } = await params
+
+  const { data: post, error } = await supabaseAdmin
     .from('blog_posts')
     .select('*')
-    .eq('id', params.id)
+    .eq('id', id)
     .single()
 
   if (!post || error) notFound()

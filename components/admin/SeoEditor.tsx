@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
+import { Upload, Loader2, X } from 'lucide-react'
 import type { SeoPage } from '@/lib/seo'
 
 const gold       = '#b8860b'
@@ -83,6 +84,139 @@ const hintSt: React.CSSProperties = {
   fontSize: '0.7rem', color: '#b8b0a0', marginTop: '0.3rem',
 }
 
+// ── Image compressor ──────────────────────────────────────────────────────────
+async function compressToWebP(file: File, targetW = 1200): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    const url = URL.createObjectURL(file)
+    img.onload = () => {
+      let { width, height } = img
+      if (width > targetW) { height = Math.round((height * targetW) / width); width = targetW }
+      const canvas = document.createElement('canvas')
+      canvas.width = width; canvas.height = height
+      canvas.getContext('2d')!.drawImage(img, 0, 0, width, height)
+      const tryQ = (q: number) => {
+        const d = canvas.toDataURL('image/webp', q)
+        const bytes = Math.round((d.length * 3) / 4)
+        if (bytes < 200_000 || q <= 0.4) { URL.revokeObjectURL(url); resolve(d) }
+        else tryQ(Math.round((q - 0.1) * 100) / 100)
+      }
+      tryQ(0.85)
+    }
+    img.onerror = reject
+    img.src = url
+  })
+}
+
+// ── Image upload field ────────────────────────────────────────────────────────
+function ImageField({
+  label, value, onChange, hint,
+}: {
+  label: string
+  value: string
+  onChange: (val: string) => void
+  hint?: string
+}) {
+  const [uploading, setUploading] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    setUploading(true)
+    try {
+      const webp = await compressToWebP(file)
+      onChange(webp)
+    } catch {
+      alert('Image compression failed.')
+    }
+    setUploading(false)
+    e.target.value = ''
+  }
+
+  return (
+    <div>
+      <label style={labelSt}>{label}</label>
+
+      {/* URL input + upload button row */}
+      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <input
+          style={{ ...inputSt, flex: 1 }}
+          value={value.startsWith('data:') ? '(uploaded image)' : value}
+          readOnly={value.startsWith('data:')}
+          onChange={e => onChange(e.target.value)}
+          placeholder="https://… or upload →"
+        />
+        <button
+          type="button"
+          onClick={() => inputRef.current?.click()}
+          disabled={uploading}
+          title="Upload image"
+          style={{
+            flexShrink: 0,
+            display: 'flex', alignItems: 'center', gap: 5,
+            padding: '0.55rem 0.875rem',
+            borderRadius: '0.5rem',
+            fontSize: '0.75rem', fontWeight: 600,
+            cursor: uploading ? 'not-allowed' : 'pointer',
+            border: `1px solid ${goldBorder}`,
+            background: goldBg, color: gold,
+            whiteSpace: 'nowrap',
+            opacity: uploading ? 0.6 : 1,
+          }}
+        >
+          {uploading
+            ? <Loader2 size={13} className="animate-spin" />
+            : <Upload size={13} aria-hidden="true" />
+          }
+          {uploading ? 'Uploading…' : 'Upload'}
+        </button>
+        <input
+          ref={inputRef}
+          type="file"
+          accept="image/*"
+          style={{ display: 'none' }}
+          onChange={handleFile}
+        />
+      </div>
+
+      {hint && <p style={hintSt}>{hint}</p>}
+
+      {/* Preview */}
+      {value && (
+        <div style={{ marginTop: '0.625rem', position: 'relative', display: 'inline-block', width: '100%' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={value}
+            alt="Preview"
+            style={{
+              width: '100%', maxHeight: 200,
+              objectFit: 'cover', borderRadius: '0.5rem',
+              border: '1px solid #e8e3d8', display: 'block',
+            }}
+            onError={e => ((e.target as HTMLImageElement).style.display = 'none')}
+          />
+          <button
+            type="button"
+            onClick={() => onChange('')}
+            aria-label="Remove image"
+            style={{
+              position: 'absolute', top: 6, right: 6,
+              width: 24, height: 24, borderRadius: '50%',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              background: '#fff', border: '1px solid #e8e3d8',
+              cursor: 'pointer', color: '#dc2626',
+            }}
+          >
+            <X size={12} aria-hidden="true" />
+          </button>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ── Main component ────────────────────────────────────────────────────────────
 export default function SeoEditor({ route, pageLabel, initialData }: Props) {
   const init = initialData
 
@@ -274,18 +408,15 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
               value={fields.og_description} onChange={e => set('og_description', e.target.value)}
               placeholder={fields.description || 'Inherits from description if blank'} />
           </div>
-          <div>
-            <label style={labelSt}>OG Image URL</label>
-            <input style={inputSt} value={fields.og_image} onChange={e => set('og_image', e.target.value)}
-              placeholder="/images/og/car-tinting.webp or https://…" />
-            <p style={hintSt}>Recommended size: 1200×630px.</p>
-            {fields.og_image && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={fields.og_image} alt="OG preview"
-                style={{ marginTop: '0.5rem', borderRadius: '0.5rem', width: '100%', maxHeight: 200, objectFit: 'cover', border: '1px solid #e8e3d8' }}
-                onError={e => ((e.target as HTMLImageElement).style.display = 'none')} />
-            )}
-          </div>
+
+          {/* ── OG Image with upload ── */}
+          <ImageField
+            label="OG Image (1200×630px recommended)"
+            value={fields.og_image}
+            onChange={v => set('og_image', v)}
+            hint="Shown when shared on WhatsApp, Facebook, LinkedIn. Compressed to WebP automatically."
+          />
+
           <div>
             <label style={labelSt}>OG Type</label>
             <select style={inputSt} value={fields.og_type} onChange={e => set('og_type', e.target.value)}>
@@ -317,11 +448,14 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
               value={fields.twitter_description} onChange={e => set('twitter_description', e.target.value)}
               placeholder={fields.og_description || fields.description || 'Inherits from OG / description'} />
           </div>
-          <div>
-            <label style={labelSt}>Twitter Image URL</label>
-            <input style={inputSt} value={fields.twitter_image} onChange={e => set('twitter_image', e.target.value)}
-              placeholder={fields.og_image || '/images/og/default.webp'} />
-          </div>
+
+          {/* ── Twitter Image with upload ── */}
+          <ImageField
+            label="Twitter Image"
+            value={fields.twitter_image}
+            onChange={v => set('twitter_image', v)}
+            hint="Shown on Twitter/X cards. Falls back to OG image if blank."
+          />
         </>}
 
         {/* STRUCTURED DATA */}
@@ -398,7 +532,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
             background: saved ? '#16a34a' : gold,
             color: '#fff', opacity: saving ? 0.7 : 1,
           }}>
-          {saving ? 'Saving…' : saved ? '✓ Saved to Supabase!' : 'Save SEO Changes'}
+          {saving ? 'Saving…' : saved ? ' Changes Saved' : 'Save SEO Changes'}
         </button>
       </div>
 

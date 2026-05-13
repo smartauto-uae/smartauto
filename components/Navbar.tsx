@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Menu, X, ChevronDown } from 'lucide-react'
-import { usePathname } from 'next/navigation'         
+import { usePathname } from 'next/navigation'
 
 const GOLD = '#C9A84C'
 const goldGrad = 'linear-gradient(135deg,#C9A84C,#E8C96A,#A07830)'
@@ -33,15 +33,14 @@ const navLinks = [
 ]
 
 export default function Navbar() {
-  const pathname = usePathname()                       
+  const pathname = usePathname()
 
-  const [scrolled,     setScrolled]     = useState(false)
   const [mobileOpen,   setMobileOpen]   = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [isDesktop,    setIsDesktop]    = useState(false)
 
-  if (pathname.startsWith('/admin')) return null        
+  if (pathname.startsWith('/admin')) return null
 
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 1024px)')
@@ -55,12 +54,6 @@ export default function Navbar() {
     }
     mq.addEventListener('change', handler)
     return () => mq.removeEventListener('change', handler)
-  }, [])
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
@@ -81,21 +74,18 @@ export default function Navbar() {
           position: 'fixed',
           top: 0, left: 0, right: 0,
           zIndex: 200,
-          transition: 'background 300ms ease, border-color 300ms ease',
-          background: scrolled || mobileOpen ? 'rgba(5,5,5,0.98)' : 'transparent',
-          borderBottom: scrolled ? '1px solid rgba(201,168,76,0.12)' : '1px solid transparent',
-          backdropFilter: scrolled ? 'blur(16px)' : 'none',
-          WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
+          background: 'rgba(5,5,5,0.98)',
+          borderBottom: '1px solid rgba(201,168,76,0.12)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
         }}
       >
-        <div
-          style={{
-            maxWidth: 1280, margin: '0 auto',
-            padding: '0 1.25rem',
-            height: 68,
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          }}
-        >
+        <div style={{
+          maxWidth: 1280, margin: '0 auto',
+          padding: '0 1.25rem',
+          height: 68,
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        }}>
 
           {/* ── LOGO ── */}
           <Link
@@ -113,7 +103,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* ── DESKTOP NAV ── only rendered on lg+ ── */}
+          {/* ── DESKTOP NAV ── */}
           {isDesktop && (
             <nav
               aria-label="Primary navigation"
@@ -224,7 +214,7 @@ export default function Navbar() {
             </nav>
           )}
 
-          {/* ── DESKTOP CTA ── only rendered on lg+ ── */}
+          {/* ── DESKTOP CTA ── */}
           {isDesktop && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <a
@@ -272,7 +262,7 @@ export default function Navbar() {
             </div>
           )}
 
-          {/* ── HAMBURGER ── only rendered on mobile ── */}
+          {/* ── HAMBURGER ── */}
           {!isDesktop && (
             <button
               type="button"
@@ -330,25 +320,21 @@ export default function Navbar() {
             boxShadow: mobileOpen ? '0 24px 48px rgba(0,0,0,0.6)' : 'none',
           }}
         >
-          <div
-            style={{
-              overflowY: 'auto',
-              maxHeight: 'calc(100dvh - 68px)',
-              padding: '20px 20px 32px',
-              display: 'flex', flexDirection: 'column',
-            }}
-          >
+          <div style={{
+            overflowY: 'auto',
+            maxHeight: 'calc(100dvh - 68px)',
+            padding: '20px 20px 32px',
+            display: 'flex', flexDirection: 'column',
+          }}>
 
             {/* Quick contact row */}
-            <div
-              style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                padding: '12px 16px', marginBottom: 16,
-                borderRadius: 12,
-                background: 'rgba(201,168,76,0.05)',
-                border: '1px solid rgba(201,168,76,0.1)',
-              }}
-            >
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              padding: '12px 16px', marginBottom: 16,
+              borderRadius: 12,
+              background: 'rgba(201,168,76,0.05)',
+              border: '1px solid rgba(201,168,76,0.1)',
+            }}>
               <div>
                 <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 2 }}>
                   Need help?
@@ -399,15 +385,13 @@ export default function Navbar() {
                       }}
                     >
                       {link.label}
-                      <span
-                        style={{
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          width: 28, height: 28, borderRadius: 8, flexShrink: 0,
-                          background: servicesOpen ? 'rgba(201,168,76,0.12)' : 'rgba(255,255,255,0.04)',
-                          border: servicesOpen ? '1px solid rgba(201,168,76,0.25)' : '1px solid rgba(255,255,255,0.07)',
-                          transition: 'all 200ms ease',
-                        }}
-                      >
+                      <span style={{
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        width: 28, height: 28, borderRadius: 8, flexShrink: 0,
+                        background: servicesOpen ? 'rgba(201,168,76,0.12)' : 'rgba(255,255,255,0.04)',
+                        border: servicesOpen ? '1px solid rgba(201,168,76,0.25)' : '1px solid rgba(255,255,255,0.07)',
+                        transition: 'all 200ms ease',
+                      }}>
                         <ChevronDown
                           size={14}
                           style={{
@@ -419,19 +403,15 @@ export default function Navbar() {
                       </span>
                     </button>
 
-                    <div
-                      style={{
-                        maxHeight: servicesOpen ? '500px' : 0,
-                        overflow: 'hidden',
-                        transition: 'max-height 350ms cubic-bezier(0.16,1,0.3,1)',
-                      }}
-                    >
-                      <div
-                        style={{
-                          display: 'grid', gridTemplateColumns: '1fr 1fr',
-                          gap: 6, padding: '10px 0 14px',
-                        }}
-                      >
+                    <div style={{
+                      maxHeight: servicesOpen ? '500px' : 0,
+                      overflow: 'hidden',
+                      transition: 'max-height 350ms cubic-bezier(0.16,1,0.3,1)',
+                    }}>
+                      <div style={{
+                        display: 'grid', gridTemplateColumns: '1fr 1fr',
+                        gap: 6, padding: '10px 0 14px',
+                      }}>
                         {link.children.map((child) => (
                           <Link
                             key={child.href}

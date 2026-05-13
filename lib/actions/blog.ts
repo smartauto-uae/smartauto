@@ -7,7 +7,7 @@ import type { BlogPost } from '@/types/blog'
 // ── Read (public supabase) ────────────────────────────────────────────────────
 
 export async function getPosts(): Promise<BlogPost[]> {
-  const { data, error } = await supabase
+  const { data, error } = await supabaseAdmin
     .from('blog_posts')
     .select('*')
     .order('updated_at', { ascending: false })

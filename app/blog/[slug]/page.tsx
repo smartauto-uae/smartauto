@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Tag, Calendar, ArrowLeft } from 'lucide-react'
+import BlogLayout from '@/components/blog/BlogLayout'
 
 export const revalidate = 0
 
@@ -47,7 +48,6 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      {/* ── Schema injection ── */}
       {post.schema_custom && (
         <script
           type="application/ld+json"
@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       <main style={{ background: '#f7f6f2', minHeight: '100vh' }}>
 
-        {/* ── Cover image ── */}
+        {/* Cover image */}
         {post.cover_image && (
           <div style={{ width: '100%', maxHeight: 480, overflow: 'hidden' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -71,9 +71,9 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
 
-        <div style={{ maxWidth: 760, margin: '0 auto', padding: '3rem 1.5rem 5rem' }}>
+        {/* Outer container — wider to fit sidebar */}
+        <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.5rem 5rem' }}>
 
-          {/* ── Back link ── */}
           <Link
             href="/blog"
             style={{
@@ -86,10 +86,8 @@ export default async function BlogPostPage({ params }: Props) {
             Back to Blog
           </Link>
 
-          {/* ── Header ── */}
+          {/* Header */}
           <header style={{ marginBottom: '2.5rem' }}>
-
-            {/* Category + Date */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
               {post.category && (
                 <span style={{
@@ -115,7 +113,6 @@ export default async function BlogPostPage({ params }: Props) {
               )}
             </div>
 
-            {/* Title */}
             <h1 style={{
               fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
               fontWeight: 800, color: '#1a1814',
@@ -124,28 +121,20 @@ export default async function BlogPostPage({ params }: Props) {
               {post.title}
             </h1>
 
-            {/* Excerpt */}
             {post.excerpt && (
-              <p style={{
-                fontSize: '1.05rem', color: '#7a7264',
-                lineHeight: 1.7, maxWidth: '65ch',
-              }}>
+              <p style={{ fontSize: '1.05rem', color: '#7a7264', lineHeight: 1.7, maxWidth: '65ch' }}>
                 {post.excerpt}
               </p>
             )}
 
-            {/* Tags */}
             {post.tags && post.tags.length > 0 && (
               <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: '1rem' }}>
                 {post.tags.map((tag: string) => (
-                  <span
-                    key={tag}
-                    style={{
-                      display: 'inline-flex', alignItems: 'center', gap: 4,
-                      fontSize: '0.7rem', padding: '0.2rem 0.55rem', borderRadius: 999,
-                      background: '#f5f3ef', border: '1px solid #e8e3d8', color: '#7a7264',
-                    }}
-                  >
+                  <span key={tag} style={{
+                    display: 'inline-flex', alignItems: 'center', gap: 4,
+                    fontSize: '0.7rem', padding: '0.2rem 0.55rem', borderRadius: 999,
+                    background: '#f5f3ef', border: '1px solid #e8e3d8', color: '#7a7264',
+                  }}>
                     <Tag size={9} aria-hidden="true" />
                     {tag}
                   </span>
@@ -154,16 +143,13 @@ export default async function BlogPostPage({ params }: Props) {
             )}
           </header>
 
-          {/* ── Divider ── */}
+          {/* Divider */}
           <div style={{ height: 1, background: '#e8e3d8', marginBottom: '2.5rem' }} />
 
-          {/* ── Content ── */}
-          <article
-            className="blog-content"
-            dangerouslySetInnerHTML={{ __html: post.content ?? '' }}
-          />
+          {/* ── Content + TOC ── */}
+          <BlogLayout content={post.content ?? ''} />
 
-          {/* ── Footer ── */}
+          {/* Footer */}
           <div style={{
             marginTop: '4rem', paddingTop: '2rem',
             borderTop: '1px solid #e8e3d8',
