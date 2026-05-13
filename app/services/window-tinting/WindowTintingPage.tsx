@@ -8,9 +8,8 @@ import {
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { buildMetadata, getStructuredData } from '@/lib/metadata'
 
-const GOLD = '#C9A84C'
+const GOLD  = '#C9A84C'
 const GOLD2 = '#E8C96A'
 const GOLD3 = '#A07830'
 const goldGrad = `linear-gradient(135deg,${GOLD},${GOLD2},${GOLD3})`
@@ -39,7 +38,7 @@ const benefits = [
   {
     icon: Thermometer,
     title: 'Reduces Heat by Up to 95%',
-    desc: 'High-performance films with hybrid nanotechnology reduce infrared heat waves by up to 95%, keeping your cabin significantly cooler in Dubai\'s extreme summer temperatures.',
+    desc: "High-performance films with hybrid nanotechnology reduce infrared heat waves by up to 95%, keeping your cabin significantly cooler in Dubai's extreme summer temperatures.",
   },
   {
     icon: Eye,
@@ -75,7 +74,7 @@ const films = [
       'Crystal clarity, no colour shift',
       'Hybrid nanotechnology',
     ],
-    warranty: 'Up to 115-Year warranty',
+    warranty: 'Up to 15-Year warranty',
     price: 'From AED 799',
     best: 'Best for: Luxury, performance & daily drivers',
   },
@@ -112,24 +111,24 @@ const films = [
 ]
 
 const pricing = [
-  { type: 'Coupe', range: 'AED 300 – 1,400', note: 'Both sides + rear' },
-  { type: 'Saloon', range: 'AED 350 – 1,700', note: 'Both sides + rear' },
-  { type: '4x4 / SUV', range: 'AED 400 – 1,900', note: 'Both sides + rear' },
-  { type: 'Station Wagon', range: 'AED 450 – 2,100', note: 'Both sides + rear' },
+  { type: 'Coupe',          range: 'AED 300 – 1,400', note: 'Both sides + rear' },
+  { type: 'Saloon',         range: 'AED 350 – 1,700', note: 'Both sides + rear' },
+  { type: '4x4 / SUV',      range: 'AED 400 – 1,900', note: 'Both sides + rear' },
+  { type: 'Station Wagon',  range: 'AED 450 – 2,100', note: 'Both sides + rear' },
 ]
 
 const stats = [
-  { value: '99%', label: 'UV Rays Blocked' },
-  { value: '95%', label: 'IR Heat Reduced' },
+  { value: '99%',   label: 'UV Rays Blocked' },
+  { value: '95%',   label: 'IR Heat Reduced' },
   { value: '15 Yr', label: 'Max Warranty' },
-  { value: '600+', label: 'Google Reviews' },
+  { value: '600+',  label: 'Google Reviews' },
 ]
 
 const process = [
-  { num: '01', title: 'Free Inspection', desc: 'We inspect your vehicle and recommend the right film grade for your budget and driving needs.' },
-  { num: '02', title: 'Film Selection', desc: 'Choose from nano ceramic, carbon, or standard dyed film across multiple tint shades.' },
+  { num: '01', title: 'Free Inspection',          desc: 'We inspect your vehicle and recommend the right film grade for your budget and driving needs.' },
+  { num: '02', title: 'Film Selection',            desc: 'Choose from nano ceramic, carbon, or standard dyed film across multiple tint shades.' },
   { num: '03', title: 'Professional Installation', desc: 'Certified technicians apply the film using professional-grade tools in a dust-controlled environment.' },
-  { num: '04', title: 'Quality Check & Handover', desc: 'Every installation is inspected for clarity, adhesion, and compliance before handover with warranty documentation.' },
+  { num: '04', title: 'Quality Check & Handover',  desc: 'Every installation is inspected for clarity, adhesion, and compliance before handover with warranty documentation.' },
 ]
 
 const faqs = [
@@ -139,11 +138,11 @@ const faqs = [
   },
   {
     q: 'What are the benefits of car window tinting in Dubai?',
-    a: 'Window tinting in Dubai offers multiple benefits: blocks up to 99% of UV rays protecting skin and interior, reduces cabin heat by up to 95% improving comfort, reduces glare for safer driving, adds privacy and security, and prevents interior fading. Given Dubai\'s extreme solar conditions, professional window tinting is one of the most practical upgrades for any vehicle.',
+    a: "Window tinting in Dubai offers multiple benefits: blocks up to 99% of UV rays protecting skin and interior, reduces cabin heat by up to 95% improving comfort, reduces glare for safer driving, adds privacy and security, and prevents interior fading. Given Dubai's extreme solar conditions, professional window tinting is one of the most practical upgrades for any vehicle.",
   },
   {
-    q: 'Which is the best car tinting option for Dubai\'s climate?',
-    a: 'For Dubai\'s intense heat and UV conditions, nano ceramic film is the highest-performing option. It uses hybrid nanotechnology to reject both UV and infrared rays without affecting visibility or GPS signals. 3M Crystalline and Totalgard Nano Ceramic are our top recommendations for UAE conditions.',
+    q: "Which is the best car tinting option for Dubai's climate?",
+    a: "For Dubai's intense heat and UV conditions, nano ceramic film is the highest-performing option. It uses hybrid nanotechnology to reject both UV and infrared rays without affecting visibility or GPS signals. 3M Crystalline and Totalgard Nano Ceramic are our top recommendations for UAE conditions.",
   },
   {
     q: 'How much heat does car window tinting reduce?',
@@ -163,7 +162,7 @@ const faqs = [
   },
   {
     q: 'Can car tinting protect my car interior?',
-    a: 'Yes. UV and infrared radiation cause upholstery, leather, dashboards, and plastics to fade and crack over time. Window tinting blocks the radiation responsible for this damage — preserving your interior and maintaining your vehicle\'s resale value.',
+    a: "Yes. UV and infrared radiation cause upholstery, leather, dashboards, and plastics to fade and crack over time. Window tinting blocks the radiation responsible for this damage — preserving your interior and maintaining your vehicle's resale value.",
   },
   {
     q: 'Why choose Smart Auto UAE for car window tinting in Dubai?',
@@ -175,22 +174,22 @@ const faqs = [
   },
   {
     q: 'Is ceramic car tinting worth the cost?',
-    a: 'Yes. In Dubai\'s climate, the heat and UV reduction from a nano ceramic film translates directly into lower air conditioning load, reduced fuel consumption, a cooler cabin, protected interior materials, and long-term skin protection. The higher upfront cost is offset by the 10–15 year warranty and significantly better performance compared to standard films.',
+    a: "Yes. In Dubai's climate, the heat and UV reduction from a nano ceramic film translates directly into lower air conditioning load, reduced fuel consumption, a cooler cabin, protected interior materials, and long-term skin protection. The higher upfront cost is offset by the 10–15 year warranty and significantly better performance compared to standard films.",
   },
 ]
 
 const branches = [
-  { name: 'Smart Auto MotorCity', address: 'MotorCity, Dubai', phone: '+971 56 726 9666' },
-  { name: 'Smart Auto Al Quoz', address: 'Al Quoz Industrial Area, Dubai', phone: '+971 56 726 9666' },
-  { name: 'Smart Auto Mirdif', address: 'Uptown Mirdif Mall, Dubai', phone: '+971 56 726 9666' },
-  { name: 'Smart Auto Sharjah', address: 'Central Mall, Sharjah', phone: '+971 56 726 9666' },
+  { name: 'Smart Auto MotorCity', address: 'MotorCity, Dubai',                phone: '+971 56 726 9666' },
+  { name: 'Smart Auto Al Quoz',   address: 'Al Quoz Industrial Area, Dubai',  phone: '+971 56 726 9666' },
+  { name: 'Smart Auto Mirdif',    address: 'Uptown Mirdif Mall, Dubai',       phone: '+971 56 726 9666' },
+  { name: 'Smart Auto Sharjah',   address: 'Central Mall, Sharjah',           phone: '+971 56 726 9666' },
 ]
 
 const relatedServices = [
-  { name: 'Paint Protection Film (PPF)', href: '/services/ppf', desc: 'Shield your paint from stone chips and UV damage.' },
-  { name: 'Nano Ceramic Coating', href: '/services/ceramic-coating', desc: '9H hydrophobic paint coating. Lasts 2–5 years.' },
-  { name: 'Car Detailing', href: '/services/car-detailing', desc: 'Full interior and exterior detailing services.' },
-  { name: 'Car Wrapping', href: '/services/car-wrapping', desc: 'Colour-change and custom vinyl wraps in Dubai.' },
+  { name: 'Paint Protection Film (PPF)', href: '/services/ppf',            desc: 'Shield your paint from stone chips and UV damage.' },
+  { name: 'Nano Ceramic Coating',        href: '/services/ceramic-coating', desc: '9H hydrophobic paint coating. Lasts 2–5 years.' },
+  { name: 'Car Detailing',               href: '/services/car-detailing',   desc: 'Full interior and exterior detailing services.' },
+  { name: 'Car Wrapping',                href: '/services/car-wrapping',    desc: 'Colour-change and custom vinyl wraps in Dubai.' },
 ]
 
 // ─── FAQ ITEM ──────────────────────────────────────────────────────────────
@@ -227,21 +226,13 @@ function FAQItem({ q, a, i }: { q: string; a: string; i: number }) {
   )
 }
 
-// ––––– METADATA ─────────────────────────────────────────────────────────────────
-
-export async function generateMetadata() {
-  return buildMetadata('/services/window-tinting', {
-    title: 'Car Window Tinting Dubai | Smart Auto UAE',
-    description: 'Premium car window tinting in Dubai. 3M, TotalGard & XPEL nano ceramic films. UAE RTA compliant. Up to 15-year warranty. 4 branches in Dubai & Sharjah.',
-  })
-}
-
 // ─── PAGE ──────────────────────────────────────────────────────────────────
 
 export default function WindowTintingPage() {
   return (
     <main style={{ background: '#0A0A0A', paddingTop: '80px' }}>
-<Navbar/>
+      <Navbar />
+
       {/* ── HERO ── */}
       <section
         className="relative py-28 overflow-hidden"
@@ -273,22 +264,12 @@ export default function WindowTintingPage() {
               style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(2.5rem,5vw,4.5rem)' }}
             >
               Car Window Tinting<br />
-              <span
-                style={{
-                  background: goldGrad,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
+              <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 Dubai &amp; UAE
               </span>
             </h1>
 
-            <div
-              className="flex items-center gap-3 mb-6"
-              style={{ borderLeft: `3px solid ${GOLD}`, paddingLeft: '1rem' }}
-            >
+            <div className="flex items-center gap-3 mb-6" style={{ borderLeft: `3px solid ${GOLD}`, paddingLeft: '1rem' }}>
               <p className="text-white/60 text-base leading-[1.8] italic">
                 Stay cool with our specially designed window films engineered for GCC weather conditions.
                 Mobile tinting available at your doorstep — all across Dubai.
@@ -299,7 +280,7 @@ export default function WindowTintingPage() {
               {[
                 'UAE RTA law compliant — all vehicle types',
                 '3M, Totalgard & XPEL Applicator',
-                'Up to 115-Year warranty on nano ceramic films',
+                'Up to 15-Year warranty on nano ceramic films',
                 'Same-day service · Mobile doorstep tinting available',
                 'Free inspection before every installation',
               ].map((p) => (
@@ -343,7 +324,6 @@ export default function WindowTintingPage() {
                 style={{ maxHeight: '500px' }}
               />
             </div>
-            {/* Stats bar */}
             <div
               className="grid grid-cols-4 mt-4 rounded-2xl p-5"
               style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.1)' }}
@@ -368,13 +348,8 @@ export default function WindowTintingPage() {
       <section className="py-24" style={{ backgroundColor: '#060606' }}>
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>
-              Why Tint Your Car in Dubai
-            </p>
-            <h2
-              className="font-bold text-white"
-              style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}
-            >
+            <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>Why Tint Your Car in Dubai</p>
+            <h2 className="font-bold text-white" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}>
               6 Key Benefits of{' '}
               <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 Window Tinting
@@ -384,16 +359,15 @@ export default function WindowTintingPage() {
               Window tinting is one of the most practical upgrades for any vehicle in the UAE. Dubai&apos;s extreme UV index, intense heat, and long driving hours make professionally installed window film essential — not just cosmetic.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {benefits.map((b, i) => (
               <motion.div key={b.title} variants={fadeUp} custom={i} initial="hidden" whileInView="show" viewport={{ once: true }}>
                 <div
-                  className="rounded-2xl p-7 h-full transition-all duration-300 hover:border-gold/30 group"
+                  className="rounded-2xl p-7 h-full transition-all duration-300 group"
                   style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.1)' }}
                 >
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:bg-gold/15"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                     style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.2)', color: GOLD }}
                   >
                     <b.icon size={22} aria-hidden="true" />
@@ -411,13 +385,8 @@ export default function WindowTintingPage() {
       <section className="py-24" style={{ background: 'linear-gradient(180deg,#080808 0%,#0A0A0A 100%)' }}>
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>
-              3M · Totalgard · XPEL · SunTek
-            </p>
-            <h2
-              className="font-bold text-white"
-              style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}
-            >
+            <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>3M · Totalgard · XPEL · SunTek</p>
+            <h2 className="font-bold text-white" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}>
               Window Tint Films We{' '}
               <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 Install in UAE
@@ -427,7 +396,6 @@ export default function WindowTintingPage() {
               All our automotive window films are UAE RTA compliant, manufactured with hybrid nanotechnology, and warranted for up to 15 years.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {films.map((film, i) => (
               <motion.div key={film.name} variants={fadeUp} custom={i} initial="hidden" whileInView="show" viewport={{ once: true }}>
@@ -442,16 +410,8 @@ export default function WindowTintingPage() {
                     {film.tag}
                   </span>
                   <p className="text-[10px] tracking-[0.2em] uppercase mb-1.5" style={{ color: GOLD }}>{film.brand}</p>
-                  <h3
-                    className="text-white font-bold text-xl mb-1"
-                    style={{ fontFamily: 'var(--font-playfair),serif' }}
-                  >
-                    {film.name}
-                  </h3>
-                  <p
-                    className="font-semibold text-base mb-5"
-                    style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
-                  >
+                  <h3 className="text-white font-bold text-xl mb-1" style={{ fontFamily: 'var(--font-playfair),serif' }}>{film.name}</h3>
+                  <p className="font-semibold text-base mb-5" style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     {film.price}
                   </p>
                   <ul className="flex flex-col gap-2.5 mb-5 flex-1">
@@ -477,13 +437,8 @@ export default function WindowTintingPage() {
       <section className="py-24" style={{ backgroundColor: '#060606' }}>
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>
-              Transparent Pricing
-            </p>
-            <h2
-              className="font-bold text-white"
-              style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}
-            >
+            <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>Transparent Pricing</p>
+            <h2 className="font-bold text-white" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}>
               Window Tinting Price{' '}
               <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 in Dubai
@@ -493,7 +448,6 @@ export default function WindowTintingPage() {
               Pricing varies by vehicle type and film grade selected. All packages include both side windows and rear glass. Contact us for an exact quote.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {pricing.map((p, i) => (
               <motion.div key={p.type} variants={fadeUp} custom={i} initial="hidden" whileInView="show" viewport={{ once: true }}>
@@ -502,13 +456,8 @@ export default function WindowTintingPage() {
                   style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.12)' }}
                 >
                   <Car size={32} className="mb-4" style={{ color: GOLD }} aria-hidden="true" />
-                  <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: 'var(--font-playfair),serif' }}>
-                    {p.type}
-                  </h3>
-                  <p
-                    className="font-bold text-xl mb-2"
-                    style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
-                  >
+                  <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: 'var(--font-playfair),serif' }}>{p.type}</h3>
+                  <p className="font-bold text-xl mb-2" style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     {p.range}
                   </p>
                   <p className="text-white/35 text-[11px] mb-4">{p.note}</p>
@@ -524,7 +473,6 @@ export default function WindowTintingPage() {
               </motion.div>
             ))}
           </div>
-
           <div className="text-center mt-8">
             <p className="text-white/35 text-sm">
               Prices vary by film grade. Contact us for your exact quote —{' '}
@@ -539,13 +487,8 @@ export default function WindowTintingPage() {
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-                Why 3M &amp; Totalgard
-              </p>
-              <h2
-                className="font-bold text-white leading-[1.15] mb-6"
-                style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.6rem)' }}
-              >
+              <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>Why 3M &amp; Totalgard</p>
+              <h2 className="font-bold text-white leading-[1.15] mb-6" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.6rem)' }}>
                 Premium Brands Engineered for{' '}
                 <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   UAE Conditions
@@ -573,37 +516,13 @@ export default function WindowTintingPage() {
             <motion.div variants={fadeUp} custom={1} initial="hidden" whileInView="show" viewport={{ once: true }}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img
-                    src="/images/services/window-tinting-2.webp"
-                    alt="3M nano ceramic window tint film installation Dubai"
-                    width={350}
-                    height={280}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-52 object-cover"
-                  />
+                  <img src="/images/services/window-tinting-2.webp" alt="3M nano ceramic window tint film installation Dubai" width={350} height={280} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
                 </div>
                 <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img
-                    src="/images/services/window-tinting-3.webp"
-                    alt="Totalgard window film applied at Smart Auto UAE Dubai"
-                    width={350}
-                    height={280}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-52 object-cover"
-                  />
+                  <img src="/images/services/window-tinting-3.webp" alt="Totalgard window film applied at Smart Auto UAE Dubai" width={350} height={280} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
                 </div>
                 <div className="col-span-2 rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img
-                    src="/images/services/window-tinting-4.webp"
-                    alt="Mobile car window tinting at your doorstep Dubai — Smart Auto UAE"
-                    width={700}
-                    height={280}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-52 object-cover"
-                  />
+                  <img src="/images/services/window-tinting-4.webp" alt="Mobile car window tinting at your doorstep Dubai — Smart Auto UAE" width={700} height={280} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
                 </div>
               </div>
             </motion.div>
@@ -616,40 +535,24 @@ export default function WindowTintingPage() {
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>Simple Process</p>
-            <h2
-              className="font-bold text-white"
-              style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}
-            >
+            <h2 className="font-bold text-white" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}>
               How Our Window Tinting{' '}
               <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 Process Works
               </span>
             </h2>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-            <div
-              className="absolute top-9 left-[12%] w-[76%] h-px pointer-events-none hidden lg:block"
+            <div className="absolute top-9 left-[12%] w-[76%] h-px pointer-events-none hidden lg:block"
               style={{ background: 'linear-gradient(to right,transparent,rgba(201,168,76,0.2),transparent)' }}
               aria-hidden="true"
             />
             {process.map((step, i) => (
               <motion.div key={step.num} variants={fadeUp} custom={i} initial="hidden" whileInView="show" viewport={{ once: true }}>
-                <div
-                  className="rounded-2xl p-9 text-center"
-                  style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.1)' }}
-                >
+                <div className="rounded-2xl p-9 text-center" style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.1)' }}>
                   <div
                     className="rounded-full flex items-center justify-center mx-auto mb-5"
-                    style={{
-                      width: 72, height: 72,
-                      background: 'rgba(201,168,76,0.06)',
-                      border: '1px solid rgba(201,168,76,0.25)',
-                      color: GOLD,
-                      fontFamily: 'var(--font-playfair),serif',
-                      fontSize: 22,
-                      fontWeight: 700,
-                    }}
+                    style={{ width: 72, height: 72, background: 'rgba(201,168,76,0.06)', border: '1px solid rgba(201,168,76,0.25)', color: GOLD, fontFamily: 'var(--font-playfair),serif', fontSize: 22, fontWeight: 700 }}
                     aria-hidden="true"
                   >
                     {step.num}
@@ -668,10 +571,7 @@ export default function WindowTintingPage() {
         <div className="w-full max-w-4xl mx-auto px-6">
           <div className="space-y-10">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <h2
-                className="font-bold text-white mb-5"
-                style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.5rem,2.5vw,2.2rem)' }}
-              >
+              <h2 className="font-bold text-white mb-5" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.5rem,2.5vw,2.2rem)' }}>
                 Window Tinting Dubai —{' '}
                 <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   Does It Reduce Visibility?
@@ -686,10 +586,7 @@ export default function WindowTintingPage() {
             </motion.div>
 
             <motion.div variants={fadeUp} custom={1} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <h2
-                className="font-bold text-white mb-5"
-                style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.5rem,2.5vw,2.2rem)' }}
-              >
+              <h2 className="font-bold text-white mb-5" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.5rem,2.5vw,2.2rem)' }}>
                 Reduces Glare at{' '}
                 <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   Night &amp; Day
@@ -704,10 +601,7 @@ export default function WindowTintingPage() {
             </motion.div>
 
             <motion.div variants={fadeUp} custom={2} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <h2
-                className="font-bold text-white mb-5"
-                style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.5rem,2.5vw,2.2rem)' }}
-              >
+              <h2 className="font-bold text-white mb-5" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.5rem,2.5vw,2.2rem)' }}>
                 Protection from{' '}
                 <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   Shattered Glass
@@ -729,10 +623,7 @@ export default function WindowTintingPage() {
         <div className="w-full max-w-4xl mx-auto px-6">
           <div className="text-center mb-14">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>Common Questions</p>
-            <h2
-              className="font-bold text-white"
-              style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}
-            >
+            <h2 className="font-bold text-white" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}>
               Window Tinting{' '}
               <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 FAQs — Dubai
@@ -755,10 +646,7 @@ export default function WindowTintingPage() {
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>Window Tinting Near Me</p>
-            <h2
-              className="font-bold text-white"
-              style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}
-            >
+            <h2 className="font-bold text-white" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}>
               4 Branches Across{' '}
               <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 Dubai &amp; Sharjah
@@ -771,14 +659,8 @@ export default function WindowTintingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {branches.map((b, i) => (
               <motion.div key={b.name} variants={fadeUp} custom={i} initial="hidden" whileInView="show" viewport={{ once: true }}>
-                <div
-                  className="rounded-2xl p-7 flex items-start gap-5"
-                  style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.1)' }}
-                >
-                  <div
-                    className="w-11 h-11 min-w-[44px] rounded-xl flex items-center justify-center"
-                    style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.2)', color: GOLD }}
-                  >
+                <div className="rounded-2xl p-7 flex items-start gap-5" style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.1)' }}>
+                  <div className="w-11 h-11 min-w-[44px] rounded-xl flex items-center justify-center" style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.2)', color: GOLD }}>
                     <MapPin size={18} aria-hidden="true" />
                   </div>
                   <div>
@@ -797,10 +679,7 @@ export default function WindowTintingPage() {
       <section className="py-20" style={{ backgroundColor: '#060606' }}>
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2
-              className="font-bold text-white"
-              style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.5rem,2.5vw,2.2rem)' }}
-            >
+            <h2 className="font-bold text-white" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.5rem,2.5vw,2.2rem)' }}>
               Complete Your Car Protection with{' '}
               <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 Our Other Services
@@ -812,7 +691,7 @@ export default function WindowTintingPage() {
               <motion.div key={s.name} variants={fadeUp} custom={i} initial="hidden" whileInView="show" viewport={{ once: true }}>
                 <a
                   href={s.href}
-                  className="block rounded-2xl p-6 h-full transition-all duration-300 hover:border-gold/30 no-underline"
+                  className="block rounded-2xl p-6 h-full transition-all duration-300 no-underline"
                   style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.1)' }}
                 >
                   <h3 className="text-white font-semibold text-base mb-2">{s.name}</h3>
@@ -833,24 +712,14 @@ export default function WindowTintingPage() {
           <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
             Dubai · Sharjah · Doorstep Service · Open Every Day
           </p>
-          <h2
-            className="font-bold text-white mb-4"
-            style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(2rem,4vw,3rem)' }}
-          >
+          <h2 className="font-bold text-white mb-4" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(2rem,4vw,3rem)' }}>
             Book Your Window Tinting<br />
-            <span
-              style={{
-                background: goldGrad,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
+            <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               in Dubai Today
             </span>
           </h2>
           <p className="text-white/45 text-base mb-8 max-w-lg mx-auto">
-            4 branches across Dubai &amp; Sharjah — or book our mobile doorstep tinting service at your home or office. Free inspection. No hidden charges. Up to 115-Year warranty.
+            4 branches across Dubai &amp; Sharjah — or book our mobile doorstep tinting service at your home or office. Free inspection. No hidden charges. Up to 15-Year warranty.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a
@@ -872,7 +741,8 @@ export default function WindowTintingPage() {
           </div>
         </div>
       </section>
-<Footer/>
+
+      <Footer />
     </main>
   )
 }
