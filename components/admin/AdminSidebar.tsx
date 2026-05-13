@@ -20,40 +20,22 @@ const NAV: NavGroup[] = [
   {
     title: 'Overview',
     items: [
-      { label: 'Dashboard', href: '/admin',           icon: LayoutDashboard },
-      { label: 'Analytics', href: '/admin/analytics', icon: BarChart2 },
-    ],
+      { label: 'Dashboard', href: '/admin',           icon: LayoutDashboard },    ],
   },
   {
     title: 'Content',
     items: [
       { label: 'Blog Posts', href: '/admin/blog',     icon: FileText },
-      { label: 'Media',      href: '/admin/media',    icon: Image },
-      { label: 'Services',   href: '/admin/services', icon: Layers },
     ],
   },
   {
     title: 'SEO',
     items: [
       { label: 'All Pages',  href: '/admin/seo',       icon: Search },
-      { label: 'Redirects',  href: '/admin/redirects', icon: Globe },
-      { label: 'Sitemap',    href: '/admin/sitemap',   icon: Tag },
     ],
   },
-  {
-    title: 'Engagement',
-    items: [
-      { label: 'Reviews',  href: '/admin/reviews',  icon: Star },
-      { label: 'Messages', href: '/admin/messages', icon: MessageSquare },
-      { label: 'Branches', href: '/admin/branches', icon: MapPin },
-    ],
-  },
-  {
-    title: 'System',
-    items: [
-      { label: 'Settings', href: '/admin/settings', icon: Settings },
-    ],
-  },
+  
+  
 ]
 
 export default function AdminSidebar() {

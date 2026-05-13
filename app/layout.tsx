@@ -20,10 +20,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://smartautouae.ae"),
 
-  title: {
-    default:  "Smart Auto UAE | #1 Window Tinting, PPF & Ceramic Coating in Dubai & Sharjah",
-    template: "%s | Smart Auto UAE",
-  },
+  title: "Smart Auto UAE | #1 Window Tinting, PPF & Ceramic Coating in Dubai & Sharjah",
 
   description:
     "Smart Auto UAE — Dubai & Sharjah's most trusted car protection centre. Premium window tinting, paint protection film (PPF), ceramic coating, car detailing, vinyl wrapping & residential tinting. Trusted by 50,000+ customers. Free inspection. Call +971 56 726 9666.",
