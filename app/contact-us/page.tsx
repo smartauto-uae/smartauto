@@ -24,7 +24,7 @@ const branches = [
     whatsapp: '971567269666',
     hours: '11:00 AM – 9:00 PM',
     days: 'Every Day',
-    mapsUrl: 'https://maps.google.com/?q=MotorCity+Dubai+Smart+Auto',
+    mapsUrl: 'https://maps.app.goo.gl/y3fMGRgHvRkYdw7W9',
   },
   {
     name: 'Al Quoz',
@@ -35,7 +35,7 @@ const branches = [
     whatsapp: '971567269666',
     hours: '11:00 AM – 9:30 PM',
     days: 'Every Day',
-    mapsUrl: 'https://maps.google.com/?q=Al+Quoz+4+Warehouse+6+D16+Road+Dubai',
+    mapsUrl: 'https://maps.app.goo.gl/8vJPuX6hW9pg1TH8A',
   },
   {
     name: 'Mirdif · Uptown Mall',
@@ -46,7 +46,7 @@ const branches = [
     whatsapp: '971557823731',
     hours: '11:00 AM – 10:00 PM',
     days: 'Every Day',
-    mapsUrl: 'https://maps.google.com/?q=Uptown+Mall+Mirdif+Dubai',
+    mapsUrl: 'https://maps.app.goo.gl/T1NayCGQyPM8Boow9',
   },
   {
     name: 'Central Mall',
@@ -57,7 +57,7 @@ const branches = [
     whatsapp: '971564255770',
     hours: '10:00 AM – 10:00 PM',
     days: 'Every Day',
-    mapsUrl: 'https://maps.google.com/?q=Central+Mall+Sharjah',
+    mapsUrl: 'https://maps.app.goo.gl/6RoVE97RGNunSFXd9',
   },
 ]
 

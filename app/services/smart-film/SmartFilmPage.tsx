@@ -954,28 +954,28 @@ export default function SmartFilmPage() {
           city: "Dubai",
           address: "MotorCity, Dubai",
           hours: "Sun–Thu 11AM–9PM\nFri–Sat 11AM–9:30PM",
-          maps: "https://maps.google.com/?q=Smart+Auto+UAE+MotorCity+Dubai",
+          maps: "https://maps.app.goo.gl/QT1zHa2LztgD7tbU7",
         },
         {
           name: "Al Quoz",
           city: "Dubai",
           address: "Al Quoz Industrial Area 4, D16 Road, Dubai",
           hours: "Sat–Thu 11AM–9:30PM\nFri 2PM–9:30PM",
-          maps: "https://maps.google.com/?q=Smart+Auto+UAE+Al+Quoz+Dubai",
+          maps: "https://maps.app.goo.gl/7fhEUsrUvGfxG8fPA",
         },
         {
           name: "Mirdif — Uptown Mall",
           city: "Dubai",
           address: "Uptown Mall, Mirdif, Dubai",
           hours: "Daily 11AM–10PM",
-          maps: "https://maps.google.com/?q=Smart+Auto+UAE+Mirdif+Uptown+Mall+Dubai",
+          maps: "https://maps.app.goo.gl/GS6USX8GSxJqwES67",
         },
         {
           name: "Central Mall",
           city: "Sharjah",
           address: "Central Mall, Sharjah",
           hours: "Daily 10AM–10PM",
-          maps: "https://maps.google.com/?q=Smart+Auto+UAE+Central+Mall+Sharjah",
+          maps: "https://maps.app.goo.gl/6RoVE97RGNunSFXd9",
         },
       ].map((branch) => (
         <div

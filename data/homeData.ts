@@ -197,14 +197,14 @@ export const branches = [
     address: 'Motorcity, Dubai, UAE',
     phone: '+971 567 269 666',
     hours: 'Mon – Sun: 9:00 AM – 9:00 PM',
-    mapsUrl: 'https://maps.google.com/?q=Smart+Auto+UAE+Motorcity+Dubai',
+    mapsUrl: 'https://maps.app.goo.gl/QT1zHa2LztgD7tbU7',
   },
   {
     city: 'Sharjah',
     address: 'Sharjah, UAE',
     phone: '+971 567 269 666',
     hours: 'Mon – Sun: 9:00 AM – 9:00 PM',
-    mapsUrl: 'https://maps.google.com/?q=Smart+Auto+UAE+Sharjah',
+    mapsUrl: 'https://maps.app.goo.gl/6RoVE97RGNunSFXd9',
   },
 ]
 
@@ -255,12 +255,12 @@ export const contactItems = [
   {
     label: 'Dubai Branch',
     value: 'Motorcity, Dubai, UAE',
-    href: 'https://maps.google.com/?q=Smart+Auto+UAE+Motorcity+Dubai',
+    href: 'https://maps.app.goo.gl/QT1zHa2LztgD7tbU7',
   },
   {
     label: 'Sharjah Branch',
     value: 'Sharjah, UAE',
-    href: 'https://maps.google.com/?q=Smart+Auto+UAE+Sharjah',
+    href: 'https://maps.app.goo.gl/6RoVE97RGNunSFXd9',
   },
 ]
 
