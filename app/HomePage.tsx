@@ -260,7 +260,7 @@ const faqs = [
 const contactItems = [
   { label: 'Phone / WhatsApp', value: '+971 56 726 9666', href: 'tel:+971567269666', icon: Phone },
   { label: 'WhatsApp Chat', value: 'Chat with us directly', href: 'https://wa.me/971567269666', icon: MessageCircle },
-  { label: 'Email', value: 'info@smartautouae.ae', href: 'mailto:info@smartautouae.ae', icon: Mail },
+  { label: 'Email', value: 'info@smartautouae.com', href: 'mailto:info@smartautouae.com', icon: Mail },
   { label: 'Instagram', value: '@smartautouae', href: 'https://instagram.com/smartautouae', icon: AtSign },
 ]
 

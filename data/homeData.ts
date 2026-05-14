@@ -249,8 +249,8 @@ export const contactItems = [
   },
   {
     label: 'Email',
-    value: 'info@smartautouae.ae',
-    href: 'mailto:info@smartautouae.ae',
+    value: 'info@smartautouae.com',
+    href: 'mailto:info@smartautouae.com',
   },
   {
     label: 'Dubai Branch',

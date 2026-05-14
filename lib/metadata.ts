@@ -56,7 +56,7 @@ export async function getStructuredData(route: string): Promise<Record<string, u
       image: `${SITE_URL}/images/og-default.webp`,
       description: 'Premium car window tinting, PPF, ceramic coating, detailing and car wrapping in Dubai and Sharjah UAE.',
       telephone: '+971524403677',
-      email: 'info@smartautouae.ae',
+      email: 'info@smartautouae.com',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Dubai',

@@ -34,7 +34,7 @@ const socials = [
   { label: 'WhatsApp',  href: 'https://wa.me/971567269666',         icon: MessageCircle },
   { label: 'Instagram', href: 'https://instagram.com/smartautouae', icon: AtSign },
   { label: 'Call',      href: 'tel:+971567269666',                   icon: Phone },
-  { label: 'Email',     href: 'mailto:info@smartautouae.ae',         icon: Mail },
+  { label: 'Email',     href: 'mailto:info@smartautouae.com',         icon: Mail },
 ]
 
 const brands = ['3M', 'Totalgard', 'XPEL', 'Gyeon', 'Gtechniq', 'IGL Coatings', 'Avery Dennison']
@@ -148,10 +148,10 @@ export default function Footer() {
             <a href="tel:+971567269666" style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.9375rem', color: GOLD, fontWeight: 600, textDecoration: 'none', marginBottom: 8 }}>
               <Phone size={14} aria-hidden="true" /> +971 56 726 9666
             </a>
-            <a href="mailto:info@smartautouae.ae" style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.8125rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 150ms ease' }}
+            <a href="mailto:info@smartautouae.com" style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.8125rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 150ms ease' }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = GOLD }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.4)' }}>
-              <Mail size={13} aria-hidden="true" /> info@smartautouae.ae
+              <Mail size={13} aria-hidden="true" /> info@smartautouae.com
             </a>
           </div>
 

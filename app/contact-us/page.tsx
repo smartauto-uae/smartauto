@@ -140,11 +140,11 @@ export default function ContactPage() {
                 <Phone size={15} aria-hidden="true" /> +971 56 726 9666
               </a>
               <a
-                href="mailto:info@smartautouae.ae"
+                href="mailto:info@smartautouae.com"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl font-semibold text-sm border"
                 style={{ color: 'rgba(255,255,255,0.6)', borderColor: 'rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)' }}
               >
-                <Mail size={15} aria-hidden="true" /> info@smartautouae.ae
+                <Mail size={15} aria-hidden="true" /> info@smartautouae.com
               </a>
             </div>
           </motion.div>
@@ -184,9 +184,9 @@ export default function ContactPage() {
               {
                 icon: Mail,
                 label: 'Email',
-                value: 'info@smartautouae.ae',
+                value: 'info@smartautouae.com',
                 note: 'Quotes, projects & partnerships',
-                href: 'mailto:info@smartautouae.ae',
+                href: 'mailto:info@smartautouae.com',
                 cta: 'Send Email',
                 primary: false,
               },

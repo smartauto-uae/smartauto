@@ -103,7 +103,7 @@ const structuredData = [
     "description": "Dubai's premier car protection centre specialising in window tinting, paint protection film (PPF), nano ceramic coating, car detailing, vinyl wrapping, commercial tinting, marine tinting and residential tinting.",
     "url": "https://smartautouae.ae",
     "telephone": "+971567269666",
-    "email": "info@smartautouae.ae",
+    "email": "info@smartautouae.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "MotorCity",
