@@ -38,7 +38,7 @@ const benefits = [
   {
     icon: Thermometer,
     title: 'Reduces Heat by Up to 99%',
-    desc: "High-performance films with hybrid nanotechnology reduce infrared heat waves by up to 95%, keeping your cabin significantly cooler in Dubai's extreme summer temperatures.",
+    desc: "High-performance films with hybrid nanotechnology reduce infrared heat waves by up to 99%, keeping your cabin significantly cooler in Dubai's extreme summer temperatures.",
   },
   {
     icon: Eye,
@@ -69,7 +69,7 @@ const films = [
     tag: 'Best Performer',
     features: [
       'Blocks up to 99% UV rays',
-      'Reduces IR heat up to 95%',
+      'Reduces IR heat up to 99%',
       'Non-metallic — zero signal interference',
       'Crystal clarity, no colour shift',
       'Hybrid nanotechnology',
@@ -119,7 +119,7 @@ const pricing = [
 
 const stats = [
   { value: '99%',   label: 'UV Rays Blocked' },
-  { value: '95%',   label: 'IR Heat Reduced' },
+  { value: '99%',   label: 'IR Heat Reduced' },
   { value: '15 Yr', label: 'Max Warranty' },
   { value: '600+',  label: 'Google Reviews' },
 ]

@@ -20,7 +20,7 @@ const fadeRight = { hidden: { opacity: 0, x: 28 },  show: { opacity: 1, x: 0, tr
 const stats = [
   { value: '90%', label: 'Solar Heat Rejection',  desc: 'Keeps cabins and decks cool even in peak UAE summer' },
   { value: '99%', label: 'UV Ray Blockage',        desc: 'Full protection from harmful UV-A and UV-B radiation' },
-  { value: '95%', label: 'Glare Reduction',         desc: 'Safer navigation on open water in direct sunlight' },
+  { value: '99%', label: 'Glare Reduction',         desc: 'Safer navigation on open water in direct sunlight' },
   { value: '30%', label: 'Energy Cost Saving',      desc: 'Reduced air conditioning load on board' },
 ]
 
@@ -33,7 +33,7 @@ const benefits = [
   {
     icon: Eye,
     title: 'Glare Reduction',
-    desc: 'Sun glare reflected off water is one of the most dangerous conditions for boat operators. Marine tinting reduces glare by up to 95%, significantly improving visibility and reaction time when navigating UAE waters.',
+    desc: 'Sun glare reflected off water is one of the most dangerous conditions for boat operators. Marine tinting reduces glare by up to 99%, significantly improving visibility and reaction time when navigating UAE waters.',
   },
   {
     icon: Thermometer,
@@ -107,7 +107,7 @@ const filmTypes = [
     name: 'Anti-Glare Film',
     brand: '3M · Llumar',
     best: 'Helm stations, navigation desks, instrument areas',
-    features: ['95% glare reduction', 'Diffuses bright reflections evenly', 'Improves screen legibility on instruments', 'UV protection included', '15-Year warranty'],
+    features: ['99% glare reduction', 'Diffuses bright reflections evenly', 'Improves screen legibility on instruments', 'UV protection included', '15-Year warranty'],
     price: 'From AED 38/sqft',
   },
 ]

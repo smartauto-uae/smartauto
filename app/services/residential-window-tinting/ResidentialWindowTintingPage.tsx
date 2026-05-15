@@ -24,7 +24,7 @@ const fadeRight = { hidden: { opacity: 0, x: 28 },  show: { opacity: 1, x: 0, tr
 const stats = [
   { value: '90%', label: 'Solar Heat Rejection', desc: 'Keeps your home cool without blocking natural light' },
   { value: '99%', label: 'UV Ray Blockage', desc: 'Protects skin, furniture, floors and valuables' },
-  { value: '95%', label: 'Glare Reduction', desc: 'Eliminates glare on screens and reflective surfaces' },
+  { value: '99%', label: 'Glare Reduction', desc: 'Eliminates glare on screens and reflective surfaces' },
   { value: '30%', label: 'Energy Cost Saving', desc: 'Reduced air conditioning load lowers electricity bills' },
 ]
 
@@ -94,7 +94,7 @@ const filmTypes = [
     name: 'Anti-Glare Film',
     brand: '3M · Totalgard',
     best: 'Home offices, living rooms with TV screens',
-    features: ['95% glare reduction', 'Diffuses bright light evenly', 'Reduces eye strain', 'UV protection included', '15-Year warranty'],
+    features: ['99% glare reduction', 'Diffuses bright light evenly', 'Reduces eye strain', 'UV protection included', '15-Year warranty'],
     price: 'From AED 22/sqft',
   },
   {

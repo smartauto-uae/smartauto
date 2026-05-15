@@ -55,7 +55,7 @@ const BRANCHES: Option[] = [
 
 const SERVICE_INFO: Record<string, string> = {
   "Car Window Tinting":
-    "We install 3M, TotalGard & Global USA window films for cars. Blocks up to 90% solar heat, 99% UV & 95% glare. All 4 branches. Prices from AED 300.",
+    "We install 3M, TotalGard & Global USA window films for cars. Blocks up to 90% solar heat, 99% UV & 99% glare. All 4 branches. Prices from AED 300.",
   "Paint Protection Film":
     "PPF shields your paint from rock chips, scratches & swirls. Invisible self-healing film from 3M & TotalGard. Partial packages from AED 800, full car from AED 8,000.",
   "Colour PPF":

@@ -26,7 +26,7 @@ const fadeRight = { hidden: { opacity: 0, x: 28 },  show: { opacity: 1, x: 0, tr
 const stats = [
   { value: '90%', label: 'Solar Heat Rejection',  desc: 'Eliminating hot spots and reducing HVAC load across entire floors' },
   { value: '99%', label: 'UV Ray Blockage',        desc: 'Protecting staff, merchandise, and interior finishes from UV damage' },
-  { value: '95%', label: 'Glare Reduction',        desc: 'Reducing screen glare and improving visual comfort at workstations' },
+  { value: '99%', label: 'Glare Reduction',        desc: 'Reducing screen glare and improving visual comfort at workstations' },
   { value: '30%', label: 'Energy Cost Reduction',  desc: 'Proven savings on cooling costs — improving your building\'s energy rating' },
 ]
 
@@ -349,7 +349,7 @@ export default function CommercialTintingPage() {
                 A productive work environment requires comfortable, glare-free workstations and stable temperatures throughout the day. Untreated south-facing and west-facing office windows create hot spots near desks, force HVAC systems to overcompensate, and cause significant glare on monitor screens during afternoon hours.
               </p>
               <p className="text-white/50 text-base leading-[1.85] mb-7">
-                Smart Auto UAE&apos;s <strong className="text-white/70 font-medium">office window tinting solutions</strong> eliminate hot spots, reduce screen glare by up to 95%, and create a consistently comfortable workspace — improving employee productivity while cutting energy costs.
+                Smart Auto UAE&apos;s <strong className="text-white/70 font-medium">office window tinting solutions</strong> eliminate hot spots, reduce screen glare by up to 99%, and create a consistently comfortable workspace — improving employee productivity while cutting energy costs.
               </p>
               <ul className="flex flex-col gap-2.5">
                 {[
