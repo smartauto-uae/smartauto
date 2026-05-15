@@ -217,7 +217,7 @@ export const faqs = [
   {
     question: 'How much does window tinting cost in Dubai?',
     answer:
-      'Window tinting prices in Dubai start from AED 299 depending on the type of film and vehicle size. Smart Auto UAE offers nano ceramic, carbon, and dyed films with UAE traffic law-compliant VLT levels.',
+      'Window tinting prices in Dubai start from AED 299 depending on the type of film and vehicle size. Smart Auto UAE offers nano ceramic with UAE traffic law-compliant VLT levels.',
   },
   {
     question: 'How long does nano ceramic coating last in Dubai?',

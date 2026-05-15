@@ -249,7 +249,7 @@ const branches = [
 ]
 
 const faqs = [
-  { q: 'How much does window tinting cost in Dubai?', a: 'Window tinting prices at Smart Auto UAE start from AED 299 depending on film type and vehicle size. We offer nano ceramic, carbon, and dyed films — all UAE RTA law compliant. Contact us for a free quote.' },
+  { q: 'How much does window tinting cost in Dubai?', a: 'Window tinting prices at Smart Auto UAE start from AED 299 depending on film type and vehicle size. We offer nano ceramic films — all UAE RTA law compliant. Contact us for a free quote.' },
   { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from Totalgard, 3M, or XPEL offers the best protection. Smart Auto UAE is an Applicator for all three brands, ensuring genuine product and certified installation.' },
   { q: 'How long does ceramic coating last in Dubai?', a: "A professional 9H ceramic coating lasts 2–5 years in Dubai's climate, depending on the product tier. We use Gyeon, Gtechniq, and IGL coatings — all formulated for high UV and heat environments." },
   { q: 'Does Smart Auto UAE have a branch in Sharjah?', a: 'Yes. Smart Auto UAE has a branch at Central Mall, Sharjah, offering window tinting, PPF, ceramic coating, car detailing, and car wrapping services.' },

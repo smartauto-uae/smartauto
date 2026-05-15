@@ -53,13 +53,6 @@ const faqs: {
     tags: ['fine', 'penalty', 'Dubai Police', 'RTA'],
   },
   {
-    id: 'tint-types',
-    category: 'tinting',
-    q: 'What types of window tint film are available at Smart Auto UAE?',
-    a: 'Smart Auto UAE installs the following film types from 3M, TotalGard, Global USA, and Llumar: (1) Dyed films — entry-level, basic heat reduction; (2) Metalized films — reflective, strong heat rejection; (3) Carbon films — non-reflective, good heat and UV rejection; (4) Nano ceramic films — the highest performance, non-metallic, maximum heat rejection without signal interference, crystal clear. We recommend nano ceramic for UAE conditions due to the extreme UV index and heat levels.',
-    tags: ['ceramic', 'carbon', 'dyed', 'film types'],
-  },
-  {
     id: 'tint-how-long',
     category: 'tinting',
     q: 'How long does car window tinting take at Smart Auto UAE?',
@@ -70,7 +63,7 @@ const faqs: {
     id: 'tint-last',
     category: 'tinting',
     q: 'How long does car window tinting last in Dubai?',
-    a: 'Premium 3M and TotalGard nano ceramic films are rated for 10 to 15 years in UAE conditions. Entry-level dyed films typically last 3 to 5 years before fading or bubbling. All films installed by Smart Auto UAE come with a manufacturer warranty — 5 to 10 years depending on the film grade. UAE heat and UV can accelerate degradation of inferior films, which is why we only use authorised brand products.',
+    a: 'Premium 3M and TotalGard nano ceramic films are rated for 10 to 15 years in UAE conditions. Nano ceramic films typically last 3 to 5 years before fading or bubbling. All films installed by Smart Auto UAE come with a manufacturer warranty — 5 to 10 years depending on the film grade. UAE heat and UV can accelerate degradation of inferior films, which is why we only use authorised brand products.',
     tags: ['durability', 'lifespan', 'warranty'],
   },
   {

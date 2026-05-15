@@ -94,7 +94,7 @@ const films = [
     best: 'Best for: SUVs, family cars & pickups',
   },
   {
-    name: 'Dyed / Standard Film',
+    name: 'Nano Ceramic Film',
     brand: 'Totalgard · SunTek',
     tag: 'Budget Friendly',
     features: [
@@ -126,7 +126,7 @@ const stats = [
 
 const process = [
   { num: '01', title: 'Free Inspection',          desc: 'We inspect your vehicle and recommend the right film grade for your budget and driving needs.' },
-  { num: '02', title: 'Film Selection',            desc: 'Choose from nano ceramic, carbon, or standard dyed film across multiple tint shades.' },
+  { num: '02', title: 'Film Selection',            desc: 'Choose nano ceramic films across multiple tint shades.' },
   { num: '03', title: 'Professional Installation', desc: 'Certified technicians apply the film using professional-grade tools in a dust-controlled environment.' },
   { num: '04', title: 'Quality Check & Handover',  desc: 'Every installation is inspected for clarity, adhesion, and compliance before handover with warranty documentation.' },
 ]
