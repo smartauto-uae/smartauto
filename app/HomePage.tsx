@@ -121,7 +121,7 @@ const services = [
   {
     title: 'Car Window Tinting',
     slug: 'window-tinting',
-    description: 'Premium 3M, Global USA, and Totalgard nano ceramic window films. Block up to 99% UV rays and reduce heat by up to 60%. RTA law compliant for all UAE vehicles.',
+    description: 'Premium 3M, Global USA, and Totalgard nano ceramic window films. Block up to 99% UV rays and reduce heat by up to 90%. RTA law compliant for all UAE vehicles.',
     features: ['3M · Global USA · Totalgard Films', 'UAE RTA Law Compliant', '15-Year Warranty', 'Same-Day Service Available'],
     image: '/images/services/window-tinting-1.webp',
     href: '/services/window-tinting',

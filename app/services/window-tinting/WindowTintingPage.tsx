@@ -37,7 +37,7 @@ const benefits = [
   },
   {
     icon: Thermometer,
-    title: 'Reduces Heat by Up to 95%',
+    title: 'Reduces Heat by Up to 99%',
     desc: "High-performance films with hybrid nanotechnology reduce infrared heat waves by up to 95%, keeping your cabin significantly cooler in Dubai's extreme summer temperatures.",
   },
   {
@@ -138,7 +138,7 @@ const faqs = [
   },
   {
     q: 'What are the benefits of car window tinting in Dubai?',
-    a: "Window tinting in Dubai offers multiple benefits: blocks up to 99% of UV rays protecting skin and interior, reduces cabin heat by up to 95% improving comfort, reduces glare for safer driving, adds privacy and security, and prevents interior fading. Given Dubai's extreme solar conditions, professional window tinting is one of the most practical upgrades for any vehicle.",
+    a: "Window tinting in Dubai offers multiple benefits: blocks up to 99% of UV rays protecting skin and interior, reduces cabin heat by up to 99% improving comfort, reduces glare for safer driving, adds privacy and security, and prevents interior fading. Given Dubai's extreme solar conditions, professional window tinting is one of the most practical upgrades for any vehicle.",
   },
   {
     q: "Which is the best car tinting option for Dubai's climate?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     q: 'How much heat does car window tinting reduce?',
-    a: 'High-performance nano ceramic films can reduce infrared heat by up to 95% and overall solar heat gain by up to 60%. Even entry-level carbon films provide significant heat reduction compared to untinted glass.',
+    a: 'High-performance nano ceramic films can reduce infrared heat by up to 99% and overall solar heat gain by up to 60%. Even entry-level carbon films provide significant heat reduction compared to untinted glass.',
   },
   {
     q: 'Does car tinting affect night driving visibility?',
