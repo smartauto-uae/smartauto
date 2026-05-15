@@ -114,15 +114,15 @@ const stripItems = [
   'Window Tinting Dubai', 'PPF Dubai', 'Ceramic Coating Dubai',
   'Car Detailing Dubai', 'Car Wrapping Dubai', 'Car Accessories Dubai',
   'Window Tinting Sharjah', 'PPF Sharjah', 'Ceramic Coating Sharjah',
-  '3M Applicator UAE', 'Totalgard UAE', 'XPEL Installer Dubai',
+  '3M Applicator UAE', 'Totalgard UAE', 'Global USA Installer Dubai',
 ]
 
 const services = [
   {
     title: 'Car Window Tinting',
     slug: 'window-tinting',
-    description: 'Premium 3M, XPEL, and Totalgard nano ceramic window films. Block up to 99% UV rays and reduce heat by up to 60%. RTA law compliant for all UAE vehicles.',
-    features: ['3M · XPEL · Totalgard Films', 'UAE RTA Law Compliant', '15-Year Warranty', 'Same-Day Service Available'],
+    description: 'Premium 3M, Global USA, and Totalgard nano ceramic window films. Block up to 99% UV rays and reduce heat by up to 60%. RTA law compliant for all UAE vehicles.',
+    features: ['3M · Global USA · Totalgard Films', 'UAE RTA Law Compliant', '15-Year Warranty', 'Same-Day Service Available'],
     image: '/images/services/window-tinting-1.webp',
     href: '/services/window-tinting',
     icon: Layers,
@@ -130,8 +130,8 @@ const services = [
   {
     title: 'Paint Protection Film',
     slug: 'ppf',
-    description: 'Self-healing TPU-based PPF from Totalgard, 3M, and XPEL. Invisible shield against stone chips, scratches, and UV damage. Certified installation.',
-    features: ['Totalgard · 3M · XPEL PPF', 'Self-Healing Technology', '10-Year Warranty', 'Full & Partial Coverage'],
+    description: 'Self-healing TPU-based PPF from Totalgard, 3M, and Global USA. Invisible shield against stone chips, scratches, and UV damage. Certified installation.',
+    features: ['Totalgard · 3M · Global USA PPF', 'Self-Healing Technology', '10-Year Warranty', 'Full & Partial Coverage'],
     image: '/images/services/PPF-1.webp',
     href: '/services/ppf',
     icon: Shield,
@@ -166,7 +166,7 @@ const services = [
 ]
 
 const whyFeatures = [
-  { title: '3M Applicator', description: 'Official UAE distributor and certified installer for 3M, Totalgard, XPEL, Gyeon, and Gtechniq.', icon: Shield },
+  { title: '3M Applicator', description: 'Official UAE distributor and certified installer for 3M, Totalgard, Global USA, Gyeon, and Gtechniq.', icon: Shield },
   { title: 'Upto 15-Year Warranty', description: 'Window tinting and PPF installations are backed by a comprehensive manufacturer warranty.', icon: CheckCircle },
   { title: '4 Branches UAE', description: 'MotorCity, Al Quoz, Mirdif, and Sharjah Central Mall. Always close to you.', icon: MapPin },
   { title: 'Open Every Day', description: 'All 4 branches open 7 days a week, 11 AM to 10 PM & Sharjah Branch 10 AM to 10 PM. No appointment needed.', icon: Clock },
@@ -250,7 +250,7 @@ const branches = [
 
 const faqs = [
   { q: 'How much does window tinting cost in Dubai?', a: 'Window tinting prices at Smart Auto UAE start from AED 299 depending on film type and vehicle size. We offer nano ceramic films — all UAE RTA law compliant. Contact us for a free quote.' },
-  { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from Totalgard, 3M, or XPEL offers the best protection. Smart Auto UAE is an Applicator for all three brands, ensuring genuine product and certified installation.' },
+  { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from Totalgard, 3M, or Global USA offers the best protection. Smart Auto UAE is an Applicator for all three brands, ensuring genuine product and certified installation.' },
   { q: 'How long does ceramic coating last in Dubai?', a: "A professional 9H ceramic coating lasts 2–5 years in Dubai's climate, depending on the product tier. We use Gyeon, Gtechniq, and IGL coatings — all formulated for high UV and heat environments." },
   { q: 'Does Smart Auto UAE have a branch in Sharjah?', a: 'Yes. Smart Auto UAE has a branch at Central Mall, Sharjah, offering window tinting, PPF, ceramic coating, car detailing, and car wrapping services.' },
   { q: 'How long does a full car wrap take?', a: 'A full vinyl car wrap takes 2–4 days depending on vehicle size and finish complexity. Partial wraps and accents can be completed in a single day.' },
@@ -506,7 +506,7 @@ export default function HomeClient() {
               </p>
               <div className="flex flex-col gap-3.5 mb-9">
                 {[
-                  'Totalgard, 3M & XPEL Applicator in UAE',
+                  'Totalgard, 3M & Global USA Applicator in UAE',
                   'Ceramic coating price Dubai — competitive & transparent',
                   'All PPF, tinting & coating work backed by warranty',
                   '4 branches — MotorCity, Al Quoz, Mirdif & Sharjah',

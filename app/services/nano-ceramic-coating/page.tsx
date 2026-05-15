@@ -5,7 +5,7 @@ import NanoCeramicCoatingPage from './NanoCeramicCoatingPage'
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata('/services/nano-ceramic-coating', {
     title: 'Nano Ceramic Coating Dubai | Smart Auto UAE',
-    description: 'Premium nano ceramic coating in Dubai. 3M, TotalGard & XPEL nano ceramic films. UAE RTA compliant.',
+    description: 'Premium nano ceramic coating in Dubai. 3M, TotalGard & Global USA nano ceramic films. UAE RTA compliant.',
   })
 }
 

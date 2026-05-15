@@ -6,7 +6,7 @@ import SmartFilmPage from './SmartFilmPage'
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata('/services/smart-film', {
     title: 'Smart Film Dubai | Smart Auto UAE',
-    description: 'Premium smart film in Dubai. 3M, TotalGard & XPEL nano ceramic films. UAE RTA compliant.',
+    description: 'Premium smart film in Dubai. 3M, TotalGard & Global USA nano ceramic films. UAE RTA compliant.',
   })
 }
 

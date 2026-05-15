@@ -72,7 +72,7 @@ const benefits = [
   },
   {
     title: 'Self-Healing Technology',
-    body: 'Premium TPU-based PPF films from Totalgard, 3M, and XPEL feature thermoplastic self-healing technology. Minor surface swirl marks and light scratches vanish with heat from the sun or warm water — the film literally repairs itself.',
+    body: 'Premium TPU-based PPF films from Totalgard, 3M, and Global USA feature thermoplastic self-healing technology. Minor surface swirl marks and light scratches vanish with heat from the sun or warm water — the film literally repairs itself.',
   },
   {
     title: 'Repels Environmental Damage',
@@ -125,9 +125,8 @@ const protectsFrom = [
 
 const brands = [
   { name: 'Totalgard', note: 'UAE Applicator' },
-  { name: '3M Scotchgard', note: 'UAE Applicator' },
-  { name: 'XPEL Ultimate Plus', note: 'Certified Installer' },
-  { name: 'SunTek Ultra', note: 'Approved Applicator' },
+  { name: '3M', note: 'UAE Applicator' },
+  { name: 'Global USA', note: 'Certified Installer' },
 ]
 
 const faqs = [
@@ -141,7 +140,7 @@ const faqs = [
   },
   {
     q: 'Does PPF go yellow over time?',
-    a: 'Premium TPU films from Totalgard, 3M, and XPEL are manufactured with UV stabilisers and optical-grade clarity. They will not yellow, cloud, or discolour throughout their warranty period — which ranges from 5 to 10 years depending on the product.',
+    a: 'Premium TPU films from Totalgard, 3M, and Global USA are manufactured with UV stabilisers and optical-grade clarity. They will not yellow, cloud, or discolour throughout their warranty period — which ranges from 5 to 10 years depending on the product.',
   },
   {
     q: 'What is the difference between PPF and ceramic coating?',
@@ -206,7 +205,7 @@ export default function PPFPage() {
               className="text-[11px] tracking-[0.3em] uppercase mb-4"
               style={{ color: GOLD }}
             >
-              Totalgard · 3M · XPEL — UAE Authorised Distributor &amp; Applicator
+              Totalgard · 3M · Global USA — UAE Authorised Distributor &amp; Applicator
             </p>
 
             <h1
@@ -236,7 +235,7 @@ export default function PPFPage() {
             <p className="text-white/50 text-base leading-[1.9] mb-8 max-w-xl">
               Smart Auto UAE is Dubai and Sharjah&apos;s trusted{' '}
               <strong className="text-white/70 font-medium">Paint Protection Film (PPF)</strong> installer. We use
-              self-healing TPU films from Totalgard, 3M, and XPEL — the same films trusted by luxury and exotic car
+              self-healing TPU films from Totalgard, 3M, and Global USA — the same films trusted by luxury and exotic car
               owners across the UAE. Virtually invisible, permanently protective, and backed by up to a 10-year warranty.
               Car Paint Protection Films starting from{' '}
               <strong className="text-white/70 font-medium">AED 4,999</strong>.
@@ -244,7 +243,7 @@ export default function PPFPage() {
 
             <div className="flex flex-col gap-2.5 mb-9">
               {[
-                'UAE authorised distributor & applicator — Totalgard, 3M & XPEL',
+                'UAE authorised distributor & applicator — Totalgard, 3M & Global USA',
                 'Self-healing TPU film — minor scratches vanish with heat',
                 'Optically clear — completely invisible on the paint',
                 'Starting from AED 4,999 — transparent pricing',
@@ -333,7 +332,7 @@ export default function PPFPage() {
                 PPF is trusted by owners of{' '}
                 <strong className="text-white/70 font-medium">luxury and exotic vehicles</strong> worldwide as the
                 gold standard in paint preservation. At Smart Auto UAE, we use only manufacturer-certified PPF from
-                Totalgard, 3M Scotchgard, and XPEL — the three most trusted brands in the UAE market.
+                Totalgard, 3M Scotchgard, and Global USA — the three most trusted brands in the UAE market.
               </p>
               <p>
                 The film protects vulnerable areas including front bumpers, bonnets, side mirrors, door handle
@@ -354,7 +353,7 @@ export default function PPFPage() {
             {[
               { label: 'Starting Price', value: 'AED 4,999' },
               { label: 'Warranty', value: 'Up to 10 Years' },
-              { label: 'Film Brands', value: 'Totalgard · 3M · XPEL' },
+              { label: 'Film Brands', value: 'Totalgard · 3M · Global USA' },
               { label: 'Branches', value: '4 Across UAE' },
             ].map((stat) => (
               <div
@@ -827,7 +826,7 @@ export default function PPFPage() {
             className="text-[11px] tracking-[0.3em] uppercase mb-4 relative z-10"
             style={{ color: GOLD }}
           >
-            UAE Authorised Distributor &amp; Applicator — Totalgard · 3M · XPEL
+            UAE Authorised Distributor &amp; Applicator — Totalgard · 3M · Global USA
           </p>
           <h2
             className="font-bold text-white mb-4 relative z-10"

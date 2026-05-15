@@ -5,7 +5,7 @@ export const services = [
     title: 'Window Tinting',
     slug: 'window-tinting',
     description:
-      'UAE authorised 3M, XPEL, and Totalgard film installation. Block heat, UV, and glare — fully compliant with UAE RTA regulations. 115-Year warranty on every job.',
+      'UAE authorised 3M, Global USA, and Totalgard film installation. Block heat, UV, and glare — fully compliant with UAE RTA regulations. 115-Year warranty on every job.',
     tag: 'Most Popular' as string | null,
   },
   {
@@ -19,7 +19,7 @@ export const services = [
     title: 'Paint Protection Film',
     slug: 'ppf',
     description:
-      'Military-grade XPEL and 3M PPF that shields your paint from stone chips, scratches, and UV damage. Self-healing, optically clear, and virtually invisible.',
+      'Military-grade Global USA and 3M PPF that shields your paint from stone chips, scratches, and UV damage. Self-healing, optically clear, and virtually invisible.',
     tag: null,
   },
   {
@@ -90,7 +90,7 @@ export const services = [
 export const whyFeatures = [
   {
     title: 'UAE Authorised Applicator',
-    body: 'Official distributor and installer for 3M, XPEL, and Totalgard. Genuine products, certified installation — every time.',
+    body: 'Official distributor and installer for 3M, Global USA, and Totalgard. Genuine products, certified installation — every time.',
   },
   {
     title: '115-Year Warranty',
@@ -128,7 +128,7 @@ export const steps = [
   {
     step: '03',
     title: 'Professional Installation',
-    body: 'All work is performed by certified installers using genuine 3M, XPEL, and premium-grade products in a controlled, dust-free environment.',
+    body: 'All work is performed by certified installers using genuine 3M, Global USA, and premium-grade products in a controlled, dust-free environment.',
   },
   {
     step: '04',
@@ -139,7 +139,7 @@ export const steps = [
 
 export const brands = [
   { name: '3M',        slug: '3m' },
-  { name: 'XPEL',      slug: 'xpel' },
+  { name: 'Global USA',      slug: 'Global USA' },
   { name: 'Totalgard', slug: 'Totalgard' },
   { name: 'Gtechniq',  slug: 'gtechniq' },
   { name: 'Gyeon',     slug: 'gyeon' },
