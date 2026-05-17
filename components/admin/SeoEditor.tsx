@@ -60,7 +60,6 @@ type Props = {
 
 type Tab = 'basic' | 'og' | 'twitter' | 'schema' | 'advanced'
 
-// ── Shared styles ─────────────────────────────────────────────────────────────
 const inputSt: React.CSSProperties = {
   width: '100%', padding: '0.6rem 0.875rem',
   border: '1px solid #e8e3d8', borderRadius: '0.5rem',
@@ -84,8 +83,7 @@ const hintSt: React.CSSProperties = {
   fontSize: '0.7rem', color: '#b8b0a0', marginTop: '0.3rem',
 }
 
-// ── Image compressor ──────────────────────────────────────────────────────────
-async function compressToWebP(file: File, targetW = 1200): Promise<string> {
+async function compressToBlob(file: File, targetW = 1200): Promise<Blob> {
   return new Promise((resolve, reject) => {
     const img = new Image()
     const url = URL.createObjectURL(file)
@@ -95,11 +93,13 @@ async function compressToWebP(file: File, targetW = 1200): Promise<string> {
       const canvas = document.createElement('canvas')
       canvas.width = width; canvas.height = height
       canvas.getContext('2d')!.drawImage(img, 0, 0, width, height)
+      URL.revokeObjectURL(url)
       const tryQ = (q: number) => {
-        const d = canvas.toDataURL('image/webp', q)
-        const bytes = Math.round((d.length * 3) / 4)
-        if (bytes < 200_000 || q <= 0.4) { URL.revokeObjectURL(url); resolve(d) }
-        else tryQ(Math.round((q - 0.1) * 100) / 100)
+        canvas.toBlob((blob) => {
+          if (!blob) { reject(new Error('Blob failed')); return }
+          if (blob.size < 200_000 || q <= 0.4) resolve(blob)
+          else tryQ(Math.round((q - 0.1) * 100) / 100)
+        }, 'image/webp', q)
       }
       tryQ(0.85)
     }
@@ -110,12 +110,13 @@ async function compressToWebP(file: File, targetW = 1200): Promise<string> {
 
 // ── Image upload field ────────────────────────────────────────────────────────
 function ImageField({
-  label, value, onChange, hint,
+  label, value, onChange, hint, route,  // ← route destructured here
 }: {
-  label: string
-  value: string
+  label:    string
+  value:    string
   onChange: (val: string) => void
-  hint?: string
+  hint?:    string
+  route:    string                       // ← route typed here
 }) {
   const [uploading, setUploading] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -125,10 +126,25 @@ function ImageField({
     if (!file) return
     setUploading(true)
     try {
-      const webp = await compressToWebP(file)
-      onChange(webp)
-    } catch {
-      alert('Image compression failed.')
+      const blob = await compressToBlob(file)
+      const { createClient } = await import('@supabase/supabase-js')
+      const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      )
+      const slug = route.replace(/\//g, '-').replace(/^-/, '')
+      const filename = `${slug}-og.webp`
+      const { error } = await supabase.storage
+        .from('seo-images')
+        .upload(filename, blob, { upsert: true, contentType: 'image/webp' })
+      if (error) throw error
+      const { data: { publicUrl } } = supabase.storage
+        .from('seo-images')
+        .getPublicUrl(filename)
+      onChange(publicUrl)
+    } catch (err) {
+      console.error(err)
+      alert('Image upload failed. Check Supabase Storage bucket exists and is public.')
     }
     setUploading(false)
     e.target.value = ''
@@ -137,8 +153,6 @@ function ImageField({
   return (
     <div>
       <label style={labelSt}>{label}</label>
-
-      {/* URL input + upload button row */}
       <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
         <input
           style={{ ...inputSt, flex: 1 }}
@@ -165,10 +179,7 @@ function ImageField({
             opacity: uploading ? 0.6 : 1,
           }}
         >
-          {uploading
-            ? <Loader2 size={13} className="animate-spin" />
-            : <Upload size={13} aria-hidden="true" />
-          }
+          {uploading ? <Loader2 size={13} className="animate-spin" /> : <Upload size={13} aria-hidden="true" />}
           {uploading ? 'Uploading…' : 'Upload'}
         </button>
         <input
@@ -179,21 +190,14 @@ function ImageField({
           onChange={handleFile}
         />
       </div>
-
       {hint && <p style={hintSt}>{hint}</p>}
-
-      {/* Preview */}
       {value && (
         <div style={{ marginTop: '0.625rem', position: 'relative', display: 'inline-block', width: '100%' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={value}
             alt="Preview"
-            style={{
-              width: '100%', maxHeight: 200,
-              objectFit: 'cover', borderRadius: '0.5rem',
-              border: '1px solid #e8e3d8', display: 'block',
-            }}
+            style={{ width: '100%', maxHeight: 200, objectFit: 'cover', borderRadius: '0.5rem', border: '1px solid #e8e3d8', display: 'block' }}
             onError={e => ((e.target as HTMLImageElement).style.display = 'none')}
           />
           <button
@@ -328,7 +332,6 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
         </div>
       </div>
 
-      {/* Error */}
       {error && (
         <div style={{ marginBottom: '1rem', padding: '0.65rem 1rem', borderRadius: '0.5rem', background: '#fef2f2', border: '1px solid #fca5a5', color: '#dc2626', fontSize: '0.82rem' }}>
           {error}
@@ -360,9 +363,9 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
             style={{
               padding: '0.4rem 0.875rem', borderRadius: 999,
               fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer',
-              background: tab === t.key ? goldBg     : '#ffffff',
+              background: tab === t.key ? goldBg  : '#ffffff',
               border:     tab === t.key ? `1px solid ${goldBorder}` : '1px solid #e8e3d8',
-              color:      tab === t.key ? gold        : '#7a7264',
+              color:      tab === t.key ? gold     : '#7a7264',
             }}>
             {t.label}
           </button>
@@ -408,15 +411,13 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
               value={fields.og_description} onChange={e => set('og_description', e.target.value)}
               placeholder={fields.description || 'Inherits from description if blank'} />
           </div>
-
-          {/* ── OG Image with upload ── */}
           <ImageField
             label="OG Image (1200×630px recommended)"
             value={fields.og_image}
             onChange={v => set('og_image', v)}
             hint="Shown when shared on WhatsApp, Facebook, LinkedIn. Compressed to WebP automatically."
+            route={route}
           />
-
           <div>
             <label style={labelSt}>OG Type</label>
             <select style={inputSt} value={fields.og_type} onChange={e => set('og_type', e.target.value)}>
@@ -448,13 +449,12 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
               value={fields.twitter_description} onChange={e => set('twitter_description', e.target.value)}
               placeholder={fields.og_description || fields.description || 'Inherits from OG / description'} />
           </div>
-
-          {/* ── Twitter Image with upload ── */}
           <ImageField
             label="Twitter Image"
             value={fields.twitter_image}
             onChange={v => set('twitter_image', v)}
             hint="Shown on Twitter/X cards. Falls back to OG image if blank."
+            route={route}
           />
         </>}
 
@@ -468,9 +468,9 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
                   style={{
                     padding: '0.3rem 0.75rem', borderRadius: 999,
                     fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer',
-                    background: fields.schema_type === type ? goldBg     : '#fafaf9',
+                    background: fields.schema_type === type ? goldBg  : '#fafaf9',
                     border:     fields.schema_type === type ? `1px solid ${goldBorder}` : '1px solid #e8e3d8',
-                    color:      fields.schema_type === type ? gold        : '#7a7264',
+                    color:      fields.schema_type === type ? gold     : '#7a7264',
                   }}>
                   {type}
                 </button>
@@ -532,7 +532,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
             background: saved ? '#16a34a' : gold,
             color: '#fff', opacity: saving ? 0.7 : 1,
           }}>
-          {saving ? 'Saving…' : saved ? ' Changes Saved' : 'Save SEO Changes'}
+          {saving ? 'Saving…' : saved ? '✓ Changes Saved' : 'Save SEO Changes'}
         </button>
       </div>
 
