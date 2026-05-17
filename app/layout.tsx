@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
@@ -17,9 +17,18 @@ const playfair = Playfair_Display({
   display: "swap",
 })
 
+// ── Single merged metadata export ──────────────────────────────────────────
 export const metadata: Metadata = {
   metadataBase: new URL("https://smartautouae.com"),
-
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Smart Auto UAE',
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+  },
   keywords: [
     "window tinting Dubai", "car tinting Dubai", "nano ceramic tint Dubai",
     "paint protection film Dubai", "PPF Dubai",
@@ -37,11 +46,9 @@ export const metadata: Metadata = {
     "window film UAE", "Smart Auto UAE", "Smart Auto Dubai", "Smart Auto Sharjah",
     "3M window film Dubai", "TotalGard window film UAE",
   ],
-
   authors:   [{ name: "Smart Auto UAE", url: "https://smartautouae.com" }],
   creator:   "Smart Auto UAE",
   publisher: "Smart Auto UAE",
-
   openGraph: {
     type:        "website",
     locale:      "en_AE",
@@ -58,14 +65,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-
   twitter: {
     card:        "summary_large_image",
     title:       "Smart Auto UAE | Window Tinting, PPF & Ceramic Coating Dubai",
     description: "Dubai & Sharjah's most trusted car protection centre. 50,000+ happy clients. Free inspection with every service.",
     images:      ["/og-image.jpg"],
   },
-
   robots: {
     index:  true,
     follow: true,
@@ -77,18 +82,22 @@ export const metadata: Metadata = {
       "max-snippet":       -1,
     },
   },
-
   alternates: {
     canonical: "https://smartautouae.com",
   },
-
   verification: {
     google: "YOUR_GOOGLE_SEARCH_CONSOLE_ID",
   },
-
   category: "automotive",
 }
 
+export const viewport: Viewport = {
+  themeColor: '#b8860b',
+  width: 'device-width',
+  initialScale: 1,
+}
+
+// ── Structured Data ──────────────────────────────────────────────────────────
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -266,42 +275,39 @@ const structuredData = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-     <body
-  className={`${inter.variable} ${playfair.variable}`}
-  style={{ backgroundColor: '#0A0A0A' }}
->
-  <noscript>
-    <iframe
-      src="https://www.googletagmanager.com/ns.html?id=GTM-WNC3VHF"
-      height="0"
-      width="0"
-      style={{ display: 'none', visibility: 'hidden' }}
-    />
-  </noscript>
+      <body
+        className={`${inter.variable} ${playfair.variable}`}
+        style={{ backgroundColor: '#0A0A0A' }}
+      >
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WNC3VHF"
+            height="0" width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
 
-  {/* GTM- Next.js Script component */}
-  <Script
-    id="gtm-script"
-    strategy="afterInteractive"
-    dangerouslySetInnerHTML={{
-      __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WNC3VHF');`,
-    }}
-  />
+          }}
+        />
 
-  {/* JSON-LD- plain script tag, server component only */}
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-  />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
 
-  <Navbar />
-  {children}
-  <ChatbotWrapper />
-</body>
+        <Navbar />
+        {children}
+        <ChatbotWrapper />
+      </body>
     </html>
   )
 }
