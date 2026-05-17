@@ -110,13 +110,14 @@ async function compressToBlob(file: File, targetW = 1200): Promise<Blob> {
 
 // ── Image upload field ────────────────────────────────────────────────────────
 function ImageField({
-  label, value, onChange, hint, route,  // ← route destructured here
+  label, value, onChange, hint, route, suffix = 'image',
 }: {
   label:    string
   value:    string
   onChange: (val: string) => void
   hint?:    string
-  route:    string                       // ← route typed here
+  route:    string 
+  suffix?:  string
 }) {
   const [uploading, setUploading] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -133,7 +134,7 @@ function ImageField({
         process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
       )
       const slug = route.replace(/\//g, '-').replace(/^-/, '')
-      const filename = `${slug}-og.webp`
+      const filename = `${slug}-${suffix}.webp`
       const { error } = await supabase.storage
         .from('seo-images')
         .upload(filename, blob, { upsert: true, contentType: 'image/webp' })
@@ -416,7 +417,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
             value={fields.og_image}
             onChange={v => set('og_image', v)}
             hint="Shown when shared on WhatsApp, Facebook, LinkedIn. Compressed to WebP automatically."
-            route={route}
+            route={route} suffix="og"
           />
           <div>
             <label style={labelSt}>OG Type</label>
@@ -454,7 +455,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
             value={fields.twitter_image}
             onChange={v => set('twitter_image', v)}
             hint="Shown on Twitter/X cards. Falls back to OG image if blank."
-            route={route}
+            route={route} suffix="twitter"
           />
         </>}
 

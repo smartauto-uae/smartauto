@@ -26,7 +26,7 @@ export async function getPublishedPosts(): Promise<BlogPost[]> {
 }
 
 export async function getPost(id: string): Promise<BlogPost> {
-  const { data, error } = await supabase
+  const { data, error } = await supabaseAdmin
     .from('blog_posts')
     .select('*')
     .eq('id', id)
@@ -35,11 +35,24 @@ export async function getPost(id: string): Promise<BlogPost> {
   return data
 }
 
+// Admin version — bypasses RLS, fetches drafts too
 export async function getPostBySlug(slug: string): Promise<BlogPost> {
+  const { data, error } = await supabaseAdmin
+    .from('blog_posts')
+    .select('*')
+    .eq('slug', slug)
+    .single()
+  if (error) throw new Error(error.message)
+  return data
+}
+
+// Public version — use this on /blog/[slug] page
+export async function getPublishedPostBySlug(slug: string): Promise<BlogPost> {
   const { data, error } = await supabase
     .from('blog_posts')
     .select('*')
     .eq('slug', slug)
+    .eq('status', 'published')
     .single()
   if (error) throw new Error(error.message)
   return data
@@ -67,7 +80,7 @@ export async function updatePost(id: string, payload: Partial<BlogPost>): Promis
   if (error) throw new Error(error.message)
   revalidatePath('/admin/blog')
   revalidatePath('/blog')
-  revalidatePath(`/blog/${payload.slug ?? ''}`)
+  if (payload.slug) revalidatePath(`/blog/${payload.slug}`)
 }
 
 export async function deletePost(id: string): Promise<void> {
@@ -85,6 +98,13 @@ export async function toggleStatus(
   current: 'draft' | 'published'
 ): Promise<void> {
   const next = current === 'draft' ? 'published' : 'draft'
+
+  const { data: post } = await supabaseAdmin
+    .from('blog_posts')
+    .select('slug')
+    .eq('id', id)
+    .single()
+
   const { error } = await supabaseAdmin
     .from('blog_posts')
     .update({
@@ -94,6 +114,8 @@ export async function toggleStatus(
     })
     .eq('id', id)
   if (error) throw new Error(error.message)
+
   revalidatePath('/admin/blog')
   revalidatePath('/blog')
+  if (post?.slug) revalidatePath(`/blog/${post.slug}`)
 }

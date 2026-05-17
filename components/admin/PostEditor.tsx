@@ -97,28 +97,45 @@ function slugify(str: string) {
     .replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
 }
 
-async function compressToWebP(file: File): Promise<string> {
+async function compressToBlob(file: File, maxW = 1200): Promise<Blob> {
   return new Promise((resolve, reject) => {
     const img = new Image()
     const url = URL.createObjectURL(file)
     img.onload = () => {
       let { width, height } = img
-      const MAX = 1200
-      if (width > MAX) { height = Math.round((height * MAX) / width); width = MAX }
+      if (width > maxW) { height = Math.round((height * maxW) / width); width = maxW }
       const canvas = document.createElement('canvas')
       canvas.width = width; canvas.height = height
       canvas.getContext('2d')!.drawImage(img, 0, 0, width, height)
+      URL.revokeObjectURL(url)
       const tryQ = (q: number) => {
-        const d = canvas.toDataURL('image/webp', q)
-        const b = Math.round((d.length * 3) / 4)
-        if (b < 100_000 || q <= 0.4) { URL.revokeObjectURL(url); resolve(d) }
-        else tryQ(Math.round((q - 0.15) * 100) / 100)
+        canvas.toBlob((b) => {
+          if (!b) { reject(new Error('Blob failed')); return }
+          if (b.size < 200_000 || q <= 0.4) resolve(b)
+          else tryQ(Math.round((q - 0.1) * 100) / 100)
+        }, 'image/webp', q)
       }
       tryQ(0.85)
     }
     img.onerror = reject
     img.src = url
   })
+}
+
+async function uploadToSupabase(blob: Blob, filename: string): Promise<string> {
+  const { createClient } = await import('@supabase/supabase-js')
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+  const { error } = await supabase.storage
+    .from('blog-images')
+    .upload(filename, blob, { upsert: true, contentType: 'image/webp' })
+  if (error) throw error
+  const { data: { publicUrl } } = supabase.storage
+    .from('blog-images')
+    .getPublicUrl(filename)
+  return publicUrl
 }
 
 // ── Shared styles ─────────────────────────────────────────────────────────────
@@ -170,22 +187,23 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
   const [saved,        setSaved]        = useState(false)
   const [preview,      setPreview]      = useState(false)
   const [uploadingImg, setUploadingImg] = useState(false)
+  const [uploadingOg,  setUploadingOg]  = useState(false)
   const [error,        setError]        = useState<string | null>(null)
 
   // ── Fields ──────────────────────────────────────────────────────────────────
-  const [title,        setTitle]        = useState(post?.title        ?? '')
-  const [slug,         setSlug]         = useState(post?.slug         ?? '')
-  const [excerpt,      setExcerpt]      = useState(post?.excerpt      ?? '')
-  const [content,      setContent]      = useState(post?.content      ?? '')
-  const [coverImage,   setCoverImage]   = useState(post?.cover_image  ?? '')
-  const [category,     setCategory]     = useState(post?.category     ?? 'General')
+  const [title,        setTitle]        = useState(post?.title         ?? '')
+  const [slug,         setSlug]         = useState(post?.slug          ?? '')
+  const [excerpt,      setExcerpt]      = useState(post?.excerpt       ?? '')
+  const [content,      setContent]      = useState(post?.content       ?? '')
+  const [coverImage,   setCoverImage]   = useState(post?.cover_image   ?? '')
+  const [category,     setCategory]     = useState(post?.category      ?? 'General')
   const [tags,         setTags]         = useState<string[]>(post?.tags ?? [])
   const [tagInput,     setTagInput]     = useState('')
   const [status,       setStatus]       = useState<'draft' | 'published'>(post?.status ?? 'draft')
-  const [metaTitle,    setMetaTitle]    = useState(post?.meta_title   ?? '')
-  const [metaDesc,     setMetaDesc]     = useState(post?.meta_desc    ?? '')
-  const [ogImage,      setOgImage]      = useState(post?.og_image     ?? '')
-  const [schemaType,   setSchemaType]   = useState(post?.schema_type  ?? 'Article')
+  const [metaTitle,    setMetaTitle]    = useState(post?.meta_title    ?? '')
+  const [metaDesc,     setMetaDesc]     = useState(post?.meta_desc     ?? '')
+  const [ogImage,      setOgImage]      = useState(post?.og_image      ?? '')
+  const [schemaType,   setSchemaType]   = useState(post?.schema_type   ?? 'Article')
   const [schemaCustom, setSchemaCustom] = useState(post?.schema_custom ?? '')
   const [schemaOpen,   setSchemaOpen]   = useState(false)
 
@@ -205,9 +223,31 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
     const file = e.target.files?.[0]
     if (!file) return
     setUploadingImg(true)
-    try { setCoverImage(await compressToWebP(file)) }
-    catch { alert('Image compression failed.') }
+    try {
+      const blob = await compressToBlob(file)
+      const url  = await uploadToSupabase(blob, `cover-${slug || Date.now()}.webp`)
+      setCoverImage(url)
+    } catch (err) {
+      console.error(err)
+      alert('Cover image upload failed.')
+    }
     setUploadingImg(false)
+    e.target.value = ''
+  }
+
+  const handleOgImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    setUploadingOg(true)
+    try {
+      const blob = await compressToBlob(file)
+      const url  = await uploadToSupabase(blob, `og-${slug || Date.now()}.webp`)
+      setOgImage(url)
+    } catch (err) {
+      console.error(err)
+      alert('OG image upload failed.')
+    }
+    setUploadingOg(false)
     e.target.value = ''
   }
 
@@ -226,18 +266,18 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
     const payload = {
       title,
       slug,
-      excerpt:      excerpt    || null,
-      content:      content    || null,
-      cover_image:  coverImage || null,
+      excerpt:       excerpt     || null,
+      content:       content     || null,
+      cover_image:   coverImage  || null,
       category,
-      status:       finalStatus,
-      meta_title:   metaTitle  || null,
-      meta_desc:    metaDesc   || null,
-      og_image:     ogImage    || null,
-      tags:         tags.length ? tags : null,
-      schema_type:  schemaType   || null,
+      status:        finalStatus,
+      meta_title:    metaTitle   || null,
+      meta_desc:     metaDesc    || null,
+      og_image:      ogImage     || null,
+      tags:          tags.length ? tags : null,
+      schema_type:   schemaType  || null,
       schema_custom: schemaCustom || null,
-      published_at: finalStatus === 'published'
+      published_at:  finalStatus === 'published'
         ? (post?.published_at ?? new Date().toISOString())
         : null,
     }
@@ -541,15 +581,16 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
                 <label style={labelSt}>Cover Image</label>
                 <label style={{
                   display: 'flex', alignItems: 'center', gap: '0.5rem',
-                  padding: '0.6rem 0.75rem', borderRadius: '0.4rem', cursor: 'pointer',
+                  padding: '0.6rem 0.75rem', borderRadius: '0.4rem', cursor: uploadingImg ? 'not-allowed' : 'pointer',
                   border: '1px dashed #e8e3d8', color: '#7a7264', fontSize: '0.78rem',
+                  opacity: uploadingImg ? 0.6 : 1,
                 }}>
                   {uploadingImg
                     ? <Loader2 size={14} className="animate-spin" />
                     : <ImageIcon size={14} aria-hidden="true" />
                   }
-                  {coverImage ? 'Change image' : 'Upload- auto WebP compressed'}
-                  <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFeaturedImage} />
+                  {uploadingImg ? 'Uploading…' : coverImage ? 'Change image' : 'Upload — auto WebP compressed'}
+                  <input type="file" accept="image/*" style={{ display: 'none' }} disabled={uploadingImg} onChange={handleFeaturedImage} />
                 </label>
                 {coverImage && (
                   <div style={{ marginTop: '0.5rem', position: 'relative' }}>
@@ -558,6 +599,7 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
                       src={coverImage}
                       alt="Cover preview"
                       style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', borderRadius: '0.4rem', border: '1px solid #e8e3d8' }}
+                      onError={e => ((e.target as HTMLImageElement).style.display = 'none')}
                     />
                     <button
                       onClick={() => setCoverImage('')}
@@ -622,14 +664,60 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
                 />
               </div>
 
+              {/* OG Image upload */}
               <div>
-                <label style={labelSt}>OG Image URL</label>
-                <input
-                  value={ogImage}
-                  onChange={e => setOgImage(e.target.value)}
-                  placeholder="https://… (1200×630)"
-                  style={inpSt}
-                />
+                <label style={labelSt}>OG Image (1200×630px)</label>
+                <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+                  <input
+                    value={ogImage}
+                    onChange={e => setOgImage(e.target.value)}
+                    placeholder="https://… or upload →"
+                    style={{ ...inpSt, flex: 1 }}
+                  />
+                  <label style={{
+                    flexShrink: 0, display: 'flex', alignItems: 'center', gap: 4,
+                    padding: '0.45rem 0.65rem', borderRadius: '0.4rem',
+                    cursor: uploadingOg ? 'not-allowed' : 'pointer',
+                    border: `1px solid ${GOLD_BORDER}`, background: GOLD_BG, color: GOLD,
+                    fontSize: '0.72rem', fontWeight: 600, whiteSpace: 'nowrap',
+                    opacity: uploadingOg ? 0.6 : 1,
+                  }}>
+                    {uploadingOg
+                      ? <Loader2 size={12} className="animate-spin" />
+                      : <ImageIcon size={12} aria-hidden="true" />
+                    }
+                    {uploadingOg ? 'Uploading…' : 'Upload'}
+                    <input
+                      type="file" accept="image/*"
+                      style={{ display: 'none' }}
+                      disabled={uploadingOg}
+                      onChange={handleOgImage}
+                    />
+                  </label>
+                </div>
+                {ogImage && (
+                  <div style={{ marginTop: '0.5rem', position: 'relative' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={ogImage} alt="OG preview"
+                      style={{ width: '100%', aspectRatio: '1200/630', objectFit: 'cover', borderRadius: '0.4rem', border: '1px solid #e8e3d8' }}
+                      onError={e => ((e.target as HTMLImageElement).style.display = 'none')}
+                    />
+                    <button
+                      onClick={() => setOgImage('')}
+                      style={{
+                        position: 'absolute', top: 6, right: 6,
+                        background: '#fff', border: '1px solid #e8e3d8',
+                        borderRadius: '50%', width: 22, height: 22,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        cursor: 'pointer', color: '#dc2626',
+                      }}
+                      aria-label="Remove OG image"
+                    >
+                      <Trash2 size={11} aria-hidden="true" />
+                    </button>
+                  </div>
+                )}
               </div>
 
               {(metaTitle || title) && (
