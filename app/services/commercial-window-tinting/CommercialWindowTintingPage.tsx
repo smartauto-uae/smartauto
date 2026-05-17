@@ -27,39 +27,39 @@ const stats = [
   { value: '90%', label: 'Solar Heat Rejection',  desc: 'Eliminating hot spots and reducing HVAC load across entire floors' },
   { value: '99%', label: 'UV Ray Blockage',        desc: 'Protecting staff, merchandise, and interior finishes from UV damage' },
   { value: '99%', label: 'Glare Reduction',        desc: 'Reducing screen glare and improving visual comfort at workstations' },
-  { value: '30%', label: 'Energy Cost Reduction',  desc: 'Proven savings on cooling costs — improving your building\'s energy rating' },
+  { value: '30%', label: 'Energy Cost Reduction',  desc: 'Proven savings on cooling costs- improving your building\'s energy rating' },
 ]
 
 const benefits = [
   {
     icon: Thermometer,
     title: 'Solar Heat Control',
-    desc: 'Dubai\'s commercial glass facades face extreme solar heat radiation for most of the year. Totalgard and 3M architectural window films reject up to 79% of excess solar heat — eliminating hot spots near windows, reducing workstation discomfort, and allowing your HVAC system to operate at designed capacity rather than running constantly at maximum load.',
+    desc: 'Dubai\'s commercial glass facades face extreme solar heat radiation for most of the year. Totalgard and 3M architectural window films reject up to 79% of excess solar heat- eliminating hot spots near windows, reducing workstation discomfort, and allowing your HVAC system to operate at designed capacity rather than running constantly at maximum load.',
   },
   {
     icon: Zap,
     title: 'Energy Efficiency & Cost Saving',
-    desc: 'Commercial buildings in the UAE can spend up to 60% of their energy budget on cooling. Window film is one of the highest-return energy efficiency upgrades available — reducing cooling energy consumption by up to 30% without any structural modification, downtime, or disruption to your business operations.',
+    desc: 'Commercial buildings in the UAE can spend up to 60% of their energy budget on cooling. Window film is one of the highest-return energy efficiency upgrades available- reducing cooling energy consumption by up to 30% without any structural modification, downtime, or disruption to your business operations.',
   },
   {
     icon: Sun,
     title: 'UV Protection',
-    desc: 'UV radiation bleaches and degrades office furniture, reception area finishes, display items, retail merchandise, and hotel interiors — causing premature wear that requires costly replacement. Our films block 99% of UV-A and UV-B radiation, protecting your interior investment indefinitely.',
+    desc: 'UV radiation bleaches and degrades office furniture, reception area finishes, display items, retail merchandise, and hotel interiors- causing premature wear that requires costly replacement. Our films block 99% of UV-A and UV-B radiation, protecting your interior investment indefinitely.',
   },
   {
     icon: Eye,
     title: 'Privacy & Confidentiality',
-    desc: 'Meeting rooms, executive offices, reception areas, and glass partitions often require daytime privacy without losing natural light. Our one-way privacy films prevent external visibility during daylight hours while maintaining full interior transparency and views outward — ideal for boardrooms, consultation spaces, and street-facing offices.',
+    desc: 'Meeting rooms, executive offices, reception areas, and glass partitions often require daytime privacy without losing natural light. Our one-way privacy films prevent external visibility during daylight hours while maintaining full interior transparency and views outward- ideal for boardrooms, consultation spaces, and street-facing offices.',
   },
   {
     icon: Shield,
     title: 'Safety & Security Film',
-    desc: 'Totalgard safety and security window films hold glass together on breakage — dramatically reducing the injury risk from accidental glass failure, extreme weather events, or forced entry attempts. Essential for ground-floor retail, shopping malls, schools, and any commercial space with high foot traffic.',
+    desc: 'Totalgard safety and security window films hold glass together on breakage- dramatically reducing the injury risk from accidental glass failure, extreme weather events, or forced entry attempts. Essential for ground-floor retail, shopping malls, schools, and any commercial space with high foot traffic.',
   },
   {
     icon: Building2,
     title: 'Anti-Graffiti Protection',
-    desc: 'Ground-floor commercial glass is vulnerable to graffiti and surface scratching. Our sacrificial anti-graffiti film absorbs the damage instead of the glass — protecting your storefront and allowing rapid, low-cost film replacement rather than expensive glass resurfacing or replacement.',
+    desc: 'Ground-floor commercial glass is vulnerable to graffiti and surface scratching. Our sacrificial anti-graffiti film absorbs the damage instead of the glass- protecting your storefront and allowing rapid, low-cost film replacement rather than expensive glass resurfacing or replacement.',
   },
 ]
 
@@ -69,35 +69,35 @@ const filmTypes = [
     brand: 'Totalgard · 3M',
     best: 'Offices, towers, and commercial buildings with sun-facing facades',
     features: ['Up to 79% solar heat rejection', 'High visible light transmission maintained', 'No disruption to natural daylight', 'Reduces HVAC operating costs', '10-year commercial warranty'],
-    price: 'From AED 20/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Privacy Film (One-Way)',
-    brand: 'Totalgard · Llumar',
+    brand: 'Totalgard · Global USA',
     best: 'Meeting rooms, executive offices, reception areas, glass partitions',
     features: ['Daytime one-way visibility', 'Full view retained from inside', 'Multiple opacity levels available', 'Compatible with existing glass', '15-Year warranty'],
-    price: 'From AED 18/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Decorative & Frosted Film',
     brand: 'Totalgard · 3M',
     best: 'Glass partitions, entrance lobbies, bathroom glass, branding applications',
     features: ['Frosted, etched & patterned options', 'Custom cut logos and graphics', 'Permanent privacy solution', 'Easy to clean and maintain', '15-Year warranty'],
-    price: 'From AED 16/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Safety & Security Film',
     brand: '3M Safety Series · Totalgard',
     best: 'Shopping malls, schools, banks, retail stores, ground-floor glazing',
-    features: ['Holds glass on breakage', 'Slows forced entry attempts', 'Meets international safety standards', 'Optically clear — no visible change', '10-year warranty'],
-    price: 'From AED 30/sqft',
+    features: ['Holds glass on breakage', 'Slows forced entry attempts', 'Meets international safety standards', 'Optically clear- no visible change', '10-year warranty'],
+    price: 'Custom quote',
   },
   {
     name: 'Anti-Graffiti Film',
     brand: 'Totalgard',
     best: 'Ground-floor retail, public-facing glass, transit facilities',
     features: ['Sacrificial surface protection', 'Absorbs scratching and etching', 'Replace film, not glass', 'Rapid replacement service', '2-year warranty'],
-    price: 'From AED 22/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Graphically Printed Film',
@@ -119,19 +119,19 @@ const buildingTypes = [
 
 const process = [
   { num: '01', title: 'Site Survey', desc: 'We survey the building, assess glass type, orientation, and sun exposure, and document all window measurements. Conducted at no cost and with no obligation.' },
-  { num: '02', title: 'Film Specification', desc: 'We recommend the optimal film type for each glazing area — balancing heat rejection, light transmission, privacy, and budget priorities.' },
-  { num: '03', title: 'Installation Scheduling', desc: 'Installation is planned to minimise disruption — after-hours, floor by floor, or room by room depending on your operations.' },
+  { num: '02', title: 'Film Specification', desc: 'We recommend the optimal film type for each glazing area- balancing heat rejection, light transmission, privacy, and budget priorities.' },
+  { num: '03', title: 'Installation Scheduling', desc: 'Installation is planned to minimise disruption- after-hours, floor by floor, or room by room depending on your operations.' },
   { num: '04', title: 'Installation & QA', desc: 'Certified installers complete the work to manufacturer specification. Each installation is inspected before handover and warranty is issued.' },
 ]
 
 const faqs = [
   {
     q: 'How much does commercial window tinting cost in Dubai?',
-    a: 'Commercial window film pricing in Dubai typically ranges from AED 16–40 per square foot depending on film type, building height, and access requirements. Smart Auto UAE provides detailed itemised quotations after a free site survey — no vague estimates.',
+    a: 'Commercial window film pricing in Dubai depends on film type, building height, and access requirements. Smart Auto UAE provides detailed itemised quotations after a free site survey- no vague estimates.',
   },
   {
     q: 'Will window film installation disrupt our business operations?',
-    a: 'No. Smart Auto UAE schedules commercial installations outside business hours, floor by floor, or in phases — whatever minimises disruption to your team and customers. Most offices continue normal operations throughout the installation process.',
+    a: 'No. Smart Auto UAE schedules commercial installations outside business hours, floor by floor, or in phases- whatever minimises disruption to your team and customers. Most offices continue normal operations throughout the installation process.',
   },
   {
     q: 'Can window film be installed on existing double-glazed units?',
@@ -151,7 +151,7 @@ const faqs = [
   },
   {
     q: 'Do you provide anti-graffiti film for retail stores?',
-    a: 'Yes. Our Totalgard anti-graffiti sacrificial film protects ground-floor retail glass from scratching, etching, and surface damage. When the film is damaged, it is replaced at a fraction of the cost of glass resurfacing — keeping your storefront looking pristine.',
+    a: 'Yes. Our Totalgard anti-graffiti sacrificial film protects ground-floor retail glass from scratching, etching, and surface damage. When the film is damaged, it is replaced at a fraction of the cost of glass resurfacing- keeping your storefront looking pristine.',
   },
 ]
 
@@ -182,7 +182,7 @@ export default function CommercialTintingPage() {
         <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeLeft} initial="hidden" animate="show">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-              Totalgard · 3M · Llumar — UAE Authorised Commercial Installer
+              Totalgard · 3M · Global USA- Partnering Brands in the UAE
             </p>
             <h1
               className="font-bold text-white leading-[1.1] mb-5"
@@ -195,13 +195,13 @@ export default function CommercialTintingPage() {
               </span>
             </h1>
             <p className="text-white/50 text-base leading-[1.85] mb-8 max-w-xl">
-              Smart Auto UAE provides professional <strong className="text-white/75 font-medium">commercial window film installation</strong> for office buildings, retail stores, shopping malls, hotels, schools, and all commercial properties across Dubai and Sharjah. As a UAE authorised distributor and installer for Totalgard, 3M, and Llumar — we deliver energy-saving, comfort-enhancing, and safety-compliant window film solutions backed by full manufacturer warranties.
+              Smart Auto UAE provides professional <strong className="text-white/75 font-medium">commercial window film installation</strong> for office buildings, retail stores, shopping malls, hotels, schools, and all commercial properties across Dubai and Sharjah. As a UAE authorised distributor and installer for Totalgard, 3M, and Global USA- we deliver energy-saving, comfort-enhancing, and safety-compliant window film solutions backed by full manufacturer warranties.
             </p>
             <div className="flex flex-col gap-2.5 mb-8">
               {[
-                'UAE authorised Totalgard, 3M & Llumar installer',
+                'UAE authorised Totalgard, 3M & Global USA installer',
                 'Offices, retail, hotels, malls & industrial buildings',
-                'After-hours installation — zero business disruption',
+                'After-hours installation- zero business disruption',
                 'Full building facade capability',
                 'Free site survey & itemised quotation',
               ].map((p) => (
@@ -238,7 +238,7 @@ export default function CommercialTintingPage() {
           >
             <img
               src="/images/office-commercial-window-tinting.webp"
-              alt="Commercial office building window tinting Dubai — Totalgard and 3M film installation by Smart Auto UAE"
+              alt="Commercial office building window tinting Dubai- Totalgard and 3M film installation by Smart Auto UAE"
               width={700} height={500} loading="eager" decoding="async"
               className="w-full h-full object-cover" style={{ maxHeight: '480px' }}
             />
@@ -297,7 +297,7 @@ export default function CommercialTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto leading-relaxed">
-              The UAE&apos;s extreme UV index and year-round solar radiation present unique challenges for commercial buildings. Window film addresses energy costs, occupant comfort, safety compliance, and interior preservation — simultaneously.
+              The UAE&apos;s extreme UV index and year-round solar radiation present unique challenges for commercial buildings. Window film addresses energy costs, occupant comfort, safety compliance, and interior preservation- simultaneously.
             </p>
           </motion.div>
 
@@ -349,7 +349,7 @@ export default function CommercialTintingPage() {
                 A productive work environment requires comfortable, glare-free workstations and stable temperatures throughout the day. Untreated south-facing and west-facing office windows create hot spots near desks, force HVAC systems to overcompensate, and cause significant glare on monitor screens during afternoon hours.
               </p>
               <p className="text-white/50 text-base leading-[1.85] mb-7">
-                Smart Auto UAE&apos;s <strong className="text-white/70 font-medium">office window tinting solutions</strong> eliminate hot spots, reduce screen glare by up to 99%, and create a consistently comfortable workspace — improving employee productivity while cutting energy costs.
+                Smart Auto UAE&apos;s <strong className="text-white/70 font-medium">office window tinting solutions</strong> eliminate hot spots, reduce screen glare by up to 99%, and create a consistently comfortable workspace- improving employee productivity while cutting energy costs.
               </p>
               <ul className="flex flex-col gap-2.5">
                 {[
@@ -357,7 +357,7 @@ export default function CommercialTintingPage() {
                   'Maintains meeting room confidentiality with privacy film',
                   'Eliminates temperature variation across open-plan floors',
                   'Protects office furniture and finishes from UV fading',
-                  'Installed outside business hours — zero disruption',
+                  'Installed outside business hours- zero disruption',
                 ].map((p) => (
                   <li key={p} className="flex items-center gap-3">
                     <CheckCircle size={14} style={{ color: GOLD, flexShrink: 0 }} />
@@ -373,7 +373,7 @@ export default function CommercialTintingPage() {
             >
               <img
                 src="/images/commercial-tint.webp"
-                alt="Office building window tinting Dubai — Totalgard solar control film by Smart Auto UAE"
+                alt="Office building window tinting Dubai- Totalgard solar control film by Smart Auto UAE"
                 width={700} height={460} loading="lazy" decoding="async"
                 className="w-full h-full object-cover" style={{ maxHeight: '420px' }}
               />
@@ -389,7 +389,7 @@ export default function CommercialTintingPage() {
             >
               <img
                 src="/images/shop-tint.jpeg"
-                alt="Retail shop window tinting Dubai — storefront privacy and UV protection by Smart Auto UAE"
+                alt="Retail shop window tinting Dubai- storefront privacy and UV protection by Smart Auto UAE"
                 width={700} height={460} loading="lazy" decoding="async"
                 className="w-full h-full object-cover" style={{ maxHeight: '420px' }}
               />
@@ -592,15 +592,15 @@ export default function CommercialTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto">
-              Since 2014, Smart Auto UAE has delivered commercial window film installations across offices, retail, hospitality, and industrial buildings throughout Dubai and Sharjah. Authorised by Totalgard, 3M, and Llumar.
+              Since 2014, Smart Auto UAE has delivered commercial window film installations across offices, retail, hospitality, and industrial buildings throughout Dubai and Sharjah. Authorised by Totalgard, 3M, and Global USA.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Applicator',    body: 'UAE authorised distributor and installer for Totalgard, 3M, and Llumar. All products are genuine — no grey-market films.' },
-              { title: 'Zero Business Disruption', body: 'We schedule installations after hours, at weekends, or floor by floor — so your operations continue without interruption.' },
-              { title: 'Full Building Capability', body: 'From a single office window to a full tower facade — our team and equipment handle projects of any scale across Dubai and Sharjah.' },
+              { title: 'Applicator',    body: 'UAE authorised distributor and installer for Totalgard, 3M, and Global USA. All products are genuine- no grey-market films.' },
+              { title: 'Zero Business Disruption', body: 'We schedule installations after hours, at weekends, or floor by floor- so your operations continue without interruption.' },
+              { title: 'Full Building Capability', body: 'From a single office window to a full tower facade- our team and equipment handle projects of any scale across Dubai and Sharjah.' },
               { title: 'Itemised Quotation',       body: 'Detailed per-window, per-floor pricing after a free site survey. No vague estimates or surprise additions on invoice.' },
               { title: 'Manufacturer Warranties',  body: 'All commercial film installations carry 5–10 year manufacturer warranties. Full documentation provided at handover.' },
               { title: 'LEED Documentation',       body: 'We provide full technical data sheets and performance certificates to support your building\'s LEED or sustainability certification submission.' },
@@ -716,7 +716,7 @@ export default function CommercialTintingPage() {
               </span>
             </h2>
             <p className="text-white/50 text-base mb-8 max-w-lg mx-auto relative z-10">
-              Our team surveys your building, specifies the right film for each area, and delivers a detailed itemised quotation — all at no cost. Authorised Totalgard and 3M installer. Full manufacturer warranties on every job.
+              Our team surveys your building, specifies the right film for each area, and delivers a detailed itemised quotation- all at no cost. Authorised Totalgard and 3M installer. Full manufacturer warranties on every job.
             </p>
             <div className="flex gap-4 justify-center flex-wrap relative z-10">
               <a

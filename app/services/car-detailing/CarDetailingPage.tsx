@@ -127,17 +127,17 @@ const services = [
 
 const polishBenefits = [
   'Removes microscopic scratches caused by road debris and dirty sponges',
-  'More permanent result than wax or T-cut — not just a surface cover',
-  'Complete 3-stage polishing process — reduces lacquer top coat step by step',
+  'More permanent result than wax or T-cut- not just a surface cover',
+  'Complete 3-stage polishing process- reduces lacquer top coat step by step',
   'Transforms your car in 2–3 hours to showroom condition',
   'Deep, long-lasting shine that generic products cannot replicate',
 ]
 
 const headlightBenefits = [
-  'Increases safety — properly functioning headlights are critical for night driving',
-  'Increases resale value — buyers pay more for vehicles with clear, bright headlights',
+  'Increases safety- properly functioning headlights are critical for night driving',
+  'Increases resale value- buyers pay more for vehicles with clear, bright headlights',
   'Improves light projection and road visibility significantly',
-  'Enhances appearance — clear headlights transform the front look of any vehicle',
+  'Enhances appearance- clear headlights transform the front look of any vehicle',
   'Removes yellowing, cloudiness, leakage, and trapped water or dust particles',
   'Minor accidental scratches removed depending on depth',
 ]
@@ -156,7 +156,7 @@ const interiorBenefits = [
   'Leaves no greasy residue on any surface',
   'Enhances look, shine, and durability of vehicle plastics and leather',
   'Streak-free glass and windshield cleaning',
-  'Complete interior coverage — seats, roof, floor, side panels',
+  'Complete interior coverage- seats, roof, floor, side panels',
 ]
 
 const faqs = [
@@ -174,11 +174,11 @@ const faqs = [
   },
   {
     q: 'Can you detail my car at my location in Dubai?',
-    a: 'We offer mobile detailing for select services. Contact us on WhatsApp to check availability for your area. Walk-ins are welcome at all 4 branches across Dubai and Sharjah.',
+    a: 'No, we do not offer mobile detailing services because it requires specialized equipment and a controlled environment. Contact us on WhatsApp to check availability for your area. Walk-ins are welcome at all 4 branches across Dubai and Sharjah.',
   },
   {
     q: 'What is included in headlight restoration?',
-    a: 'Our headlight restoration removes yellowing, cloudiness, leakage, trapped water and dust, and minor surface scratches. The process takes 24 hours and requires headlight removal. We offer one free follow-up service after one year.',
+    a: 'Our headlight restoration removes yellowing, cloudiness, and dust, and minor surface scratches. The process takes 30-60 minutes and requires headlight removal.',
   },
   {
     q: 'How often should I get my car detailed in Dubai?',
@@ -254,7 +254,7 @@ export default function CarDetailingPage() {
               className="text-[11px] tracking-[0.3em] uppercase mb-4"
               style={{ color: GOLD }}
             >
-              Professional Car Detailing — Dubai &amp; Sharjah
+              Professional Car Detailing- Dubai &amp; Sharjah
             </p>
             <h1
               className="font-bold text-white leading-[1.05] mb-5"
@@ -263,7 +263,7 @@ export default function CarDetailingPage() {
                 fontSize: 'clamp(2.5rem,5vw,4.5rem)',
               }}
             >
-              Car Detailing Dubai —<br />
+              Car Detailing Dubai-<br />
               <span
                 style={{
                   background: goldGrad,
@@ -278,7 +278,7 @@ export default function CarDetailingPage() {
             <p className="text-white/50 text-base leading-[1.85] mb-8 max-w-xl">
               Smart Auto UAE offers professional{' '}
               <strong className="text-white/70 font-medium">car detailing services in Dubai</strong> and
-              Sharjah — from interior deep cleaning and machine polishing to headlight
+              Sharjah- from interior deep cleaning and machine polishing to headlight
               restoration and ceramic sealant application. With 4 branches across the UAE and
               competitive packages starting from AED 299, we are Dubai&apos;s most trusted{' '}
               <strong className="text-white/70 font-medium">car detailing centre</strong>.
@@ -336,7 +336,7 @@ export default function CarDetailingPage() {
           >
             <img
               src="/images/nano-ceramic-2.webp"
-              alt="Professional car detailing in Dubai — Smart Auto UAE car polishing and interior cleaning services"
+              alt="Professional car detailing in Dubai- Smart Auto UAE car polishing and interior cleaning services"
               width={700}
               height={500}
               loading="eager"
@@ -381,7 +381,7 @@ export default function CarDetailingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm max-w-2xl mx-auto leading-relaxed">
-              From a quick interior refresh to a full premium detail with ceramic sealant —
+              From a quick interior refresh to a full premium detail with ceramic sealant-
               choose the package that suits your vehicle and budget. All prices include both
               interior and exterior work.
             </p>
@@ -504,7 +504,7 @@ export default function CarDetailingPage() {
           >
             <img
               src="/images/detailing.webp"
-              alt="Car polishing and swirl mark removal in Dubai — 3-stage machine polish by Smart Auto UAE"
+              alt="Car polishing and swirl mark removal in Dubai- 3-stage machine polish by Smart Auto UAE"
               width={650}
               height={480}
               loading="lazy"
@@ -554,7 +554,7 @@ export default function CarDetailingPage() {
             </p>
             <p className="text-white/50 text-base leading-[1.85] mb-6">
               Unlike wax or T-cut products that simply sit on top of the paintwork and wash off
-              — our complete <strong className="text-white/70 font-medium">3-stage machine polishing process</strong>{' '}
+             - our complete <strong className="text-white/70 font-medium">3-stage machine polishing process</strong>{' '}
               step by step reduces the top coat of lacquer, revealing a new unmarked surface in
               the paint. In 2–3 hours your car is transformed back to how it looked when new.
               The shine produced is significantly more permanent than any over-the-counter
@@ -623,19 +623,14 @@ export default function CarDetailingPage() {
               Dim, yellowed, or cloudy headlights reduce visibility dramatically and put you
               and other road users at risk. In the past, replacing scratched or discoloured
               plastic headlight covers was an expensive necessity. Smart Auto UAE&apos;s
-              headlight restoration service restores plastic lenses — including headlights,
-              tail lights, and fog lights — to like-new condition for a fraction of the
+              headlight restoration service restores plastic lenses- including headlights,
+              tail lights, and fog lights- to like-new condition for a fraction of the
               replacement cost.
             </p>
             <p className="text-white/50 text-base leading-[1.85] mb-6">
               Leakage, water, dust, and particles trapped inside the headlight can be
               successfully removed. Minor accidental surface scratches can also be removed
-              depending on depth. The full restoration process takes 24 hours and requires
-              headlight removal from the vehicle.{' '}
-              <strong className="text-white/70 font-medium">
-                We offer one complimentary follow-up service after one year — taking only 15
-                minutes with no dismantling required.
-              </strong>
+              depending on depth.
             </p>
             <ul className="flex flex-col gap-2.5 mb-7">
               {headlightBenefits.map((b) => (
@@ -664,7 +659,7 @@ export default function CarDetailingPage() {
               <div className="flex flex-col gap-2">
                 {[
                   '1. Headlight removal from vehicle',
-                  '2. Deep cleaning of lens interior — removes water, dust & particles',
+                  '2. Deep cleaning of lens interior- removes water, dust & particles',
                   '3. Wet sanding to remove yellowing and surface oxidation',
                   '4. 3-stage polish to restore optical clarity',
                   '5. UV sealant application to prevent future yellowing',
@@ -697,7 +692,7 @@ export default function CarDetailingPage() {
           >
             <img
               src="/images/headlight-restoration.jpeg"
-              alt="Headlight restoration Dubai — yellowed and cloudy headlight lens restored by Smart Auto UAE"
+              alt="Headlight restoration Dubai- yellowed and cloudy headlight lens restored by Smart Auto UAE"
               width={650}
               height={480}
               loading="lazy"
@@ -722,7 +717,7 @@ export default function CarDetailingPage() {
           >
             <img
               src="/images/ceramic-coating-2.webp"
-              alt="Exterior car detailing Dubai — paint decontamination and Power Shine by Smart Auto UAE"
+              alt="Exterior car detailing Dubai- paint decontamination and Power Shine by Smart Auto UAE"
               width={650}
               height={480}
               loading="lazy"
@@ -767,14 +762,14 @@ export default function CarDetailingPage() {
             <p className="text-white/50 text-base leading-[1.85] mb-4">
               Over time, your car&apos;s paint begins to fade and lose its shine. Harsh
               environmental conditions and prolonged exposure to Dubai&apos;s intense sunlight
-              are the two main culprits. Left unprotected, paint starts oxidising — moisture
+              are the two main culprits. Left unprotected, paint starts oxidising- moisture
               is removed from the top layers causing it to lose vital oils, and the surface
               gradually becomes duller and chalky.
             </p>
             <p className="text-white/50 text-base leading-[1.85] mb-6">
               A standard car wash will not restore the damage caused by oxidation. Smart Auto&apos;s
               exterior detailing service is one proven solution to protect the gloss and shine
-              on your car — restoring the original paint finish while giving your car a
+              on your car- restoring the original paint finish while giving your car a
               brand-new look. We keep your car&apos;s paint sparkling for longer.
             </p>
             <ul className="flex flex-col gap-2.5 mb-7">
@@ -859,7 +854,7 @@ export default function CarDetailingPage() {
                 fontSize: 'clamp(1.8rem,3vw,2.8rem)',
               }}
             >
-              Interior Detailing —{' '}
+              Interior Detailing-{' '}
               <span
                 style={{
                   background: goldGrad,
@@ -874,7 +869,7 @@ export default function CarDetailingPage() {
             <p className="text-white/50 text-base leading-[1.85] mb-4">
               Almost every day, the morning journey in your car decides your mood for the rest
               of the day. Travelling through Dubai&apos;s traffic for more than an hour is already
-              tiring — a dull, unclean, or dusty interior makes it worse. Over time, plastic
+              tiring- a dull, unclean, or dusty interior makes it worse. Over time, plastic
               and leather interiors loosen, dust accumulates in every corner, and mirrors look
               foggy. A quick wipe with a cloth does not give a fresh, clean look for long.
             </p>
@@ -956,7 +951,7 @@ export default function CarDetailingPage() {
           >
             <img
               src="/images/detailing-2.webp"
-              alt="Interior car cleaning Dubai — full interior detailing and upholstery cleaning by Smart Auto UAE"
+              alt="Interior car cleaning Dubai- full interior detailing and upholstery cleaning by Smart Auto UAE"
               width={650}
               height={480}
               loading="lazy"
@@ -980,7 +975,7 @@ export default function CarDetailingPage() {
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: '4', label: 'Branches — Dubai & Sharjah' },
+              { value: '4', label: 'Branches- Dubai & Sharjah' },
               { value: 'AED 299', label: 'Starting Price' },
               { value: '600+', label: 'Google Reviews' },
               { value: '20+', label: 'Years in UAE' },
@@ -1067,7 +1062,7 @@ export default function CarDetailingPage() {
               className="text-[11px] tracking-[0.3em] uppercase mb-4"
               style={{ color: GOLD }}
             >
-              Car Detailing Near Me — Dubai &amp; Sharjah
+              Car Detailing Near Me- Dubai &amp; Sharjah
             </p>
             <h2
               className="font-bold text-white mb-4"

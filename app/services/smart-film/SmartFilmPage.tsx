@@ -76,7 +76,7 @@ const filmCategories = [
     colorBdr: "rgba(165,180,252,0.25)",
     icon: Eye,
     tagline: "Permanent privacy without replacing glass",
-    desc: "Our frosted decorative films transform clear glass into elegant, diffused surfaces — providing permanent visual privacy while retaining natural light. Ideal for bathrooms, office partitions, meeting rooms, and any glass requiring a clean, professional appearance.",
+    desc: "Our frosted decorative films transform clear glass into elegant, diffused surfaces- providing permanent visual privacy while retaining natural light. Ideal for bathrooms, office partitions, meeting rooms, and any glass requiring a clean, professional appearance.",
     specs: ["Available in 10+ opacity levels", "Various patterns and textures", "UV blocking layer included", "Easy-clean surface coating"],
   },
   {
@@ -85,7 +85,7 @@ const filmCategories = [
     colorBg: "rgba(201,168,76,0.07)",
     colorBdr: "rgba(201,168,76,0.25)",
     icon: Shield,
-    tagline: "Daytime privacy — full outward visibility retained",
+    tagline: "Daytime privacy- full outward visibility retained",
     desc: "One-way mirror films allow clear outward visibility from inside while preventing outsiders from seeing in during daylight. A premium solution for ground-floor offices, street-facing windows, and villa facades that require privacy without sacrificing natural light or views.",
     specs: ["Works on daytime light differential", "Full outward view retained", "Solar heat rejection included", "Available in multiple VLT levels"],
   },
@@ -96,7 +96,7 @@ const filmCategories = [
     colorBdr: "rgba(110,231,183,0.25)",
     icon: Palette,
     tagline: "Custom branding and aesthetic glass treatments",
-    desc: "Transform plain glass into a branded, artistic, or decorative feature. From custom logo prints to geometric patterns, gradient frosting, and etched-look designs — our decorative films are printed to your exact specifications and applied without replacing the glass.",
+    desc: "Transform plain glass into a branded, artistic, or decorative feature. From custom logo prints to geometric patterns, gradient frosting, and etched-look designs- our decorative films are printed to your exact specifications and applied without replacing the glass.",
     specs: ["Full-colour digital printing", "Custom logos, patterns & gradients", "Etched and brushed metal effects", "Cut-to-shape available"],
   },
   {
@@ -105,9 +105,9 @@ const filmCategories = [
     colorBg: "rgba(252,165,165,0.07)",
     colorBdr: "rgba(252,165,165,0.25)",
     icon: Lock,
-    tagline: "Sacrificial surface layer — peel and replace",
-    desc: "Anti-graffiti films protect glass from scratches, paint, acid etching, and surface damage. The sacrificial clear film takes the damage — when vandalism occurs, only the film needs to be replaced, not the glass. A cost-effective, long-term solution for retail fronts, transport hubs, and public-facing buildings.",
-    specs: ["Optically clear — invisible protection", "Resists scratches, paint and acid", "Peel and replace — no glass cost", "UV-stable — no yellowing"],
+    tagline: "Sacrificial surface layer- peel and replace",
+    desc: "Anti-graffiti films protect glass from scratches, paint, acid etching, and surface damage. The sacrificial clear film takes the damage- when vandalism occurs, only the film needs to be replaced, not the glass. A cost-effective, long-term solution for retail fronts, transport hubs, and public-facing buildings.",
+    specs: ["Optically clear- invisible protection", "Resists scratches, paint and acid", "Peel and replace- no glass cost", "UV-stable- no yellowing"],
   },
   {
     name: "Safety & Security Film",
@@ -116,8 +116,8 @@ const filmCategories = [
     colorBdr: "rgba(251,191,36,0.25)",
     icon: ShieldCheck,
     tagline: "Holds shattered glass together on impact",
-    desc: "Safety window films hold glass fragments together when broken — dramatically reducing injury risk from accidental impact, forced entry, or extreme weather. Our security-grade films meet international safety standards and are particularly recommended for ground-floor commercial fronts, schools, healthcare, and residential entry points.",
-    specs: ["Meets EN12600 & ANSI Z97.1", "Slows forced entry attempts", "Optically clear — no visual change", "Available in 4mil, 7mil and 12mil thickness"],
+    desc: "Safety window films hold glass fragments together when broken- dramatically reducing injury risk from accidental impact, forced entry, or extreme weather. Our security-grade films meet international safety standards and are particularly recommended for ground-floor commercial fronts, schools, healthcare, and residential entry points.",
+    specs: ["Meets EN12600 & ANSI Z97.1", "Slows forced entry attempts", "Optically clear- no visual change", "Available in 4mil, 7mil and 12mil thickness"],
   },
   {
     name: "Solar Control Film",
@@ -126,8 +126,8 @@ const filmCategories = [
     colorBdr: "rgba(249,115,22,0.25)",
     icon: Sun,
     tagline: "Heat and UV rejection for commercial buildings",
-    desc: "High-performance solar control films reject up to 80% of solar heat through commercial and residential glass — reducing air conditioning loads and protecting interiors from UV fading. Available in nano-ceramic, spectrally selective, and reflective options to match any aesthetic requirement.",
-    specs: ["Up to 80% solar heat rejection", "99% UV blocking", "Glare reduction up to 90%", "Spectrally selective — high clarity"],
+    desc: "High-performance solar control films reject up to 80% of solar heat through commercial and residential glass- reducing air conditioning loads and protecting interiors from UV fading. Available in nano-ceramic, spectrally selective, and reflective options to match any aesthetic requirement.",
+    specs: ["Up to 80% solar heat rejection", "99% UV blocking", "Glare reduction up to 90%", "Spectrally selective- high clarity"],
   },
 ];
 
@@ -174,27 +174,27 @@ const benefits = [
   {
     icon: Layers,
     title: "No Glass Replacement Required",
-    desc: "Every SmartFilm product is applied directly to your existing glass as a self-adhesive film. No glass cutting, no frame removal, no structural work — a clean retrofit solution that transforms your glass at a fraction of the cost of replacement.",
+    desc: "Every SmartFilm product is applied directly to your existing glass as a self-adhesive film. No glass cutting, no frame removal, no structural work- a clean retrofit solution that transforms your glass at a fraction of the cost of replacement.",
   },
   {
     icon: Eye,
     title: "Privacy Without Sacrificing Light",
-    desc: "Frosted and decorative films block the view in while maintaining natural light transmission. One-way mirror films go further — retaining full outward visibility while preventing any inward view during daylight hours.",
+    desc: "Frosted and decorative films block the view in while maintaining natural light transmission. One-way mirror films go further- retaining full outward visibility while preventing any inward view during daylight hours.",
   },
   {
     icon: Sun,
     title: "Solar & UV Protection Built In",
-    desc: "All SmartFilm products include UV-blocking layers that protect interiors, furniture, flooring, and occupants from harmful UV-A and UV-B radiation. Solar control films additionally reduce heat penetration — lowering AC costs in UAE's climate.",
+    desc: "All SmartFilm products include UV-blocking layers that protect interiors, furniture, flooring, and occupants from harmful UV-A and UV-B radiation. Solar control films additionally reduce heat penetration- lowering AC costs in UAE's climate.",
   },
   {
     icon: Palette,
     title: "Fully Customisable Aesthetics",
-    desc: "From subtle frosted gradients to full-colour branded graphics, every SmartFilm product can be customised to your exact specification. Patterns, logos, opacity levels, cut-to-shape — the glass becomes a design element, not just a functional surface.",
+    desc: "From subtle frosted gradients to full-colour branded graphics, every SmartFilm product can be customised to your exact specification. Patterns, logos, opacity levels, cut-to-shape- the glass becomes a design element, not just a functional surface.",
   },
   {
     icon: ShieldCheck,
     title: "Safety & Security Enhancement",
-    desc: "Safety and anti-graffiti films add a critical protective layer to otherwise vulnerable glass surfaces — without any visible change to appearance. Shattered glass stays in place, reducing injury risk and forced-entry speed.",
+    desc: "Safety and anti-graffiti films add a critical protective layer to otherwise vulnerable glass surfaces- without any visible change to appearance. Shattered glass stays in place, reducing injury risk and forced-entry speed.",
   },
   {
     icon: Award,
@@ -204,23 +204,23 @@ const benefits = [
 ];
 
 const smartFilmVsAlternatives = [
-  { aspect: "Privacy",         smartFilm: "Immediate — permanent or switchable",  replacement: "Permanent privacy only",       blinds: "Manual — blocks light entirely" },
+  { aspect: "Privacy",         smartFilm: "Immediate- permanent or switchable",  replacement: "Permanent privacy only",       blinds: "Manual- blocks light entirely" },
   { aspect: "Natural Light",   smartFilm: "Retained with diffused clarity",        replacement: "Unchanged",                    blinds: "Blocked when closed" },
-  { aspect: "Aesthetics",      smartFilm: "Clean, customisable, premium",          replacement: "New glass — costly",           blinds: "Bulky, collects dust" },
-  { aspect: "Installation",    smartFilm: "Film retrofit — no glass removal",      replacement: "Full glass replacement",       blinds: "Fixtures & frame required" },
-  { aspect: "UV Protection",   smartFilm: "99% UV block — all products",           replacement: "Depends on glass spec",        blinds: "Only when fully closed" },
+  { aspect: "Aesthetics",      smartFilm: "Clean, customisable, premium",          replacement: "New glass- costly",           blinds: "Bulky, collects dust" },
+  { aspect: "Installation",    smartFilm: "Film retrofit- no glass removal",      replacement: "Full glass replacement",       blinds: "Fixtures & frame required" },
+  { aspect: "UV Protection",   smartFilm: "99% UV block- all products",           replacement: "Depends on glass spec",        blinds: "Only when fully closed" },
   { aspect: "Safety",          smartFilm: "Safety film holds glass on impact",     replacement: "Laminated glass option only",  blinds: "None" },
   { aspect: "Branding",        smartFilm: "Full custom print to specification",    replacement: "Not applicable",               blinds: "Not applicable" },
-  { aspect: "Maintenance",     smartFilm: "Wipe clean — no moving parts",          replacement: "Standard glass cleaning",      blinds: "Regular deep cleaning" },
-  { aspect: "Cost",            smartFilm: "Fraction of glass replacement",         replacement: "High — full replacement",      blinds: "Low initial, ongoing wear" },
-  { aspect: "Reversibility",   smartFilm: "Removable — glass undamaged",           replacement: "Permanent",                    blinds: "Removable" },
+  { aspect: "Maintenance",     smartFilm: "Wipe clean- no moving parts",          replacement: "Standard glass cleaning",      blinds: "Regular deep cleaning" },
+  { aspect: "Cost",            smartFilm: "Fraction of glass replacement",         replacement: "High- full replacement",      blinds: "Low initial, ongoing wear" },
+  { aspect: "Reversibility",   smartFilm: "Removable- glass undamaged",           replacement: "Permanent",                    blinds: "Removable" },
 ];
 
 const process = [
   {
     num: "01",
     title: "Free Site Visit",
-    desc: "Our team visits your property — office, villa, retail, or commercial space — to assess glass surfaces, discuss your privacy, aesthetic, and safety requirements, and recommend the right film for each area.",
+    desc: "Our team visits your property- office, villa, retail, or commercial space- to assess glass surfaces, discuss your privacy, aesthetic, and safety requirements, and recommend the right film for each area.",
   },
   {
     num: "02",
@@ -230,7 +230,7 @@ const process = [
   {
     num: "03",
     title: "Custom Measurement & Print",
-    desc: "Every panel is precisely measured and film is cut or printed to exact dimensions — including bespoke decorative or branded designs produced to your specification.",
+    desc: "Every panel is precisely measured and film is cut or printed to exact dimensions- including bespoke decorative or branded designs produced to your specification.",
   },
   {
     num: "04",
@@ -247,15 +247,15 @@ const process = [
 const faqs = [
   {
     q: "What is SmartFilm?",
-    a: "SmartFilm is a range of premium self-adhesive window films that transform existing glass without replacing it. The SmartFilm range includes frosted privacy films, one-way mirror films, decorative and printed films, anti-graffiti films, safety and security films, and solar control films. Each product applies directly to your existing glass surface as a professional retrofit — giving the appearance and performance of specialist glass at a fraction of the cost.",
+    a: "SmartFilm is a range of premium self-adhesive window films that transform existing glass without replacing it. The SmartFilm range includes frosted privacy films, one-way mirror films, decorative and printed films, anti-graffiti films, safety and security films, and solar control films. Each product applies directly to your existing glass surface as a professional retrofit- giving the appearance and performance of specialist glass at a fraction of the cost.",
   },
   {
     q: "What is the difference between SmartFilm and switchable smart glass film?",
-    a: "SmartFilm refers to our range of passive, always-on architectural window films — frosted, decorative, one-way mirror, anti-graffiti, safety, and solar control. These films provide permanent effects. Switchable Smart Glass Film (also called PDLC film) is a separate, electrically powered product that switches between clear and frosted on demand at the touch of a button. Both are installed by Smart Auto UAE. If you need on-demand switching, ask about our PDLC switchable smart film service.",
+    a: "SmartFilm refers to our range of passive, always-on architectural window films- frosted, decorative, one-way mirror, anti-graffiti, safety, and solar control. These films provide permanent effects. Switchable Smart Glass Film (also called PDLC film) is a separate, electrically powered product that switches between clear and frosted on demand at the touch of a button. Both are installed by Smart Auto UAE. If you need on-demand switching, ask about our PDLC switchable smart film service.",
   },
   {
     q: "Can SmartFilm be applied to any glass?",
-    a: "Yes — SmartFilm products can be applied to virtually any smooth, flat glass surface including windows, glass doors, glass partitions, shower screens, skylights, and shopfronts. Our team assesses your specific glass type during the free site visit to confirm suitability and recommend the appropriate film thickness and adhesive type.",
+    a: "Yes- SmartFilm products can be applied to virtually any smooth, flat glass surface including windows, glass doors, glass partitions, shower screens, skylights, and shopfronts. Our team assesses your specific glass type during the free site visit to confirm suitability and recommend the appropriate film thickness and adhesive type.",
   },
   {
     q: "How long does SmartFilm last in Dubai's climate?",
@@ -263,19 +263,19 @@ const faqs = [
   },
   {
     q: "Does frosted SmartFilm provide complete privacy at night?",
-    a: "Standard frosted films provide excellent daytime privacy but may reduce privacy at night when interior lights are on and the exterior is dark — as the light differential reverses. For full day-and-night privacy, we recommend higher-opacity frosted films (60%+) or our switchable PDLC smart film which provides complete opaque privacy at any time of day on demand.",
+    a: "Standard frosted films provide excellent daytime privacy but may reduce privacy at night when interior lights are on and the exterior is dark- as the light differential reverses. For full day-and-night privacy, we recommend higher-opacity frosted films (60%+) or our switchable PDLC smart film which provides complete opaque privacy at any time of day on demand.",
   },
   {
     q: "Can SmartFilm be customised with our company logo or branding?",
-    a: "Yes — our decorative and printed film range supports full-colour digital printing to your exact specification. Logos, typography, patterns, gradient frosting, and geometric designs are all possible. We handle the design file preparation, printing, and installation. A popular solution for office reception fronts, retail windows, and branded partitions across Dubai and Sharjah.",
+    a: "Yes- our decorative and printed film range supports full-colour digital printing to your exact specification. Logos, typography, patterns, gradient frosting, and geometric designs are all possible. We handle the design file preparation, printing, and installation. A popular solution for office reception fronts, retail windows, and branded partitions across Dubai and Sharjah.",
   },
   {
     q: "Is anti-graffiti film actually effective?",
-    a: "Yes. Anti-graffiti film works as a sacrificial surface layer — the film takes the damage from scratches, paint, acid etching, or markers instead of the glass underneath. When vandalism occurs, only the film needs to be replaced at a fraction of the cost of glass replacement. The film is optically clear and invisible in normal conditions — there is no visible change to the glass appearance.",
+    a: "Yes. Anti-graffiti film works as a sacrificial surface layer- the film takes the damage from scratches, paint, acid etching, or markers instead of the glass underneath. When vandalism occurs, only the film needs to be replaced at a fraction of the cost of glass replacement. The film is optically clear and invisible in normal conditions- there is no visible change to the glass appearance.",
   },
   {
     q: "Where can I get SmartFilm installed near me in Dubai or Sharjah?",
-    a: "Smart Auto UAE has 4 branches across Dubai and Sharjah — MotorCity Dubai, Al Quoz Dubai, Mirdif (Uptown Mall) Dubai, and Central Mall Sharjah. We offer free on-site surveys for all SmartFilm projects. Contact us on WhatsApp or call us to book your free site visit at a time that suits you.",
+    a: "Smart Auto UAE has 4 branches across Dubai and Sharjah- MotorCity Dubai, Al Quoz Dubai, Mirdif (Uptown Mall) Dubai, and Central Mall Sharjah. We offer free on-site surveys for all SmartFilm projects. Contact us on WhatsApp or call us to book your free site visit at a time that suits you.",
   },
 ];
 
@@ -401,7 +401,7 @@ export default function SmartFilmPage() {
                   <strong style={{ color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>SmartFilm</strong>{" "}
                   architectural window films across{" "}
                   <strong style={{ color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>Dubai</strong> and{" "}
-                  <strong style={{ color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>Sharjah</strong> —
+                  <strong style={{ color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>Sharjah</strong>-
                   from frosted privacy and one-way mirror films, to custom decorative prints,
                   anti-graffiti protection, safety security films, and high-performance solar control.
                   Any glass. Any application. No glass replacement required.
@@ -414,7 +414,7 @@ export default function SmartFilmPage() {
                     "Safety & anti-graffiti protection",
                     "Solar control & UV blocking",
                     "Offices, villas, hotels & retail",
-                    "Film retrofit — no glass replacement",
+                    "Film retrofit- no glass replacement",
                   ].map((f) => (
                     <div key={f} className="flex items-center gap-2.5">
                       <CheckCircle size={14} style={{ color: gold, flexShrink: 0 }} />
@@ -481,7 +481,7 @@ export default function SmartFilmPage() {
                   </div>
                 </div>
 
-                {/* Floating — 6 Film Types */}
+                {/* Floating- 6 Film Types */}
                 <div
                   className="absolute -top-5 -right-5 rounded-2xl px-5 py-4 border text-center"
                   style={{ background: "#0A0A0A", border: "1px solid rgba(201,168,76,0.2)", minWidth: "120px" }}
@@ -496,7 +496,7 @@ export default function SmartFilmPage() {
                   <div className="text-[9px] tracking-[0.1em] uppercase" style={{ color: "rgba(255,255,255,0.35)" }}>Available</div>
                 </div>
 
-                {/* Floating — 99% UV */}
+                {/* Floating- 99% UV */}
                 <div
                   className="absolute -bottom-5 -left-5 rounded-2xl px-5 py-4 border text-center"
                   style={{ background: "#0A0A0A", border: "1px solid rgba(201,168,76,0.2)", minWidth: "110px" }}
@@ -536,7 +536,7 @@ export default function SmartFilmPage() {
                 </span>
               </h2>
               <p className="max-w-xl mx-auto text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
-                Six specialised film types — each solving a different glass challenge. All applied as a
+                Six specialised film types- each solving a different glass challenge. All applied as a
                 retrofit to your existing glass with no replacement required.
               </p>
               <div className="w-14 h-0.5 mx-auto mt-5 rounded-full" style={{ background: goldGrad }} />
@@ -600,7 +600,7 @@ export default function SmartFilmPage() {
                 </span>
               </h2>
               <p className="max-w-xl mx-auto text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
-                SmartFilm products are used across every sector — wherever glass needs privacy, protection,
+                SmartFilm products are used across every sector- wherever glass needs privacy, protection,
                 branding, safety, or better solar performance.
               </p>
               <div className="w-14 h-0.5 mx-auto mt-5 rounded-full" style={{ background: goldGrad }} />
@@ -817,7 +817,7 @@ export default function SmartFilmPage() {
                 style={{ border: "1px solid rgba(201,168,76,0.12)", height: "495px" }}
               >
                 <img
-                  src="/images/smartfilm-install.webp"
+                  src="/images/smart-glass-1.webp"
                   alt="Smart Auto UAE - SmartFilm window film installation near me Dubai Sharjah"
                   className="w-full h-full object-cover"
                 />
@@ -850,7 +850,7 @@ export default function SmartFilmPage() {
                 </div>
               </div>
 
-              {/* Right — text */}
+              {/* Right- text */}
               <div className="order-1 lg:order-2">
                 <span className="text-[11px] tracking-[0.35em] uppercase mb-4 block" style={{ color: gold }}>
                   Why Smart Auto UAE
@@ -866,26 +866,26 @@ export default function SmartFilmPage() {
                 </h2>
                 <p className="text-[13px] leading-[1.85] mb-8" style={{ color: "rgba(255,255,255,0.45)" }}>
                   Smart Auto UAE has been installing architectural window films across Dubai and Sharjah for
-                  over 20 years. We are Applicators for SmartFilm, 3M, TotalGard, and Llumar —
+                  over 20 years. We are Applicators for SmartFilm, 3M, TotalGard, and Global USA-
                   using only genuine manufacturer products backed by full warranties. Our certified installation
                   team handles everything from the free site visit to final handover, with no subcontracting.
                 </p>
                 <div className="flex flex-col gap-4 mb-8">
                   {[
                     {
-                      title: "Free Site Visit — No Obligation",
+                      title: "Free Site Visit- No Obligation",
                       body: "We visit your property, assess every glass surface, and present honest recommendations with physical samples on your actual glass.",
                     },
                     {
                       title: "Authorised SmartFilm Installer",
-                      body: "Smart Auto UAE is an Applicator and installer for SmartFilm, 3M, TotalGard, and Llumar. All products are genuine — never grey market.",
+                      body: "Smart Auto UAE is an Applicator and installer for SmartFilm, 3M, TotalGard, and Global USA. All products are genuine- never grey market.",
                     },
                     {
                       title: "Manufacturer Warranty on All Products",
                       body: "Every SmartFilm installation carries a 5–15 year manufacturer warranty depending on product type. Full documentation provided at handover.",
                     },
                     {
-                      title: "4 Branches — Dubai & Sharjah",
+                      title: "4 Branches- Dubai & Sharjah",
                       body: "MotorCity, Al Quoz, Mirdif (Uptown Mall), and Central Mall Sharjah. Same-day quotations available after site survey.",
                     },
                   ].map((item) => (
@@ -936,7 +936,7 @@ export default function SmartFilmPage() {
         className="font-bold leading-snug mb-4"
         style={{ fontFamily: "var(--font-playfair),serif", fontSize: "clamp(1.8rem,3.5vw,2.8rem)", color: "#fff" }}
       >
-        SmartFilm Near Me —{" "}
+        SmartFilm Near Me-{" "}
         <span style={{ background: goldGrad, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
           4 Branches in UAE
         </span>
@@ -947,28 +947,14 @@ export default function SmartFilmPage() {
       <div className="w-14 h-0.5 mx-auto mt-5 rounded-full" style={{ background: goldGrad }} />
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5">
       {[
-        {
-          name: "MotorCity",
-          city: "Dubai",
-          address: "MotorCity, Dubai",
-          hours: "Sun–Thu 11AM–9PM\nFri–Sat 11AM–9:30PM",
-          maps: "https://maps.app.goo.gl/QT1zHa2LztgD7tbU7",
-        },
         {
           name: "Al Quoz",
           city: "Dubai",
           address: "Al Quoz Industrial Area 4, D16 Road, Dubai",
           hours: "Sat–Thu 11AM–9:30PM\nFri 2PM–9:30PM",
           maps: "https://maps.app.goo.gl/7fhEUsrUvGfxG8fPA",
-        },
-        {
-          name: "Mirdif — Uptown Mall",
-          city: "Dubai",
-          address: "Uptown Mall, Mirdif, Dubai",
-          hours: "Daily 11AM–10PM",
-          maps: "https://maps.app.goo.gl/GS6USX8GSxJqwES67",
         },
         {
           name: "Central Mall",
@@ -1083,7 +1069,7 @@ export default function SmartFilmPage() {
                 >
                   Book a free site visit today. Our team comes to you, assesses every glass surface,
                   shows you physical film samples in your own lighting, and provides a same-day
-                  itemised quote — with no obligation to proceed.
+                  itemised quote- with no obligation to proceed.
                 </p>
 
                 <div className="flex items-center justify-center gap-4 flex-wrap">

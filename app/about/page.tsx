@@ -32,23 +32,23 @@ const milestones = [
   },
   {
     year: '2010',
-    title: '3M Authorised Partnership',
-    desc: 'Smart Auto became an officially authorised distributor and certified applicator for 3M USA window films and protection products across the UAE — a recognition of installation quality and volume.',
+    title: '3M ',
+    desc: 'Smart Auto became a applicator for 3M USA window films and protection products across the UAE- a recognition of installation quality and volume.',
   },
   {
     year: '2014',
     title: 'Totalgard & Residential Expansion',
-    desc: 'Added Totalgard as an authorised brand partner and expanded into residential, commercial, and architectural window film — bringing the same quality standard from automotive into homes and buildings.',
+    desc: 'Added Totalgard as an authorised brand partner and expanded into residential, commercial, and architectural window film- bringing the same quality standard from automotive into homes and buildings.',
   },
   {
     year: '2018',
     title: 'PPF & Ceramic Coating',
-    desc: 'Launched full Paint Protection Film (PPF) and nano ceramic coating services to complement the window film offering — becoming a complete vehicle and surface protection centre.',
+    desc: 'Launched full Paint Protection Film (PPF) and nano ceramic coating services to complement the window film offering- becoming a complete vehicle and surface protection centre.',
   },
   {
     year: '2021',
     title: 'Marine & Smart Film',
-    desc: 'Extended services to marine vessels — boats, yachts, and commercial craft — and introduced Smart Film (switchable privacy glass) for residential and commercial spaces.',
+    desc: 'Extended services to marine vessels- boats, yachts, and commercial craft- and introduced Smart Film (switchable privacy glass) for residential and commercial spaces.',
   },
   {
     year: '2024',
@@ -61,7 +61,7 @@ const brands = [
   {
     name: '3M USA',
     role: 'Authorised Distributor & Certified Applicator',
-    desc: '3M is the world\'s leading window film and surface protection brand. Smart Auto UAE is an officially authorised distributor and certified installer for the full 3M range — including 3M Sun Control, Safety & Security, and All Seasons films.',
+    desc: '3M is the world\'s leading window film and surface protection brand. Smart Auto UAE is an officially authorised distributor and certified installer for the full 3M range- including 3M Sun Control, Safety & Security, and All Seasons films.',
   },
   {
     name: 'Totalgard',
@@ -74,9 +74,9 @@ const brands = [
     desc: 'Global USA window films are engineered for precision solar control and optical clarity. As an authorised Global USA installer, Smart Auto UAE delivers their performance range for automotive, residential, and commercial applications.',
   },
   {
-    name: 'Llumar',
+    name: 'Global USA',
     role: 'Certified Applicator',
-    desc: 'Llumar is part of Eastman Chemical Company — makers of some of the world\'s most durable and optically pure window films. Smart Auto UAE installs Llumar films across automotive and architectural segments.',
+    desc: 'Global USA is part of Eastman Chemical Company- makers of some of the world\'s most durable and optically pure window films. Smart Auto UAE installs Global USA films across automotive and architectural segments.',
   },
 ]
 
@@ -97,12 +97,12 @@ const values = [
   {
     icon: Award,
     title: 'Authorised Only',
-    desc: 'We install only genuine products from our authorised brand partners — 3M, Totalgard, Global USA, and Llumar. No grey-market films, no imitations, no exceptions.',
+    desc: 'We install only genuine products from our authorised brand partners- 3M, Totalgard, Global USA, and Global USA. No grey-market films, no imitations, no exceptions.',
   },
   {
     icon: Shield,
     title: 'Certified Installers',
-    desc: 'Every Smart Auto technician is trained and certified by the brands they install. Certification is not just a badge — it requires passing rigorous written and hands-on tests.',
+    desc: 'Every Smart Auto technician is trained and certified by the brands they install. Certification is not just a badge- it requires passing rigorous written and hands-on tests.',
   },
   {
     icon: Zap,
@@ -112,12 +112,12 @@ const values = [
   {
     icon: Heart,
     title: 'Customer First',
-    desc: 'Over 50,000 UAE customers and 600+ verified 5-star Google reviews reflect one principle — if the customer is not satisfied, the job is not done.',
+    desc: 'Over 50,000 UAE customers and 600+ verified 5-star Google reviews reflect one principle- if the customer is not satisfied, the job is not done.',
   },
   {
     icon: Users,
     title: 'Trusted by All Segments',
-    desc: 'From first-time car owners to fleet operators, luxury homeowners to marina managers, government facilities to shopping malls — Smart Auto UAE serves every segment with equal care.',
+    desc: 'From first-time car owners to fleet operators, luxury homeowners to marina managers, government facilities to shopping malls- Smart Auto UAE serves every segment with equal care.',
   },
   {
     icon: MapPin,
@@ -131,7 +131,7 @@ const testimonials = [
     name: 'Ahmed Al Mansoori',
     role: 'Luxury Vehicle Owner · Dubai Marina',
     rating: 5,
-    text: "I have had three cars done by Smart Auto over the past 8 years — PPF and tinting on all of them. The quality is consistent every single time. These guys know what they are doing and they don't cut corners.",
+    text: "I have had three cars done by Smart Auto over the past 8 years- PPF and tinting on all of them. The quality is consistent every single time. These guys know what they are doing and they don't cut corners.",
   },
   {
     name: 'Sarah Mitchell',
@@ -191,7 +191,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-white/50 text-base leading-[1.9] mb-6 max-w-xl">
-              Smart Auto UAE has been the most trusted name in window tinting, paint protection film, and ceramic coating across Dubai and Sharjah for over 20 years. From a single automotive tinting bay in 2004 to four branches, 50,000 customers, and authorised partnerships with 3M, Totalgard, Global USA, and Llumar — our story is one of consistent quality and earned trust.
+              Smart Auto UAE has been the most trusted name in window tinting, paint protection film, and ceramic coating across Dubai and Sharjah for over 20 years. From a single automotive tinting bay in 2004 to four branches, 50,000 customers, and authorised partnerships with 3M, Totalgard, Global USA, and Global USA- our story is one of consistent quality and earned trust.
             </p>
             <p className="text-white/40 text-base leading-[1.9] mb-8 max-w-xl">
               We protect cars, homes, offices, yachts, and commercial spaces across the UAE. Whatever surface needs protecting, Smart Auto has the product, the brand authority, and the certified team to do it right.
@@ -222,7 +222,7 @@ export default function AboutPage() {
           >
             <img
               src="/images/about/about-hero.webp"
-              alt="Smart Auto UAE team — professional window tinting and protection specialists Dubai"
+              alt="Smart Auto UAE team- professional window tinting and protection specialists Dubai"
               width={700} height={500}
               loading="eager" decoding="async"
               className="w-full h-full object-cover"
@@ -295,7 +295,7 @@ export default function AboutPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto">
-              From a single installation bay in Dubai to a four-branch UAE operation trusted by 50,000 customers — here is how Smart Auto got here.
+              From a single installation bay in Dubai to a four-branch UAE operation trusted by 50,000 customers- here is how Smart Auto got here.
             </p>
           </motion.div>
 
@@ -344,7 +344,7 @@ export default function AboutPage() {
                       aria-hidden="true"
                     />
 
-                    {/* Empty right/left column — keeps grid alignment */}
+                    {/* Empty right/left column- keeps grid alignment */}
                     <div />
                   </motion.div>
                 )
@@ -378,7 +378,7 @@ export default function AboutPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto">
-              Smart Auto UAE is an officially authorised distributor and certified applicator for 3M USA, Totalgard, Global USA, and Llumar. Authorised status is earned — not purchased. It requires meeting rigorous installation quality standards, volume thresholds, and ongoing certification.
+              Smart Auto UAE is an officially authorised distributor and certified applicator for 3M USA, Totalgard, Global USA, and Global USA. Authorised status is earned- not purchased. It requires meeting rigorous installation quality standards, volume thresholds, and ongoing certification.
             </p>
           </motion.div>
 
@@ -435,7 +435,7 @@ export default function AboutPage() {
                   Official UAE Authorised Distributor &amp; Certified Installer
                 </p>
                 <p className="text-white/40 text-[12px] mt-0.5">
-                  3M USA · Totalgard · Global USA · Llumar — verified and active authorisations
+                  3M USA · Totalgard · Global USA · Global USA- verified and active authorisations
                 </p>
               </div>
             </div>
@@ -531,7 +531,7 @@ export default function AboutPage() {
                 </span>
               </h2>
               <p className="text-white/50 text-base leading-[1.85] mb-7">
-                Smart Auto UAE is not a window tinting shop — it is a complete protection specialist. Over 20 years, we have built the team, product range, and brand authorisations to handle every protection requirement across automotive, residential, commercial, and marine segments.
+                Smart Auto UAE is not a window tinting shop- it is a complete protection specialist. Over 20 years, we have built the team, product range, and brand authorisations to handle every protection requirement across automotive, residential, commercial, and marine segments.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {services.map((svc) => (
@@ -553,7 +553,7 @@ export default function AboutPage() {
             >
               <img
                 src="/images/about/services-overview.webp"
-                alt="Smart Auto UAE services — window tinting, PPF, ceramic coating and car wrapping in Dubai"
+                alt="Smart Auto UAE services- window tinting, PPF, ceramic coating and car wrapping in Dubai"
                 width={700} height={500}
                 loading="lazy" decoding="async"
                 className="w-full h-full object-cover"

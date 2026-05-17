@@ -108,7 +108,7 @@ export default function AdminLoginPage() {
             Smart Auto UAE
           </h1>
           <p className="text-[13px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-            Admin Panel — Sign in to continue
+            Admin Panel- Sign in to continue
           </p>
         </div>
 

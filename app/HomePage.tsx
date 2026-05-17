@@ -121,8 +121,8 @@ const services = [
   {
     title: 'Car Window Tinting',
     slug: 'window-tinting',
-    description: 'Premium 3M, Global USA, and Totalgard nano ceramic window films. Block up to 99% UV rays and reduce heat by up to 90%. RTA law compliant for all UAE vehicles.',
-    features: ['3M · Global USA · Totalgard Films', 'UAE RTA Law Compliant', '15-Year Warranty', 'Same-Day Service Available'],
+    description: 'Premium 3M, and Totalgard nano ceramic window films. Block up to 99% UV rays and reduce heat by up to 90%. RTA law compliant for all UAE vehicles.',
+    features: ['3M · Totalgard Films', 'UAE RTA Law Compliant', 'Up-to 15-Year Warranty', 'Same-Day Service Available'],
     image: '/images/services/window-tinting-1.webp',
     href: '/services/window-tinting',
     icon: Layers,
@@ -131,7 +131,7 @@ const services = [
     title: 'Paint Protection Film',
     slug: 'ppf',
     description: 'Self-healing TPU-based PPF from Totalgard, 3M, and Global USA. Invisible shield against stone chips, scratches, and UV damage. Certified installation.',
-    features: ['Totalgard · 3M · Global USA PPF', 'Self-Healing Technology', '10-Year Warranty', 'Full & Partial Coverage'],
+    features: ['Totalgard · 3M · Global USA PPF', 'Self-Healing Technology', 'Up-to 12-Year Warranty', 'Full & Partial Coverage'],
     image: '/images/services/PPF-1.webp',
     href: '/services/ppf',
     icon: Shield,
@@ -140,7 +140,7 @@ const services = [
     title: 'Nano Ceramic Coating',
     slug: 'ceramic-coating',
     description: '9H hardness ceramic coatings from Sirus USA, Jade, Puris & Gyeon. Hydrophobic protection, deep gloss, and UV resistance lasting 2–5 years.',
-    features: ['Gyeon · Gtechniq · IGL Coatings', '9H Hardness Rating', 'Hydrophobic Protection', 'Paint Correction Included'],
+    features: ['SIRUS USA · Jade · Puris · Gyeon', 'Up-to 10H Hardness Rating', 'Hydrophobic Protection', 'Paint Correction Included'],
     image: '/images/services/ceramic-coating-1.webp',
     href: '/services/ceramic-coating',
     icon: Sparkles,
@@ -149,7 +149,7 @@ const services = [
     title: 'Car Detailing',
     slug: 'car-detailing',
     description: 'Professional interior and exterior detailing. Paint decontamination, leather conditioning, engine bay cleaning, and full paint correction services.',
-    features: ['Interior & Exterior', 'Paint Correction', 'Engine Bay Cleaning', 'Headlight Restoration'],
+    features: ['Interior & Exterior', 'Paint Correction', 'Engine Bay Dressing', 'Headlight Restoration'],
     image: '/images/detailing.webp',
     href: '/services/car-detailing',
     icon: Car,
@@ -158,7 +158,7 @@ const services = [
     title: 'Car Wrapping',
     slug: 'car-wrapping',
     description: 'Full colour-change and partial vinyl wraps. Matte, gloss, satin, chrome, and custom finishes. Full RTA documentation support for Dubai colour-change registrations.',
-    features: ['Full & Partial Wraps', 'Matte · Gloss · Satin · Chrome', 'RTA Colour Change Support', '3M & Avery Dennison Vinyl'],
+    features: ['Full & Partial Wraps', 'Matte · Gloss · Satin · Chrome', 'RTA Colour Change Support', '3M & Avery Dennison Wrap and more'],
     image: '/images/car-wrapping.webp',
     href: '/services/car-wrapping',
     icon: Paintbrush,
@@ -166,10 +166,10 @@ const services = [
 ]
 
 const whyFeatures = [
-  { title: '3M Applicator', description: 'Official UAE distributor and certified installer for 3M, Totalgard, Global USA, Gyeon, and Gtechniq.', icon: Shield },
-  { title: 'Upto 15-Year Warranty', description: 'Window tinting and PPF installations are backed by a comprehensive manufacturer warranty.', icon: CheckCircle },
+  { title: 'Partnering Brands', description: 'Official UAE distributor and certified installer for 3M, Totalgard, Global USA, Gyeon, and Gtechniq.', icon: Shield },
+  { title: 'Up-to 15-Year Warranty', description: 'Window tinting and PPF installations are backed by a comprehensive warranty.', icon: CheckCircle },
   { title: '4 Branches UAE', description: 'MotorCity, Al Quoz, Mirdif, and Sharjah Central Mall. Always close to you.', icon: MapPin },
-  { title: 'Open Every Day', description: 'All 4 branches open 7 days a week, 11 AM to 10 PM & Sharjah Branch 10 AM to 10 PM. No appointment needed.', icon: Clock },
+  { title: 'Open Every Day', description: 'All 4 branches open 7 days a week, 11 AM to 10 PM & Sharjah Branch 10 AM to 10 PM.', icon: Clock },
 ]
 
 const steps = [
@@ -181,7 +181,7 @@ const steps = [
 
 const brands = [
   '3M', 'Totalgard',
-  'Global USA', 'Sirus USA', 'Jade', 'Puris',
+  'Global USA', 'Sirius USA', 'Jade', 'Puris',
 ]
 
 const testimonials = [
@@ -198,12 +198,12 @@ const testimonials = [
   {
     name: 'Don Hacbang', role: 'Window Tinting Client · Dubai', rating: 5,
     date: '28 November 2025',
-    text: 'Completed promptly and I am fully satisfied with the results. They followed up to resolve a minor issue with the installed window tints — that level of service is rare.',
+    text: 'Completed promptly and I am fully satisfied with the results. They followed up to resolve a minor issue with the installed window tints- that level of service is rare.',
   },
   {
     name: 'Rob Rees', role: 'Returning Client · 3rd Vehicle', rating: 5,
     date: '8 November 2025',
-    text: 'My third vehicle done by Smart Auto. They keep improving — this time offering home collection and drop-off, which I took full advantage of. Outstanding service.',
+    text: 'My third vehicle done by Smart Auto. They keep improving- this time offering home collection and drop-off, which I took full advantage of. Outstanding service.',
   },
   {
     name: 'Tasha Dewan', role: 'Window Tinting · Dubai', rating: 5,
@@ -220,14 +220,14 @@ const testimonials = [
 const branches = [
   {
     city: 'Dubai', name: 'Smart Auto MotorCity',
-    address: 'MotorCity, Dubai — near Dubai Autodrome',
+    address: 'MotorCity, Dubai- near Dubai Autodrome',
     phone: '+971 56 726 9666',
     mapUrl: 'https://maps.app.goo.gl/EWFALRVyktTJiXDP9',
     hours: '11:00 AM – 10:00 PM · Every Day',
   },
   {
     city: 'Dubai', name: 'Smart Auto Al Quoz',
-    address: 'Al Quoz Industrial Area, Dubai',
+    address: 'Al Quoz Industrial Area 4, Dubai',
     phone: '+971 56 726 9666',
     mapUrl: 'https://maps.app.goo.gl/dMBKEHxWbMEHH3ZAA',
     hours: '11:00 AM – 10:00 PM · Every Day',
@@ -235,26 +235,25 @@ const branches = [
   {
     city: 'Dubai', name: 'Smart Auto Mirdif',
     address: 'Uptown Mirdif Mall, Mirdif, Dubai',
-    phone: '+971 56 726 9666',
+    phone: '+971 55 782 3731',
     mapUrl: 'https://maps.app.goo.gl/GrH4wePJkpzsXApU6',
     hours: '11:00 AM – 10:00 PM · Every Day',
   },
   {
     city: 'Sharjah', name: 'Smart Auto Sharjah',
     address: 'Central Mall, Sharjah',
-    phone: '+971 56 726 9666',
+    phone: '+971 56 425 5770',
     mapUrl: 'https://maps.app.goo.gl/UiRuRcVsk66LFFYW9',
     hours: '10:00 AM – 10:00 PM · Every Day',
   },
 ]
 
 const faqs = [
-  { q: 'How much does window tinting cost in Dubai?', a: 'Window tinting prices at Smart Auto UAE start from AED 299 depending on film type and vehicle size. We offer nano ceramic films — all UAE RTA law compliant. Contact us for a free quote.' },
+  { q: 'How much does window tinting cost in Dubai?', a: 'Window tinting prices at Smart Auto UAE start from AED 299 depending on film type and vehicle size. We offer nano ceramic films- all UAE RTA law compliant. Contact us for a free quote.' },
   { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from Totalgard, 3M, or Global USA offers the best protection. Smart Auto UAE is an Applicator for all three brands, ensuring genuine product and certified installation.' },
-  { q: 'How long does ceramic coating last in Dubai?', a: "A professional 9H ceramic coating lasts 2–5 years in Dubai's climate, depending on the product tier. We use Gyeon, Gtechniq, and IGL coatings — all formulated for high UV and heat environments." },
+  { q: 'How long does ceramic coating last in Dubai?', a: "A professional 9H ceramic coating lasts 2–5 years in Dubai's climate, depending on the product tier. We use Gyeon, Gtechniq, and IGL coatings- all formulated for high UV and heat environments." },
   { q: 'Does Smart Auto UAE have a branch in Sharjah?', a: 'Yes. Smart Auto UAE has a branch at Central Mall, Sharjah, offering window tinting, PPF, ceramic coating, car detailing, and car wrapping services.' },
   { q: 'How long does a full car wrap take?', a: 'A full vinyl car wrap takes 2–4 days depending on vehicle size and finish complexity. Partial wraps and accents can be completed in a single day.' },
-  { q: 'Is Smart Auto UAE an authorised 3M installer?', a: 'Yes. Smart Auto UAE is an authorised UAE dealer and certified installer for 3M window film and paint protection products.' },
 ]
 
 const contactItems = [
@@ -364,7 +363,7 @@ export default function HomeClient() {
             <strong className="text-white/75 font-medium">window tinting in the UAE</strong>,{' '}
             <strong className="text-white/75 font-medium">PPF</strong>,{' '}
             <strong className="text-white/75 font-medium">nano ceramic coating</strong>, car detailing, and car
-            wrapping — serving car owners across{' '}
+            wrapping- serving car owners across{' '}
             <strong className="text-white/75 font-medium">MotorCity, Al Quoz, Mirdif</strong> and{' '}
             <strong className="text-white/75 font-medium">Sharjah</strong> since 2014.
           </motion.p>
@@ -373,7 +372,7 @@ export default function HomeClient() {
             className="flex items-center justify-center gap-6 mb-8 flex-wrap"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }}
           >
-            {['3M Applicator', '15-Year Warranty', 'RTA Law Compliant'].map((t) => (
+            {['3M Applicator', 'Up-to 15-Year Warranty', 'RTA Law Compliant'].map((t) => (
               <div key={t} className="flex items-center gap-1.5">
                 <CheckCircle size={13} style={{ color: GOLD }} aria-hidden="true" />
                 <span className="text-[11px] text-white/50 tracking-wide">{t}</span>
@@ -447,7 +446,7 @@ export default function HomeClient() {
           <motion.div ref={servicesRef} variants={fadeUp} initial="hidden" animate={sInView ? 'show' : 'hidden'}>
             <SectionHeader eyebrow="Window Tinting · PPF · Ceramic Coating · Detailing · Wrapping" title="Premium Car Protection" highlight="Services in UAE" />
             <p className="text-center text-white/40 text-sm -mt-10 mb-14 max-w-2xl mx-auto leading-relaxed">
-              From car window tinting and paint protection film to nano ceramic coating and car detailing — all services available across our 4 branches in{' '}
+              From car window tinting and paint protection film to nano ceramic coating and car detailing- all services available across our 4 branches in{' '}
               <strong className="text-white/60 font-medium">Dubai</strong> and{' '}
               <strong className="text-white/60 font-medium">Sharjah</strong>.
             </p>
@@ -502,14 +501,14 @@ export default function HomeClient() {
                 Smart Auto has been the trusted car protection centre for thousands of vehicle owners in Dubai, Sharjah and across the UAE since 2014. Whether you need the{' '}
                 <strong className="text-white/70 font-medium">best PPF installer in Dubai</strong>, professional{' '}
                 <strong className="text-white/70 font-medium">ceramic coating for luxury cars</strong>, or affordable{' '}
-                <strong className="text-white/70 font-medium">window tinting</strong> — we deliver premium results with manufacturer-backed warranties.
+                <strong className="text-white/70 font-medium">window tinting</strong>- we deliver premium results with manufacturer-backed warranties.
               </p>
               <div className="flex flex-col gap-3.5 mb-9">
                 {[
                   'Totalgard, 3M & Global USA Applicator in UAE',
-                  'Ceramic coating price Dubai — competitive & transparent',
+                  'Ceramic coating price Dubai- competitive & transparent',
                   'All PPF, tinting & coating work backed by warranty',
-                  '4 branches — MotorCity, Al Quoz, Mirdif & Sharjah',
+                  '4 branches- MotorCity, Al Quoz, Mirdif & Sharjah',
                   'No hidden charges · Open every day',
                 ].map((p) => (
                   <div key={p} className="flex items-center gap-3">
@@ -527,7 +526,7 @@ export default function HomeClient() {
             <motion.div variants={fadeRight} initial="hidden" animate={wInView ? 'show' : 'hidden'}>
               <div className="grid grid-cols-2 gap-3.5" style={{ gridTemplateRows: '260px 260px' }}>
                 <div className="rounded-2xl overflow-hidden relative row-span-2 group" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img src="/images/services/PPF-1.webp" alt="Totalgard PPF installation by Smart Auto UAE — best PPF installer Dubai"
+                  <img src="/images/services/PPF-1.webp" alt="Totalgard PPF installation by Smart Auto UAE- best PPF installer Dubai"
                     width={400} height={520} loading="lazy" decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <span className="absolute bottom-3.5 left-3.5 text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-md backdrop-blur-sm"
@@ -536,7 +535,7 @@ export default function HomeClient() {
                   </span>
                 </div>
                 <div className="rounded-2xl overflow-hidden relative group" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img src="/images/services/ceramic-coating-1.webp" alt="9H nano ceramic coating Dubai and Sharjah — Smart Auto UAE"
+                  <img src="/images/services/ceramic-coating-1.webp" alt="9H nano ceramic coating Dubai and Sharjah- Smart Auto UAE"
                     width={400} height={260} loading="lazy" decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <span className="absolute bottom-3.5 left-3.5 text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-md backdrop-blur-sm"
@@ -545,7 +544,7 @@ export default function HomeClient() {
                   </span>
                 </div>
                 <div className="rounded-2xl overflow-hidden relative group" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img src="/images/services/window-tinting-1.webp" alt="Car window tinting Dubai — 3M and Totalgard film by Smart Auto UAE"
+                  <img src="/images/services/window-tinting-1.webp" alt="Car window tinting Dubai- 3M and Totalgard film by Smart Auto UAE"
                     width={400} height={260} loading="lazy" decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <span className="absolute bottom-3.5 left-3.5 text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-md backdrop-blur-sm"
@@ -659,7 +658,7 @@ export default function HomeClient() {
           </div>
 
           <motion.div className="text-center mt-10" variants={fadeUp} initial="hidden" animate={tInView ? 'show' : 'hidden'}>
-            <a href="https://g.page/r/review" target="_blank" rel="noopener noreferrer"
+            <a href="https://maps.app.goo.gl/uHRoEXNmjnunhyPf7" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-2.5 rounded-full no-underline transition-all duration-300"
               style={{ color: GOLD, border: '1px solid rgba(201,168,76,0.25)', background: 'rgba(201,168,76,0.05)' }}>
               <Star size={14} fill={GOLD} aria-hidden="true" /> Write a Google Review
@@ -674,7 +673,7 @@ export default function HomeClient() {
           <motion.div ref={branchesRef} variants={fadeUp} initial="hidden" animate={brInView ? 'show' : 'hidden'}>
             <SectionHeader eyebrow="Car Tinting & Car Protection Near Me" title="4 Branches Across" highlight="the UAE" />
             <p className="text-center text-white/40 text-sm -mt-10 mb-10 max-w-xl mx-auto">
-              Car window tinting in Al Quoz, PPF in MotorCity, ceramic coating in Mirdif, or car protection in Sharjah — Smart Auto UAE is always near you.
+              Car window tinting in Al Quoz, PPF in MotorCity, ceramic coating in Mirdif, or car protection in Sharjah- Smart Auto UAE is always near you.
             </p>
           </motion.div>
 
@@ -747,7 +746,7 @@ export default function HomeClient() {
               </span>
             </h2>
             <p className="text-white/45 text-base leading-[1.8] mb-10 max-w-2xl mx-auto">
-              Visit any of our 4 branches across Dubai and Sharjah — or contact us to book your free vehicle inspection today.
+              Visit any of our 4 branches across Dubai and Sharjah- or contact us to book your free vehicle inspection today.
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <GoldBtn href="https://wa.me/971567269666"><MessageCircle size={16} /> WhatsApp Us</GoldBtn>

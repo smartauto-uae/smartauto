@@ -1,4 +1,3 @@
-// app/api/admin/login/route.ts
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
@@ -13,7 +12,7 @@ export async function POST(req: Request) {
     {
       cookies: {
         getAll: () => cookieStore.getAll(),
-        // ✅ THIS is what actually writes the cookie to the browser
+        // writes the cookie to the browser
         setAll: (cookiesToSet) => {
           cookiesToSet.forEach(({ name, value, options }) =>
             cookieStore.set(name, value, options)

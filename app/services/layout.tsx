@@ -3,7 +3,7 @@ import Script from 'next/script'
 import { headers } from 'next/headers'
 import { buildMetadata, getStructuredData } from '@/lib/metadata'
 
-// Fallback metadata — each page overrides via its own generateMetadata in layout
+// Fallback metadata- each page overrides via its own generateMetadata in layout
 // But since we can't know the route statically here, pages handle their own metadata.
 // This layout only injects JSON-LD dynamically per route.
 

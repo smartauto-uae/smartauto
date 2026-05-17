@@ -42,7 +42,7 @@ const faqs: {
     id: 'tint-legal-dubai',
     category: 'tinting',
     q: 'What is the legal window tint percentage in Dubai and UAE?',
-    a: 'Under UAE traffic law (Circular No. 86, Article 9), front side windows must allow at least 70% visible light transmission (VLT), meaning a maximum of 30% tint. Rear side windows and the rear windshield must allow at least 30% VLT, meaning a maximum of 70% tint. No aftermarket tint is permitted on the front windshield — only a factory-installed sun strip of no more than 5 inches. Smart Auto UAE installs only RTA-compliant films and advises you on the correct VLT for each window before installation.',
+    a: 'Under UAE traffic law (Circular No. 86, Article 9), front side windows must allow at least 70% visible light transmission (VLT), meaning a maximum of 30% tint. Rear side windows and the rear windshield must allow at least 30% VLT, meaning a maximum of 70% tint. No aftermarket tint is permitted on the front windshield- only a factory-installed sun strip of no more than 5 inches. Smart Auto UAE installs only RTA-compliant films and advises you on the correct VLT for each window before installation.',
     tags: ['legal', 'RTA', 'VLT', 'Dubai law'],
   },
   {
@@ -63,21 +63,21 @@ const faqs: {
     id: 'tint-last',
     category: 'tinting',
     q: 'How long does car window tinting last in Dubai?',
-    a: 'Premium 3M and TotalGard nano ceramic films are rated for 10 to 15 years in UAE conditions. Nano ceramic films typically last 3 to 5 years before fading or bubbling. All films installed by Smart Auto UAE come with a manufacturer warranty — 5 to 10 years depending on the film grade. UAE heat and UV can accelerate degradation of inferior films, which is why we only use authorised brand products.',
+    a: 'Premium 3M and TotalGard nano ceramic films are rated for 10 to 15 years in UAE conditions. Nano ceramic films typically last 3 to 5 years before fading or bubbling. All films installed by Smart Auto UAE come with a manufacturer warranty- 5 to 10 years depending on the film grade. UAE heat and UV can accelerate degradation of inferior films, which is why we only use authorised brand products.',
     tags: ['durability', 'lifespan', 'warranty'],
   },
   {
     id: 'tint-cost',
     category: 'tinting',
     q: 'How much does car window tinting cost in Dubai?',
-    a: 'Car window tinting at Smart Auto UAE starts from AED 200 for basic films and ranges up to AED 2,500+ for full nano ceramic packages on large SUVs. The cost depends on the film brand and grade (3M, TotalGard, Llumar), the number of windows, and the size of your vehicle. We provide a fixed price quote after viewing your vehicle — no hidden charges. WhatsApp us a photo of your car for a same-day estimate.',
+    a: 'Car window tinting at Smart Auto UAE starts from AED 200 for basic films and ranges up to AED 2,500+ for full nano ceramic packages on large SUVs. The cost depends on the film brand and grade (3M, TotalGard, Global USA), the number of windows, and the size of your vehicle. We provide a fixed price quote after viewing your vehicle- no hidden charges. WhatsApp us a photo of your car for a same-day estimate.',
     tags: ['price', 'cost', 'AED'],
   },
   {
     id: 'tint-signal',
     category: 'tinting',
     q: 'Does window tinting block mobile signal, GPS, or toll gates (Salik)?',
-    a: 'Metalized films can interfere with GPS, mobile signal, and toll gate readers (Salik). Nano ceramic films are entirely non-metallic and do not affect any electronic signals. Smart Auto UAE recommends and installs nano ceramic films specifically because they deliver maximum performance without signal interference — important in a connected city like Dubai.',
+    a: 'Metalized films can interfere with GPS, mobile signal, and toll gate readers (Salik). Nano ceramic films are entirely non-metallic and do not affect any electronic signals. Smart Auto UAE recommends and installs nano ceramic films specifically because they deliver maximum performance without signal interference- important in a connected city like Dubai.',
     tags: ['GPS', 'Salik', 'signal', 'ceramic'],
   },
   {
@@ -100,28 +100,28 @@ const faqs: {
     id: 'ppf-what',
     category: 'ppf',
     q: 'What is Paint Protection Film (PPF) and how does it work?',
-    a: 'Paint Protection Film (PPF) is a transparent polyurethane film 150 to 200 microns thick applied to your vehicle\'s painted surfaces. It acts as a physical barrier that absorbs stone chips, road debris, sand abrasion, and minor scratches before they reach the factory paint. Premium PPF has a self-healing top coat — minor scratches disappear when the surface warms up (either from the sun or warm water). Smart Auto UAE installs 3M, TotalGard, and Llumar PPF with 10-year warranties.',
+    a: 'Paint Protection Film (PPF) is a transparent polyurethane film 150 to 200 microns thick applied to your vehicle\'s painted surfaces. It acts as a physical barrier that absorbs stone chips, road debris, sand abrasion, and minor scratches before they reach the factory paint. Premium PPF has a self-healing top coat- minor scratches disappear when the surface warms up (either from the sun or warm water). Smart Auto UAE installs 3M, TotalGard, and Global USA PPF with 10-year warranties.',
     tags: ['PPF', 'paint protection', 'self healing'],
   },
   {
     id: 'ppf-vs-ceramic',
     category: 'ppf',
     q: 'What is the difference between PPF and ceramic coating?',
-    a: 'PPF is a physical film that protects against stone chips, scratches, and road debris — it is impact protection. Ceramic coating is a nano-chemical layer (1 to 2 microns) that protects against UV, oxidation, chemical stains, and makes the surface hydrophobic (water and dirt bead off). PPF lasts 5 to 10 years in UAE conditions; ceramic coating lasts 2 to 5 years. Many Smart Auto UAE customers combine both — PPF on high-impact areas (bonnet, bumpers, side mirrors, door edges) and ceramic coating over the entire vehicle for gloss, UV protection, and easy cleaning.',
+    a: 'PPF is a physical film that protects against stone chips, scratches, and road debris- it is impact protection. Ceramic coating is a nano-chemical layer (1 to 2 microns) that protects against UV, oxidation, chemical stains, and makes the surface hydrophobic (water and dirt bead off). PPF lasts 5 to 10 years in UAE conditions; ceramic coating lasts 2 to 5 years. Many Smart Auto UAE customers combine both- PPF on high-impact areas (bonnet, bumpers, side mirrors, door edges) and ceramic coating over the entire vehicle for gloss, UV protection, and easy cleaning.',
     tags: ['PPF vs ceramic', 'difference', 'combined'],
   },
   {
     id: 'ppf-uae-worth',
     category: 'ppf',
     q: 'Is PPF worth it in Dubai and UAE?',
-    a: 'Yes — PPF is particularly valuable in the UAE for three reasons: (1) Desert sand acts as a fine abrasive at highway speeds, causing micro-scratches and paint degradation faster than in other climates; (2) UAE highways expose vehicles to stone chips and gravel frequently; (3) Extreme UV and heat accelerate paint oxidation on unprotected surfaces. For new, luxury, or high-resale-value vehicles, PPF is one of the highest-return investments you can make in the UAE.',
+    a: 'Yes- PPF is particularly valuable in the UAE for three reasons: (1) Desert sand acts as a fine abrasive at highway speeds, causing micro-scratches and paint degradation faster than in other climates; (2) UAE highways expose vehicles to stone chips and gravel frequently; (3) Extreme UV and heat accelerate paint oxidation on unprotected surfaces. For new, luxury, or high-resale-value vehicles, PPF is one of the highest-return investments you can make in the UAE.',
     tags: ['UAE', 'Dubai', 'worth it', 'ROI'],
   },
   {
     id: 'ppf-how-long',
     category: 'ppf',
     q: 'How long does PPF last in UAE heat and conditions?',
-    a: 'Premium PPF from 3M and TotalGard lasts 7 to 10 years in UAE conditions. The film is engineered with UV inhibitors and heat-stabilised adhesives that resist the Gulf\'s intense sun. Smart Auto UAE installs only premium-grade PPF — not budget films — and all installations carry a manufacturer warranty of 5 to 10 years.',
+    a: 'Premium PPF from 3M and TotalGard lasts 7 to 10 years in UAE conditions. The film is engineered with UV inhibitors and heat-stabilised adhesives that resist the Gulf\'s intense sun. Smart Auto UAE installs only premium-grade PPF- not budget films- and all installations carry a manufacturer warranty of 5 to 10 years.',
     tags: ['durability', 'lifespan', 'UAE heat'],
   },
   {
@@ -142,14 +142,14 @@ const faqs: {
     id: 'ppf-damage-paint',
     category: 'ppf',
     q: 'Does PPF damage car paint when removed?',
-    a: 'No — when PPF is professionally installed and removed, it does not damage factory paint. Smart Auto UAE uses PPF with pressure-sensitive adhesives designed for clean removal. Damage only occurs when film is improperly installed (applied to fresh paint before it has cured) or forcibly removed by an unqualified installer. We recommend always having PPF removed by a professional.',
+    a: 'No- when PPF is professionally installed and removed, it does not damage factory paint. Smart Auto UAE uses PPF with pressure-sensitive adhesives designed for clean removal. Damage only occurs when film is improperly installed (applied to fresh paint before it has cured) or forcibly removed by an unqualified installer. We recommend always having PPF removed by a professional.',
     tags: ['removal', 'paint damage', 'safe'],
   },
   {
     id: 'ppf-colour',
     category: 'ppf',
     q: 'What is Colour PPF and how is it different from a car wrap?',
-    a: 'Colour PPF combines the physical protection of standard PPF with a colour or finish change — available in matte, satin, gloss, and colour-shift options. Unlike vinyl wrapping, Colour PPF is much thicker (150–200 microns vs 80–100 microns for vinyl), self-healing, and protects the factory paint beneath it. It is the premium solution for clients who want a new look AND full paint protection. Smart Auto UAE offers Colour PPF in a wide range of finishes from 3M and TotalGard.',
+    a: 'Colour PPF combines the physical protection of standard PPF with a colour or finish change- available in matte, satin, gloss, and colour-shift options. Unlike vinyl wrapping, Colour PPF is much thicker (150–200 microns vs 80–100 microns for vinyl), self-healing, and protects the factory paint beneath it. It is the premium solution for clients who want a new look AND full paint protection. Smart Auto UAE offers Colour PPF in a wide range of finishes from 3M and TotalGard.',
     tags: ['colour PPF', 'colour change', 'vs wrap'],
   },
 
@@ -165,28 +165,28 @@ const faqs: {
     id: 'ceramic-last',
     category: 'ceramic',
     q: 'How long does ceramic coating last in Dubai?',
-    a: 'In UAE conditions, professional-grade ceramic coatings last 2 to 5 years depending on the product tier and maintenance habits. Budget ceramic coatings (often spray-on) last 6 to 12 months. Smart Auto UAE applies multi-layer professional coatings that bond properly to the paint — not consumer-grade sprays. Annual maintenance top-ups can extend the coating\'s performance further.',
+    a: 'In UAE conditions, professional-grade ceramic coatings last 2 to 5 years depending on the product tier and maintenance habits. Budget ceramic coatings (often spray-on) last 6 to 12 months. Smart Auto UAE applies multi-layer professional coatings that bond properly to the paint- not consumer-grade sprays. Annual maintenance top-ups can extend the coating\'s performance further.',
     tags: ['durability', 'lifespan', 'UAE'],
   },
   {
     id: 'ceramic-diy',
     category: 'ceramic',
     q: 'Can I apply ceramic coating myself at home?',
-    a: 'Consumer spray ceramic products are available but deliver significantly inferior results — typically lasting 3 to 6 months and providing no scratch resistance. Professional ceramic coating requires surface decontamination, paint correction (removing swirls and scratches), and application in a controlled environment. Improper application causes high spots, streaking, and bonding failures. Smart Auto UAE applies ceramic coating in a professional, temperature-controlled setting with certified technicians.',
+    a: 'Consumer spray ceramic products are available but deliver significantly inferior results- typically lasting 3 to 6 months and providing no scratch resistance. Professional ceramic coating requires surface decontamination, paint correction (removing swirls and scratches), and application in a controlled environment. Improper application causes high spots, streaking, and bonding failures. Smart Auto UAE applies ceramic coating in a professional, temperature-controlled setting with certified technicians.',
     tags: ['DIY', 'professional', 'application'],
   },
   {
     id: 'ceramic-new-car',
     category: 'ceramic',
     q: 'Should I ceramic coat a new car?',
-    a: 'Yes — applying ceramic coating to a new car before any environmental exposure gives the best long-term results. New paint is clean and free of contamination, allowing the coating to bond at maximum strength. Smart Auto UAE recommends applying ceramic coating within the first month of ownership, ideally after a light paint correction to remove any transport marks or showroom swirls.',
+    a: 'Yes- applying ceramic coating to a new car before any environmental exposure gives the best long-term results. New paint is clean and free of contamination, allowing the coating to bond at maximum strength. Smart Auto UAE recommends applying ceramic coating within the first month of ownership, ideally after a light paint correction to remove any transport marks or showroom swirls.',
     tags: ['new car', 'best time'],
   },
   {
     id: 'ceramic-ppf-together',
     category: 'ceramic',
     q: 'Can PPF and ceramic coating be applied together?',
-    a: 'Yes — and this is the recommended approach for maximum protection. The standard method is: (1) Apply PPF to high-impact zones (bonnet, bumpers, mirrors, door edges); (2) Apply ceramic coating over the PPF and over all remaining painted panels. This gives you physical impact protection where it is needed most, plus full UV, chemical, and hydrophobic protection across the entire vehicle. Many Smart Auto UAE clients choose this combined package for new luxury cars.',
+    a: 'Yes- and this is the recommended approach for maximum protection. The standard method is: (1) Apply PPF to high-impact zones (bonnet, bumpers, mirrors, door edges); (2) Apply ceramic coating over the PPF and over all remaining painted panels. This gives you physical impact protection where it is needed most, plus full UV, chemical, and hydrophobic protection across the entire vehicle. Many Smart Auto UAE clients choose this combined package for new luxury cars.',
     tags: ['combined', 'PPF and ceramic', 'together'],
   },
 
@@ -202,7 +202,7 @@ const faqs: {
     id: 'wrap-damage-paint',
     category: 'wrapping',
     q: 'Does car wrapping damage the original paint?',
-    a: 'No — when professionally installed and removed, car wrapping protects the factory paint and leaves it in the same condition as before wrapping. The vinyl acts as a protective layer over the paint. Damage occurs only when cheap or expired vinyl is used (adhesive can bond too strongly), or when film is removed improperly. Smart Auto UAE uses premium cast vinyl and removes wraps correctly — no paint damage.',
+    a: 'No- when professionally installed and removed, car wrapping protects the factory paint and leaves it in the same condition as before wrapping. The vinyl acts as a protective layer over the paint. Damage occurs only when cheap or expired vinyl is used (adhesive can bond too strongly), or when film is removed improperly. Smart Auto UAE uses premium cast vinyl and removes wraps correctly- no paint damage.',
     tags: ['paint damage', 'removal', 'factory paint'],
   },
   {
@@ -218,21 +218,21 @@ const faqs: {
     id: 'marine-different',
     category: 'marine',
     q: 'Is marine window tinting different from car window tinting?',
-    a: 'Yes. Marine films are specifically engineered for constant salt spray, high humidity, and intense sun reflection off water — conditions far more demanding than automotive use. Standard automotive films fail prematurely in marine environments due to adhesive corrosion from salt air. Smart Auto UAE installs dedicated marine-grade films from 3M and TotalGard with corrosion-resistant adhesives and UV constructions rated for maritime conditions.',
+    a: 'Yes. Marine films are specifically engineered for constant salt spray, high humidity, and intense sun reflection off water- conditions far more demanding than automotive use. Standard automotive films fail prematurely in marine environments due to adhesive corrosion from salt air. Smart Auto UAE installs dedicated marine-grade films from 3M and TotalGard with corrosion-resistant adhesives and UV constructions rated for maritime conditions.',
     tags: ['marine vs automotive', 'salt air', 'yacht'],
   },
   {
     id: 'marine-instruments',
     category: 'marine',
     q: 'Will marine window film interfere with GPS, radar, or VHF radio?',
-    a: 'Non-metallic nano ceramic marine films do not interfere with any electronic navigation equipment — GPS, VHF radio, radar, or AIS transponders. Smart Auto UAE specifically recommends and installs non-metallic films for helm areas and any glazing near antenna equipment. We advise on the correct film type for each area of your vessel before installation.',
+    a: 'Non-metallic nano ceramic marine films do not interfere with any electronic navigation equipment- GPS, VHF radio, radar, or AIS transponders. Smart Auto UAE specifically recommends and installs non-metallic films for helm areas and any glazing near antenna equipment. We advise on the correct film type for each area of your vessel before installation.',
     tags: ['GPS', 'radar', 'VHF', 'instruments'],
   },
   {
     id: 'marine-onsite',
     category: 'marine',
     q: 'Do I need to move my boat for marine window tinting?',
-    a: 'No. Smart Auto UAE provides on-site marine tinting at your berth or boatyard across Dubai and Sharjah marinas — including Dubai Marina, Palm Jumeirah Marina, Port Rashid, Dubai Harbour, and Mina Seyahi. Our team brings all equipment to you. No vessel transport is required.',
+    a: 'No. Smart Auto UAE provides on-site marine tinting at your berth or boatyard across Dubai and Sharjah marinas- including Dubai Marina, Palm Jumeirah Marina, Port Rashid, Dubai Harbour, and Mina Seyahi. Our team brings all equipment to you. No vessel transport is required.',
     tags: ['on-site', 'marina', 'Dubai Marina'],
   },
 
@@ -255,14 +255,14 @@ const faqs: {
     id: 'res-dark',
     category: 'residential',
     q: 'Will home window tinting make my rooms dark?',
-    a: 'No. Modern solar control films use spectrally selective technology to reject infrared heat and UV radiation while passing the majority of visible light. You can reject 70%+ of solar heat while keeping the glass looking nearly transparent. Smart Auto UAE carries a full range of VLT levels — from lightly tinted to virtually clear — so you can choose exactly the right balance of heat rejection, privacy, and natural light.',
+    a: 'No. Modern solar control films use spectrally selective technology to reject infrared heat and UV radiation while passing the majority of visible light. You can reject 70%+ of solar heat while keeping the glass looking nearly transparent. Smart Auto UAE carries a full range of VLT levels- from lightly tinted to virtually clear- so you can choose exactly the right balance of heat rejection, privacy, and natural light.',
     tags: ['dark', 'natural light', 'spectrally selective'],
   },
   {
     id: 'res-how-long',
     category: 'residential',
     q: 'How long does home window tinting take for a Dubai villa?',
-    a: 'A standard 3 to 4 bedroom villa typically takes 1 to 2 days depending on the number of windows and the film type. Individual apartments are usually completed in a single day. Smart Auto UAE\'s team works efficiently with minimal disruption to your home — and leaves no mess behind.',
+    a: 'A standard 3 to 4 bedroom villa typically takes 1 to 2 days depending on the number of windows and the film type. Individual apartments are usually completed in a single day. Smart Auto UAE\'s team works efficiently with minimal disruption to your home- and leaves no mess behind.',
     tags: ['installation time', 'villa', 'apartment'],
   },
 
@@ -271,21 +271,21 @@ const faqs: {
     id: 'general-branches',
     category: 'general',
     q: 'Where are Smart Auto UAE branches located?',
-    a: 'Smart Auto UAE operates 4 branches: (1) MotorCity, Dubai — main branch, open 11AM to 9PM daily; (2) Al Quoz 4, D16 Road, Dubai — open 11AM to 9:30PM daily; (3) Uptown Mall, Mirdif, Dubai — open 11AM to 10PM daily; (4) Central Mall, Sharjah — open 10AM to 10PM daily. All branches are open every day including weekends and public holidays. Walk-ins are welcome at all locations.',
+    a: 'Smart Auto UAE operates 4 branches: (1) MotorCity, Dubai- main branch, open 11AM to 9PM daily; (2) Al Quoz 4, D16 Road, Dubai- open 11AM to 9:30PM daily; (3) Uptown Mall, Mirdif, Dubai- open 11AM to 10PM daily; (4) Central Mall, Sharjah- open 10AM to 10PM daily. All branches are open every day including weekends and public holidays. Walk-ins are welcome at all locations.',
     tags: ['branches', 'locations', 'opening hours'],
   },
   {
     id: 'general-brands',
     category: 'general',
     q: 'Which brands does Smart Auto UAE use?',
-    a: 'Smart Auto UAE is an officially authorised distributor and certified installer for: 3M USA (window film, PPF, safety film), TotalGard (window film, PPF, ceramic coating), Global USA (solar control window film), and Llumar (architectural and automotive film). All are genuine manufacturer products with full warranties. Smart Auto UAE does not use grey-market, imitation, or unbranded products.',
-    tags: ['3M', 'TotalGard', 'Llumar', 'brands', 'authorised'],
+    a: 'Smart Auto UAE is an officially authorised distributor and certified installer for: 3M USA (window film, PPF, safety film), TotalGard (window film, PPF, ceramic coating), Global USA (solar control window film), and Global USA (architectural and automotive film). All are genuine manufacturer products with full warranties. Smart Auto UAE does not use grey-market, imitation, or unbranded products.',
+    tags: ['3M', 'TotalGard', 'Global USA', 'brands', 'authorised'],
   },
   {
     id: 'general-warranty',
     category: 'general',
     q: 'What warranty do Smart Auto UAE installations carry?',
-    a: 'All Smart Auto UAE installations carry manufacturer warranties: window tinting 5 to 10 years (brand and film grade dependent), PPF 5 to 10 years, ceramic coating 2 to 5 years, car wrapping 2 to 5 years, marine films 3 to 10 years. Warranty documentation is provided at handover. Warranty claims are handled directly through Smart Auto UAE — you do not need to contact the manufacturer yourself.',
+    a: 'All Smart Auto UAE installations carry manufacturer warranties: window tinting 5 to 10 years (brand and film grade dependent), PPF 5 to 10 years, ceramic coating 2 to 5 years, car wrapping 2 to 5 years, marine films 3 to 10 years. Warranty documentation is provided at handover. Warranty claims are handled directly through Smart Auto UAE- you do not need to contact the manufacturer yourself.',
     tags: ['warranty', 'guarantee', 'documentation'],
   },
   {
@@ -299,14 +299,14 @@ const faqs: {
     id: 'general-mobile',
     category: 'general',
     q: 'Does Smart Auto UAE offer mobile or on-site services?',
-    a: 'Yes — Smart Auto UAE offers on-site installation for residential window tinting (at your home or villa), commercial window tinting (at your office or building), and marine tinting (at your marina berth or boatyard). Automotive services (window tinting, PPF, ceramic coating, wrapping) are performed at our branches. Contact us to discuss on-site requirements for your project.',
+    a: 'Yes- Smart Auto UAE offers on-site installation for residential window tinting (at your home or villa), commercial window tinting (at your office or building), and marine tinting (at your marina berth or boatyard). Automotive services (window tinting, PPF, ceramic coating, wrapping) are performed at our branches. Contact us to discuss on-site requirements for your project.',
     tags: ['mobile', 'on-site', 'home service'],
   },
   {
     id: 'general-experience',
     category: 'general',
     q: 'How long has Smart Auto UAE been in business?',
-    a: 'Smart Auto UAE has been operating in Dubai since 2004 — over 20 years of experience in window tinting, PPF, ceramic coating, and surface protection. We have served over 50,000 customers across automotive, residential, commercial, and marine segments and hold over 600 verified 5-star Google reviews.',
+    a: 'Smart Auto UAE has been operating in Dubai since 2004- over 20 years of experience in window tinting, PPF, ceramic coating, and surface protection. We have served over 50,000 customers across automotive, residential, commercial, and marine segments and hold over 600 verified 5-star Google reviews.',
     tags: ['experience', 'history', 'established'],
   },
 ]
@@ -321,7 +321,7 @@ function FaqItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
       variants={fadeUp} custom={index}
       initial="hidden" whileInView="show" viewport={{ once: true }}
     >
-      {/* Schema-friendly — each item is a proper section */}
+      {/* Schema-friendly- each item is a proper section */}
       <div
         className="rounded-2xl overflow-hidden"
         style={{ border: `1px solid ${open ? 'rgba(201,168,76,0.25)' : 'rgba(255,255,255,0.06)'}`, background: open ? 'rgba(201,168,76,0.04)' : 'rgba(17,17,17,0.7)', transition: 'border-color 0.25s,background 0.25s' }}
@@ -398,7 +398,7 @@ export default function FAQPage() {
 
   return (
     <>
-      {/* ── JSON-LD Schema — FAQPage ── */}
+      {/* ── JSON-LD Schema- FAQPage ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -456,7 +456,7 @@ export default function FAQPage() {
                 </span>
               </h1>
               <p className="text-white/50 text-base leading-[1.85] max-w-2xl mx-auto mb-8">
-                Everything you need to know about window tinting laws in Dubai, PPF, ceramic coating, car wrapping, marine and residential tinting — answered by Smart Auto UAE, authorised 3M and TotalGard installer with 20+ years in the UAE.
+                Everything you need to know about window tinting laws in Dubai, PPF, ceramic coating, car wrapping, marine and residential tinting- answered by Smart Auto UAE, authorised 3M and TotalGard installer with 20+ years in the UAE.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <a
@@ -643,7 +643,7 @@ export default function FAQPage() {
                 </span>
               </h2>
               <p className="text-white/45 text-sm mb-7 max-w-md mx-auto relative z-10">
-                Our team responds on WhatsApp within minutes. Send photos, describe your project, or ask anything — free consultation, no obligation.
+                Our team responds on WhatsApp within minutes. Send photos, describe your project, or ask anything- free consultation, no obligation.
               </p>
               <div className="flex gap-3 justify-center flex-wrap relative z-10">
                 <a

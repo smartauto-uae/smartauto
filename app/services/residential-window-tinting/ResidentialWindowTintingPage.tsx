@@ -37,12 +37,12 @@ const benefits = [
   {
     icon: Sun,
     title: 'UV Protection',
-    desc: 'UAE has one of the world\'s highest UV indices. Our 3M and Totalgard residential films block 99% of harmful UV-A and UV-B radiation — protecting your skin during daily indoor exposure and preventing furniture, flooring, artwork, and fabrics from fading and yellowing.',
+    desc: 'UAE has one of the world\'s highest UV indices. Our 3M and Totalgard residential films block 99% of harmful UV-A and UV-B radiation- protecting your skin during daily indoor exposure and preventing furniture, flooring, artwork, and fabrics from fading and yellowing.',
   },
   {
     icon: Eye,
     title: 'Privacy Without Darkness',
-    desc: 'One-way privacy films allow you to see clearly outdoors while preventing neighbours and passersby from seeing into your home. Maintain full natural light and your view while enjoying complete daytime privacy — ideal for ground-floor apartments and villas.',
+    desc: 'One-way privacy films allow you to see clearly outdoors while preventing neighbours and passersby from seeing into your home. Maintain full natural light and your view while enjoying complete daytime privacy- ideal for ground-floor apartments and villas.',
   },
   {
     icon: Shield,
@@ -52,7 +52,7 @@ const benefits = [
   {
     icon: Zap,
     title: 'Energy Savings',
-    desc: 'By reducing solar heat gain, residential window film significantly lowers your HVAC system\'s workload. Independent studies show energy savings of up to 30% on cooling costs — making window film one of the highest-return home improvements available in the UAE.',
+    desc: 'By reducing solar heat gain, residential window film significantly lowers your HVAC system\'s workload. Independent studies show energy savings of up to 30% on cooling costs- making window film one of the highest-return home improvements available in the UAE.',
   },
   {
     icon: Home,
@@ -66,65 +66,65 @@ const filmTypes = [
     name: 'Solar Control Film',
     brand: '3M · Totalgard',
     best: 'Villas, apartments, offices with direct sun exposure',
-    features: ['Maximum heat rejection', 'High clarity — no visible tint', 'Reduces glare on screens', 'Energy savings from day one', '5–10 year warranty'],
-    price: 'From AED 25/sqft',
+    features: ['Maximum heat rejection', 'High clarity- no visible tint', 'Reduces glare on screens', 'Energy savings from day one', '5–10 year warranty'],
+    price: 'Custom quote',
   },
   {
     name: 'Privacy Film',
-    brand: 'Totalgard · Llumar',
+    brand: 'Totalgard · Global USA',
     best: 'Ground-floor rooms, bathrooms, street-facing windows',
     features: ['One-way daytime privacy', 'Full outward visibility retained', 'Available in multiple opacities', 'No adhesive marks on removal', '3–5 year warranty'],
-    price: 'From AED 20/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Decorative Film',
     brand: 'Totalgard · 3M',
     best: 'Bathrooms, glass partitions, entrance doors',
     features: ['Frosted, patterned & etched options', 'Permanent privacy solution', 'Easy to clean', 'No alteration to glass structure', '15-Year warranty'],
-    price: 'From AED 18/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Safety & Security Film',
     brand: '3M Safety Series',
     best: 'Ground floor windows, sliding doors, children\'s rooms',
-    features: ['Holds glass together on impact', 'Slows forced entry attempts', 'Meets international safety standards', 'Optically clear — no visual change', '10-year warranty'],
-    price: 'From AED 35/sqft',
+    features: ['Holds glass together on impact', 'Slows forced entry attempts', 'Meets international safety standards', 'Optically clear- no visual change', '10-year warranty'],
+    price: 'Custom quote',
   },
   {
     name: 'Anti-Glare Film',
     brand: '3M · Totalgard',
     best: 'Home offices, living rooms with TV screens',
     features: ['99% glare reduction', 'Diffuses bright light evenly', 'Reduces eye strain', 'UV protection included', '15-Year warranty'],
-    price: 'From AED 22/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'All-Seasons Ceramic Film',
     brand: '3M All Seasons',
     best: 'Premium villas and apartments seeking maximum performance',
-    features: ['Nano ceramic technology', 'Superior heat and UV rejection', 'Non-metallic — no signal interference', 'Crystal clarity, no colour change', '10-year warranty'],
-    price: 'From AED 40/sqft',
+    features: ['Nano ceramic technology', 'Superior heat and UV rejection', 'Non-metallic- no signal interference', 'Crystal clarity, no colour change', '10-year warranty'],
+    price: 'Custom quote',
   },
 ]
 
 const marbleBenefits = [
   'Protects marble, stone, and quartz countertops from staining',
-  'Invisible ultra-thin film — preserves natural texture and appearance',
+  'Invisible ultra-thin film- preserves natural texture and appearance',
   'Scratch resistance against daily wear from utensils and cookware',
-  'Easy to clean — wipe away spills without penetrating the surface',
+  'Easy to clean- wipe away spills without penetrating the surface',
   'Extends the life of premium marble without costly resealing',
 ]
 
 const process = [
   { num: '01', title: 'Free Site Survey', desc: 'Our team visits your home or villa to measure windows, assess sun exposure, and recommend the most suitable film type for each area.' },
   { num: '02', title: 'Film Selection', desc: 'We present samples on your actual glass so you can see exactly how each film looks and performs in your space before committing.' },
-  { num: '03', title: 'Professional Installation', desc: 'Our certified installers apply the film with precision — no bubbles, no edges, clean lines. Most residential installations complete in a single day.' },
+  { num: '03', title: 'Professional Installation', desc: 'Our certified installers apply the film with precision- no bubbles, no edges, clean lines. Most residential installations complete in a single day.' },
   { num: '04', title: 'Curing & Handover', desc: 'Films are left to cure and you receive full warranty documentation and aftercare instructions. Visible results from day one.' },
 ]
 
 const faqs = [
   {
     q: 'Is residential window tinting legal in Dubai?',
-    a: 'Yes. Residential window tinting is fully legal in Dubai and the wider UAE. There are no VLT (visible light transmission) restrictions for homes, apartments, and villas — unlike automotive tinting which is regulated by the RTA.',
+    a: 'Yes. Residential window tinting is fully legal in Dubai and the wider UAE. There are no VLT (visible light transmission) restrictions for homes, apartments, and villas- unlike automotive tinting which is regulated by the RTA.',
   },
   {
     q: 'How long does home window tinting last in Dubai?',
@@ -132,11 +132,11 @@ const faqs = [
   },
   {
     q: 'Will window film make my home too dark?',
-    a: "No. Modern solar control films reject heat and UV through advanced nano-ceramic and spectrally selective technology — not by darkening the glass. You can reject 70%+ of solar heat while keeping the glass looking nearly clear. We carry a full range of visible light transmission levels from lightly tinted to virtually clear.",
+    a: "No. Modern solar control films reject heat and UV through advanced nano-ceramic and spectrally selective technology- not by darkening the glass. You can reject 70%+ of solar heat while keeping the glass looking nearly clear. We carry a full range of visible light transmission levels from lightly tinted to virtually clear.",
   },
   {
     q: 'Can window film be installed on double-glazed or tinted glass?',
-    a: 'Yes, in most cases. We assess your existing glass type during the free site survey to confirm compatibility. Certain high-performance films require specific glass specifications — we advise you honestly before any installation.',
+    a: 'Yes, in most cases. We assess your existing glass type during the free site survey to confirm compatibility. Certain high-performance films require specific glass specifications- we advise you honestly before any installation.',
   },
   {
     q: 'Does window film protect marble and stone surfaces?',
@@ -178,7 +178,7 @@ export default function ResidentialWindowTintingPage() {
         <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeLeft} initial="hidden" animate="show">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-              3M · Totalgard · Llumar — Authorised UAE Installer
+              3M · Totalgard · Global USA- Authorised UAE Installer
             </p>
             <h1
               className="font-bold text-white leading-[1.1] mb-5"
@@ -191,13 +191,13 @@ export default function ResidentialWindowTintingPage() {
               </span>
             </h1>
             <p className="text-white/50 text-base leading-[1.85] mb-8 max-w-xl">
-              Smart Auto UAE installs premium <strong className="text-white/75 font-medium">residential window tinting</strong> for homes, villas, apartments, and flat glass across Dubai and Sharjah. Our 3M and Totalgard films block up to 99% UV rays, reject 90% of solar heat, and reduce energy bills by up to 30% — while maintaining your view and filling your home with natural light. UAE Applicator. Free site survey included.
+              Smart Auto UAE installs premium <strong className="text-white/75 font-medium">residential window tinting</strong> for homes, villas, apartments, and flat glass across Dubai and Sharjah. Our 3M and Totalgard films block up to 99% UV rays, reject 90% of solar heat, and reduce energy bills by up to 30%- while maintaining your view and filling your home with natural light. UAE Applicator. Free site survey included.
             </p>
             <div className="flex flex-col gap-2.5 mb-8">
               {[
                 'Free site survey & film consultation',
-                '3M, Totalgard & Llumar Applicator',
-                'No VLT restrictions — full range of tints',
+                '3M, Totalgard & Global USA Applicator',
+                'No VLT restrictions- full range of tints',
                 'Villas, apartments, flat glass & skylights',
                 'Marble & surface protection film also available',
               ].map((p) => (
@@ -231,7 +231,7 @@ export default function ResidentialWindowTintingPage() {
             className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.15)' }}>
             <img
               src="/images/villa-window-tint.webp"
-              alt="Residential window tinting Dubai — 3M and Totalgard home window film installation by Smart Auto UAE"
+              alt="Residential window tinting Dubai- 3M and Totalgard home window film installation by Smart Auto UAE"
               width={700} height={500} loading="eager" decoding="async"
               className="w-full h-full object-cover" style={{ maxHeight: '480px' }}
             />
@@ -294,7 +294,7 @@ export default function ResidentialWindowTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto leading-relaxed">
-              The UAE has one of the world&apos;s highest UV indices and extreme summer temperatures. Home window film is not a luxury — it is one of the most practical investments a Dubai homeowner can make.
+              The UAE has one of the world&apos;s highest UV indices and extreme summer temperatures. Home window film is not a luxury- it is one of the most practical investments a Dubai homeowner can make.
             </p>
           </motion.div>
 
@@ -449,7 +449,7 @@ export default function ResidentialWindowTintingPage() {
                 </span>
               </h2>
               <p className="text-white/50 text-base leading-[1.85] mb-6">
-                In Dubai&apos;s luxury residential market, marble and stone countertops, floors, and feature walls are standard. Maintaining their beauty against daily wear, stains, and scratches is a constant challenge. Smart Auto UAE offers a dedicated <strong className="text-white/70 font-medium">marble and surface protection film</strong> service that applies an invisible ultra-thin barrier to your stone surfaces — preserving their natural lustre without changing their appearance.
+                In Dubai&apos;s luxury residential market, marble and stone countertops, floors, and feature walls are standard. Maintaining their beauty against daily wear, stains, and scratches is a constant challenge. Smart Auto UAE offers a dedicated <strong className="text-white/70 font-medium">marble and surface protection film</strong> service that applies an invisible ultra-thin barrier to your stone surfaces- preserving their natural lustre without changing their appearance.
               </p>
               <ul className="flex flex-col gap-3 mb-8">
                 {marbleBenefits.map((b) => (
@@ -474,7 +474,7 @@ export default function ResidentialWindowTintingPage() {
               className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.15)' }}>
               <img
                 src="/images/surface-protection.webp"
-                alt="Marble and stone countertop protection film Dubai — Smart Auto UAE"
+                alt="Marble and stone countertop protection film Dubai- Smart Auto UAE"
                 width={700} height={480} loading="lazy" decoding="async"
                 className="w-full h-full object-cover" style={{ maxHeight: '440px' }}
               />
@@ -498,18 +498,18 @@ export default function ResidentialWindowTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto leading-relaxed">
-              Smart Auto UAE has been installing window film in Dubai and Sharjah homes since 2014. We are an authorised distributor and installer for 3M, Totalgard, and Llumar — using only genuine manufacturer products backed by full warranties.
+              Smart Auto UAE has been installing window film in Dubai and Sharjah homes since 2014. We are an authorised distributor and installer for 3M, Totalgard, and Global USA- using only genuine manufacturer products backed by full warranties.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Free Site Survey', body: 'We visit your home before any commitment — measure every window, assess sun exposure and privacy needs, and present honest recommendations.' },
-              { title: 'Applicator', body: 'Smart Auto UAE is an Applicator and installer for 3M, Totalgard, and Llumar residential film products. No grey-market products, ever.' },
-              { title: 'Manufacturer Warranty', body: 'All residential films carry 3–10 year manufacturer warranties. We provide full documentation at handover — not just a receipt.' },
+              { title: 'Free Site Survey', body: 'We visit your home before any commitment- measure every window, assess sun exposure and privacy needs, and present honest recommendations.' },
+              { title: 'Applicator', body: 'Smart Auto UAE is an Applicator and installer for 3M, Totalgard, and Global USA residential film products. No grey-market products, ever.' },
+              { title: 'Manufacturer Warranty', body: 'All residential films carry 3–10 year manufacturer warranties. We provide full documentation at handover- not just a receipt.' },
               { title: 'Minimal Disruption', body: 'Our installers work efficiently and respectfully in your home. Most residential installations are completed in a single day with no mess left behind.' },
-              { title: 'Same-Day Quotation', body: 'After the site survey, you receive a detailed itemised quote the same day — broken down by room and film type. No vague estimates.' },
-              { title: '4 Branches UAE', body: 'MotorCity, Al Quoz, Mirdif, and Sharjah — our teams serve all areas of Dubai and Sharjah with consistent, reliable service standards.' },
+              { title: 'Same-Day Quotation', body: 'After the site survey, you receive a detailed itemised quote the same day- broken down by room and film type. No vague estimates.' },
+              { title: '4 Branches UAE', body: 'MotorCity, Al Quoz, Mirdif, and Sharjah- our teams serve all areas of Dubai and Sharjah with consistent, reliable service standards.' },
             ].map((item, i) => (
               <motion.div key={item.title} variants={fadeUp} custom={i} initial="hidden" whileInView="show" viewport={{ once: true }}>
                 <div
@@ -638,7 +638,7 @@ export default function ResidentialWindowTintingPage() {
               </span>
             </h2>
             <p className="text-white/50 text-base mb-8 max-w-lg mx-auto relative z-10">
-              Book a free site survey today. Our team visits your home, recommends the right film, and provides a detailed quote — with no obligation to proceed.
+              Book a free site survey today. Our team visits your home, recommends the right film, and provides a detailed quote- with no obligation to proceed.
             </p>
             <div className="flex gap-4 justify-center flex-wrap relative z-10">
               <a

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "Smart Auto UAE | #1 Window Tinting, PPF & Ceramic Coating in Dubai & Sharjah",
 
   description:
-    "Smart Auto UAE — Dubai & Sharjah's most trusted car protection centre. Premium window tinting, paint protection film (PPF), ceramic coating, car detailing, vinyl wrapping & residential tinting. Trusted by 50,000+ customers. Free inspection. Call +971 56 726 9666.",
+    "Smart Auto UAE- Dubai & Sharjah's most trusted car protection centre. Premium window tinting, paint protection film (PPF), ceramic coating, car detailing, vinyl wrapping & residential tinting. Trusted by 50,000+ customers. Free inspection. Call +971 56 726 9666.",
 
   keywords: [
     "window tinting Dubai", "car tinting Dubai", "nano ceramic tint Dubai",
@@ -141,7 +141,7 @@ const structuredData = [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paint Protection Film Dubai", "description": "Self-healing PPF installation by certified technicians in Dubai. Partial and full car packages." }},
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nano Ceramic Coating Dubai", "description": "Professional 9H nano ceramic coating for long-lasting gloss, UV resistance & hydrophobic protection." }},
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Detailing Dubai", "description": "Full interior & exterior car detailing, machine polishing and paint correction in Dubai." }},
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Wrapping Dubai", "description": "Custom vinyl car wrapping — matte, gloss, satin, colour PPF & chrome finishes." }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Wrapping Dubai", "description": "Custom vinyl car wrapping- matte, gloss, satin, colour PPF & chrome finishes." }},
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Window Tinting Dubai", "description": "Solar control, privacy & safety window films for offices, retail & commercial buildings in Dubai." }},
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Window Tinting Dubai", "description": "Heat-rejection, privacy & UV-blocking window film for villas, apartments & homes in Dubai." }},
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marine Window Tinting Dubai", "description": "Marine-grade window tinting for yachts, boats & vessels. On-site installation at Dubai marinas." }},
@@ -157,7 +157,7 @@ const structuredData = [
     "@type": "AutoRepair",
     "name": "Smart Auto UAE - Al Quoz Dubai",
     "image": "https://smartautouae.ae/og-image.jpg",
-    "description": "Smart Auto UAE Al Quoz branch — window tinting, PPF, ceramic coating, car detailing and car wrapping in Dubai.",
+    "description": "Smart Auto UAE Al Quoz branch- window tinting, PPF, ceramic coating, car detailing and car wrapping in Dubai.",
     "url": "https://smartautouae.ae",
     "telephone": "+971567269666",
     "address": {
@@ -183,7 +183,7 @@ const structuredData = [
     "@type": "AutoRepair",
     "name": "Smart Auto UAE - Mirdif Uptown Mall Dubai",
     "image": "https://smartautouae.ae/og-image.jpg",
-    "description": "Smart Auto UAE Mirdif branch inside Uptown Mall — window tinting, PPF, ceramic coating, car detailing and car wrapping.",
+    "description": "Smart Auto UAE Mirdif branch inside Uptown Mall- window tinting, PPF, ceramic coating, car detailing and car wrapping.",
     "url": "https://smartautouae.ae",
     "telephone": "+971567269666",
     "address": {
@@ -209,7 +209,7 @@ const structuredData = [
     "@type": "AutoRepair",
     "name": "Smart Auto UAE - Central Mall Sharjah",
     "image": "https://smartautouae.ae/og-image.jpg",
-    "description": "Smart Auto UAE Sharjah branch at Central Mall — window tinting, PPF, ceramic coating, car detailing and car wrapping in Sharjah.",
+    "description": "Smart Auto UAE Sharjah branch at Central Mall- window tinting, PPF, ceramic coating, car detailing and car wrapping in Sharjah.",
     "url": "https://smartautouae.ae",
     "telephone": "+971567269666",
     "address": {
@@ -284,7 +284,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     />
   </noscript>
 
-  {/* GTM — Next.js Script component */}
+  {/* GTM- Next.js Script component */}
   <Script
     id="gtm-script"
     strategy="afterInteractive"
@@ -297,7 +297,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }}
   />
 
-  {/* JSON-LD — plain script tag, server component only */}
+  {/* JSON-LD- plain script tag, server component only */}
   <script
     type="application/ld+json"
     dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

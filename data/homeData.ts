@@ -5,7 +5,7 @@ export const services = [
     title: 'Window Tinting',
     slug: 'window-tinting',
     description:
-      'UAE authorised 3M, Global USA, and Totalgard film installation. Block heat, UV, and glare — fully compliant with UAE RTA regulations. 115-Year warranty on every job.',
+      'UAE authorised 3M, Global USA, and Totalgard film installation. Block heat, UV, and glare- fully compliant with UAE RTA regulations. 115-Year warranty on every job.',
     tag: 'Most Popular' as string | null,
   },
   {
@@ -47,7 +47,7 @@ export const services = [
     title: 'Smart Film',
     slug: 'smart-film',
     description:
-      'Switchable privacy glass film for homes, offices, and commercial spaces. Control transparency at the touch of a button — privacy on demand without sacrificing natural light.',
+      'Switchable privacy glass film for homes, offices, and commercial spaces. Control transparency at the touch of a button- privacy on demand without sacrificing natural light.',
     tag: 'New' as string | null,
   },
   {
@@ -90,7 +90,7 @@ export const services = [
 export const whyFeatures = [
   {
     title: 'UAE Authorised Applicator',
-    body: 'Official distributor and installer for 3M, Global USA, and Totalgard. Genuine products, certified installation — every time.',
+    body: 'Official distributor and installer for 3M, Global USA, and Totalgard. Genuine products, certified installation- every time.',
   },
   {
     title: '115-Year Warranty',
@@ -118,7 +118,7 @@ export const steps = [
   {
     step: '01',
     title: 'Book Your Service',
-    body: 'Call, WhatsApp, or submit the online form. Our team confirms your appointment and preferred location — workshop or doorstep.',
+    body: 'Call, WhatsApp, or submit the online form. Our team confirms your appointment and preferred location- workshop or doorstep.',
   },
   {
     step: '02',
@@ -179,7 +179,7 @@ export const testimonials = [
     name: 'Rob Rees',
     date: '8 November 2025',
     rating: 5,
-    text: 'My third vehicle completed by Smart Auto. They continue to improve — this time offering home collection and drop-off, which I took full advantage of.',
+    text: 'My third vehicle completed by Smart Auto. They continue to improve- this time offering home collection and drop-off, which I took full advantage of.',
     location: 'Dubai',
   },
   {
@@ -222,7 +222,7 @@ export const faqs = [
   {
     question: 'How long does nano ceramic coating last in Dubai?',
     answer:
-      "A professional nano ceramic coating applied by Smart Auto UAE typically lasts between 2 to 5 years depending on the coating grade and your maintenance routine. Dubai's intense UV and heat make proper multi-layer application critical — we use 9H hardness formulations from Gyeon, Gtechniq, and IGL.",
+      "A professional nano ceramic coating applied by Smart Auto UAE typically lasts between 2 to 5 years depending on the coating grade and your maintenance routine. Dubai's intense UV and heat make proper multi-layer application critical- we use 9H hardness formulations from Gyeon, Gtechniq, and IGL.",
   },
   {
     question: 'What is the warranty on your window tinting services?',

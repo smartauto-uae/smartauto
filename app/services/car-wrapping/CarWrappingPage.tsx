@@ -40,21 +40,21 @@ const GoldText = ({ children }: { children: React.ReactNode }) => (
 const finishes = [
   { name: 'Matte / Scraped Aluminium', desc: 'Flat, premium finish with zero glare. Extremely popular on luxury SUVs, sports cars, and executive sedans in the UAE.' },
   { name: 'Gloss & High Gloss', desc: 'Deep mirror-like shine. Colour-change wraps that look better than a factory respray, while protecting the original paint underneath.' },
-  { name: 'Satin', desc: 'Between matte and gloss — the most refined, versatile premium finish. Pairs well with any vehicle colour.' },
+  { name: 'Satin', desc: 'Between matte and gloss- the most refined, versatile premium finish. Pairs well with any vehicle colour.' },
   { name: 'Pearl & Metallic', desc: 'Multi-tonal finishes that shift in the light. Special effect foils that cannot be achieved with conventional paint.' },
   { name: 'Chrome & Mirror', desc: 'Maximum visual impact for show cars, supercars, and statement vehicles. Full chrome or partial accent chrome.' },
-  { name: 'Chameleon / Colour Shift', desc: 'Changes colour depending on viewing angle and light — the most dramatic special-effect wrap available.' },
-  { name: '3D Carbon Fibre', desc: 'Textured carbon fibre effect — roof panels, bonnets, interior trims, and full-body carbon looks without the carbon fibre price.' },
+  { name: 'Chameleon / Colour Shift', desc: 'Changes colour depending on viewing angle and light- the most dramatic special-effect wrap available.' },
+  { name: '3D Carbon Fibre', desc: 'Textured carbon fibre effect- roof panels, bonnets, interior trims, and full-body carbon looks without the carbon fibre price.' },
   { name: 'Leather & Textured Foil', desc: 'Imitation leather and custom texture foils for interior trim panels, dashboards, and exterior accent areas.' },
-  { name: 'Custom Digital Print', desc: 'Full-scale digital printing for personal designs, business branding, and fleet advertising — printed and applied on-site.' },
+  { name: 'Custom Digital Print', desc: 'Full-scale digital printing for personal designs, business branding, and fleet advertising- printed and applied on-site.' },
   { name: 'Partial Wrap', desc: 'Roof panels, bonnet, door mirrors, stripes, or any accent panel. Change one element without committing to a full wrap.' },
 ]
 
 const benefits = [
-  { title: 'Preserve Your Paint', desc: 'The vinyl film acts as a second skin — protecting the original factory paint from stone chips, UV fade, light scratches, and daily road damage.' },
-  { title: 'Maintain Resale Value', desc: 'When you sell or return the vehicle, the wrap peels off cleanly to reveal perfect factory paint beneath — maximising resale value.' },
+  { title: 'Preserve Your Paint', desc: 'The vinyl film acts as a second skin- protecting the original factory paint from stone chips, UV fade, light scratches, and daily road damage.' },
+  { title: 'Maintain Resale Value', desc: 'When you sell or return the vehicle, the wrap peels off cleanly to reveal perfect factory paint beneath- maximising resale value.' },
   { title: 'Reversible Colour Change', desc: "Change your car's colour completely without permanently altering the factory finish. Remove it at any time with no adhesive residue." },
-  { title: 'Wider Colour Choice', desc: 'Thousands of colour and finish options — pearl, metallic, chrome, matte, chameleon, and custom prints — far beyond what factory paint offers.' },
+  { title: 'Wider Colour Choice', desc: 'Thousands of colour and finish options- pearl, metallic, chrome, matte, chameleon, and custom prints- far beyond what factory paint offers.' },
   { title: 'Lease Car Friendly', desc: 'Buy or lease in black, wrap to your desired colour, then remove at end of lease. The original colour underneath stays perfect.' },
   { title: 'Cost-Effective vs Respray', desc: 'A professional wrap typically costs less than a full respray, is completely reversible, and for luxury vehicles avoids the significant loss of value that a respray causes.' },
 ]
@@ -74,7 +74,7 @@ const wrappingVsPainting = [
   { label: 'Lease car compatible', wrap: 'Yes', paint: 'No' },
   { label: 'Custom digital print', wrap: 'Yes', paint: 'No' },
   { label: 'Removal process', wrap: 'Clean peel-off', paint: 'Full respray needed' },
-  { label: 'RTA documentation', wrap: 'Required — we handle it', paint: 'Required' },
+  { label: 'RTA documentation', wrap: 'Required- we handle it', paint: 'Required' },
 ]
 
 const faqs = [
@@ -84,15 +84,15 @@ const faqs = [
   },
   {
     q: 'How long does a car wrap last in Dubai?',
-    a: 'A professional-grade vinyl wrap from 3M or Avery Dennison lasts 5–7 years in UAE conditions. The film is UV-resistant, wash-resistant, and weather-resistant. With the correct care products it can also be polished, waxed, or sealed — just like factory paint.',
+    a: 'A professional-grade vinyl wrap from 3M or Avery Dennison lasts 5–7 years in UAE conditions. The film is UV-resistant, wash-resistant, and weather-resistant. With the correct care products it can also be polished, waxed, or sealed- just like factory paint.',
   },
   {
     q: 'Will car wrapping damage my paint?',
-    a: "No. High-quality PVC vinyl films are designed for full 3D deformation and can be removed cleanly without adhesive residues or damage to the original paint — provided the paint was in good condition before application. This is one of wrapping's biggest advantages over respraying.",
+    a: "No. High-quality PVC vinyl films are designed for full 3D deformation and can be removed cleanly without adhesive residues or damage to the original paint- provided the paint was in good condition before application. This is one of wrapping's biggest advantages over respraying.",
   },
   {
     q: 'How long does a full car wrap take?',
-    a: 'A full colour-change car wrap takes 2–4 days at Smart Auto UAE depending on vehicle size, complexity, and the number of panels that need to be disassembled. Partial wraps — roof, bonnet, stripes — can be completed in 1 day.',
+    a: 'A full colour-change car wrap takes 2–10 days at Smart Auto UAE depending on vehicle size, complexity, and the number of panels that need to be disassembled. Partial wraps- roof, bonnet, stripes- can be completed in 1 day.',
   },
   {
     q: 'Can you wrap boats, motorcycles, and commercial vehicles?',
@@ -169,7 +169,7 @@ export default function CarWrappingPage() {
         <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeUp} initial="hidden" animate="show">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-              3M · Avery Dennison · Hexis · KPMF — UAE Installer
+              3M · Avery Dennison · Oracal & more - UAE Installer
             </p>
             <h1
               className="font-bold text-white leading-[1.05] mb-5"
@@ -181,7 +181,7 @@ export default function CarWrappingPage() {
             <p className="text-white/50 text-base leading-[1.9] mb-5 max-w-xl">
               Smart Auto UAE is Dubai and Sharjah&apos;s trusted{' '}
               <strong className="text-white/75 font-medium">car wrapping specialist</strong>. Customise and
-              protect your vehicle with premium vinyl wraps — from full colour-change wraps to digital print
+              protect your vehicle with premium vinyl wraps- from full colour-change wraps to digital print
               advertising, special-effect foils, and partial accents. We also wrap boats, motorcycles, and
               commercial fleets.
             </p>
@@ -190,7 +190,7 @@ export default function CarWrappingPage() {
                 'Full colour-change & partial wraps Dubai',
                 'Matte, gloss, satin, chrome, pearl, chameleon & 3D carbon',
                 'RTA colour-change documentation handled by us',
-                '3M, Avery Dennison, Hexis & KPMF vinyl films',
+                '3M, Avery Dennison, Oracal & more vinyl films',
                 'Boats, motorcycles, fleet & commercial vehicles',
               ].map((p) => (
                 <div key={p} className="flex items-center gap-3">
@@ -229,7 +229,7 @@ export default function CarWrappingPage() {
           >
             <img
               src="/images/car-wrap.webp"
-              alt="Professional vinyl car wrapping Dubai — matte, gloss, chrome and colour-change wraps by Smart Auto UAE"
+              alt="Professional vinyl car wrapping Dubai- matte, gloss, chrome and colour-change wraps by Smart Auto UAE"
               width={700}
               height={500}
               loading="eager"
@@ -492,7 +492,7 @@ export default function CarWrappingPage() {
           </h2>
           <p className="text-white/45 text-base mb-10 max-w-lg mx-auto relative z-10">
             Free consultation at any of our 4 branches in Dubai and Sharjah. Bring your vehicle or call to
-            discuss your wrap project — we will advise on the best film, finish, and coverage for your budget.
+            discuss your wrap project- we will advise on the best film, finish, and coverage for your budget.
           </p>
           <div className="flex gap-4 justify-center flex-wrap relative z-10">
             <a

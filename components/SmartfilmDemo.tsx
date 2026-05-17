@@ -30,7 +30,7 @@ export default function SmartFilmDemo() {
               color: '#fff',
             }}
           >
-            Toggle the Glass —{' '}
+            Toggle the Glass-{' '}
             <span
               style={{
                 background: goldGrad,
@@ -45,7 +45,7 @@ export default function SmartFilmDemo() {
             className="max-w-lg mx-auto text-sm leading-relaxed"
             style={{ color: 'rgba(255,255,255,0.4)' }}
           >
-            Press the button below to switch the smart film between clear and frosted —
+            Press the button below to switch the smart film between clear and frosted-
             exactly as it works in real life, in milliseconds.
           </p>
           <div
@@ -84,7 +84,7 @@ export default function SmartFilmDemo() {
                 animate={{ color: isOn ? '#4ade80' : '#f87171' }}
                 transition={{ duration: 0.3 }}
               >
-                Smart Film — {isOn ? 'ON · Clear' : 'OFF · Frosted'}
+                Smart Film- {isOn ? 'ON · Clear' : 'OFF · Frosted'}
               </motion.span>
             </div>
             <div
@@ -106,7 +106,7 @@ export default function SmartFilmDemo() {
             >
               <img
                 src="/images/gallery/smart-film-before.webp"
-                alt="Smart film ON — clear glass — transparent office view"
+                alt="Smart film ON- clear glass- transparent office view"
                 className="w-full h-full object-cover"
                 width={960}
                 height={420}
@@ -121,7 +121,7 @@ export default function SmartFilmDemo() {
                   color: '#4ade80',
                 }}
               >
-                Clear — 92% Optical Clarity
+                Clear- 92% Optical Clarity
               </div>
             </motion.div>
 
@@ -133,7 +133,7 @@ export default function SmartFilmDemo() {
             >
               <img
                 src="/images/gallery/smart-film-after.webp"
-                alt="Smart film OFF — frosted glass — opaque privacy"
+                alt="Smart film OFF- frosted glass- opaque privacy"
                 className="w-full h-full object-cover"
                 width={960}
                 height={420}
@@ -148,7 +148,7 @@ export default function SmartFilmDemo() {
                   color: gold,
                 }}
               >
-                Frosted — Full Privacy
+                Frosted- Full Privacy
               </div>
             </motion.div>
 
@@ -181,7 +181,7 @@ export default function SmartFilmDemo() {
                       className="text-[12px] leading-[1.7]"
                       style={{ color: 'rgba(255,255,255,0.4)' }}
                     >
-                      Electric current aligns liquid crystals — glass becomes fully
+                      Electric current aligns liquid crystals- glass becomes fully
                       transparent with up to 92% optical clarity. Full view, maximum
                       natural light.
                     </p>
@@ -204,7 +204,7 @@ export default function SmartFilmDemo() {
                       className="text-[12px] leading-[1.7]"
                       style={{ color: 'rgba(255,255,255,0.4)' }}
                     >
-                      No current — liquid crystals scatter randomly, instantly turning
+                      No current- liquid crystals scatter randomly, instantly turning
                       the glass opaque. Complete privacy. Light still diffuses through.
                     </p>
                   </motion.div>
@@ -227,7 +227,7 @@ export default function SmartFilmDemo() {
                 }}
               >
                 <Zap size={15} />
-                {isOn ? 'Turn OFF — Frost Glass' : 'Turn ON — Clear Glass'}
+                {isOn ? 'Turn OFF- Frost Glass' : 'Turn ON- Clear Glass'}
               </button>
 
               {/* Toggle switch */}

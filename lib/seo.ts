@@ -29,7 +29,7 @@ export type SeoPage = {
   updated_at:          string
 }
 
-// ── Server-side read — used in generateMetadata ───────────────────────────────
+// ── Server-side read- used in generateMetadata ───────────────────────────────
 export async function getSeoForRoute(route: string): Promise<SeoPage | null> {
   const { data, error } = await getAdminClient()
     .from('seo_pages')
@@ -44,7 +44,7 @@ export async function getSeoForRoute(route: string): Promise<SeoPage | null> {
   return data ?? null
 }
 
-// ── Admin read all — used in admin dashboard list ─────────────────────────────
+// ── Admin read all- used in admin dashboard list ─────────────────────────────
 export async function getAllSeoPages(): Promise<SeoPage[]> {
   const { data, error } = await getAdminClient()
     .from('seo_pages')
@@ -55,7 +55,7 @@ export async function getAllSeoPages(): Promise<SeoPage[]> {
   return (data ?? []) as SeoPage[]
 }
 
-// ── Admin write — used from API route only ────────────────────────────────────
+// ── Admin write- used from API route only ────────────────────────────────────
 export async function upsertSeoPage(
   route: string,
   payload: Partial<SeoPage>

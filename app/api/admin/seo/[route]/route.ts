@@ -4,7 +4,7 @@ import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { getSeoForRoute } from '@/lib/seo'
 
-// ── Admin client — bypasses RLS (server-side only) ────────────────────────────
+// ── Admin client- bypasses RLS (server-side only) ────────────────────────────
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!

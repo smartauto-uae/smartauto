@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AdminLoginPage from './AdminLoginPage'
 
 export const metadata: Metadata = {
-  title: 'Login — Smart Auto Admin',
+  title: 'Login- Smart Auto Admin',
   robots: 'noindex, nofollow',
 }
 

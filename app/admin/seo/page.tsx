@@ -28,7 +28,7 @@ export default async function SeoAdminPage() {
               fontWeight: 800, fontSize: '1.75rem',
               color: '#1a1814', fontFamily: 'var(--font-playfair),serif',
             }}>
-              All Pages — {pages.length} routes
+              All Pages- {pages.length} routes
             </h1>
           </div>
         </div>

@@ -30,33 +30,33 @@ const packages = [
   {
     name: 'Front End Package',
     coverage: 'Full bonnet, front bumper, side mirrors, headlights & fog lights',
-    price: 'From AED 2,500',
+    price: 'From AED 1,500',
     duration: '1–2 days',
-    warranty: '15-Year self-healing warranty',
+    warranty: '3 - 12 Years Warranty',
     popular: false,
   },
   {
     name: 'Standard Package',
     coverage: 'Full front end + door edge guards + door cup protectors + A-pillars',
-    price: 'From AED 4,999',
+    price: 'From AED 3,499',
     duration: '2–3 days',
-    warranty: '7-year warranty',
+    warranty: '3-year warranty',
     popular: true,
   },
   {
     name: 'Full Body PPF',
-    coverage: 'Every painted panel — complete vehicle coverage',
-    price: 'From AED 9,999',
-    duration: '4–5 days',
-    warranty: '10-year warranty',
+    coverage: 'Every painted panel- complete vehicle coverage',
+    price: 'From AED 4,499',
+    duration: '2–3 days',
+    warranty: '5-year warranty',
     popular: false,
   },
   {
     name: 'Custom / Supercar',
-    coverage: 'Track cars, supercars, custom rooflines — tailored to your vehicle',
+    coverage: 'Track cars, supercars, custom rooflines- tailored to your vehicle',
     price: 'Contact for quote',
     duration: 'Varies',
-    warranty: 'Manufacturer warranty',
+    warranty: '3 - 12 Years Warranty',
     popular: false,
   },
 ]
@@ -64,7 +64,7 @@ const packages = [
 const benefits = [
   {
     title: 'Keeps Your Car Looking New',
-    body: 'Paint Protection Film provides a permanent protective coat over your car\'s paint, preserving the showroom-quality finish for years. It prevents fading and maintains a polished, glossy appearance at all times — essential in Dubai\'s extreme UV conditions.',
+    body: 'Paint Protection Film provides a permanent protective coat over your car\'s paint, preserving the showroom-quality finish for years. It prevents fading and maintains a polished, glossy appearance at all times- essential in Dubai\'s extreme UV conditions.',
   },
   {
     title: 'Retains Resale Value',
@@ -72,11 +72,11 @@ const benefits = [
   },
   {
     title: 'Self-Healing Technology',
-    body: 'Premium TPU-based PPF films from Totalgard, 3M, and Global USA feature thermoplastic self-healing technology. Minor surface swirl marks and light scratches vanish with heat from the sun or warm water — the film literally repairs itself.',
+    body: 'Premium TPU-based PPF films from Totalgard, 3M, and Global USA feature thermoplastic self-healing technology. Minor surface swirl marks and light scratches vanish with heat from the sun or warm water- the film literally repairs itself.',
   },
   {
     title: 'Repels Environmental Damage',
-    body: 'Dubai\'s harsh UV radiation, sand, bird droppings, tree sap, and acid rain are constant threats to paintwork. PPF acts as a sacrificial barrier — absorbing these hazards so your paint underneath remains perfectly protected.',
+    body: 'Dubai\'s harsh UV radiation, sand, bird droppings, tree sap, and acid rain are constant threats to paintwork. PPF acts as a sacrificial barrier- absorbing these hazards so your paint underneath remains perfectly protected.',
   },
   {
     title: 'Chemical & Scratch Protection',
@@ -84,7 +84,7 @@ const benefits = [
   },
   {
     title: 'Completely Invisible',
-    body: 'The best paint protection is the kind you never notice. Our optically clear PPF films are virtually undetectable — no one will know it\'s there. Your car\'s colour, design features, and lines remain completely unchanged.',
+    body: 'The best paint protection is the kind you never notice. Our optically clear PPF films are virtually undetectable- no one will know it\'s there. Your car\'s colour, design features, and lines remain completely unchanged.',
   },
   {
     title: 'Easier Car Cleaning',
@@ -92,7 +92,7 @@ const benefits = [
   },
   {
     title: 'Saves Money on Repairs',
-    body: 'Prevention is always more cost-effective than repair. PPF eliminates the recurring expense of stone chip touch-ups, paint correction, and panel resprays — paying for itself many times over across the life of your vehicle.',
+    body: 'Prevention is always more cost-effective than repair. PPF eliminates the recurring expense of stone chip touch-ups, paint correction, and panel resprays- paying for itself many times over across the life of your vehicle.',
   },
 ]
 
@@ -103,7 +103,7 @@ const protectsFrom = [
   },
   {
     threat: 'UV Rays & Solar Radiation',
-    detail: 'PPF contains UV inhibitors that block harmful solar radiation — preventing paint fading, oxidation, and that chalky dulled appearance that affects unprotected vehicles in the UAE.',
+    detail: 'PPF contains UV inhibitors that block harmful solar radiation- preventing paint fading, oxidation, and that chalky dulled appearance that affects unprotected vehicles in the UAE.',
   },
   {
     threat: 'Bird Droppings & Tree Sap',
@@ -115,16 +115,16 @@ const protectsFrom = [
   },
   {
     threat: 'Road Grime & Dust',
-    detail: 'PPF\'s smooth, hydrophobic surface prevents dust and road grime from bonding to the paint surface — dramatically reducing contamination between washes.',
+    detail: 'PPF\'s smooth, hydrophobic surface prevents dust and road grime from bonding to the paint surface- dramatically reducing contamination between washes.',
   },
   {
     threat: 'Minor Scratches & Swirl Marks',
-    detail: 'PPF acts as a sacrificial layer — absorbing everyday swirl marks from car washes, light contact, and environmental abrasion while keeping the underlying paint in perfect condition.',
+    detail: 'PPF acts as a sacrificial layer- absorbing everyday swirl marks from car washes, light contact, and environmental abrasion while keeping the underlying paint in perfect condition.',
   },
 ]
 
 const brands = [
-  { name: 'Totalgard', note: 'UAE Applicator' },
+  { name: 'Totalgard', note: 'UAE Distributor & Applicator' },
   { name: '3M', note: 'UAE Applicator' },
   { name: 'Global USA', note: 'Certified Installer' },
 ]
@@ -132,27 +132,27 @@ const brands = [
 const faqs = [
   {
     q: 'Is PPF worth it in Dubai?',
-    a: "Yes. Dubai's combination of extreme UV radiation, sand and grit on roads, high-speed motorway driving, and intense heat make PPF one of the most practical investments for any vehicle owner in the UAE. The film protects against stone chips, UV fading, bird drop etching, and chemical damage — all of which are accelerated by the local climate. A quality PPF installation pays for itself by eliminating recurring paint repair costs.",
+    a: "Yes. Dubai's combination of extreme UV radiation, sand and grit on roads, high-speed motorway driving, and intense heat make PPF one of the most practical investments for any vehicle owner in the UAE. The film protects against stone chips, UV fading, bird drop etching, and chemical damage- all of which are accelerated by the local climate. A quality PPF installation pays for itself by eliminating recurring paint repair costs.",
   },
   {
     q: 'How long does PPF installation take at Smart Auto UAE?',
-    a: 'A full-body PPF installation takes 4–5 days at our workshop. Front-end only coverage takes 1–2 days. Standard package coverage (front end + door edges + A-pillars) takes 2–3 days. We have 4 branches across Dubai and Sharjah — book at the most convenient location.',
+    a: 'A full-body PPF installation takes 2–5 days at our workshop. Front-end only coverage takes 1–2 days. Standard package coverage (front end + door edges + A-pillars) takes 2–3 days. We have 4 branches across Dubai and Sharjah- book at the most convenient location.',
   },
   {
     q: 'Does PPF go yellow over time?',
-    a: 'Premium TPU films from Totalgard, 3M, and Global USA are manufactured with UV stabilisers and optical-grade clarity. They will not yellow, cloud, or discolour throughout their warranty period — which ranges from 5 to 10 years depending on the product.',
+    a: 'Premium TPU films from Totalgard, 3M, and Global USA are manufactured with UV stabilisers and optical-grade clarity. They will not yellow, cloud, or discolour throughout their warranty period- which ranges from 3 to 12 Years depending on the product.',
   },
   {
     q: 'What is the difference between PPF and ceramic coating?',
-    a: 'PPF is a physical film that absorbs impacts and prevents stone chips and scratches. Ceramic coating is a chemical layer that provides hydrophobic protection, UV resistance, and gloss enhancement — but it cannot absorb physical impacts. For maximum protection, Smart Auto UAE recommends PPF + ceramic coating combined. The PPF handles physical threats; the ceramic coating handles chemical and UV threats.',
+    a: 'PPF is a physical film that absorbs impacts and prevents stone chips and scratches. Ceramic coating is a chemical layer that provides hydrophobic protection, UV resistance, and gloss enhancement- but it cannot absorb physical impacts. For maximum protection, Smart Auto UAE recommends PPF + ceramic coating combined. The PPF handles physical threats; the ceramic coating handles chemical and UV threats.',
   },
   {
     q: 'Can PPF be removed without damaging the paint?',
-    a: "Yes. Professional-grade TPU PPF peels cleanly from the factory paint without any adhesive residue or damage. This is one of PPF's key advantages — it can be removed and replaced after the warranty period, or if you choose to sell the vehicle.",
+    a: "Yes. Professional-grade TPU PPF peels cleanly from the factory paint without any adhesive residue or damage. This is one of PPF's key advantages- it can be removed and replaced after the warranty period, or if you choose to sell the vehicle.",
   },
   {
     q: 'What is the starting price for PPF in Dubai?',
-    a: 'Paint Protection Film at Smart Auto UAE starts from AED 2,500 for front-end coverage and from AED 4,999 for a standard protection package. Full-body PPF starts from AED 9,999. Exact pricing depends on the vehicle size, PPF brand, and coverage area — contact us for a personalised quote.',
+    a: 'Paint Protection Film at Smart Auto UAE starts from AED 3,499 onwards. Exact pricing depends on the vehicle size, PPF brand, and coverage area- contact us for a personalised quote.',
   },
   {
     q: 'Does Smart Auto UAE install PPF on luxury and exotic cars?',
@@ -160,7 +160,7 @@ const faqs = [
   },
   {
     q: 'Is there a warranty on PPF installation?',
-    a: 'Yes. All PPF installations at Smart Auto UAE carry a manufacturer-backed warranty ranging from 5 to 10 years depending on the film selected. The warranty covers delamination, yellowing, bubbling, and significant colour change.',
+    a: 'Yes. All PPF installations at Smart Auto UAE carry a manufacturer-backed warranty ranging from 3 to 12 Years depending on the film selected. The warranty covers delamination, yellowing, bubbling, and significant colour change.',
   },
 ]
 
@@ -173,7 +173,7 @@ const vehicleTypes = [
 const process = [
   { num: '01', title: 'Free Inspection', desc: 'We inspect your vehicle\'s paint condition and discuss the right coverage level and film for your needs and budget.' },
   { num: '02', title: 'Paint Prep & Decontamination', desc: 'Your vehicle is washed, clay barred, and fully decontaminated. Any existing paint defects are identified before film application.' },
-  { num: '03', title: 'Precision Film Installation', desc: 'Our certified technicians apply PPF using computer-cut templates for a perfect panel fit — no edge lifting, no gaps, no visible seams.' },
+  { num: '03', title: 'Precision Film Installation', desc: 'Our certified technicians apply PPF using computer-cut templates for a perfect panel fit- no edge lifting, no gaps, no visible seams.' },
   { num: '04', title: 'Quality Check & Handover', desc: 'Every panel is inspected under controlled lighting before handover. You receive your warranty documentation and aftercare guidance.' },
 ]
 
@@ -205,7 +205,7 @@ export default function PPFPage() {
               className="text-[11px] tracking-[0.3em] uppercase mb-4"
               style={{ color: GOLD }}
             >
-              Totalgard · 3M · Global USA — UAE Authorised Distributor &amp; Applicator
+              Totalgard · 3M · Global USA- UAE Applicator
             </p>
 
             <h1
@@ -235,19 +235,19 @@ export default function PPFPage() {
             <p className="text-white/50 text-base leading-[1.9] mb-8 max-w-xl">
               Smart Auto UAE is Dubai and Sharjah&apos;s trusted{' '}
               <strong className="text-white/70 font-medium">Paint Protection Film (PPF)</strong> installer. We use
-              self-healing TPU films from Totalgard, 3M, and Global USA — the same films trusted by luxury and exotic car
-              owners across the UAE. Virtually invisible, permanently protective, and backed by up to a 10-year warranty.
+              self-healing TPU films from Totalgard, 3M, and Global USA- the same films trusted by luxury and exotic car
+              owners across the UAE. Virtually invisible, permanently protective, and backed by up to 12-year warranty.
               Car Paint Protection Films starting from{' '}
-              <strong className="text-white/70 font-medium">AED 4,999</strong>.
+              <strong className="text-white/70 font-medium">AED 3,499</strong>.
             </p>
 
             <div className="flex flex-col gap-2.5 mb-9">
               {[
-                'UAE authorised distributor & applicator — Totalgard, 3M & Global USA',
-                'Self-healing TPU film — minor scratches vanish with heat',
-                'Optically clear — completely invisible on the paint',
-                'Starting from AED 4,999 — transparent pricing',
-                'Up to 10-year manufacturer warranty',
+                'Partnering with Leading PPF Brands- Totalgard, 3M & Global USA & more',
+                'Self-healing TPU film- minor scratches vanish with heat',
+                'Optically clear- completely invisible on the paint',
+                'Starting from AED 3,499- transparent pricing',
+                'Up to 12-year warranty',
               ].map((p) => (
                 <div key={p} className="flex items-center gap-3">
                   <CheckCircle size={15} style={{ color: GOLD, flexShrink: 0 }} aria-hidden="true" />
@@ -286,7 +286,7 @@ export default function PPFPage() {
           >
             <img
               src="/images/services/PPF-1.webp"
-              alt="Totalgard Paint Protection Film installation Dubai — best PPF installer UAE by Smart Auto"
+              alt="Totalgard Paint Protection Film installation Dubai- best PPF installer UAE by Smart Auto"
               width={700}
               height={500}
               loading="eager"
@@ -332,11 +332,11 @@ export default function PPFPage() {
                 PPF is trusted by owners of{' '}
                 <strong className="text-white/70 font-medium">luxury and exotic vehicles</strong> worldwide as the
                 gold standard in paint preservation. At Smart Auto UAE, we use only manufacturer-certified PPF from
-                Totalgard, 3M Scotchgard, and Global USA — the three most trusted brands in the UAE market.
+                Totalgard, 3M Scotchgard, and Global USA- the three most trusted brands in the UAE market.
               </p>
               <p>
                 The film protects vulnerable areas including front bumpers, bonnets, side mirrors, door handle
-                cavities, door edges, rocker panels, headlights, and rear fender panels — preserving the showroom-quality
+                cavities, door edges, rocker panels, headlights, and rear fender panels- preserving the showroom-quality
                 finish of your vehicle and enhancing its resale value for the future.
               </p>
             </div>
@@ -351,8 +351,8 @@ export default function PPFPage() {
             className="grid grid-cols-2 gap-3"
           >
             {[
-              { label: 'Starting Price', value: 'AED 4,999' },
-              { label: 'Warranty', value: 'Up to 10 Years' },
+              { label: 'Starting Price', value: 'AED 3,499' },
+              { label: 'Warranty', value: 'Up to 12 Years' },
               { label: 'Film Brands', value: 'Totalgard · 3M · Global USA' },
               { label: 'Branches', value: '4 Across UAE' },
             ].map((stat) => (
@@ -504,9 +504,9 @@ export default function PPFPage() {
       <section className="py-16" style={{ backgroundColor: '#060606' }}>
         <div className="w-full max-w-7xl mx-auto px-6">
           <p className="text-center text-[11px] tracking-[0.3em] uppercase mb-10" style={{ color: GOLD }}>
-            UAE Authorised Distributor &amp; Applicator
+            Partnering with Leading Brands
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {brands.map((brand, i) => (
               <motion.div
                 key={brand.name}
@@ -826,7 +826,7 @@ export default function PPFPage() {
             className="text-[11px] tracking-[0.3em] uppercase mb-4 relative z-10"
             style={{ color: GOLD }}
           >
-            UAE Authorised Distributor &amp; Applicator — Totalgard · 3M · Global USA
+            Totalgard · 3M · Global USA
           </p>
           <h2
             className="font-bold text-white mb-4 relative z-10"
@@ -841,11 +841,11 @@ export default function PPFPage() {
                 backgroundClip: 'text',
               }}
             >
-              Starting from AED 4,999.
+              Starting from AED 3,499.
             </span>
           </h2>
           <p className="text-white/45 text-base mb-8 max-w-lg mx-auto relative z-10">
-            Free inspection · Transparent pricing · Up to 10-year warranty · 4 branches across Dubai &amp; Sharjah · Open every day
+            Free inspection · Transparent pricing · Up to 12-year warranty · 4 branches across Dubai &amp; Sharjah · Open every day
           </p>
 
           <div className="flex items-center justify-center gap-3 mb-8 flex-wrap relative z-10">

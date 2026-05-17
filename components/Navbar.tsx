@@ -95,7 +95,7 @@ export default function Navbar() {
           >
             <Image
               src="/logo.png"
-              alt="Smart Auto UAE — Window Tinting, PPF and Ceramic Coating Dubai"
+              alt="Smart Auto UAE- Window Tinting, PPF and Ceramic Coating Dubai"
               width={130}
               height={40}
               priority

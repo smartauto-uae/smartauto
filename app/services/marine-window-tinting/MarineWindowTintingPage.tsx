@@ -28,7 +28,7 @@ const benefits = [
   {
     icon: Sun,
     title: 'UV Protection',
-    desc: "The UAE's UV index is among the world's highest, and on open water the reflection doubles that exposure. Our marine window films block 99% of harmful UV-A and UV-B radiation — protecting passengers, crew, and interior materials from damage.",
+    desc: "The UAE's UV index is among the world's highest, and on open water the reflection doubles that exposure. Our marine window films block 99% of harmful UV-A and UV-B radiation- protecting passengers, crew, and interior materials from damage.",
   },
   {
     icon: Eye,
@@ -38,7 +38,7 @@ const benefits = [
   {
     icon: Thermometer,
     title: 'Heat Control',
-    desc: "Unprotected glass in the UAE summer turns a boat cabin into an oven. Our films reject up to 90% of incoming solar heat — keeping cabins, helms, and salons at a comfortable temperature without overloading the vessel's cooling system.",
+    desc: "Unprotected glass in the UAE summer turns a boat cabin into an oven. Our films reject up to 90% of incoming solar heat- keeping cabins, helms, and salons at a comfortable temperature without overloading the vessel's cooling system.",
   },
   {
     icon: Wind,
@@ -48,7 +48,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Privacy & Security',
-    desc: 'One-way privacy films allow unobstructed outward vision while preventing others from looking in — protecting passengers, guests, and valuables from view. Particularly valuable for yachts moored in marinas.',
+    desc: 'One-way privacy films allow unobstructed outward vision while preventing others from looking in- protecting passengers, guests, and valuables from view. Particularly valuable for yachts moored in marinas.',
   },
   {
     icon: Waves,
@@ -58,12 +58,12 @@ const benefits = [
   {
     icon: Anchor,
     title: 'Aesthetics & Customisation',
-    desc: 'Marine tinting is not just functional — it defines the character of your vessel. We offer a full range of tint shades, mirror films, and decorative options to suit any boat or yacht aesthetic, from commercial tenders to superyachts.',
+    desc: 'Marine tinting is not just functional- it defines the character of your vessel. We offer a full range of tint shades, mirror films, and decorative options to suit any boat or yacht aesthetic, from commercial tenders to superyachts.',
   },
   {
     icon: Thermometer,
     title: 'Winter Insulation',
-    desc: 'Window film works both ways. In cooler months, the same film that rejects summer heat acts as an insulating layer — retaining warmth inside cabins and reducing heating requirements during UAE winter cruising.',
+    desc: 'Window film works both ways. In cooler months, the same film that rejects summer heat acts as an insulating layer- retaining warmth inside cabins and reducing heating requirements during UAE winter cruising.',
   },
 ]
 
@@ -71,44 +71,44 @@ const filmTypes = [
   {
     name: 'Marine Solar Control',
     brand: '3M · Totalgard',
-    best: 'All vessel types — primary heat and UV rejection',
+    best: 'All vessel types- primary heat and UV rejection',
     features: ['90% solar heat rejection', '99% UV blockage', 'High visible light transmission', 'Resistant to salt spray and humidity', '15-Year marine warranty'],
-    price: 'From AED 35/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Marine Privacy Film',
-    brand: 'Totalgard · Llumar',
+    brand: 'Totalgard · Global USA',
     best: 'Salons, cabins, sleeping quarters',
     features: ['One-way daytime privacy', 'Full outward visibility retained', 'Multiple opacity levels', 'UV and heat rejection included', '3-year warranty'],
-    price: 'From AED 30/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Nano Ceramic Marine Film',
     brand: '3M All Seasons',
     best: 'Superyachts and premium vessels',
-    features: ['Maximum heat rejection', 'Non-metallic — no instrument interference', 'Crystal clarity, no colour shift', 'Corrosion-resistant adhesive', '10-year warranty'],
-    price: 'From AED 55/sqft',
+    features: ['Maximum heat rejection', 'Non-metallic- no instrument interference', 'Crystal clarity, no colour shift', 'Corrosion-resistant adhesive', '10-year warranty'],
+    price: 'Custom quote',
   },
   {
     name: 'Marine Safety Film',
     brand: '3M Safety Series',
     best: 'Navigation screens, helm glass, forward windows',
     features: ['Holds glass together on impact', 'Shatter protection at sea', 'UV protection included', 'Optically clear', '7-year warranty'],
-    price: 'From AED 45/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Mirror / Reflective Film',
     brand: 'Totalgard',
     best: 'Exterior-facing cabin windows for maximum privacy',
     features: ['One-way mirror effect', 'Maximum privacy from all angles', 'Strong heat rejection', 'High-impact aesthetic', '15-Year warranty'],
-    price: 'From AED 40/sqft',
+    price: 'Custom quote',
   },
   {
     name: 'Anti-Glare Film',
-    brand: '3M · Llumar',
+    brand: '3M · Global USA',
     best: 'Helm stations, navigation desks, instrument areas',
     features: ['99% glare reduction', 'Diffuses bright reflections evenly', 'Improves screen legibility on instruments', 'UV protection included', '15-Year warranty'],
-    price: 'From AED 38/sqft',
+    price: 'Custom quote',
   },
 ]
 
@@ -123,7 +123,7 @@ const vessels = [
 
 const process = [
   { num: '01', title: 'Contact & Survey', desc: 'Contact us via WhatsApp or phone. We arrange a survey at your marina berth or boatyard in Dubai or Sharjah to assess glass surfaces and recommend the right film.' },
-  { num: '02', title: 'Film Selection', desc: 'We present samples on your actual glass and discuss priorities — heat rejection, privacy, safety, or aesthetics. You see exactly what the result will look like before we begin.' },
+  { num: '02', title: 'Film Selection', desc: 'We present samples on your actual glass and discuss priorities- heat rejection, privacy, safety, or aesthetics. You see exactly what the result will look like before we begin.' },
   { num: '03', title: 'On-Site Installation', desc: 'Our marine-certified installers work on board at your berth. No need to transport your vessel. Work is completed with care for your interior and finishes.' },
   { num: '04', title: 'Handover & Warranty', desc: 'Full inspection and clean-up before handover. You receive manufacturer warranty documentation and aftercare instructions.' },
 ]
@@ -137,7 +137,7 @@ const marinas = [
 const faqs = [
   {
     q: 'Is marine window tinting different from car window tinting?',
-    a: "Yes. Marine films are specifically engineered for the harsher conditions at sea — high humidity, salt spray, constant sun exposure, and the unique adhesion challenges of marine glass. Smart Auto UAE uses films specifically rated for marine environments, not standard automotive films applied to boats.",
+    a: "Yes. Marine films are specifically engineered for the harsher conditions at sea- high humidity, salt spray, constant sun exposure, and the unique adhesion challenges of marine glass. Smart Auto UAE uses films specifically rated for marine environments, not standard automotive films applied to boats.",
   },
   {
     q: 'How long does marine window film last?',
@@ -170,13 +170,13 @@ const testimonials = [
     name: 'Captain Rami Al Farsi',
     role: 'Yacht Owner · Dubai Marina',
     rating: 5,
-    text: "Smart Auto did a superb job on my 42ft motor yacht. The ceramic film on the salon and helm glass has made a huge difference to cabin temperature. Professional installers who clearly know marine work — they protected my interior throughout.",
+    text: "Smart Auto did a superb job on my 42ft motor yacht. The ceramic film on the salon and helm glass has made a huge difference to cabin temperature. Professional installers who clearly know marine work- they protected my interior throughout.",
   },
   {
     name: 'James Whitfield',
     role: 'Speed Boat Owner · Palm Jumeirah',
     rating: 5,
-    text: "Been taking my boats to Smart Auto for years. They tinted my new RIB at the marina — no need to move it anywhere. Clean job, great film quality, and the glare reduction on open water is immediately noticeable.",
+    text: "Been taking my boats to Smart Auto for years. They tinted my new RIB at the marina- no need to move it anywhere. Clean job, great film quality, and the glare reduction on open water is immediately noticeable.",
   },
   {
     name: 'Khalid Hassan',
@@ -205,7 +205,7 @@ export default function MarineTintingPage() {
         <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeLeft} initial="hidden" animate="show">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-              3M · Totalgard · Llumar — Marine Certified UAE Installer
+              3M · Totalgard · Global USA- Marine Certified UAE Installer
             </p>
             <h1
               className="font-bold text-white leading-[1.1] mb-5"
@@ -217,14 +217,14 @@ export default function MarineTintingPage() {
               </span>
             </h1>
             <p className="text-white/50 text-base leading-[1.85] mb-8 max-w-xl">
-              Smart Auto UAE is the trusted specialist for <strong className="text-white/75 font-medium">marine window tinting across Dubai and the UAE</strong>. We provide professional glass coating and tinting for boats, yachts, and commercial vessels — installing premium 3M, Totalgard, and Llumar marine films that block 99% UV rays, reject 90% of solar heat, and dramatically reduce glare on open water. On-site installation at your marina berth. No vessel transport required.
+              Smart Auto UAE is the trusted specialist for <strong className="text-white/75 font-medium">marine window tinting across Dubai and the UAE</strong>. We provide professional glass coating and tinting for boats, yachts, and commercial vessels- installing premium 3M, Totalgard, and Global USA marine films that block 99% UV rays, reject 90% of solar heat, and dramatically reduce glare on open water. On-site installation at your marina berth. No vessel transport required.
             </p>
             <div className="flex flex-col gap-2.5 mb-8">
               {[
                 'Boats, yachts, superyachts & commercial vessels',
                 'On-site installation at your marina or boatyard',
-                '3M, Totalgard & Llumar marine-grade films',
-                'Non-metallic films — no instrument interference',
+                '3M, Totalgard & Global USA marine-grade films',
+                'Non-metallic films- no instrument interference',
                 'Free site assessment at your berth',
               ].map((p) => (
                 <div key={p} className="flex items-center gap-3">
@@ -260,7 +260,7 @@ export default function MarineTintingPage() {
           >
             <img
               src="/images/services/marine-tinting-hero.webp"
-              alt="Marine window tinting Dubai — professional boat and yacht glass tinting by Smart Auto UAE"
+              alt="Marine window tinting Dubai- professional boat and yacht glass tinting by Smart Auto UAE"
               width={700} height={500} loading="eager" decoding="async"
               className="w-full h-full object-cover" style={{ maxHeight: '480px' }}
             />
@@ -324,7 +324,7 @@ export default function MarineTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto leading-relaxed">
-              The combination of intense direct sunlight and its reflection off open water creates one of the harshest UV and heat environments in the world. Marine window film is not optional — it is standard equipment for any vessel operated in UAE waters.
+              The combination of intense direct sunlight and its reflection off open water creates one of the harshest UV and heat environments in the world. Marine window film is not optional- it is standard equipment for any vessel operated in UAE waters.
             </p>
           </motion.div>
 
@@ -367,7 +367,7 @@ export default function MarineTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-xl mx-auto">
-              Every vessel has different requirements. We help you select the right film for each glass area — helm, cabin, salon, or exterior windows.
+              Every vessel has different requirements. We help you select the right film for each glass area- helm, cabin, salon, or exterior windows.
             </p>
           </motion.div>
 
@@ -459,7 +459,7 @@ export default function MarineTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-xl mx-auto">
-              We come to you — no need to move your vessel or arrange transport. Our team installs at your berth across Dubai and Sharjah marinas.
+              We come to you- no need to move your vessel or arrange transport. Our team installs at your berth across Dubai and Sharjah marinas.
             </p>
           </motion.div>
 
@@ -515,14 +515,14 @@ export default function MarineTintingPage() {
                 </span>
               </h2>
               <p className="text-white/50 text-base leading-[1.85] mb-7">
-                Smart Auto UAE has been the trusted window tinting partner for boat and yacht owners across Dubai and Sharjah since 2014. When it comes to marine window tinting, there is no room for error — salt air, constant sun exposure, and the critical safety requirements of marine glass demand specialist knowledge and materials. Our team is trained specifically in marine installation techniques and uses only films engineered for maritime environments.
+                Smart Auto UAE has been the trusted window tinting partner for boat and yacht owners across Dubai and Sharjah since 2014. When it comes to marine window tinting, there is no room for error- salt air, constant sun exposure, and the critical safety requirements of marine glass demand specialist knowledge and materials. Our team is trained specifically in marine installation techniques and uses only films engineered for maritime environments.
               </p>
               <div className="flex flex-col gap-3">
                 {[
                   'Marine-certified installation technicians',
-                  '3M, Totalgard & Llumar authorised marine installer',
+                  '3M, Totalgard & Global USA authorised marine installer',
                   'Films engineered for salt, humidity & UV resistance',
-                  'On-site at your berth — no vessel transport needed',
+                  'On-site at your berth- no vessel transport needed',
                   'Free site assessment and same-day quotation',
                   'Manufacturer warranty on all marine installations',
                 ].map((p) => (
@@ -541,7 +541,7 @@ export default function MarineTintingPage() {
               >
                 <img
                   src="/images/services/marine-tinting-2.webp"
-                  alt="Marine window film installation on yacht in Dubai — Smart Auto UAE"
+                  alt="Marine window film installation on yacht in Dubai- Smart Auto UAE"
                   width={700} height={480} loading="lazy" decoding="async"
                   className="w-full h-full object-cover" style={{ maxHeight: '440px' }}
                 />
@@ -703,7 +703,7 @@ export default function MarineTintingPage() {
               </span>
             </h2>
             <p className="text-white/50 text-base mb-8 max-w-lg mx-auto relative z-10">
-              Free site assessment at your berth. We bring everything to your marina — across Dubai and Sharjah. No vessel transport required.
+              Free site assessment at your berth. We bring everything to your marina- across Dubai and Sharjah. No vessel transport required.
             </p>
             <div className="flex gap-4 justify-center flex-wrap relative z-10">
               <a

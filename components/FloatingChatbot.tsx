@@ -59,13 +59,13 @@ const SERVICE_INFO: Record<string, string> = {
   "Paint Protection Film":
     "PPF shields your paint from rock chips, scratches & swirls. Invisible self-healing film from 3M & TotalGard. Partial packages from AED 800, full car from AED 8,000.",
   "Colour PPF":
-    "Change your car's look AND protect the paint — available in matte, satin, gloss & colour-shift finishes. Thicker than vinyl wraps with self-healing properties.",
+    "Change your car's look AND protect the paint- available in matte, satin, gloss & colour-shift finishes. Thicker than vinyl wraps with self-healing properties.",
   "Nano Ceramic Coating":
     "Professional 9H nano ceramic coating for long-lasting gloss, hydrophobic protection & UV resistance. Multi-year manufacturer warranty available.",
   "Car Detailing & Polishing":
     "Full interior & exterior detailing, machine polishing & paint correction at all 4 branches. Restore your car to showroom condition.",
   "Car Wrapping":
-    "Full & partial car wraps in any colour or finish — matte, gloss, chrome, satin & brushed metal. Premium cast vinyl brands only.",
+    "Full & partial car wraps in any colour or finish- matte, gloss, chrome, satin & brushed metal. Premium cast vinyl brands only.",
   "Commercial Tinting":
     "Solar control, privacy & safety films for offices, retail units & commercial buildings across Dubai and Sharjah. On-site installation available.",
   "Marine Window Tinting":
@@ -176,7 +176,7 @@ export default function FloatingChatbot() {
       return;
     }
     if (value === "branch") {
-      botReply("We have 4 branches — all open every day. Which area suits you?", "options", BRANCHES);
+      botReply("We have 4 branches- all open every day. Which area suits you?", "options", BRANCHES);
       return;
     }
     if (value === "human") {
@@ -324,7 +324,7 @@ export default function FloatingChatbot() {
         { label: "Find a Branch",       value: "branch" },
       ]);
     } else {
-      botReply("I'm not sure about that — but our team can answer anything!", "booking");
+      botReply("I'm not sure about that- but our team can answer anything!", "booking");
     }
   };
 

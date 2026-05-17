@@ -118,7 +118,7 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="text-white/50 text-base leading-[1.85] max-w-2xl mx-auto mb-10">
-              4 branches across Dubai and Sharjah, open 7 days a week — including weekends and
+              4 branches across Dubai and Sharjah, open 7 days a week- including weekends and
               public holidays. Call, WhatsApp, or visit us for a free consultation on window
               tinting, PPF, ceramic coating, and surface protection.
             </p>
@@ -517,7 +517,7 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     id="message" name="message" rows={5}
-                    placeholder="Tell us about your car, home, yacht, or project — include any specific requirements."
+                    placeholder="Tell us about your car, home, yacht, or project- include any specific requirements."
                     className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 outline-none resize-none"
                     style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
                   />
@@ -666,7 +666,7 @@ export default function ContactPage() {
                   </p>
                   <p className="text-white/45 text-[13px] leading-snug">
                     Fastest way to reach us. Send photos, ask questions, or book a consultation
-                    — we reply instantly.
+                   - we reply instantly.
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-1.5 font-semibold text-sm" style={{ color: GOLD }}>
@@ -710,7 +710,7 @@ export default function ContactPage() {
             style={{ border: '1px solid rgba(201,168,76,0.15)', height: '400px' }}
           >
             <iframe
-              title="Smart Auto UAE — Al Quoz Dubai location"
+              title="Smart Auto UAE- Al Quoz Dubai location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.2!2d55.2345!3d25.1312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69d7a0000001%3A0x0!2sAl+Quoz+4+Dubai!5e0!3m2!1sen!2sae!4v1000000"
               width="100%"
               height="400"

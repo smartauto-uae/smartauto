@@ -34,7 +34,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Scratch & Swirl Resistance',
-    desc: 'The 9H hardness rating — harder than your factory clear coat — significantly reduces light scratches, swirl marks, and wash-induced marring.',
+    desc: 'The 9H hardness rating- harder than your factory clear coat- significantly reduces light scratches, swirl marks, and wash-induced marring.',
   },
   {
     icon: Sun,
@@ -49,7 +49,7 @@ const benefits = [
   {
     icon: Thermometer,
     title: 'Thermal Resistance up to 608°C',
-    desc: 'Our nano ceramic coatings are thermally stable up to 608°C — far beyond any heat your vehicle\'s paintwork will encounter in UAE conditions.',
+    desc: 'Our nano ceramic coatings are thermally stable up to 608°C- far beyond any heat your vehicle\'s paintwork will encounter in UAE conditions.',
   },
   {
     icon: Sparkles,
@@ -59,37 +59,22 @@ const benefits = [
 ]
 
 const comparison = [
-  { feature: 'Protection duration',   wax: '4–8 weeks',      sealant: '4–6 months',    ceramic: '2–9+ years' },
+  { feature: 'Protection duration',   wax: '4–8 weeks',      sealant: '4–6 months',    ceramic: '2–5+ years' },
   { feature: 'UV protection',         wax: 'Basic',          sealant: 'Moderate',      ceramic: 'Superior' },
   { feature: 'Hydrophobic effect',    wax: 'Low',            sealant: 'Moderate',      ceramic: 'Extreme' },
   { feature: 'Chemical resistance',   wax: 'None',           sealant: 'Basic',         ceramic: 'High' },
   { feature: 'Scratch resistance',    wax: 'None',           sealant: 'None',          ceramic: '9H hardness' },
   { feature: 'Thermal resistance',    wax: 'None',           sealant: 'None',          ceramic: 'Up to 608°C' },
   { feature: 'Gloss enhancement',     wax: 'Temporary',      sealant: 'Moderate',      ceramic: 'Permanent' },
-  { feature: 'Reapplication needed',  wax: 'Every 4–8 wks',  sealant: 'Every 6 months',ceramic: 'Every 2–9 years' },
 ]
 
 const tiers = [
-  {
-    name: 'Entry Nano Ceramic',
-    brand: 'IGL Coatings Kenzo',
-    duration: '1–2 Years',
-    hardness: '9H',
-    features: [
-      '9H hardness ceramic layer',
-      'Hydrophobic surface coating',
-      'UV and oxidation protection',
-      'Chemical resistance',
-      'Deep gloss enhancement',
-    ],
-    best: 'Daily drivers & budget-conscious owners',
-    price: 'From AED 1,200',
-  },
+  
   {
     name: 'Professional Ceramic',
-    brand: 'Gyeon Q² Mohs+',
-    duration: '3–4 Years',
-    hardness: '9H+',
+    brand: '',
+    duration: '2–5 Years',
+    hardness: 'Up-to 10H',
     features: [
       'Paint decontamination & clay bar',
       'Single-stage paint correction',
@@ -99,32 +84,16 @@ const tiers = [
       'Deep mirror gloss finish',
     ],
     best: 'New vehicles & enthusiast owners',
-    price: 'From AED 2,500',
+    price: 'Price Range AED 999 - AED 1999',
     highlight: true,
   },
-  {
-    name: 'Elite Ceramic Ultra',
-    brand: 'Gtechniq Crystal Serum Ultra',
-    duration: '5–9 Years',
-    hardness: '10H',
-    features: [
-      'Full multi-stage paint correction',
-      'Gtechniq Crystal Serum Ultra',
-      'EXO v5 ultra-hydrophobic top coat',
-      'Anti-graffiti & chemical resistance',
-      'Maximum scratch resistance system',
-      'Accredited installer guarantee',
-      '9-year manufacturer warranty',
-    ],
-    best: 'Luxury, supercar & investment vehicles',
-    price: 'From AED 4,500',
-  },
+  
 ]
 
 const process = [
   { num: '01', title: 'Vehicle Assessment', desc: 'We inspect your paintwork under specialised lighting to identify swirl marks, scratches, water spots, and oxidation that need correction before coating.' },
   { num: '02', title: 'Paint Decontamination', desc: 'Chemical decontamination and clay bar treatment removes bonded iron particles, tar, and road fallout that washing alone cannot remove.' },
-  { num: '03', title: 'Paint Correction', desc: 'Machine polishing removes swirl marks and scratches — because any defect present before coating gets permanently sealed in. We do not skip this step.' },
+  { num: '03', title: 'Paint Correction', desc: 'Machine polishing removes swirl marks and scratches- because any defect present before coating gets permanently sealed in. We do not skip this step.' },
   { num: '04', title: 'Ceramic Application', desc: 'The coating is applied panel by panel in a climate-controlled environment, levelled, and cured. Multiple layers are applied where required.' },
   { num: '05', title: 'Curing & Inspection', desc: 'A full inspection under specialised lighting confirms even coverage and perfect levelling. The vehicle is delivered with warranty documentation.' },
 ]
@@ -136,23 +105,23 @@ const faqs = [
   },
   {
     q: 'How long does nano ceramic coating last in Dubai?',
-    a: 'A professional nano ceramic coating in Dubai lasts between 2 and 9+ years depending on the product tier, the number of layers applied, and your maintenance routine. Smart Auto UAE uses Gyeon, Gtechniq, and IGL Coatings — all formulated specifically for high UV and heat environments like the UAE.',
+    a: 'A professional nano ceramic coating in Dubai lasts between 2 and 5+ years depending on the product tier, the number of layers applied, and your maintenance routine. Smart Auto UAE uses Sirius USA, Jade, Puris and Gyeon- all formulated specifically for high UV and heat environments like the UAE.',
   },
   {
     q: 'Is nano ceramic coating better than car wax?',
-    a: 'Yes — significantly. Car wax lasts 4–8 weeks and provides no meaningful scratch or chemical resistance. Nano ceramic coating lasts years, provides 9H scratch hardness, extreme hydrophobic performance, UV protection, and chemical resistance. It is a permanent protective layer, not a temporary shine product.',
+    a: 'Yes- significantly. Car wax lasts 4–8 weeks and provides no meaningful scratch or chemical resistance. Nano ceramic coating lasts years, provides 9H scratch hardness, extreme hydrophobic performance, UV protection, and chemical resistance. It is a permanent protective layer, not a temporary shine product.',
   },
   {
     q: 'Does ceramic coating replace paint protection film (PPF)?',
-    a: 'No. Ceramic coating adds a chemical hard layer but does not absorb physical impacts — stone chips and deep scratches will still reach the paint. PPF is a physical film that absorbs those impacts. For maximum protection, we recommend applying PPF first, then a ceramic coating on top.',
+    a: 'No. Ceramic coating adds a chemical hard layer but does not absorb physical impacts- stone chips and deep scratches will still reach the paint. PPF is a physical film that absorbs those impacts. For maximum protection, we recommend applying PPF first, then a ceramic coating on top.',
   },
   {
     q: 'How do I maintain a ceramic-coated car?',
-    a: 'Avoid car washes for 7 days after application. Thereafter, only hand wash or touchless wash. Avoid automatic brush car washes — the brushes induce swirl marks. Use a pH-neutral shampoo. An annual ceramic maintenance spray significantly extends the coating\'s life.',
+    a: 'Avoid car washes for 7 days after application. Thereafter, only hand wash or touchless wash. Avoid automatic brush car washes- the brushes induce swirl marks. Use a pH-neutral shampoo. An annual ceramic maintenance spray significantly extends the coating\'s life.',
   },
   {
     q: 'Can ceramic coating be applied to a new car?',
-    a: 'Yes — and we strongly recommend it. New cars from the showroom still have minor swirl marks from transport and dealer preparation. We perform a light paint correction before coating to ensure the paint is perfect before it is sealed permanently.',
+    a: 'Yes- and we strongly recommend it. New cars from the showroom still have minor swirl marks from transport and dealer preparation. We perform a light paint correction before coating to ensure the paint is perfect before it is sealed permanently.',
   },
   {
     q: 'Is ceramic coating available for glass, wheels, and plastic trims?',
@@ -160,7 +129,7 @@ const faqs = [
   },
   {
     q: 'Does nano ceramic coating work on matte paint?',
-    a: 'Yes. We use matte-specific ceramic coatings that preserve the flat finish without adding gloss. These coatings provide full protection — hydrophobic, UV, and chemical resistance — without altering the matte appearance.',
+    a: 'Yes. We use matte-specific ceramic coatings that preserve the flat finish without adding gloss. These coatings provide full protection- hydrophobic, UV, and chemical resistance- without altering the matte appearance.',
   },
 ]
 
@@ -201,7 +170,7 @@ export default function NanoCeramicCoatingPage() {
               className="text-[11px] tracking-[0.3em] uppercase mb-4"
               style={{ color: GOLD }}
             >
-              Gyeon · Gtechniq · IGL Coatings — Certified Installer UAE
+              Sirius USA · Jade · Puris · Gyeon
             </p>
 
             <h1
@@ -231,9 +200,9 @@ export default function NanoCeramicCoatingPage() {
               <strong className="text-white/70 font-medium">
                 9H nano ceramic coatings
               </strong>{' '}
-              from Gyeon, Gtechniq, and IGL Coatings across Dubai and Sharjah. Our
+              from Sirius USA, Jade, Puris and Gyeon across Dubai and Sharjah. Our
               ceramic coatings bond permanently to your paintwork at a molecular
-              level — delivering a{' '}
+              level- delivering a{' '}
               <strong className="text-white/70 font-medium">
                 super hydrophobic, self-cleaning surface
               </strong>{' '}
@@ -244,17 +213,17 @@ export default function NanoCeramicCoatingPage() {
             <p className="text-white/40 text-sm leading-[1.8] mb-8 max-w-xl">
               Unlike car wax or paint sealants that require reapplication every few
               months, a properly applied nano ceramic coating provides long-term beauty,
-              protection, and ease of maintenance — preserving your car&apos;s showroom
+              protection, and ease of maintenance- preserving your car&apos;s showroom
               appearance and protecting its value for the long term.
             </p>
 
             <div className="flex flex-col gap-2.5 mb-8">
               {[
-                'Permanent 9H hardness — harder than factory clear coat',
-                'Extreme hydrophobic — water, dirt and grime bead off instantly',
+                'Permanent 9H hardness- harder than factory clear coat',
+                'Extreme hydrophobic- water, dirt and grime bead off instantly',
                 'UV, chemical and thermal resistance up to 608°C',
-                'Anti-graffiti surface — contaminants cannot bond',
-                'Gyeon, Gtechniq & IGL certified installer — Dubai & Sharjah',
+                'Anti-graffiti surface- contaminants cannot bond',
+                'Gyeon, Gtechniq & IGL certified installer- Dubai & Sharjah',
                 'Paint correction performed on every car before coating',
               ].map((p) => (
                 <div key={p} className="flex items-center gap-3">
@@ -298,7 +267,7 @@ export default function NanoCeramicCoatingPage() {
           >
             <img
               src="/images/services/ceramic-coating-1.webp"
-              alt="Professional nano ceramic coating Dubai — 9H Gyeon and Gtechniq certified installer Smart Auto UAE"
+              alt="Professional nano ceramic coating Dubai- 9H Gyeon and Gtechniq certified installer Smart Auto UAE"
               width={700}
               height={500}
               loading="eager"
@@ -342,7 +311,7 @@ export default function NanoCeramicCoatingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm mt-4 max-w-2xl mx-auto leading-relaxed">
-              No other coating technology — not wax, not sealant, not traditional clear film — offers
+              No other coating technology- not wax, not sealant, not traditional clear film- offers
               the combination of permanent hardness, hydrophobics, and UV resistance that a
               professional nano ceramic coating delivers.
             </p>
@@ -465,7 +434,7 @@ export default function NanoCeramicCoatingPage() {
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: GOLD }}>
-              Ceramic Coating Packages — Dubai &amp; Sharjah
+              Ceramic Coating Packages- Dubai &amp; Sharjah
             </p>
             <h2
               id="tiers-heading"
@@ -493,7 +462,7 @@ export default function NanoCeramicCoatingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 text-center md:grid-cols-1 gap-6">
             {tiers.map((tier, i) => (
               <motion.div
                 key={tier.name}
@@ -504,7 +473,7 @@ export default function NanoCeramicCoatingPage() {
                 viewport={{ once: true }}
               >
                 <div
-                  className="rounded-2xl p-8 h-full flex flex-col relative overflow-hidden"
+                  className="rounded-2xl text-center p-8 h-full flex flex-col relative overflow-hidden"
                   style={{
                     background: tier.highlight
                       ? 'rgba(201,168,76,0.06)'
@@ -516,14 +485,14 @@ export default function NanoCeramicCoatingPage() {
                 >
                   {tier.highlight && (
                     <div
-                      className="absolute top-0 left-0 right-0 h-0.5"
+                      className="absolute text-center top-0 left-0 right-0 h-0.5"
                       style={{ background: goldGrad }}
                       aria-hidden="true"
                     />
                   )}
                   {tier.highlight && (
                     <div
-                      className="inline-block text-[9px] tracking-[0.2em] uppercase font-bold px-3 py-1 rounded-full mb-4 self-start"
+                      className=" text-[9px] tracking-[0.2em] uppercase font-bold px-3 py-1 rounded-full mb-4 self-center text-center"
                       style={{ background: goldGrad, color: '#0A0A0A' }}
                     >
                       Most Popular
@@ -531,13 +500,13 @@ export default function NanoCeramicCoatingPage() {
                   )}
 
                   <p
-                    className="text-[10px] tracking-[0.2em] uppercase mb-1.5"
+                    className="text-[10px] tracking-[0.2em] self-center text-center uppercase mb-1.5"
                     style={{ color: GOLD }}
                   >
                     {tier.brand}
                   </p>
                   <h3
-                    className="text-white font-bold text-xl mb-1"
+                    className="text-white self-center font-bold text-xl mb-1"
                     style={{ fontFamily: 'var(--font-playfair),serif' }}
                   >
                     {tier.name}
@@ -555,7 +524,7 @@ export default function NanoCeramicCoatingPage() {
                       {tier.hardness} Hardness
                     </span>
                     <span
-                      className="text-[11px] px-2.5 py-1 rounded-full text-white/40"
+                      className="text-[11px] px-2.5 py-1 self-center text-center rounded-full text-white/40"
                       style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
                     >
                       {tier.duration}
@@ -711,7 +680,7 @@ export default function NanoCeramicCoatingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm mt-4 max-w-xl mx-auto">
-              Our nano coatings are formulated for automotive, marine, aviation, and industrial applications —
+              Our nano coatings are formulated for automotive, marine, aviation, and industrial applications-
               molecularly designed for paint, vinyl, polymers, glass, wheels, and trim.
             </p>
           </div>
@@ -869,7 +838,7 @@ export default function NanoCeramicCoatingPage() {
       <section className="py-24" style={{ backgroundColor: '#0A0A0A' }}>
         <div className="w-full max-w-3xl mx-auto px-6 text-center">
           <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-            Professional Nano Ceramic Coating — Dubai &amp; Sharjah
+            Professional Nano Ceramic Coating- Dubai &amp; Sharjah
           </p>
           <h2
             className="font-bold text-white mb-4"
@@ -891,7 +860,7 @@ export default function NanoCeramicCoatingPage() {
             </span>
           </h2>
           <p className="text-white/45 text-base leading-[1.8] mb-8 max-w-xl mx-auto">
-            Permanent hydrophobic protection, 9H scratch hardness, and deep showroom gloss —
+            Permanent hydrophobic protection, 9H scratch hardness, and deep showroom gloss-
             applied by certified installers at any of our 4 branches across Dubai and Sharjah.
             Free inspection with every booking.
           </p>

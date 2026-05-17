@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
 
-        {/* Outer container — wider to fit sidebar */}
+        {/* Outer container- wider to fit sidebar */}
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.5rem 5rem' }}>
 
           <Link

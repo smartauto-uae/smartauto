@@ -56,7 +56,7 @@ const benefits = [
   {
     icon: Thermometer,
     title: "UAE Heat Rejection",
-    desc: "Reduces cabin heat buildup significantly — one of the most effective upgrades you can make in a hot climate.",
+    desc: "Reduces cabin heat buildup significantly- one of the most effective upgrades you can make in a hot climate.",
   },
   {
     icon: SunMedium,
@@ -103,7 +103,7 @@ const packages = [
     title: "Side & Rear",
     badge: "Most Popular",
     featured: true,
-    desc: "Full coverage for all side windows and rear glass — the most popular package for privacy, heat, and clean aesthetics.",
+    desc: "Full coverage for all side windows and rear glass- the most popular package for privacy, heat, and clean aesthetics.",
     items: [
       "All side windows",
       "Rear windshield",
@@ -181,7 +181,7 @@ const faqs = [
   },
   {
     q: "What cars do you tint?",
-    a: "All car types — sedans, SUVs, hatchbacks, trucks, and luxury vehicles. We work on both new cars and cars that need a tint refresh.",
+    a: "All car types- sedans, SUVs, hatchbacks, trucks, and luxury vehicles. We work on both new cars and cars that need a tint refresh.",
   },
 ];
 
@@ -410,7 +410,7 @@ export default function WindowTintingPage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-[16px] leading-8 text-white/60 sm:text-[17px]">
-              Professional window tinting installed at your door — no driving to a garage, no waiting.
+              Professional window tinting installed at your door- no driving to a garage, no waiting.
               Premium heat-rejection and UV films for UAE roads. Book your free home slot and get 15% off today.
             </p>
 
@@ -462,7 +462,7 @@ export default function WindowTintingPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <p className="text-[11px] uppercase tracking-[0.26em] text-white/50">Offer Active Now</p>
-                  <p className="mt-2 text-2xl font-bold text-white">15% off — book your home slot today</p>
+                  <p className="mt-2 text-2xl font-bold text-white">15% off- book your home slot today</p>
                 </div>
               </div>
 
@@ -506,7 +506,7 @@ export default function WindowTintingPage() {
               eyebrow="Why Home Service"
               title="Tinting should come to you"
               highlight="not the other way around"
-              desc="Dubai driving means spending hours on the road. The last thing you need is another trip to a workshop. Our team brings professional-grade tinting equipment directly to your parking space — home, office, or building."
+              desc="Dubai driving means spending hours on the road. The last thing you need is another trip to a workshop. Our team brings professional-grade tinting equipment directly to your parking space- home, office, or building."
             />
             <div className="mt-8">
               <CTAButtons />
@@ -559,7 +559,7 @@ export default function WindowTintingPage() {
               eyebrow="Benefits"
               title="What quality tinting actually"
               highlight="does for your car"
-              desc="Window tinting is one of the most practical upgrades for driving in the UAE — less heat, less glare, better privacy, and real protection for your interior."
+              desc="Window tinting is one of the most practical upgrades for driving in the UAE- less heat, less glare, better privacy, and real protection for your interior."
             />
           </motion.div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -610,7 +610,7 @@ export default function WindowTintingPage() {
               eyebrow="Packages"
               title="Choose the right tint"
               highlight="coverage for your car"
-              desc="From windshield UV protection to full car tinting — we have a package to suit every car, every budget, and every preference."
+              desc="From windshield UV protection to full car tinting- we have a package to suit every car, every budget, and every preference."
             />
           </motion.div>
           <div className="grid gap-6 xl:grid-cols-3">
@@ -718,7 +718,7 @@ export default function WindowTintingPage() {
               eyebrow="How It Works"
               title="From WhatsApp message"
               highlight="to tinted windows at your door"
-              desc="The entire process is designed to be as easy as possible. No paperwork, no long calls, no workshop visit — just a fast chat on WhatsApp and a confirmed home booking."
+              desc="The entire process is designed to be as easy as possible. No paperwork, no long calls, no workshop visit- just a fast chat on WhatsApp and a confirmed home booking."
             />
           </motion.div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -748,7 +748,7 @@ export default function WindowTintingPage() {
               eyebrow="Visual Quality"
               title="Clean finish that looks"
               highlight="as good as it performs"
-              desc="A proper tint job should be invisible to everyone except the driver — no bubbles, no peeling edges, no misaligned cuts. Our installers work with precision to ensure the film looks right inside and out."
+              desc="A proper tint job should be invisible to everyone except the driver- no bubbles, no peeling edges, no misaligned cuts. Our installers work with precision to ensure the film looks right inside and out."
             />
             <div className="mt-8">
               <CTAButtons />
@@ -798,7 +798,7 @@ export default function WindowTintingPage() {
         >
           <p className="text-[11px] uppercase tracking-[0.3em]" style={{ color: gold }}>Get Your Quote Now</p>
           <h3 className="mt-4 text-3xl font-bold text-white md:text-4xl" style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}>
-            Tint your car windows at home — get an instant WhatsApp quote
+            Tint your car windows at home- get an instant WhatsApp quote
           </h3>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/52">
             Share your car model and we'll confirm pricing, film options, and availability fast. No forms, no waiting.
@@ -866,7 +866,7 @@ export default function WindowTintingPage() {
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-white/52">
-            Book your free slot now, get an instant WhatsApp quote, and let our mobile tinting team come to you — wherever you are in Dubai.
+            Book your free slot now, get an instant WhatsApp quote, and let our mobile tinting team come to you- wherever you are in Dubai.
           </p>
           <div className="mt-10 flex justify-center">
             <CTAButtons />

@@ -548,7 +548,7 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
                     ? <Loader2 size={14} className="animate-spin" />
                     : <ImageIcon size={14} aria-hidden="true" />
                   }
-                  {coverImage ? 'Change image' : 'Upload — auto WebP compressed'}
+                  {coverImage ? 'Change image' : 'Upload- auto WebP compressed'}
                   <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFeaturedImage} />
                 </label>
                 {coverImage && (

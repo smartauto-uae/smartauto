@@ -40,7 +40,6 @@ export async function buildMetadata(
   }
 }
 
-// Renders JSON-LD structured data — drop in <head> via Script tag
 export async function getStructuredData(route: string): Promise<Record<string, unknown> | null> {
   const seo = await getSeoForRoute(route)
   if (seo?.structured_data) return seo.structured_data

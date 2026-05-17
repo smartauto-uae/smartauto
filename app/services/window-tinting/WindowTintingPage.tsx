@@ -32,17 +32,17 @@ const fadeUp = {
 const benefits = [
   {
     icon: Sun,
-    title: 'Blocks 99% of UV Rays',
-    desc: 'Our nano ceramic films block up to 99% of harmful UV radiation — protecting your skin from darkening, premature aging, and reducing the long-term risk of UV-related skin damage on every drive.',
+    title: 'Blocks 99.9% of UV Rays',
+    desc: 'Our nano ceramic films block up to 99% of harmful UV radiation- protecting your skin from darkening, premature aging, and reducing the long-term risk of UV-related skin damage on every drive.',
   },
   {
     icon: Thermometer,
-    title: 'Reduces Heat by Up to 99%',
+    title: 'Reduces InfraredHeat by Up to 99%',
     desc: "High-performance films with hybrid nanotechnology reduce infrared heat waves by up to 99%, keeping your cabin significantly cooler in Dubai's extreme summer temperatures.",
   },
   {
     icon: Eye,
-    title: 'Reduces Glare — Day & Night',
+    title: 'Reduces Glare - Day & Night',
     desc: 'Window tinting reduces sun glare during the day and headlight glare at night. Less glare means better visibility, reduced driver fatigue, and a safer driving experience overall.',
   },
   {
@@ -53,7 +53,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Shatter Protection',
-    desc: 'Window film adds a bonded layer to the glass. In the event of an accident or impact, the film holds shattered glass together — reducing the risk of glass-related injuries significantly.',
+    desc: 'Window film adds a bonded layer to the glass. In the event of an accident or impact, the film holds shattered glass together- reducing the risk of glass-related injuries significantly.',
   },
   {
     icon: Zap,
@@ -64,23 +64,8 @@ const benefits = [
 
 const films = [
   {
-    name: 'Nano Ceramic Film',
-    brand: '3M · Totalgard · Global USA',
-    tag: 'Best Performer',
-    features: [
-      'Blocks up to 99% UV rays',
-      'Reduces IR heat up to 99%',
-      'Non-metallic — zero signal interference',
-      'Crystal clarity, no colour shift',
-      'Hybrid nanotechnology',
-    ],
-    warranty: 'Up to 15-Year warranty',
-    price: 'From AED 799',
-    best: 'Best for: Luxury, performance & daily drivers',
-  },
-  {
-    name: 'Carbon Film',
-    brand: '3M · Totalgard',
+    name: 'FX Series ',
+    brand: '3M ·',
     tag: 'Most Popular',
     features: [
       'Superior heat rejection',
@@ -89,7 +74,7 @@ const films = [
       'Excellent UV protection',
       'Durable & scratch resistant',
     ],
-    warranty: 'Up to 10-year warranty',
+    warranty: 'Up to 5-year warranty',
     price: 'From AED 499',
     best: 'Best for: SUVs, family cars & pickups',
   },
@@ -150,7 +135,7 @@ const faqs = [
   },
   {
     q: 'Does car tinting affect night driving visibility?',
-    a: 'No — and in fact it improves it. RTA-compliant window tints do not reduce visibility below safe levels. They reduce the glare from streetlights and oncoming headlights, which actually improves night driving safety. Illegally dark tints are never installed by Smart Auto UAE.',
+    a: 'No- and in fact it improves it. RTA-compliant window tints do not reduce visibility below safe levels. They reduce the glare from streetlights and oncoming headlights, which actually improves night driving safety. Illegally dark tints are never installed by Smart Auto UAE.',
   },
   {
     q: 'How long does car window tinting last?',
@@ -162,7 +147,7 @@ const faqs = [
   },
   {
     q: 'Can car tinting protect my car interior?',
-    a: "Yes. UV and infrared radiation cause upholstery, leather, dashboards, and plastics to fade and crack over time. Window tinting blocks the radiation responsible for this damage — preserving your interior and maintaining your vehicle's resale value.",
+    a: "Yes. UV and infrared radiation cause upholstery, leather, dashboards, and plastics to fade and crack over time. Window tinting blocks the radiation responsible for this damage- preserving your interior and maintaining your vehicle's resale value.",
   },
   {
     q: 'Why choose Smart Auto UAE for car window tinting in Dubai?',
@@ -170,7 +155,7 @@ const faqs = [
   },
   {
     q: 'Do you offer car tinting services across Dubai?',
-    a: 'Yes. Smart Auto UAE has 4 branches — MotorCity, Al Quoz, Mirdif, and Sharjah Central Mall. We also offer mobile tinting services at your home or office across all areas of Dubai.',
+    a: 'Yes. Smart Auto UAE has 4 branches- MotorCity, Al Quoz, Mirdif, and Sharjah Central Mall. We also offer mobile tinting services at your home or office across all areas of Dubai.',
   },
   {
     q: 'Is ceramic car tinting worth the cost?',
@@ -181,8 +166,8 @@ const faqs = [
 const branches = [
   { name: 'Smart Auto MotorCity', address: 'MotorCity, Dubai',                phone: '+971 56 726 9666' },
   { name: 'Smart Auto Al Quoz',   address: 'Al Quoz Industrial Area, Dubai',  phone: '+971 56 726 9666' },
-  { name: 'Smart Auto Mirdif',    address: 'Uptown Mirdif Mall, Dubai',       phone: '+971 56 726 9666' },
-  { name: 'Smart Auto Sharjah',   address: 'Central Mall, Sharjah',           phone: '+971 56 726 9666' },
+  { name: 'Smart Auto Mirdif',    address: 'Uptown Mirdif Mall, Dubai',       phone: '+971 55 782 3731' },
+  { name: 'Smart Auto Sharjah',   address: 'Central Mall, Sharjah',           phone: '+971 56 425 5770' },
 ]
 
 const relatedServices = [
@@ -272,13 +257,13 @@ export default function WindowTintingPage() {
             <div className="flex items-center gap-3 mb-6" style={{ borderLeft: `3px solid ${GOLD}`, paddingLeft: '1rem' }}>
               <p className="text-white/60 text-base leading-[1.8] italic">
                 Stay cool with our specially designed window films engineered for GCC weather conditions.
-                Mobile tinting available at your doorstep — all across Dubai.
+                Mobile tinting available at your doorstep- all across Dubai.
               </p>
             </div>
 
             <div className="flex flex-col gap-2.5 mb-8">
               {[
-                'UAE RTA law compliant — all vehicle types',
+                'UAE RTA law compliant- all vehicle types',
                 '3M, Totalgard & Global USA Applicator',
                 'Up to 15-Year warranty on nano ceramic films',
                 'Same-day service · Mobile doorstep tinting available',
@@ -315,7 +300,7 @@ export default function WindowTintingPage() {
             <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.15)' }}>
               <img
                 src="/images/services/window-tinting-1.webp"
-                alt="Professional car window tinting Dubai — 3M, Totalgard and Global USA nano ceramic film installation by Smart Auto UAE"
+                alt="Professional car window tinting Dubai- 3M, Totalgard and Global USA nano ceramic film installation by Smart Auto UAE"
                 width={700}
                 height={500}
                 loading="eager"
@@ -356,7 +341,7 @@ export default function WindowTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm mt-4 max-w-2xl mx-auto leading-relaxed">
-              Window tinting is one of the most practical upgrades for any vehicle in the UAE. Dubai&apos;s extreme UV index, intense heat, and long driving hours make professionally installed window film essential — not just cosmetic.
+              Window tinting is one of the most practical upgrades for any vehicle in the UAE. Dubai&apos;s extreme UV index, intense heat, and long driving hours make professionally installed window film essential- not just cosmetic.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -395,8 +380,8 @@ export default function WindowTintingPage() {
             <p className="text-white/40 text-sm mt-4 max-w-xl mx-auto">
               All our automotive window films are UAE RTA compliant, manufactured with hybrid nanotechnology, and warranted for up to 15 years.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          </div>Up to 15 years warranty
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {films.map((film, i) => (
               <motion.div key={film.name} variants={fadeUp} custom={i} initial="hidden" whileInView="show" viewport={{ once: true }}>
                 <div
@@ -462,7 +447,7 @@ export default function WindowTintingPage() {
                   </p>
                   <p className="text-white/35 text-[11px] mb-4">{p.note}</p>
                   <div className="flex flex-col gap-1.5 mt-auto w-full pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                    {['Up to 15 years warranty', 'Up to 90% heat reduction'].map((f) => (
+                    {['3 -15 years warranty', 'Up to 90% heat reduction'].map((f) => (
                       <div key={f} className="flex items-center gap-2 justify-center">
                         <div className="w-1 h-1 rounded-full" style={{ background: GOLD }} aria-hidden="true" />
                         <span className="text-white/40 text-[11px]">{f}</span>
@@ -475,7 +460,7 @@ export default function WindowTintingPage() {
           </div>
           <div className="text-center mt-8">
             <p className="text-white/35 text-sm">
-              Prices vary by film grade. Contact us for your exact quote —{' '}
+              Prices vary by film grade. Contact us for your exact quote-{' '}
               <a href="tel:+971567269666" className="underline" style={{ color: GOLD }}>+971 56 726 9666</a>
             </p>
           </div>
@@ -495,7 +480,7 @@ export default function WindowTintingPage() {
                 </span>
               </h2>
               <p className="text-white/50 text-base leading-[1.85] mb-5">
-                Smart Auto UAE is a <strong className="text-white/70 font-medium">UAE authorised distributor and applicator</strong> for 3M, Totalgard, and Global window films. Our automotive products are manufactured using hybrid nanotechnology, specifically engineered to perform in extreme climates like the UAE — where UV index regularly exceeds 11 and cabin temperatures can reach 70°C+ in parked vehicles.
+                Smart Auto UAE is a <strong className="text-white/70 font-medium">UAE authorised distributor and applicator</strong> for 3M, Totalgard, and Global window films. Our automotive products are manufactured using hybrid nanotechnology, specifically engineered to perform in extreme climates like the UAE- where UV index regularly exceeds 11 and cabin temperatures can reach 70°C+ in parked vehicles.
               </p>
               <p className="text-white/50 text-base leading-[1.85] mb-7">
                 All Smart Auto UAE window films are <strong className="text-white/70 font-medium">highly durable, warranted from 3 to 15 years</strong>, and combine leading-edge thermal insulation technology with a range of styles and tint shades suited to every vehicle type and personal preference.
@@ -516,13 +501,13 @@ export default function WindowTintingPage() {
             <motion.div variants={fadeUp} custom={1} initial="hidden" whileInView="show" viewport={{ once: true }}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img src="/images/services/window-tinting-2.webp" alt="3M nano ceramic window tint film installation Dubai" width={350} height={280} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
+                  <img src="/images/car-window-tint-2.webp" alt="3M nano ceramic window tint film installation Dubai" width={350} height={280} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
                 </div>
                 <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img src="/images/services/window-tinting-3.webp" alt="Totalgard window film applied at Smart Auto UAE Dubai" width={350} height={280} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
+                  <img src="/images/services/window-tinting-1.webp" alt="Totalgard window film applied at Smart Auto UAE Dubai" width={350} height={280} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
                 </div>
                 <div className="col-span-2 rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <img src="/images/services/window-tinting-4.webp" alt="Mobile car window tinting at your doorstep Dubai — Smart Auto UAE" width={700} height={280} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
+                  <img src="/images/car-window-tinting.webp" alt="Mobile car window tinting at your doorstep Dubai- Smart Auto UAE" width={700} height={280} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
                 </div>
               </div>
             </motion.div>
@@ -572,16 +557,16 @@ export default function WindowTintingPage() {
           <div className="space-y-10">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
               <h2 className="font-bold text-white mb-5" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.5rem,2.5vw,2.2rem)' }}>
-                Window Tinting Dubai —{' '}
+                Window Tinting Dubai-{' '}
                 <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   Does It Reduce Visibility?
                 </span>
               </h2>
               <p className="text-white/50 text-base leading-[1.9] mb-4">
-                Some drivers worry that adding a window tint will reduce their visibility when driving. The truth is this is only a concern with extreme, illegal window tints. Tints that are dark enough to genuinely limit visibility are not permitted under UAE traffic law — so you do not need to worry when working with a reputable installer.
+                Some drivers worry that adding a window tint will reduce their visibility when driving. The truth is this is only a concern with extreme, illegal window tints. Tints that are dark enough to genuinely limit visibility are not permitted under UAE traffic law- so you do not need to worry when working with a reputable installer.
               </p>
               <p className="text-white/50 text-base leading-[1.9]">
-                Any window tint installed by Smart Auto UAE is fully RTA compliant. Rather than reducing visibility, our films <strong className="text-white/70 font-medium">improve daytime driving comfort</strong> by reducing harsh sun glare — the same blinding effect that poses a genuine safety hazard on UAE roads during peak sunlight hours.
+                Any window tint installed by Smart Auto UAE is fully RTA compliant. Rather than reducing visibility, our films <strong className="text-white/70 font-medium">improve daytime driving comfort</strong> by reducing harsh sun glare- the same blinding effect that poses a genuine safety hazard on UAE roads during peak sunlight hours.
               </p>
             </motion.div>
 
@@ -593,10 +578,10 @@ export default function WindowTintingPage() {
                 </span>
               </h2>
               <p className="text-white/50 text-base leading-[1.9] mb-4">
-                One of the most underrated safety benefits of window tinting is the reduction in glare during night driving. Many drivers feel less confident at night due to the harsh glare of streetlights and oncoming headlights, which can momentarily blind or disorient them — increasing accident risk.
+                One of the most underrated safety benefits of window tinting is the reduction in glare during night driving. Many drivers feel less confident at night due to the harsh glare of streetlights and oncoming headlights, which can momentarily blind or disorient them- increasing accident risk.
               </p>
               <p className="text-white/50 text-base leading-[1.9]">
-                With a properly applied window tint from Smart Auto UAE, glare from both headlights and streetlights is significantly softened — allowing drivers to maintain better focus on the road, react more quickly, and drive with greater confidence at night.
+                With a properly applied window tint from Smart Auto UAE, glare from both headlights and streetlights is significantly softened- allowing drivers to maintain better focus on the road, react more quickly, and drive with greater confidence at night.
               </p>
             </motion.div>
 
@@ -611,7 +596,7 @@ export default function WindowTintingPage() {
                 Every component of a vehicle, including the window glass, is designed to minimise safety risks in the event of a collision. Window tinting film adds another bonded layer to this protection. Because the film adheres to the entire glass surface, it significantly reduces the risk of glass shattering and flying outward in an accident.
               </p>
               <p className="text-white/50 text-base leading-[1.9]">
-                While the glass itself may still crack on impact, the tint film holds the pieces together — preventing glass fragments from entering the cabin and reducing the risk of lacerations to occupants. This is a genuine, underappreciated safety benefit that applies to every quality window tint installation.
+                While the glass itself may still crack on impact, the tint film holds the pieces together- preventing glass fragments from entering the cabin and reducing the risk of lacerations to occupants. This is a genuine, underappreciated safety benefit that applies to every quality window tint installation.
               </p>
             </motion.div>
           </div>
@@ -626,7 +611,7 @@ export default function WindowTintingPage() {
             <h2 className="font-bold text-white" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}>
               Window Tinting{' '}
               <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                FAQs — Dubai
+                FAQs- Dubai
               </span>
             </h2>
             <p className="text-white/40 text-sm mt-4 max-w-xl mx-auto">
@@ -653,7 +638,7 @@ export default function WindowTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm mt-4 max-w-xl mx-auto">
-              Walk in to any branch — no appointment needed. Or book our mobile doorstep tinting service to have your car tinted at your home or office.
+              Walk in to any branch or book our mobile doorstep tinting service to have your car tinted at your home or office.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -719,7 +704,7 @@ export default function WindowTintingPage() {
             </span>
           </h2>
           <p className="text-white/45 text-base mb-8 max-w-lg mx-auto">
-            4 branches across Dubai &amp; Sharjah — or book our mobile doorstep tinting service at your home or office. Free inspection. No hidden charges. Up to 15-Year warranty.
+            4 branches across Dubai &amp; Sharjah- or book our mobile doorstep tinting service at your home or office. Free inspection. No hidden charges. Up to 15-Year warranty.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a

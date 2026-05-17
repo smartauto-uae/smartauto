@@ -3,10 +3,10 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl  = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
-// Public client — works everywhere
+// Public client- works everywhere
 export const supabase = createClient(supabaseUrl, supabaseAnon)
 
-// Admin client — server only, lazy so client bundle doesn't crash
+// Admin client- server only, lazy so client bundle doesn't crash
 let _adminClient: ReturnType<typeof createClient> | null = null
 
 export function getSupabaseAdmin() {

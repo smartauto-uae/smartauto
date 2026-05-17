@@ -262,7 +262,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
     let structured_data = null
     if (schemaJson.trim()) {
       try { structured_data = JSON.parse(schemaJson); setSchemaError('') }
-      catch { setSchemaError('Invalid JSON — fix before saving'); setSaving(false); setTab('schema'); return }
+      catch { setSchemaError('Invalid JSON- fix before saving'); setSaving(false); setTab('schema'); return }
     }
     const res = await fetch(`/api/admin/seo/${encodeURIComponent(route)}`, {
       method: 'PUT',
@@ -461,7 +461,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
         {/* STRUCTURED DATA */}
         {tab === 'schema' && <>
           <div>
-            <label style={labelSt}>Schema Type — Load Template</label>
+            <label style={labelSt}>Schema Type- Load Template</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
               {Object.keys(SCHEMA_TEMPLATES).map(type => (
                 <button key={type} onClick={() => loadTemplate(type)}
@@ -513,7 +513,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           <div>
             <label style={labelSt}>Robots</label>
             <select style={inputSt} value={fields.robots} onChange={e => set('robots', e.target.value)}>
-              <option value="index, follow">index, follow (default — recommended)</option>
+              <option value="index, follow">index, follow (default- recommended)</option>
               <option value="noindex, follow">noindex, follow</option>
               <option value="index, nofollow">index, nofollow</option>
               <option value="noindex, nofollow">noindex, nofollow (block from Google)</option>

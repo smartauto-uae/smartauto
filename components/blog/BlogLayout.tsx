@@ -31,7 +31,7 @@ export default function BlogLayout({
           dangerouslySetInnerHTML={{ __html: content }}
         />
 
-        {/* TOC — sticky right sidebar */}
+        {/* TOC- sticky right sidebar */}
         <aside style={{ position: 'sticky', top: '5rem' }}>
           <TableOfContents content={content} />
         </aside>
@@ -39,7 +39,7 @@ export default function BlogLayout({
     )
   }
 
-  // Mobile — TOC above content
+  // Mobile- TOC above content
   return (
     <div>
       <TableOfContents content={content} />
