@@ -349,7 +349,7 @@ export default function AdminHeader() {
             <div style={{ ...dropdownStyle, position: 'absolute', right: 0, top: 44, width: 200, overflow: 'hidden' }} role="menu">
               <div style={{ padding: '0.75rem 1rem', borderBottom: '1px solid #f0ece4' }}>
                 <p style={{ fontSize: '0.82rem', fontWeight: 600, color: '#1a1814' }}>Admin</p>
-                <p style={{ fontSize: '0.72rem', color: '#b8b0a0' }}>smartautouae.ae</p>
+                <p style={{ fontSize: '0.72rem', color: '#b8b0a0' }}>smartautouae.com</p>
               </div>
               <div style={{ padding: '0.4rem' }}>
                 <Link href="/admin/settings" onClick={() => setProfileOpen(false)}

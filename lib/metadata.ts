@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getSeoForRoute } from './seo'
 
-const SITE_URL  = 'https://smartautouae.ae'
+const SITE_URL  = 'https://smartautouae.com'
 const SITE_NAME = 'Smart Auto UAE'
 const DEFAULT_OG_IMAGE = '/images/og-default.webp'
 

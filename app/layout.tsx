@@ -18,12 +18,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://smartautouae.ae"),
-
-  title: "Smart Auto UAE | #1 Window Tinting, PPF & Ceramic Coating in Dubai & Sharjah",
-
-  description:
-    "Smart Auto UAE- Dubai & Sharjah's most trusted car protection centre. Premium window tinting, paint protection film (PPF), ceramic coating, car detailing, vinyl wrapping & residential tinting. Trusted by 50,000+ customers. Free inspection. Call +971 56 726 9666.",
+  metadataBase: new URL("https://smartautouae.com"),
 
   keywords: [
     "window tinting Dubai", "car tinting Dubai", "nano ceramic tint Dubai",
@@ -43,14 +38,14 @@ export const metadata: Metadata = {
     "3M window film Dubai", "TotalGard window film UAE",
   ],
 
-  authors:   [{ name: "Smart Auto UAE", url: "https://smartautouae.ae" }],
+  authors:   [{ name: "Smart Auto UAE", url: "https://smartautouae.com" }],
   creator:   "Smart Auto UAE",
   publisher: "Smart Auto UAE",
 
   openGraph: {
     type:        "website",
     locale:      "en_AE",
-    url:         "https://smartautouae.ae",
+    url:         "https://smartautouae.com",
     siteName:    "Smart Auto UAE",
     title:       "Smart Auto UAE | #1 Window Tinting, PPF & Ceramic Coating in Dubai & Sharjah",
     description: "Dubai & Sharjah's most trusted car protection centre. Window tinting, PPF, ceramic coating, detailing & car wrapping. 50,000+ happy clients. Free inspection.",
@@ -84,7 +79,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://smartautouae.ae",
+    canonical: "https://smartautouae.com",
   },
 
   verification: {
@@ -99,9 +94,9 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Smart Auto UAE - MotorCity Dubai",
-    "image": "https://smartautouae.ae/og-image.jpg",
+    "image": "https://smartautouae.com/og-image.jpg",
     "description": "Dubai's premier car protection centre specialising in window tinting, paint protection film (PPF), nano ceramic coating, car detailing, vinyl wrapping, commercial tinting, marine tinting and residential tinting.",
-    "url": "https://smartautouae.ae",
+    "url": "https://smartautouae.com",
     "telephone": "+971567269666",
     "email": "info@smartautouae.com",
     "address": {
@@ -156,9 +151,9 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Smart Auto UAE - Al Quoz Dubai",
-    "image": "https://smartautouae.ae/og-image.jpg",
+    "image": "https://smartautouae.com/og-image.jpg",
     "description": "Smart Auto UAE Al Quoz branch- window tinting, PPF, ceramic coating, car detailing and car wrapping in Dubai.",
-    "url": "https://smartautouae.ae",
+    "url": "https://smartautouae.com",
     "telephone": "+971567269666",
     "address": {
       "@type": "PostalAddress",
@@ -182,9 +177,9 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Smart Auto UAE - Mirdif Uptown Mall Dubai",
-    "image": "https://smartautouae.ae/og-image.jpg",
+    "image": "https://smartautouae.com/og-image.jpg",
     "description": "Smart Auto UAE Mirdif branch inside Uptown Mall- window tinting, PPF, ceramic coating, car detailing and car wrapping.",
-    "url": "https://smartautouae.ae",
+    "url": "https://smartautouae.com",
     "telephone": "+971567269666",
     "address": {
       "@type": "PostalAddress",
@@ -208,9 +203,9 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Smart Auto UAE - Central Mall Sharjah",
-    "image": "https://smartautouae.ae/og-image.jpg",
+    "image": "https://smartautouae.com/og-image.jpg",
     "description": "Smart Auto UAE Sharjah branch at Central Mall- window tinting, PPF, ceramic coating, car detailing and car wrapping in Sharjah.",
-    "url": "https://smartautouae.ae",
+    "url": "https://smartautouae.com",
     "telephone": "+971567269666",
     "address": {
       "@type": "PostalAddress",

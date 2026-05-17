@@ -104,7 +104,7 @@ const nextConfig: NextConfig = {
   },
 
   env: {
-    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://smartautouae.ae',
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://smartautouae.com',
   },
 
   // ✅ Allow Next.js dev server to accept requests from local network IP

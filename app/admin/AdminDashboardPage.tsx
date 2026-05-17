@@ -42,7 +42,7 @@ type DashboardData = {
 const QUICK_LINKS = [
   { label: 'Edit SEO',      href: '/admin/seo',      icon: Search,        desc: 'Manage metadata for all pages' },
   { label: 'New Blog Post', href: '/admin/blog/new',  icon: FileText,      desc: 'Write and publish a new article' },
-  { label: 'View Site',     href: '/',                icon: Globe,         desc: 'Open smartautouae.ae', external: true },
+  { label: 'View Site',     href: '/',                icon: Globe,         desc: 'Open smartautouae.com', external: true },
   { label: 'Services',      href: '/admin/services',  icon: Layers,        desc: 'Manage service pages' },
   { label: 'Reviews',       href: '/admin/reviews',   icon: Star,          desc: 'Customer reviews' },
   { label: 'Messages',      href: '/admin/messages',  icon: MessageSquare, desc: 'Contact form submissions' },
@@ -218,7 +218,7 @@ return (
           Dashboard
         </h1>
         <p style={{ fontSize: '0.8rem', color: '#7a7264', marginTop: '0.25rem' }}>
-          smartautouae.ae{dateStr ? ` · ${dateStr}` : ''}
+          smartautouae.com{dateStr ? ` · ${dateStr}` : ''}
         </p>
       </div>
 

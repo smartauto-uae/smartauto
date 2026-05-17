@@ -118,7 +118,7 @@ export default async function SeoAdminPage() {
                         href={`/admin/seo/${encodeURIComponent(page.route)}`}
                         style={{
                           display: 'inline-block',
-                          padding: '0.35rem 0.875rem',
+                          padding: '0.2rem 0.65rem',
                           borderRadius: 999,
                           fontSize: '0.75rem',
                           fontWeight: 600,

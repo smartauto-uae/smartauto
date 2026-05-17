@@ -14,7 +14,7 @@ const SCHEMA_TEMPLATES: Record<string, (route: string) => Record<string, unknown
     '@context': 'https://schema.org',
     '@type': 'AutoRepair',
     name: 'Smart Auto UAE',
-    url: `https://smartautouae.ae${route}`,
+    url: `https://smartautouae.com${route}`,
     telephone: '+971524403677',
     address: { '@type': 'PostalAddress', addressLocality: 'Dubai', addressCountry: 'AE' },
     priceRange: '$$',
@@ -23,9 +23,9 @@ const SCHEMA_TEMPLATES: Record<string, (route: string) => Record<string, unknown
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: '',
-    provider: { '@type': 'AutoRepair', name: 'Smart Auto UAE', url: 'https://smartautouae.ae' },
+    provider: { '@type': 'AutoRepair', name: 'Smart Auto UAE', url: 'https://smartautouae.com' },
     areaServed: { '@type': 'City', name: 'Dubai' },
-    url: `https://smartautouae.ae${route}`,
+    url: `https://smartautouae.com${route}`,
   }),
   FAQPage: () => ({
     '@context': 'https://schema.org',
@@ -38,8 +38,8 @@ const SCHEMA_TEMPLATES: Record<string, (route: string) => Record<string, unknown
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://smartautouae.ae' },
-      { '@type': 'ListItem', position: 2, name: 'Service', item: `https://smartautouae.ae${route}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://smartautouae.com' },
+      { '@type': 'ListItem', position: 2, name: 'Service', item: `https://smartautouae.com${route}` },
     ],
   }),
   Article: (route) => ({
@@ -47,8 +47,8 @@ const SCHEMA_TEMPLATES: Record<string, (route: string) => Record<string, unknown
     '@type': 'Article',
     headline: '',
     author: { '@type': 'Organization', name: 'Smart Auto UAE' },
-    publisher: { '@type': 'Organization', name: 'Smart Auto UAE', logo: { '@type': 'ImageObject', url: 'https://smartautouae.ae/images/logo.png' } },
-    url: `https://smartautouae.ae${route}`,
+    publisher: { '@type': 'Organization', name: 'Smart Auto UAE', logo: { '@type': 'ImageObject', url: 'https://smartautouae.com/images/logo.png' } },
+    url: `https://smartautouae.com${route}`,
   }),
 }
 
@@ -237,7 +237,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
     twitter_title:       init?.twitter_title       ?? '',
     twitter_description: init?.twitter_description ?? '',
     twitter_image:       init?.twitter_image       ?? '',
-    canonical:           init?.canonical           ?? `https://smartautouae.ae${route}`,
+    canonical:           init?.canonical           ?? `https://smartautouae.com${route}`,
     robots:              init?.robots              ?? 'index, follow',
     schema_type:         init?.schema_type         ?? 'LocalBusiness',
   })
@@ -342,7 +342,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
         </p>
         <div style={{ fontFamily: 'Arial, sans-serif' }}>
           <div style={{ fontSize: '0.72rem', color: '#16a34a', marginBottom: 2 }}>
-            smartautouae.ae{route}
+            smartautouae.com{route}
           </div>
           <div style={{ fontSize: '1.1rem', fontWeight: 500, color: '#1a6ef5', marginBottom: 4 }}>
             {fields.title || <em style={{ color: '#b8b0a0', fontStyle: 'italic' }}>Page title not set</em>}
@@ -507,7 +507,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           <div>
             <label style={labelSt}>Canonical URL</label>
             <input style={inputSt} value={fields.canonical} onChange={e => set('canonical', e.target.value)}
-              placeholder={`https://smartautouae.ae${route}`} />
+              placeholder={`https://smartautouae.com${route}`} />
             <p style={hintSt}>Prevents duplicate content issues. Usually the full URL of this page.</p>
           </div>
           <div>

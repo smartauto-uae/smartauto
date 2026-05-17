@@ -205,7 +205,7 @@ export default function AdminSidebar() {
               </div>
               <div style={{ overflow: 'hidden', flex: 1 }}>
                 <p style={{ fontSize: '0.75rem', fontWeight: 600, color: '#1a1814', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>Admin</p>
-                <p style={{ fontSize: '0.65rem', color: '#b8b0a0' }}>smartautouae.ae</p>
+                <p style={{ fontSize: '0.65rem', color: '#b8b0a0' }}>smartautouae.com</p>
               </div>
             </div>
           )}
