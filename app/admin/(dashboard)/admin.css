@@ -354,3 +354,12 @@
   pointer-events: none;
   height: 0;
 }
+
+@media (max-width: 768px) {
+  .admin-main-content {
+    margin-left: 0 !important;
+    padding: 1rem !important;
+    padding-top: calc(56px + 1rem) !important;        /* topbar height */
+    padding-bottom: calc(72px + env(safe-area-inset-bottom)) !important;  /* bottom tabs */
+  }
+}

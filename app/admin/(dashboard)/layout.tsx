@@ -1,5 +1,5 @@
 import './admin.css'
-import AdminSidebar from '@/components/admin/AdminSidebar'
+import AdminSidebar from '@/components/admin/AdminLayoutClient'
 import type { ReactNode } from 'react'
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
@@ -12,7 +12,15 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
     }}>
       <AdminSidebar />
 
-      <main style={{ flex: 1, minWidth: 0, padding: '2rem 1.5rem', overflowX: 'hidden' }}>
+      <main style={{
+        flex: 1,
+        minWidth: 0,
+        padding: '2rem 1.5rem',
+        overflowX: 'hidden',
+        marginLeft: 220,   // ← matches your sidebar width
+      }}
+      className="admin-main-content"
+      >
         {children}
       </main>
     </div>

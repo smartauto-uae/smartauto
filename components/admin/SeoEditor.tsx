@@ -52,13 +52,8 @@ const SCHEMA_TEMPLATES: Record<string, (route: string) => Record<string, unknown
   }),
 }
 
-type Props = {
-  route:       string
-  pageLabel:   string
-  initialData: SeoPage | null
-}
-
-type Tab = 'basic' | 'og' | 'twitter' | 'schema' | 'advanced'
+type Props = { route: string; pageLabel: string; initialData: SeoPage | null }
+type Tab   = 'basic' | 'og' | 'twitter' | 'schema' | 'advanced'
 
 const inputSt: React.CSSProperties = {
   width: '100%', padding: '0.6rem 0.875rem',
@@ -66,19 +61,16 @@ const inputSt: React.CSSProperties = {
   fontSize: '0.875rem', color: '#1a1814',
   background: '#fafaf9', outline: 'none',
 }
-
 const labelSt: React.CSSProperties = {
   display: 'block', fontSize: '0.65rem', fontWeight: 700,
   textTransform: 'uppercase', letterSpacing: '0.14em',
   color: '#7a7264', marginBottom: '0.4rem',
 }
-
 const cardSt: React.CSSProperties = {
   background: '#ffffff', border: '1px solid #e8e3d8',
-  borderRadius: '0.75rem', padding: '1.5rem',
+  borderRadius: '0.75rem', padding: '1.25rem',
   display: 'flex', flexDirection: 'column', gap: '1.25rem',
 }
-
 const hintSt: React.CSSProperties = {
   fontSize: '0.7rem', color: '#b8b0a0', marginTop: '0.3rem',
 }
@@ -108,16 +100,9 @@ async function compressToBlob(file: File, targetW = 1200): Promise<Blob> {
   })
 }
 
-// ── Image upload field ────────────────────────────────────────────────────────
-function ImageField({
-  label, value, onChange, hint, route, suffix = 'image',
-}: {
-  label:    string
-  value:    string
-  onChange: (val: string) => void
-  hint?:    string
-  route:    string 
-  suffix?:  string
+function ImageField({ label, value, onChange, hint, route, suffix = 'image' }: {
+  label: string; value: string; onChange: (val: string) => void
+  hint?: string; route: string; suffix?: string
 }) {
   const [uploading, setUploading] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -133,15 +118,13 @@ function ImageField({
         process.env.NEXT_PUBLIC_SUPABASE_URL!,
         process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
       )
-      const slug = route.replace(/\//g, '-').replace(/^-/, '')
+      const slug     = route.replace(/\//g, '-').replace(/^-/, '')
       const filename = `${slug}-${suffix}.webp`
       const { error } = await supabase.storage
         .from('seo-images')
         .upload(filename, blob, { upsert: true, contentType: 'image/webp' })
       if (error) throw error
-      const { data: { publicUrl } } = supabase.storage
-        .from('seo-images')
-        .getPublicUrl(filename)
+      const { data: { publicUrl } } = supabase.storage.from('seo-images').getPublicUrl(filename)
       onChange(publicUrl)
     } catch (err) {
       console.error(err)
@@ -154,66 +137,60 @@ function ImageField({
   return (
     <div>
       <label style={labelSt}>{label}</label>
-      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-        <input
-          style={{ ...inputSt, flex: 1 }}
-          value={value.startsWith('data:') ? '(uploaded image)' : value}
-          readOnly={value.startsWith('data:')}
-          onChange={e => onChange(e.target.value)}
-          placeholder="https://… or upload →"
-        />
-        <button
-          type="button"
-          onClick={() => inputRef.current?.click()}
-          disabled={uploading}
-          title="Upload image"
-          style={{
-            flexShrink: 0,
-            display: 'flex', alignItems: 'center', gap: 5,
-            padding: '0.55rem 0.875rem',
-            borderRadius: '0.5rem',
-            fontSize: '0.75rem', fontWeight: 600,
-            cursor: uploading ? 'not-allowed' : 'pointer',
-            border: `1px solid ${goldBorder}`,
-            background: goldBg, color: gold,
-            whiteSpace: 'nowrap',
-            opacity: uploading ? 0.6 : 1,
-          }}
-        >
-          {uploading ? <Loader2 size={13} className="animate-spin" /> : <Upload size={13} aria-hidden="true" />}
-          {uploading ? 'Uploading…' : 'Upload'}
-        </button>
-        <input
-          ref={inputRef}
-          type="file"
-          accept="image/*"
-          style={{ display: 'none' }}
-          onChange={handleFile}
-        />
+      {/* Stack vertically on mobile */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+          <input
+            style={{ ...inputSt, flex: 1 }}
+            value={value.startsWith('data:') ? '(uploaded image)' : value}
+            readOnly={value.startsWith('data:')}
+            onChange={e => onChange(e.target.value)}
+            placeholder="https://… or upload →"
+          />
+          <button
+            type="button"
+            onClick={() => inputRef.current?.click()}
+            disabled={uploading}
+            style={{
+              flexShrink: 0,
+              display: 'flex', alignItems: 'center', gap: 5,
+              padding: '0.55rem 0.875rem',
+              borderRadius: '0.5rem',
+              fontSize: '0.75rem', fontWeight: 600,
+              cursor: uploading ? 'not-allowed' : 'pointer',
+              border: `1px solid ${goldBorder}`,
+              background: goldBg, color: gold,
+              whiteSpace: 'nowrap',
+              opacity: uploading ? 0.6 : 1,
+              minHeight: 44,
+            }}
+          >
+            {uploading ? <Loader2 size={13} className="animate-spin" /> : <Upload size={13} aria-hidden="true" />}
+            {uploading ? 'Uploading…' : 'Upload'}
+          </button>
+          <input ref={inputRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFile} />
+        </div>
+        {hint && <p style={hintSt}>{hint}</p>}
       </div>
-      {hint && <p style={hintSt}>{hint}</p>}
       {value && (
         <div style={{ marginTop: '0.625rem', position: 'relative', display: 'inline-block', width: '100%' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={value}
-            alt="Preview"
-            style={{ width: '100%', maxHeight: 200, objectFit: 'cover', borderRadius: '0.5rem', border: '1px solid #e8e3d8', display: 'block' }}
+            src={value} alt="Preview"
+            style={{ width: '100%', maxHeight: 180, objectFit: 'cover', borderRadius: '0.5rem', border: '1px solid #e8e3d8', display: 'block' }}
             onError={e => ((e.target as HTMLImageElement).style.display = 'none')}
           />
           <button
-            type="button"
-            onClick={() => onChange('')}
-            aria-label="Remove image"
+            type="button" onClick={() => onChange('')} aria-label="Remove image"
             style={{
               position: 'absolute', top: 6, right: 6,
-              width: 24, height: 24, borderRadius: '50%',
+              width: 28, height: 28, borderRadius: '50%',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               background: '#fff', border: '1px solid #e8e3d8',
               cursor: 'pointer', color: '#dc2626',
             }}
           >
-            <X size={12} aria-hidden="true" />
+            <X size={13} aria-hidden="true" />
           </button>
         </div>
       )}
@@ -221,7 +198,6 @@ function ImageField({
   )
 }
 
-// ── Main component ────────────────────────────────────────────────────────────
 export default function SeoEditor({ route, pageLabel, initialData }: Props) {
   const init = initialData
 
@@ -267,7 +243,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
     let structured_data = null
     if (schemaJson.trim()) {
       try { structured_data = JSON.parse(schemaJson); setSchemaError('') }
-      catch { setSchemaError('Invalid JSON- fix before saving'); setSaving(false); setTab('schema'); return }
+      catch { setSchemaError('Invalid JSON — fix before saving'); setSaving(false); setTab('schema'); return }
     }
     const res = await fetch(`/api/admin/seo/${encodeURIComponent(route)}`, {
       method: 'PUT',
@@ -295,41 +271,53 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
     { key: 'basic',    label: 'Basic SEO' },
     { key: 'og',       label: 'Open Graph' },
     { key: 'twitter',  label: 'Twitter / X' },
-    { key: 'schema',   label: 'Structured Data' },
+    { key: 'schema',   label: 'Schema' },
     { key: 'advanced', label: 'Advanced' },
   ]
 
   return (
-    <div style={{ maxWidth: 860, margin: '0 auto', padding: '2.5rem 1.5rem' }}>
+    <div style={{ maxWidth: 860, margin: '0 auto' }}>
 
       {/* ── Header ── */}
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
-        <div>
-          <Link href="/admin/seo" style={{ fontSize: '0.72rem', color: '#b8b0a0', textDecoration: 'none' }}>
-            ← All Pages
-          </Link>
-          <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.18em', color: gold, marginTop: '0.75rem', marginBottom: '0.25rem' }}>
-            SEO Editor
-          </p>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1a1814', fontFamily: 'var(--font-playfair),serif', marginBottom: '0.25rem' }}>
-            {pageLabel}
-          </h1>
-          <code style={{ fontSize: '0.75rem', color: '#b8b0a0' }}>{route}</code>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <a href={route} target="_blank" rel="noopener noreferrer"
-            style={{ padding: '0.5rem 1rem', borderRadius: 999, fontSize: '0.78rem', fontWeight: 500, border: '1px solid #e8e3d8', color: '#7a7264', background: '#fff', textDecoration: 'none' }}>
-            View Page ↗
-          </a>
-          <button onClick={save} disabled={saving}
-            style={{
-              padding: '0.5rem 1.25rem', borderRadius: 999,
-              fontSize: '0.82rem', fontWeight: 700, border: 'none', cursor: saving ? 'not-allowed' : 'pointer',
-              background: saved ? '#16a34a' : gold,
-              color: '#fff', opacity: saving ? 0.7 : 1,
-            }}>
-            {saving ? 'Saving…' : saved ? '✓ Saved!' : 'Save SEO'}
-          </button>
+      <div style={{ marginBottom: '1.5rem' }}>
+        <Link href="/admin/seo" style={{ fontSize: '0.72rem', color: '#b8b0a0', textDecoration: 'none' }}>
+          ← All Pages
+        </Link>
+        {/* Title row — stacks on mobile */}
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginTop: '0.75rem' }}>
+          <div style={{ minWidth: 0 }}>
+            <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.18em', color: gold, marginBottom: '0.2rem' }}>
+              SEO Editor
+            </p>
+            <h1 style={{ fontSize: 'clamp(1.1rem,3vw,1.5rem)', fontWeight: 800, color: '#1a1814', marginBottom: '0.2rem', wordBreak: 'break-word' }}>
+              {pageLabel}
+            </h1>
+            <code style={{ fontSize: '0.72rem', color: '#b8b0a0' }}>{route}</code>
+          </div>
+          {/* Action buttons — full width on mobile */}
+          <div className="seo-actions">
+            <a href={route} target="_blank" rel="noopener noreferrer"
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                padding: '0.5rem 1rem', borderRadius: '0.5rem', minHeight: 44,
+                fontSize: '0.78rem', fontWeight: 500,
+                border: '1px solid #e8e3d8', color: '#7a7264', background: '#fff', textDecoration: 'none',
+              }}>
+              View Page ↗
+            </a>
+            <button onClick={save} disabled={saving}
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                padding: '0.5rem 1.25rem', borderRadius: '0.5rem', minHeight: 44,
+                fontSize: '0.82rem', fontWeight: 700, border: 'none',
+                cursor: saving ? 'not-allowed' : 'pointer',
+                background: saved ? '#16a34a' : gold,
+                color: '#fff', opacity: saving ? 0.7 : 1,
+                flex: 1,
+              }}>
+              {saving ? 'Saving…' : saved ? '✓ Saved!' : 'Save SEO'}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -340,43 +328,45 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
       )}
 
       {/* ── SERP Preview ── */}
-      <div style={{ background: '#ffffff', border: '1px solid #e8e3d8', borderRadius: '0.75rem', padding: '1.25rem', marginBottom: '1.25rem' }}>
-        <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#b8b0a0', marginBottom: '0.75rem' }}>
+      <div style={{ background: '#ffffff', border: '1px solid #e8e3d8', borderRadius: '0.75rem', padding: '1rem', marginBottom: '1rem' }}>
+        <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#b8b0a0', marginBottom: '0.625rem' }}>
           Google Search Preview
         </p>
         <div style={{ fontFamily: 'Arial, sans-serif' }}>
-          <div style={{ fontSize: '0.72rem', color: '#16a34a', marginBottom: 2 }}>
+          <div style={{ fontSize: '0.7rem', color: '#16a34a', marginBottom: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             smartautouae.com{route}
           </div>
-          <div style={{ fontSize: '1.1rem', fontWeight: 500, color: '#1a6ef5', marginBottom: 4 }}>
+          <div style={{ fontSize: 'clamp(0.9rem,2.5vw,1.1rem)', fontWeight: 500, color: '#1a6ef5', marginBottom: 4 }}>
             {fields.title || <em style={{ color: '#b8b0a0', fontStyle: 'italic' }}>Page title not set</em>}
           </div>
-          <div style={{ fontSize: '0.82rem', color: '#4a4a4a', lineHeight: 1.5, maxWidth: 560 }}>
+          <div style={{ fontSize: '0.82rem', color: '#4a4a4a', lineHeight: 1.5 }}>
             {fields.description || <em style={{ color: '#b8b0a0', fontStyle: 'italic' }}>Meta description not set</em>}
           </div>
         </div>
       </div>
 
-      {/* ── Tabs ── */}
-      <div style={{ display: 'flex', gap: '0.375rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
-        {tabs.map(t => (
-          <button key={t.key} onClick={() => setTab(t.key)}
-            style={{
-              padding: '0.4rem 0.875rem', borderRadius: 999,
-              fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer',
-              background: tab === t.key ? goldBg  : '#ffffff',
-              border:     tab === t.key ? `1px solid ${goldBorder}` : '1px solid #e8e3d8',
-              color:      tab === t.key ? gold     : '#7a7264',
-            }}>
-            {t.label}
-          </button>
-        ))}
+      {/* ── Tabs — horizontal scroll on mobile ── */}
+      <div style={{ overflowX: 'auto', marginBottom: '1rem', paddingBottom: '0.25rem' }}>
+        <div style={{ display: 'flex', gap: '0.375rem', minWidth: 'max-content' }}>
+          {tabs.map(t => (
+            <button key={t.key} onClick={() => setTab(t.key)}
+              style={{
+                padding: '0.45rem 0.875rem', borderRadius: '0.5rem',
+                fontSize: '0.78rem', fontWeight: 600, cursor: 'pointer',
+                whiteSpace: 'nowrap', minHeight: 40,
+                background: tab === t.key ? goldBg  : '#ffffff',
+                border:     tab === t.key ? `1px solid ${goldBorder}` : '1px solid #e8e3d8',
+                color:      tab === t.key ? gold     : '#7a7264',
+              }}>
+              {t.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* ── Tab content ── */}
       <div style={cardSt}>
 
-        {/* BASIC SEO */}
         {tab === 'basic' && <>
           <div>
             <label style={labelSt}>Title Tag {counter(fields.title, 60)}</label>
@@ -386,7 +376,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           </div>
           <div>
             <label style={labelSt}>Meta Description {counter(fields.description, 160)}</label>
-            <textarea style={{ ...inputSt, resize: 'none', lineHeight: 1.6 }} rows={3}
+            <textarea style={{ ...inputSt, resize: 'vertical', lineHeight: 1.6 }} rows={3}
               value={fields.description} onChange={e => set('description', e.target.value)}
               placeholder="Premium car window tinting in Dubai. 3M and TotalGard films. UAE RTA compliant. 5-year warranty…" />
             <p style={hintSt}>Recommended: 150–160 characters. Shown below the title in search results.</p>
@@ -398,7 +388,6 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           </div>
         </>}
 
-        {/* OPEN GRAPH */}
         {tab === 'og' && <>
           {infoBox('Open Graph tags control how your page appears when shared on WhatsApp, Facebook, LinkedIn, etc. Leave blank to inherit from Basic SEO.')}
           <div>
@@ -408,20 +397,17 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           </div>
           <div>
             <label style={labelSt}>OG Description {counter(fields.og_description, 160)}</label>
-            <textarea style={{ ...inputSt, resize: 'none', lineHeight: 1.6 }} rows={3}
+            <textarea style={{ ...inputSt, resize: 'vertical', lineHeight: 1.6 }} rows={3}
               value={fields.og_description} onChange={e => set('og_description', e.target.value)}
               placeholder={fields.description || 'Inherits from description if blank'} />
           </div>
-          <ImageField
-            label="OG Image (1200×630px recommended)"
-            value={fields.og_image}
+          <ImageField label="OG Image (1200×630px recommended)" value={fields.og_image}
             onChange={v => set('og_image', v)}
             hint="Shown when shared on WhatsApp, Facebook, LinkedIn. Compressed to WebP automatically."
-            route={route} suffix="og"
-          />
+            route={route} suffix="og" />
           <div>
             <label style={labelSt}>OG Type</label>
-            <select style={inputSt} value={fields.og_type} onChange={e => set('og_type', e.target.value)}>
+            <select style={{ ...inputSt, minHeight: 44 }} value={fields.og_type} onChange={e => set('og_type', e.target.value)}>
               <option value="website">website</option>
               <option value="article">article</option>
               <option value="business.business">business.business</option>
@@ -429,12 +415,11 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           </div>
         </>}
 
-        {/* TWITTER */}
         {tab === 'twitter' && <>
           {infoBox('Twitter / X card tags. Leave blank to fall back to Open Graph values.')}
           <div>
             <label style={labelSt}>Twitter Card Type</label>
-            <select style={inputSt} value={fields.twitter_card} onChange={e => set('twitter_card', e.target.value)}>
+            <select style={{ ...inputSt, minHeight: 44 }} value={fields.twitter_card} onChange={e => set('twitter_card', e.target.value)}>
               <option value="summary_large_image">summary_large_image (recommended)</option>
               <option value="summary">summary</option>
             </select>
@@ -446,29 +431,25 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           </div>
           <div>
             <label style={labelSt}>Twitter Description {counter(fields.twitter_description, 200)}</label>
-            <textarea style={{ ...inputSt, resize: 'none', lineHeight: 1.6 }} rows={3}
+            <textarea style={{ ...inputSt, resize: 'vertical', lineHeight: 1.6 }} rows={3}
               value={fields.twitter_description} onChange={e => set('twitter_description', e.target.value)}
               placeholder={fields.og_description || fields.description || 'Inherits from OG / description'} />
           </div>
-          <ImageField
-            label="Twitter Image"
-            value={fields.twitter_image}
+          <ImageField label="Twitter Image" value={fields.twitter_image}
             onChange={v => set('twitter_image', v)}
             hint="Shown on Twitter/X cards. Falls back to OG image if blank."
-            route={route} suffix="twitter"
-          />
+            route={route} suffix="twitter" />
         </>}
 
-        {/* STRUCTURED DATA */}
         {tab === 'schema' && <>
           <div>
-            <label style={labelSt}>Schema Type- Load Template</label>
+            <label style={labelSt}>Schema Type — Load Template</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
               {Object.keys(SCHEMA_TEMPLATES).map(type => (
                 <button key={type} onClick={() => loadTemplate(type)}
                   style={{
-                    padding: '0.3rem 0.75rem', borderRadius: 999,
-                    fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer',
+                    padding: '0.35rem 0.75rem', borderRadius: '0.5rem',
+                    fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', minHeight: 40,
                     background: fields.schema_type === type ? goldBg  : '#fafaf9',
                     border:     fields.schema_type === type ? `1px solid ${goldBorder}` : '1px solid #e8e3d8',
                     color:      fields.schema_type === type ? gold     : '#7a7264',
@@ -490,7 +471,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
                 ...inputSt,
                 fontFamily: 'ui-monospace, "Cascadia Code", monospace',
                 fontSize: '0.78rem', lineHeight: 1.7,
-                resize: 'vertical', minHeight: 360,
+                resize: 'vertical', minHeight: 300,
                 borderColor: schemaError ? '#fca5a5' : '#e8e3d8',
               }}
             />
@@ -503,7 +484,6 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           </div>
         </>}
 
-        {/* ADVANCED */}
         {tab === 'advanced' && <>
           <div>
             <label style={labelSt}>Canonical URL</label>
@@ -513,8 +493,8 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           </div>
           <div>
             <label style={labelSt}>Robots</label>
-            <select style={inputSt} value={fields.robots} onChange={e => set('robots', e.target.value)}>
-              <option value="index, follow">index, follow (default- recommended)</option>
+            <select style={{ ...inputSt, minHeight: 44 }} value={fields.robots} onChange={e => set('robots', e.target.value)}>
+              <option value="index, follow">index, follow (default — recommended)</option>
               <option value="noindex, follow">noindex, follow</option>
               <option value="index, nofollow">index, nofollow</option>
               <option value="noindex, nofollow">noindex, nofollow (block from Google)</option>
@@ -524,18 +504,36 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
 
       </div>
 
-      {/* Bottom save */}
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.25rem' }}>
+      {/* ── Bottom save ── */}
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.25rem', paddingBottom: '1rem' }}>
         <button onClick={save} disabled={saving}
           style={{
-            padding: '0.65rem 2rem', borderRadius: 999,
-            fontSize: '0.875rem', fontWeight: 700, border: 'none', cursor: saving ? 'not-allowed' : 'pointer',
+            padding: '0.75rem 2rem', borderRadius: '0.5rem', minHeight: 48,
+            fontSize: '0.875rem', fontWeight: 700, border: 'none',
+            cursor: saving ? 'not-allowed' : 'pointer',
             background: saved ? '#16a34a' : gold,
             color: '#fff', opacity: saving ? 0.7 : 1,
+            width: '100%', maxWidth: 320,
           }}>
           {saving ? 'Saving…' : saved ? '✓ Changes Saved' : 'Save SEO Changes'}
         </button>
       </div>
+
+      {/* ── Responsive styles ── */}
+      <style>{`
+        .seo-actions {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+        }
+        @media (max-width: 600px) {
+          .seo-actions {
+            width: 100%;
+          }
+        }
+        /* Hide scrollbar on tab row */
+        div:has(> .seo-tab-row) { scrollbar-width: none; }
+      `}</style>
 
     </div>
   )

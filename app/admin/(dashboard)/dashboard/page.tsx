@@ -31,9 +31,6 @@ const QUICK_LINKS = [
   { label: 'Edit SEO',      href: '/admin/seo',      icon: Search,        desc: 'Manage metadata for all pages' },
   { label: 'New Blog Post', href: '/admin/blog/new',  icon: FileText,      desc: 'Write and publish a new article' },
   { label: 'View Site',     href: '/',                icon: Globe,         desc: 'Open smartautouae.com', external: true },
-  { label: 'Services',      href: '/admin/services',  icon: Layers,        desc: 'Manage service pages' },
-  { label: 'Reviews',       href: '/admin/reviews',   icon: Star,          desc: 'Customer reviews' },
-  { label: 'Messages',      href: '/admin/messages',  icon: MessageSquare, desc: 'Contact form submissions' },
 ]
 
 function pct(n: number, total: number) {
@@ -195,7 +192,11 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* ── Main grid ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '1.25rem' }}>
+      <div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+  gap: '1.25rem',
+}}>
 
         {/* SEO Health */}
         <div style={{ background: '#fafaf9', border: '1px solid #e8e3d8', borderRadius: '0.75rem', padding: '1.5rem' }}>
@@ -341,7 +342,11 @@ export default function AdminDashboardPage() {
           {/* Quick actions */}
           <div style={{ background: '#fafaf9', border: '1px solid #e8e3d8', borderRadius: '0.75rem', padding: '1.5rem' }}>
             <h2 style={{ fontSize: '0.9rem', fontWeight: 600, color: '#1a1814', marginBottom: '1rem' }}>Quick Actions</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem' }}>
+            <div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 140px), 1fr))',
+  gap: '0.75rem',
+}}>
               {QUICK_LINKS.map((item) => {
                 const Icon = item.icon
                 return (
