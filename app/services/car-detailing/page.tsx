@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/metadata'
 import CarDetailingContent from './content'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const meta = await buildMetadata('/services/car-detailing-polishing-dubai-sharjah', {
+  const meta = await buildMetadata('/services/car-detailing', {
     title: 'Car Detailing & Polishing Dubai | Smart Auto UAE',
     description: 'Professional car detailing and polishing in Dubai & Sharjah.',
   })
