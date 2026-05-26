@@ -259,7 +259,7 @@ export default function MarineTintingPage() {
             style={{ border: '1px solid rgba(201,168,76,0.15)' }}
           >
             <img
-              src="/images/services/marine-tinting-hero.webp"
+              src="/images/services/marine-window-tinting.webp"
               alt="Marine window tinting Dubai- professional boat and yacht glass tinting by Smart Auto UAE"
               width={700} height={500} loading="eager" decoding="async"
               className="w-full h-full object-cover" style={{ maxHeight: '480px' }}

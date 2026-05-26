@@ -31,7 +31,7 @@ const goldGrad = "linear-gradient(135deg,#C9A84C 0%,#E7CB75 100%)";
 const phoneNumber = "+971547011800";
 const displayPhone = "+971 54 701 1800";
 const WA_MSG = encodeURIComponent(
-  "Hi, I want a quote for Paint Protection Film (PPF). Please share package options and the current 15% offer."
+  "Hi, I want a quote for Paint Protection Film (PPF). Please share package options."
 );
 const WA_LINK = `https://wa.me/971547011800?text=${WA_MSG}`;
 
@@ -45,7 +45,7 @@ const fadeUp = {
 };
 
 const heroPoints = [
-  "15% off when you book your free slot today",
+  "Get free interior protection with your PPF booking",
   "Instant quote on WhatsApp in minutes",
   "Premium self-healing PPF for UAE roads",
   "Same-week booking available",
@@ -141,7 +141,7 @@ const processSteps = [
   {
     n: "03",
     title: "Book your free slot",
-    desc: "Lock your inspection slot and secure your 15% offer before it expires.",
+    desc: "Lock your inspection slot and secure your free interior protection before it expires.",
   },
   {
     n: "04",
@@ -166,10 +166,6 @@ const faqs = [
   {
     q: "Can I get PPF only on the front?",
     a: "Yes. Partial Front and Full Front packages are popular options for drivers who want to protect the most exposed areas first.",
-  },
-  {
-    q: "How do I claim the 15% offer?",
-    a: "Book your free slot while the offer is active. Once your slot is confirmed, the offer can be applied to your selected package.",
   },
   {
     q: "How do I get a quote quickly?",
@@ -337,7 +333,7 @@ function StickyOfferBar() {
           </div>
           <div>
             <p className="text-sm font-semibold text-white">
-              15% Off Premium PPF – Limited Slots Available
+              Get Free Interior Protection with Your PPF Booking
             </p>
             <p className="text-xs text-white/50">
               Book your free slot today and claim the live offer before it ends.
@@ -446,149 +442,152 @@ export default function PPFLandingPage() {
       <StickyOfferBar />
 
       <section className="relative overflow-hidden px-6 pb-20 pt-28 md:min-h-screen md:pt-36">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-[0.16]"
+  {/* backgrounds stay exactly the same */}
+  <div
+    className="absolute inset-0 bg-cover bg-center opacity-[0.16]"
+    style={{
+      backgroundImage:
+        "url(https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80)",
+    }}
+  />
+  <div className="absolute inset-0 bg-black/75" />
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(circle at top right, rgba(201,168,76,0.12), transparent 34%)",
+    }}
+  />
+
+  {/* ↓ Changed: added flex-col-reverse on mobile so image renders first visually */}
+  <div className="relative z-10 mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+
+    {/* TEXT COLUMN — order-2 on mobile (renders second), order-1 on desktop (left) */}
+    <div className="order-2 lg:order-1 max-w-3xl">
+      <div
+        className="mb-7 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.25em]"
+        style={{
+          background: goldSoft,
+          borderColor: goldBorder,
+          color: gold,
+        }}
+      >
+        <BadgePercent size={13} /> Limited-Time Free Interior Protection with PPF
+      </div>
+
+      <h1
+        className="text-white font-bold leading-[1.02]"
+        style={{
+          fontFamily: "var(--font-playfair),serif",
+          fontSize: "clamp(1.9rem,4.5vw,4rem)",
+        }}
+      >
+        Paint Protection Film
+        <span
+          className="block"
           style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80)",
+            background: goldGrad,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontSize: "clamp(0.9rem,2.5vw,rem)",
           }}
-        />
-        <div className="absolute inset-0 bg-black/75" />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at top right, rgba(201,168,76,0.12), transparent 34%)",
-          }}
-        />
+        >
+          Book Today & Get Interior Protection for free
+        </span>
+      </h1>
 
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="max-w-3xl">
-            <div
-              className="mb-7 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.25em]"
-              style={{
-                background: goldSoft,
-                borderColor: goldBorder,
-                color: gold,
-              }}
-            >
-              <BadgePercent size={13} /> Limited-Time 15% PPF Offer
-            </div>
+      <p className="mt-6 max-w-2xl text-[16px] leading-8 text-white/62 sm:text-[17px]">
+        Protect your car from stone chips, scratches, swirl marks, and
+        harsh UAE road damage with premium self-healing PPF. Book your
+        free slot now and get an instant quote on WhatsApp.
+      </p>
 
-            <h1
-              className="text-white font-bold leading-[1.02]"
-              style={{
-                fontFamily: "var(--font-playfair),serif",
-                fontSize: "clamp(2.8rem,6.8vw,6rem)",
-              }}
-            >
-              Paint Protection Film
-              <span
-                className="block"
-                style={{
-                  background: goldGrad,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                Save 15% When You Book Today
-              </span>
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-[16px] leading-8 text-white/62 sm:text-[17px]">
-              Protect your car from stone chips, scratches, swirl marks, and
-              harsh UAE road damage with premium self-healing PPF. Book your
-              free slot now and get an instant quote on WhatsApp.
-            </p>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {heroPoints.map((point) => (
-                <div
-                  key={point}
-                  className="flex items-start gap-3 rounded-2xl border px-4 py-4"
-                  style={{
-                    background: "rgba(255,255,255,0.03)",
-                    borderColor: "rgba(255,255,255,0.08)",
-                  }}
-                >
-                  <CheckCircle2
-                    size={18}
-                    style={{ color: gold, flexShrink: 0, marginTop: 2 }}
-                  />
-                  <span className="text-sm leading-6 text-white/72">
-                    {point}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8">
-              <CTAButtons />
-            </div>
-
-            <div className="mt-7 flex flex-wrap items-center gap-5 text-sm text-white/45">
-              <div className="flex items-center gap-2">
-                <Star size={14} style={{ color: gold }} /> Premium self-healing
-                film
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock3 size={14} style={{ color: gold }} /> Same-week booking
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck size={14} style={{ color: gold }} /> Free slot
-                reservation
-              </div>
-            </div>
+      <div className="mt-8 grid gap-3 sm:grid-cols-2">
+        {heroPoints.map((point) => (
+          <div
+            key={point}
+            className="flex items-start gap-3 rounded-2xl border px-4 py-4"
+            style={{
+              background: "rgba(255,255,255,0.03)",
+              borderColor: "rgba(255,255,255,0.08)",
+            }}
+          >
+            <CheckCircle2
+              size={18}
+              style={{ color: gold, flexShrink: 0, marginTop: 2 }}
+            />
+            <span className="text-sm leading-6 text-white/72">{point}</span>
           </div>
+        ))}
+      </div>
 
-          <div className="lg:pl-8">
-            <div
-              className="overflow-hidden rounded-[28px] border"
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                borderColor: "rgba(201,168,76,0.18)",
-                boxShadow: "0 30px 100px rgba(0,0,0,0.35)",
-              }}
-            >
-              <div className="relative h-[260px] sm:h-[320px]">
-                <img
-                  src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
-                  alt="Luxury car with glossy protected paint finish"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3">
-                  <div>
-                    <p className="text-[11px] uppercase tracking-[0.26em] text-white/55">
-                      Offer Active Now
-                    </p>
-                    <p className="mt-2 text-2xl font-bold text-white">
-                      Book your free slot & lock in 15% off
-                    </p>
-                  </div>
-                </div>
-              </div>
+      <div className="mt-8">
+        <CTAButtons />
+      </div>
 
-              <div className="p-5 sm:p-6">
-                <div
-                  className="mb-5 flex items-center gap-2 text-sm font-semibold"
-                  style={{ color: gold }}
-                >
-                  <Clock3 size={16} /> Limited-time countdown
-                </div>
-                <CountdownTimer />
-                <p className="mt-5 text-sm leading-7 text-white/55">
-                  Reserve your free inspection slot before the timer ends and
-                  claim the current PPF offer for your selected package.
-                </p>
-                <div className="mt-6">
-                  <CTAButtons stacked />
-                </div>
-              </div>
+      <div className="mt-7 flex flex-wrap items-center gap-5 text-sm text-white/45">
+        <div className="flex items-center gap-2">
+          <Star size={14} style={{ color: gold }} /> Premium self-healing film
+        </div>
+        <div className="flex items-center gap-2">
+          <Clock3 size={14} style={{ color: gold }} /> Same-week booking
+        </div>
+        <div className="flex items-center gap-2">
+          <ShieldCheck size={14} style={{ color: gold }} /> Free slot reservation
+        </div>
+      </div>
+    </div>
+
+    {/* IMAGE/CARD COLUMN — order-1 on mobile (renders FIRST), order-2 on desktop (right) */}
+    <div className="order-1 lg:order-2 lg:pl-8">
+      <div
+        className="overflow-hidden rounded-[28px] border"
+        style={{
+          background: "rgba(255,255,255,0.04)",
+          borderColor: "rgba(201,168,76,0.18)",
+          boxShadow: "0 30px 100px rgba(0,0,0,0.35)",
+        }}
+      >
+        <div className="relative h-[260px] sm:h-[320px]">
+          <img
+            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
+            alt="Luxury car with glossy protected paint finish"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.26em] text-white/55">
+                Offer Active Now
+              </p>
+              <p className="mt-2 text-2xl font-bold text-white">
+                Book your free slot & lock in free interior protection
+              </p>
             </div>
           </div>
         </div>
-      </section>
+
+        <div className="p-5 sm:p-6">
+          <div
+            className="mb-5 flex items-center gap-2 text-sm font-semibold"
+            style={{ color: gold }}
+          >
+            <Clock3 size={16} /> Limited-time countdown
+          </div>
+          <CountdownTimer />
+          <p className="mt-5 text-sm leading-7 text-white/55">
+            Reserve your free inspection slot before the timer ends and
+            claim the current PPF offer for your selected package.
+          </p>
+          <div className="mt-6">
+            <CTAButtons stacked />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       <section
         className="border-y px-6 py-5"
@@ -601,7 +600,7 @@ export default function PPFLandingPage() {
           <span>Free Inspection</span>
           <span>Premium PPF</span>
           <span>Instant WhatsApp Quote</span>
-          <span>15% Offer</span>
+          <span>Free Interior Protection</span>
           <span>Dubai Service</span>
           <span>Same-Week Availability</span>
         </div>
@@ -764,7 +763,7 @@ export default function PPFLandingPage() {
               className="mt-3 text-3xl font-bold text-white"
               style={{ fontFamily: "var(--font-playfair),serif" }}
             >
-              Book today and secure your 15% PPF offer
+              Book today and secure your free interior protection with PPF
             </h3>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-white/55">
               The fastest way to check package options, pricing, and
@@ -854,17 +853,7 @@ export default function PPFLandingPage() {
                   ))}
                 </div>
 
-                <div
-                  className="mt-8 rounded-2xl border px-4 py-3 text-sm text-white/72"
-                  style={{
-                    background: "rgba(255,255,255,0.03)",
-                    borderColor: "rgba(255,255,255,0.08)",
-                  }}
-                >
-                  Includes current{" "}
-                  <span style={{ color: gold, fontWeight: 700 }}>15% offer</span>{" "}
-                  when you book your free slot today.
-                </div>
+                
 
                 <a
                   href={WA_LINK}
@@ -1128,7 +1117,7 @@ export default function PPFLandingPage() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              15% PPF offer is live
+              Free Interior Protection with PPF
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-white/55">

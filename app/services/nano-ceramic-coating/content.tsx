@@ -105,7 +105,7 @@ const faqs = [
   },
   {
     q: 'How long does nano ceramic coating last in Dubai?',
-    a: 'A professional nano ceramic coating in Dubai lasts between 2 and 5+ years depending on the product tier, the number of layers applied, and your maintenance routine. Smart Auto UAE uses Sirius USA, Jade, Puris and Gyeon- all formulated specifically for high UV and heat environments like the UAE.',
+    a: 'A professional nano ceramic coating in Dubai lasts between 2 and 5+ years depending on the product tier, the number of layers applied, and your maintenance routine. Smart Auto UAE uses Sirius USA, Jade, 3M and Sirius USA- all formulated specifically for high UV and heat environments like the UAE.',
   },
   {
     q: 'Is nano ceramic coating better than car wax?',
@@ -170,7 +170,7 @@ export default function NanoCeramicCoatingPage() {
               className="text-[11px] tracking-[0.3em] uppercase mb-4"
               style={{ color: GOLD }}
             >
-              Sirius USA · Jade · Puris · Gyeon
+              Sirius USA · Jade · 3M · Sirius USA
             </p>
 
             <h1
@@ -200,7 +200,7 @@ export default function NanoCeramicCoatingPage() {
               <strong className="text-white/70 font-medium">
                 9H nano ceramic coatings
               </strong>{' '}
-              from Sirius USA, Jade, Puris and Gyeon across Dubai and Sharjah. Our
+              from Sirius USA, Jade, 3M and Sirius USA across Dubai and Sharjah. Our
               ceramic coatings bond permanently to your paintwork at a molecular
               level- delivering a{' '}
               <strong className="text-white/70 font-medium">
@@ -223,7 +223,7 @@ export default function NanoCeramicCoatingPage() {
                 'Extreme hydrophobic- water, dirt and grime bead off instantly',
                 'UV, chemical and thermal resistance up to 608°C',
                 'Anti-graffiti surface- contaminants cannot bond',
-                'Gyeon, Gtechniq & IGL certified installer- Dubai & Sharjah',
+                'Sirius USA, Totalgard & 3M certified installer- Dubai & Sharjah',
                 'Paint correction performed on every car before coating',
               ].map((p) => (
                 <div key={p} className="flex items-center gap-3">
@@ -267,7 +267,7 @@ export default function NanoCeramicCoatingPage() {
           >
             <img
               src="/images/services/ceramic-coating-1.webp"
-              alt="Professional nano ceramic coating Dubai- 9H Gyeon and Gtechniq certified installer Smart Auto UAE"
+              alt="Professional nano ceramic coating Dubai- Up-to 10H Sirius USA and 3M certified installer Smart Auto UAE"
               width={700}
               height={500}
               loading="eager"

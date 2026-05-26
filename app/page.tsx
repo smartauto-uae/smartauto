@@ -139,8 +139,8 @@ const services = [
   {
     title: 'Nano Ceramic Coating',
     slug: 'ceramic-coating',
-    description: '9H hardness ceramic coatings from Sirus USA, Jade, Puris & Gyeon. Hydrophobic protection, deep gloss, and UV resistance lasting 2–5 years.',
-    features: ['SIRUS USA · Jade · Puris · Gyeon', 'Up-to 10H Hardness Rating', 'Hydrophobic Protection', 'Paint Correction Included'],
+    description: 'Up-to 10H hardness ceramic coatings from Sirus USA, Jade & Sirius USA. Hydrophobic protection, deep gloss, and UV resistance lasting 2–5 years.',
+    features: ['SIRUS USA · Jade  · Sirius USA', 'Up-to 10H Hardness Rating', 'Hydrophobic Protection', 'Paint Correction Included'],
     image: '/images/services/ceramic-coating-1.webp',
     href: '/services/ceramic-coating',
     icon: Sparkles,
@@ -166,7 +166,7 @@ const services = [
 ]
 
 const whyFeatures = [
-  { title: 'Partnering Brands', description: 'Official UAE distributor and certified installer for 3M, Totalgard, Global USA and Gyeon.', icon: Shield },
+  { title: 'Partnering Brands', description: 'Official UAE distributor and certified installer for 3M, Totalgard, Global USA and Sirius USA.', icon: Shield },
   { title: 'Up-to 15-Year Warranty', description: 'Window tinting and PPF installations are backed by a comprehensive warranty.', icon: CheckCircle },
   { title: '4 Branches UAE', description: 'MotorCity, Al Quoz, Mirdif, and Sharjah Central Mall. Always close to you.', icon: MapPin },
   { title: 'Open Every Day', description: 'All 4 branches open 7 days a week, 11 AM to 10 PM & Sharjah Branch 10 AM to 10 PM.', icon: Clock },
@@ -181,7 +181,7 @@ const steps = [
 
 const brands = [
   '3M', 'Totalgard',
-  'Global USA', 'Sirius USA', 'Jade', 'Puris',
+  'Global USA', 'Sirius USA', 'Jade', '3M',
 ]
 
 const testimonials = [
@@ -251,7 +251,7 @@ const branches = [
 const faqs = [
   { q: 'How much does window tinting cost in Dubai?', a: 'Window tinting prices at Smart Auto UAE start from AED 299 depending on film type and vehicle size. We offer nano ceramic films- all UAE RTA law compliant. Contact us for a free quote.' },
   { q: 'What is the best PPF for cars in the UAE?', a: 'For UAE conditions, self-healing TPU-based PPF from Totalgard, 3M, or Global USA offers the best protection. Smart Auto UAE is an Applicator for all three brands, ensuring genuine product and certified installation.' },
-  { q: 'How long does ceramic coating last in Dubai?', a: "A professional 9H ceramic coating lasts 2–5 years in Dubai's climate, depending on the product tier. We use Gyeon, Gtechniq, and IGL coatings- all formulated for high UV and heat environments." },
+  { q: 'How long does ceramic coating last in Dubai?', a: "A professional 9H ceramic coating lasts 2–5 years in Dubai's climate, depending on the product tier. We use Sirius USA, Totalgard, 3M and Sirius USA- all formulated for high UV and heat environments." },
   { q: 'Does Smart Auto UAE have a branch in Sharjah?', a: 'Yes. Smart Auto UAE has a branch at Central Mall, Sharjah, offering window tinting, PPF, ceramic coating, car detailing, and car wrapping services.' },
   { q: 'How long does a full car wrap take?', a: 'A full vinyl car wrap takes 2–4 days depending on vehicle size and finish complexity. Partial wraps and accents can be completed in a single day.' },
 ]

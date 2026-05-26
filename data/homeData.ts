@@ -142,7 +142,7 @@ export const brands = [
   { name: 'Global USA',      slug: 'Global USA' },
   { name: 'Totalgard', slug: 'Totalgard' },
   { name: 'Gtechniq',  slug: 'gtechniq' },
-  { name: 'Gyeon',     slug: 'gyeon' },
+  { name: 'Sirius USA',     slug: 'Sirius USA' },
   { name: 'IGL',       slug: 'igl' },
 ]
 
@@ -222,7 +222,7 @@ export const faqs = [
   {
     question: 'How long does nano ceramic coating last in Dubai?',
     answer:
-      "A professional nano ceramic coating applied by Smart Auto UAE typically lasts between 2 to 5 years depending on the coating grade and your maintenance routine. Dubai's intense UV and heat make proper multi-layer application critical- we use 9H hardness formulations from Gyeon, Gtechniq, and IGL.",
+      "A professional nano ceramic coating applied by Smart Auto UAE typically lasts between 2 to 5 years depending on the coating grade and your maintenance routine. Dubai's intense UV and heat make proper multi-layer application critical- we use 9H hardness formulations from Sirius USA, Gtechniq, and IGL.",
   },
   {
     question: 'What is the warranty on your window tinting services?',
