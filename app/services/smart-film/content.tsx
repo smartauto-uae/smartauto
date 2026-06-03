@@ -359,15 +359,6 @@ export default function SmartFilmPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-            {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-[12px] mb-12" style={{ color: "rgba(255,255,255,0.3)" }}>
-              <Link href="/" className="no-underline hover:text-white/60 transition-colors" style={{ color: "rgba(255,255,255,0.3)" }}>Home</Link>
-              <ChevronRight size={12} />
-              <Link href="/services" className="no-underline hover:text-white/60 transition-colors" style={{ color: "rgba(255,255,255,0.3)" }}>Services</Link>
-              <ChevronRight size={12} />
-              <span style={{ color: gold }}>SmartFilm</span>
-            </div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
               {/* Left */}

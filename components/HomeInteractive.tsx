@@ -190,14 +190,12 @@ export function ContactForm() {
           <option value="ceramic-coating">Nano Ceramic Coating</option>
           <option value="ppf">Paint Protection Film (PPF)</option>
           <option value="car-detailing">Car Detailing</option>
-          <option value="car-polishing">Car Polishing</option>
+          <option value="nano-ceramic-coating">Car Polishing</option>
           <option value="car-wrapping">Car Wrapping</option>
-          <option value="interior-cleaning">Car Interior Cleaning</option>
           <option value="headlight-restoration">Headlight Restoration</option>
-          <option value="upholstery">Car Upholstery</option>
           <option value="smart-film">Smart Film</option>
-          <option value="marine-tinting">Marine Tinting</option>
-          <option value="commercial-tinting">Commercial Window Tinting</option>
+          <option value="marine-window-tinting">Marine Tinting</option>
+          <option value="commercial-window-tinting">Commercial Window Tinting</option>
           <option value="residential-tinting">Home Glass Tinting</option>
           <option value="vehicle-graphics">Vehicle Graphics</option>
           <option value="other">Other</option>

@@ -31,7 +31,7 @@ export const services = [
   },
   {
     title: 'Car Polishing',
-    slug: 'car-polishing',
+    slug: 'nano-ceramic-coating',
     description:
       'Machine paint correction to eliminate swirl marks, light scratches, water spots, and oxidation. Restores paintwork clarity and prepares the surface for coating.',
     tag: null,
@@ -52,30 +52,23 @@ export const services = [
   },
   {
     title: 'Marine Tinting',
-    slug: 'marine-tinting',
+    slug: 'marine-window-tinting',
     description:
       'Specialised glass coating and tinting for boats and yachts. Trusted by UAE boat owners for cabin heat reduction, UV protection, and enhanced comfort on the water.',
     tag: null,
   },
   {
     title: 'Commercial Tinting',
-    slug: 'commercial-tinting',
+    slug: 'commercial-window-tinting',
     description:
       'Energy-efficient window film for offices, showrooms, and commercial buildings. Reduce solar gain, lower cooling costs, and improve employee comfort and productivity.',
     tag: null,
   },
   {
     title: 'Home Glass Tinting',
-    slug: 'home-glass-tinting',
+    slug: 'residential-window-tinting',
     description:
       'Residential window film that blocks UV radiation, reduces glare, saves energy, and protects occupants from the dangers of glass breakage.',
-    tag: null,
-  },
-  {
-    title: 'Car Upholstery',
-    slug: 'upholstery',
-    description:
-      'Full and partial upholstery replacement and repair. Leather, Alcantara, and fabric options for seats, door panels, and dashboards.',
     tag: null,
   },
   {
@@ -277,6 +270,5 @@ export const stripItems = [
   'Marine Tinting',
   'Home Glass Tinting',
   'Commercial Tinting',
-  'Car Upholstery',
   'Vehicle Graphics',
 ]

@@ -55,11 +55,6 @@ const benefits = [
     title: 'Shatter Protection',
     desc: 'Window film adds a bonded layer to the glass. In the event of an accident or impact, the film holds shattered glass together- reducing the risk of glass-related injuries significantly.',
   },
-  {
-    icon: Zap,
-    title: 'Preserves Interior',
-    desc: 'UV and infrared rays cause upholstery, dashboards, and leather to fade, crack, and discolour. Window tinting blocks the radiation that causes this damage, keeping interiors looking newer for longer.',
-  },
 ]
 
 const films = [
@@ -144,10 +139,6 @@ const faqs = [
   {
     q: 'How long does the car tinting installation take?',
     a: 'A full vehicle window tinting job takes 2–4 hours at any of our 4 branches in Dubai and Sharjah. Same-day service is available in most cases. We also offer mobile doorstep tinting across Dubai at your home or office.',
-  },
-  {
-    q: 'Can car tinting protect my car interior?',
-    a: "Yes. UV and infrared radiation cause upholstery, leather, dashboards, and plastics to fade and crack over time. Window tinting blocks the radiation responsible for this damage- preserving your interior and maintaining your vehicle's resale value.",
   },
   {
     q: 'Why choose Smart Auto UAE for car window tinting in Dubai?',

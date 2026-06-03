@@ -13,11 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/nano-ceramic-coating',
     '/services/paint-protection-films',
     '/services/car-wrapping',
-    '/services/interior-detailing',
-    '/services/upholstery',
-    '/services/marine-tinting',
-    '/services/commercial-tinting',
-    '/services/home-glass-tinting',
+    '/services/marine-window-tinting',
+    '/services/commercial-window-tinting',
+    '/services/residential-window-tinting',
   ]
 
   return routes.map((route) => ({
