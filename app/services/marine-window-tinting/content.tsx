@@ -540,7 +540,7 @@ export default function MarineTintingPage() {
                 style={{ border: '1px solid rgba(201,168,76,0.15)' }}
               >
                 <img
-                  src="/images/services/marine-tinting-2.webp"
+                  src="/images/services/marine-window-tinting.webp"
                   alt="Marine window film installation on yacht in Dubai- Smart Auto UAE"
                   width={700} height={480} loading="lazy" decoding="async"
                   className="w-full h-full object-cover" style={{ maxHeight: '440px' }}

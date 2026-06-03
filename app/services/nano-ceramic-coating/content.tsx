@@ -135,7 +135,7 @@ const faqs = [
 
 const relatedServices = [
   { name: 'Car Window Tinting', href: '/services/window-tinting', desc: 'Block UV and heat entering through the glass' },
-  { name: 'Paint Protection Film', href: '/services/ppf', desc: 'Physical protection from stone chips and scratches' },
+  { name: 'Paint Protection Film', href: '/services/paint-protection-films', desc: 'Physical protection from stone chips and scratches' },
   { name: 'Car Detailing', href: '/services/car-detailing', desc: 'Full paint correction before ceramic application' },
   { name: 'Car Polishing', href: '/services/car-polishing', desc: 'Swirl and scratch removal to prepare paintwork' },
 ]

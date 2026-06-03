@@ -221,7 +221,7 @@ export default function AboutPage() {
             style={{ border: '1px solid rgba(201,168,76,0.15)' }}
           >
             <img
-              src="/images/about/about-hero.webp"
+              src="/images/commercial-tint.webp"
               alt="Smart Auto UAE team- professional window tinting and protection specialists Dubai"
               width={700} height={500}
               loading="eager" decoding="async"
@@ -552,7 +552,7 @@ export default function AboutPage() {
               style={{ border: '1px solid rgba(201,168,76,0.15)' }}
             >
               <img
-                src="/images/about/services-overview.webp"
+                src="/images/detailing.webp"
                 alt="Smart Auto UAE services- window tinting, PPF, ceramic coating and car wrapping in Dubai"
                 width={700} height={500}
                 loading="lazy" decoding="async"
@@ -696,7 +696,7 @@ export default function AboutPage() {
                 <MessageCircle size={16} /> WhatsApp Us
               </a>
               <a
-                href="/contact"
+                href="/contact-us"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm border"
                 style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
               >

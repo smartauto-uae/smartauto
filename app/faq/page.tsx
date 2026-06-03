@@ -656,7 +656,7 @@ export default function FAQPage() {
                   <MessageCircle size={15} aria-hidden="true" /> WhatsApp Us Now
                 </a>
                 <a
-                  href="/contact"
+                  href="/contact-us"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border"
                   style={{ color: GOLD, borderColor: 'rgba(201,168,76,0.3)', background: 'rgba(201,168,76,0.05)' }}
                 >

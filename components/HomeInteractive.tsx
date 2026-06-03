@@ -22,7 +22,7 @@ export function SkipLink() {
 export function BookNowButton() {
   return (
     <Link
-      href="/contact"
+      href="/contact-us"
       style={{
         display: 'inline-flex',
         alignItems: 'center',
@@ -156,7 +156,7 @@ export function ContactForm() {
 
   return (
     <form
-      action="/api/contact"
+      action="/api/contact-us"
       method="POST"
       style={{
         background: 'rgba(255,255,255,0.03)',

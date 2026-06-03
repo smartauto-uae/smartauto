@@ -171,8 +171,8 @@ const branches = [
 ]
 
 const relatedServices = [
-  { name: 'Paint Protection Film (PPF)', href: '/services/ppf',            desc: 'Shield your paint from stone chips and UV damage.' },
-  { name: 'Nano Ceramic Coating',        href: '/services/ceramic-coating', desc: '9H hydrophobic paint coating. Lasts 2–5 years.' },
+  { name: 'Paint Protection Film (PPF)', href: '/services/paint-protection-films',            desc: 'Shield your paint from stone chips and UV damage.' },
+  { name: 'Nano Ceramic Coating',        href: '/services/nano-ceramic-coating', desc: '9H hydrophobic paint coating. Lasts 2–5 years.' },
   { name: 'Car Detailing',               href: '/services/car-detailing',   desc: 'Full interior and exterior detailing services.' },
   { name: 'Car Wrapping',                href: '/services/car-wrapping',    desc: 'Colour-change and custom vinyl wraps in Dubai.' },
 ]

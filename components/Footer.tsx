@@ -8,19 +8,16 @@ const goldGrad = 'linear-gradient(135deg,#C9A84C,#E8C96A,#A07830)'
 
 const services = [
   { label: 'Window Tinting',        href: '/services/window-tinting' },
-  { label: 'Paint Protection Film', href: '/services/ppf' },
-  { label: 'Ceramic Coating',       href: '/services/ceramic-coating' },
+  { label: 'Paint Protection Film', href: '/services/paint-protection-films' },
   { label: 'Car Detailing',         href: '/services/car-detailing' },
   { label: 'Car Wrapping',          href: '/services/car-wrapping' },
-  { label: 'Car Accessories',       href: '/services/car-accessories' },
 ]
 
 const company = [
   { label: 'About Us',  href: '/about' },
-  { label: 'Gallery',   href: '/gallery' },
   { label: 'Branches',  href: '/#branches' },
   { label: 'FAQ',       href: '/#faq' },
-  { label: 'Contact',   href: '/contact' },
+  { label: 'Contact',   href: '/contact-us' },
 ]
 
 const branches = [
@@ -161,15 +158,6 @@ export default function Footer() {
           <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.22)' }}>
             &copy; {new Date().getFullYear()} Smart Auto UAE · Smart Auto Accessories Fitting LLC. All rights reserved.
           </p>
-          <div style={{ display: 'flex', gap: 20 }}>
-            {['Privacy Policy', 'Terms of Service'].map((t) => (
-              <Link key={t} href="#" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.22)', textDecoration: 'none', transition: 'color 150ms ease' }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = GOLD }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.22)' }}>
-                {t}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
 

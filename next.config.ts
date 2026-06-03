@@ -67,7 +67,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/ceramic-coating',
-        destination: '/services/nano-ceramic-coating-dubai-sharjah',
+        destination: '/services/nano-ceramic-coating',
         permanent: true,
       },
       {
@@ -77,7 +77,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/ppf',
-        destination: '/services/paint-protection-film-dubai-sharjah',
+        destination: '/services/paint-protection-films',
         permanent: true,
       },
       {
