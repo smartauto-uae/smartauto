@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/metadata'
-import FAQClient from './FaqClient'
+import FAQClient from './FAQClient'
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata('/faq', {
