@@ -243,7 +243,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
     let structured_data = null
     if (schemaJson.trim()) {
       try { structured_data = JSON.parse(schemaJson); setSchemaError('') }
-      catch { setSchemaError('Invalid JSON — fix before saving'); setSaving(false); setTab('schema'); return }
+      catch { setSchemaError('Invalid JSON - fix before saving'); setSaving(false); setTab('schema'); return }
     }
     const res = await fetch(`/api/admin/seo/${encodeURIComponent(route)}`, {
       method: 'PUT',
@@ -283,7 +283,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
         <Link href="/admin/seo" style={{ fontSize: '0.72rem', color: '#b8b0a0', textDecoration: 'none' }}>
           ← All Pages
         </Link>
-        {/* Title row — stacks on mobile */}
+        {/* Title row - stacks on mobile */}
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginTop: '0.75rem' }}>
           <div style={{ minWidth: 0 }}>
             <p style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.18em', color: gold, marginBottom: '0.2rem' }}>
@@ -294,7 +294,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
             </h1>
             <code style={{ fontSize: '0.72rem', color: '#b8b0a0' }}>{route}</code>
           </div>
-          {/* Action buttons — full width on mobile */}
+          {/* Action buttons - full width on mobile */}
           <div className="seo-actions">
             <a href={route} target="_blank" rel="noopener noreferrer"
               style={{
@@ -345,7 +345,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
         </div>
       </div>
 
-      {/* ── Tabs — horizontal scroll on mobile ── */}
+      {/* ── Tabs - horizontal scroll on mobile ── */}
       <div style={{ overflowX: 'auto', marginBottom: '1rem', paddingBottom: '0.25rem' }}>
         <div style={{ display: 'flex', gap: '0.375rem', minWidth: 'max-content' }}>
           {tabs.map(t => (
@@ -443,7 +443,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
 
         {tab === 'schema' && <>
           <div>
-            <label style={labelSt}>Schema Type — Load Template</label>
+            <label style={labelSt}>Schema Type - Load Template</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
               {Object.keys(SCHEMA_TEMPLATES).map(type => (
                 <button key={type} onClick={() => loadTemplate(type)}
@@ -494,7 +494,7 @@ export default function SeoEditor({ route, pageLabel, initialData }: Props) {
           <div>
             <label style={labelSt}>Robots</label>
             <select style={{ ...inputSt, minHeight: 44 }} value={fields.robots} onChange={e => set('robots', e.target.value)}>
-              <option value="index, follow">index, follow (default — recommended)</option>
+              <option value="index, follow">index, follow (default - recommended)</option>
               <option value="noindex, follow">noindex, follow</option>
               <option value="index, nofollow">index, nofollow</option>
               <option value="noindex, nofollow">noindex, nofollow (block from Google)</option>

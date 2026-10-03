@@ -180,8 +180,8 @@ const steps = [
 ]
 
 const brands = [
-  '3M', 'Totalgard',
-  'Global USA', 'Sirius USA', 'Jade',
+  'Totalgard','STEK',
+  'Global USA',
 ]
 
 const testimonials = [
@@ -254,6 +254,7 @@ const faqs = [
   { q: 'How long does ceramic coating last in Dubai?', a: "A professional 9H ceramic coating lasts 2–5 years in Dubai's climate, depending on the product tier. We use Sirius USA, Totalgard, 3M and Sirius USA- all formulated for high UV and heat environments." },
   { q: 'Does Smart Auto UAE have a branch in Sharjah?', a: 'Yes. Smart Auto UAE has a branch at Central Mall, Sharjah, offering window tinting, PPF, ceramic coating, car detailing, and car wrapping services.' },
   { q: 'How long does a full car wrap take?', a: 'A full vinyl car wrap takes 2–4 days depending on vehicle size and finish complexity. Partial wraps and accents can be completed in a single day.' },
+  { q: "How to Visit or Contact Smart Auto for PPF, Window tinting near me?", a: 'Smart Auto have branches across Dubai & Sharjah. Call +971 56 425 5770, WhatsApp us, or email info@smartautouae.com. Open 7 days a week.'},
 ]
 
 const contactItems = [
@@ -603,30 +604,63 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* ── BRANDS ── */}
-      <section className="py-16" style={{ backgroundColor: '#060606' }}>
-        <div className="w-full max-w-7xl mx-auto px-6">
-          <motion.div ref={brandsRef} variants={fadeUp} initial="hidden" animate={bInView ? 'show' : 'hidden'}>
-            <SectionHeader eyebrow="Authorised UAE Installer" title="Premium Brands We" highlight="Install Across the UAE" />
-            <p className="text-center text-white/40 text-sm -mt-10 mb-12 max-w-xl mx-auto">
-              We are Applicators and certified installers for the world&apos;s leading PPF, window film, and ceramic coating brands in Dubai, Sharjah and across the UAE.
-            </p>
-          </motion.div>
-          <div className="flex items-center justify-center flex-wrap gap-3">
-            {brands.map((brand, i) => (
-              <motion.div key={brand}
-                className="px-6 py-2.5 rounded-full border text-[13px] font-semibold tracking-wide transition-all duration-300 cursor-default"
-                style={{ borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(255,255,255,0.03)', color: 'rgba(255,255,255,0.45)' }}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={bInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: i * 0.07 }}
-              >
-                {brand}
-              </motion.div>
-            ))}
-          </div>
+      
+{/* ── BRANDS ── */}
+<section className="bg-[#0a0a0a] py-24 relative">
+  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#c9a84c]/20 to-transparent pointer-events-none" />
+  <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#c9a84c]/20 to-transparent pointer-events-none" />
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="text-center mb-14">
+      <span className="text-[#c9a84c] text-xs font-semibold tracking-[0.2em] uppercase">
+        Premium Brands We trust
+      </span>
+      <h2 className="text-4xl font-extrabold text-[#f5f5f5] mt-4">
+        We Use Only the Best Materials
+      </h2>
+      <p className="text-[#888] mt-4 max-w-lg mx-auto text-sm leading-relaxed">
+        Smart Auto exclusively uses the world's most trusted automotive protection brands - premium quality, professional installation, and long lasting protection.
+      </p>
+    </div>
+    <div className="flex flex-wrap justify-center gap-8">
+      {[
+        {
+          name: "STEK",
+          desc: "Certified Installer, Matte PPF & Gloss PPF",
+          detail:
+            "STEK offers premium matte and glossy paint protection films (PPF), expertly installed by Smart Auto in Sharjah & Dubai. Choose professional PPF installation near me for superior paint protection and a flawless finish, perfect for the UAE’s demanding climate.",
+        },
+        {
+          name: "3M",
+          desc: "Window Films, PPF & Automotive Solutions",
+          detail:
+            "3M is a globally trusted brand for automotive window films, paint protection film (PPF) and automotive solutions. Smart Auto provides professional 3M window tinting and PPF installation - trusted for quality, durability and long-lasting protection.",
+        },
+        {
+          name: "Global USA",
+          desc: "Certified Installer For PPF & Window Tinting",
+          detail:
+            "Global USA offers premium PPF and automotive window tinting solutions designed for the UAE climate. Smart Auto provides certified installation for superior heat rejection, UV protection and vehicle protection - ideal when searching for professional window tinting or PPF near me.",
+        },
+
+      ].map((b) => (
+        <div
+          key={b.name}
+          className="flex-1 min-w-[280px] max-w-sm glass rounded-3xl p-10 hover:border-[#c9a84c]/40 hover:shadow-xl hover:shadow-[#c9a84c]/5 transition-all duration-300 group"
+        >
+          <p className="text-5xl font-extrabold text-[#f5f5f5] group-hover:gold-text transition-colors">
+            {b.name}
+          </p>
+          <p className="text-xs text-[#c9a84c] font-semibold tracking-[0.15em] uppercase mt-2">
+            {b.desc}
+          </p>
+          <div className="w-8 h-px bg-gradient-to-r from-[#c9a84c] to-transparent mt-5 mb-4" />
+          <p className="text-sm text-[#888] leading-relaxed">{b.detail}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* ── TESTIMONIALS ── */}
       <section id="testimonials" className="py-24" style={{ backgroundColor: '#080808' }}>

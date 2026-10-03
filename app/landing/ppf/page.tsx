@@ -462,7 +462,7 @@ export default function PPFLandingPage() {
   {/* ↓ Changed: added flex-col-reverse on mobile so image renders first visually */}
   <div className="relative z-10 mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
 
-    {/* TEXT COLUMN — order-2 on mobile (renders second), order-1 on desktop (left) */}
+    {/* TEXT COLUMN - order-2 on mobile (renders second), order-1 on desktop (left) */}
     <div className="order-2 lg:order-1 max-w-3xl">
       <div
         className="mb-7 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.25em]"
@@ -538,7 +538,7 @@ export default function PPFLandingPage() {
       </div>
     </div>
 
-    {/* IMAGE/CARD COLUMN — order-1 on mobile (renders FIRST), order-2 on desktop (right) */}
+    {/* IMAGE/CARD COLUMN - order-1 on mobile (renders FIRST), order-2 on desktop (right) */}
     <div className="order-1 lg:order-2 lg:pl-8">
       <div
         className="overflow-hidden rounded-[28px] border"

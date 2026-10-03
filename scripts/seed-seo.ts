@@ -30,7 +30,7 @@ async function seed() {
   console.log(`Seeding ${PAGES.length} pages…`)
 
   for (const page of PAGES) {
-    // Only insert if the row doesn't exist yet — never overwrite existing SEO
+    // Only insert if the row doesn't exist yet - never overwrite existing SEO
     const { data: existing } = await supabase
       .from('seo_pages')
       .select('id')

@@ -222,7 +222,7 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
     })
   }
 
-  // Sidebar content — shared between desktop sticky sidebar and mobile drawer
+  // Sidebar content - shared between desktop sticky sidebar and mobile drawer
   const SidebarContent = () => (
     <>
       {/* Status */}
@@ -313,7 +313,7 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
             opacity: uploadingImg ? 0.6 : 1, minHeight: 44,
           }}>
             {uploadingImg ? <Loader2 size={14} className="animate-spin" /> : <ImageIcon size={14} aria-hidden="true" />}
-            {uploadingImg ? 'Uploading…' : coverImage ? 'Change image' : 'Upload — auto WebP compressed'}
+            {uploadingImg ? 'Uploading…' : coverImage ? 'Change image' : 'Upload - auto WebP compressed'}
             <input type="file" accept="image/*" style={{ display: 'none' }} disabled={uploadingImg} onChange={handleFeaturedImage} />
           </label>
           {coverImage && (
@@ -502,7 +502,7 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
             <span style={{ fontSize: '0.875rem', fontWeight: 600, color: '#1a1814' }}>
               {mode === 'new' ? 'New Post' : 'Edit Post'}
             </span>
-            {/* Hide slug on mobile — too long */}
+            {/* Hide slug on mobile - too long */}
             {slug && (
               <span className="post-editor-slug" style={{ fontSize: '0.68rem', color: '#b8b0a0', marginLeft: '0.5rem', fontFamily: 'monospace' }}>
                 /blog/{slug}
@@ -512,7 +512,7 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', flexShrink: 0 }}>
-          {/* Preview toggle — icon only on mobile */}
+          {/* Preview toggle - icon only on mobile */}
           <button
             onClick={() => setPreview(v => !v)}
             style={{
@@ -558,7 +558,7 @@ export default function PostEditor({ mode, post }: { mode: Mode; post?: BlogPost
             </button>
           )}
 
-          {/* Settings button — mobile only, opens sidebar drawer */}
+          {/* Settings button - mobile only, opens sidebar drawer */}
           <button
             onClick={() => setSidebarOpen(true)}
             className="post-editor-settings-btn"

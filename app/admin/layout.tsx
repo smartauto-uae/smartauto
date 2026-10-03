@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Smart Auto UAE — Admin',
+  title: 'Smart Auto UAE - Admin',
   description: 'Smart Auto UAE Admin Panel',
 }
 

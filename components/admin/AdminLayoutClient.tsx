@@ -280,7 +280,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
             </Link>
           )
         })}
-        {/* More button — opens drawer */}
+        {/* More button - opens drawer */}
         <button
           onClick={() => setDrawerOpen(true)}
           style={{

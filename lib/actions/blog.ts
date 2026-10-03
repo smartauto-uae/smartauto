@@ -35,7 +35,7 @@ export async function getPost(id: string): Promise<BlogPost> {
   return data
 }
 
-// Admin version — bypasses RLS, fetches drafts too
+// Admin version - bypasses RLS, fetches drafts too
 export async function getPostBySlug(slug: string): Promise<BlogPost> {
   const { data, error } = await supabaseAdmin
     .from('blog_posts')
@@ -46,7 +46,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
   return data
 }
 
-// Public version — use this on /blog/[slug] page
+// Public version - use this on /blog/[slug] page
 export async function getPublishedPostBySlug(slug: string): Promise<BlogPost> {
   const { data, error } = await supabase
     .from('blog_posts')

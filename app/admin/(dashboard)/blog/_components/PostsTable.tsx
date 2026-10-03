@@ -175,7 +175,7 @@ export default function PostsTable({ posts }: { posts: any[] }) {
                 background: '#fafaf9', border: '1px solid #e8e3d8',
                 borderRadius: '0.75rem', padding: '1rem',
               }}>
-                {/* Top row — title + status */}
+                {/* Top row - title + status */}
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem', marginBottom: '0.5rem' }}>
                   <div style={{ minWidth: 0, flex: 1 }}>
                     <p style={{ fontSize: '0.875rem', fontWeight: 600, color: '#1a1814', marginBottom: '0.2rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -204,7 +204,7 @@ export default function PostsTable({ posts }: { posts: any[] }) {
                   </div>
                 )}
 
-                {/* Bottom row — date + actions */}
+                {/* Bottom row - date + actions */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
                   <span style={{ fontSize: '0.72rem', color: '#b8b0a0' }}>
                     {new Date(post.updated_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}

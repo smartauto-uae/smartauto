@@ -184,7 +184,7 @@ const faqs = [
   },
 ]
 
-// ── FAQ COMPONENT (no useState — uses native <details>) ───────────────────────
+// ── FAQ COMPONENT (no useState - uses native <details>) ───────────────────────
 function FAQItem({ q, a }: { q: string; a: string }) {
   return (
     <details
