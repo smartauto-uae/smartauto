@@ -1,6 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
+import { submitLeadToWhatsApp } from '@/lib/leadToWhatsApp'
 
 export function SkipLink() {
   return (
@@ -127,6 +129,32 @@ export function ServiceCard({ title, slug, description, tag }: {
 }
 
 export function ContactForm() {
+  const [formError, setFormError] = useState('')
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const data = new FormData(e.currentTarget)
+    const name = String(data.get('name') || '').trim()
+    const phone = String(data.get('phone') || '').trim()
+    if (!name || !phone) {
+      setFormError('Please fill in your name and phone number.')
+      return
+    }
+    setFormError('')
+    submitLeadToWhatsApp({
+      formName: 'home_contact',
+      service: String(data.get('service') || ''),
+      fields: {
+        'Name': name,
+        'Phone': phone,
+        'Email': String(data.get('email') || ''),
+        'Service': String(data.get('service') || ''),
+        'Message': String(data.get('message') || ''),
+      },
+      source: 'smartautouae.com',
+    })
+  }
+
   const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '0.875rem 1.125rem',
@@ -156,8 +184,7 @@ export function ContactForm() {
 
   return (
     <form
-      action="/api/contact-us"
-      method="POST"
+      onSubmit={handleSubmit}
       style={{
         background: 'rgba(255,255,255,0.03)',
         backdropFilter: 'blur(20px)',
@@ -205,6 +232,9 @@ export function ContactForm() {
         <label htmlFor="message" style={labelStyle}>Message (Optional)</label>
         <textarea id="message" name="message" rows={4} placeholder="Vehicle type, your location, any specific requirements..." style={{ ...inputStyle, resize: 'vertical' }} onFocus={onFocus} onBlur={onBlur} />
       </div>
+      {formError && (
+        <p style={{ color: '#f87171', fontSize: '0.8125rem', fontFamily: 'Satoshi, Inter, sans-serif' }}>{formError}</p>
+      )}
       <button
         type="submit"
         style={{

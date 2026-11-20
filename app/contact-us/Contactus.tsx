@@ -1,9 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, MessageCircle, ArrowRight, ChevronRight } from 'lucide-react'
+import { submitLeadToWhatsApp } from '@/lib/leadToWhatsApp'
 const GOLD = '#C9A84C'
 const GOLD2 = '#E8C96A'
 const GOLD3 = '#A07830'
@@ -75,6 +77,34 @@ const services = [
 ]
 
 export default function ContactPage() {
+  const [formError, setFormError] = useState('')
+
+  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const data = new FormData(e.currentTarget)
+    const name = String(data.get('name') || '').trim()
+    const phone = String(data.get('phone') || '').trim()
+    if (!name || !phone) {
+      setFormError('Please fill in your name and phone number.')
+      return
+    }
+    setFormError('')
+    submitLeadToWhatsApp({
+      formName: 'contact_page',
+      service: data.getAll('service').join(', '),
+      branch: String(data.get('branch') || ''),
+      fields: {
+        'Name': name,
+        'Phone': phone,
+        'Email': String(data.get('email') || ''),
+        'Branch': String(data.get('branch') || ''),
+        'Service': data.getAll('service').join(', '),
+        'Message': String(data.get('message') || ''),
+      },
+      source: 'smartautouae.com',
+    })
+  }
+
   return (
     <main style={{ background: '#0A0A0A', paddingTop: '80px' }}>
 <Navbar/>
@@ -409,7 +439,7 @@ export default function ContactPage() {
               <form
                 className="rounded-2xl p-8 md:p-10"
                 style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.12)' }}
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleContactSubmit}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                   <div className="flex flex-col gap-2">
@@ -522,6 +552,10 @@ export default function ContactPage() {
                     style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
                   />
                 </div>
+
+                {formError && (
+                  <p className="text-[12px] mb-4" style={{ color: '#f87171' }}>{formError}</p>
+                )}
 
                 <button
                   type="submit"
