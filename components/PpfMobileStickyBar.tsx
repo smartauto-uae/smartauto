@@ -47,10 +47,10 @@ export default function PpfMobileStickyBar() {
         >
           <a
             href={WA_HREF}
-            className="inline-flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-sm text-white no-underline"
+            className="inline-flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-sm text-black no-underline"
             style={{
-              background: '#25D366',
-              boxShadow: '0 4px 16px rgba(37,211,102,0.28)',
+              background: goldGrad,
+              boxShadow: '0 4px 16px rgba(201,168,76,0.28)',
               fontFamily: 'Satoshi, Inter, sans-serif',
             }}
           >
