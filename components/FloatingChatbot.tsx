@@ -342,7 +342,8 @@ export default function FloatingChatbot() {
       <AnimatePresence>
         {!open && visible && (
           <motion.div
-            className="fixed bottom-6 right-6 z-[200] flex flex-col items-end gap-2"
+            className="fixed right-6 z-[200] flex flex-col items-end gap-2"
+            style={{ bottom: 'calc(24px + var(--fab-offset, 0px))' }}
             initial={{ opacity: 0, scale: 0.5, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.5, y: 20 }}
@@ -411,7 +412,7 @@ export default function FloatingChatbot() {
           <motion.button
             aria-label="Open chat"
             style={{
-              position: "fixed", bottom: 24, right: 24, zIndex: 200,
+              position: "fixed", bottom: 'calc(24px + var(--fab-offset, 0px))', right: 24, zIndex: 200,
               width: 56, height: 56, borderRadius: "50%",
               display: "flex", alignItems: "center", justifyContent: "center",
               background: goldGrad,
@@ -436,7 +437,7 @@ export default function FloatingChatbot() {
           <motion.button
             aria-label="Open chat"
             style={{
-              position: "fixed", bottom: 24, right: 24, zIndex: 200,
+              position: "fixed", bottom: 'calc(24px + var(--fab-offset, 0px))', right: 24, zIndex: 200,
               width: 48, height: 48, borderRadius: "50%",
               display: "flex", alignItems: "center", justifyContent: "center",
               background: "rgba(10,10,10,0.9)",
@@ -462,7 +463,7 @@ export default function FloatingChatbot() {
         {open && (
           <motion.div
             style={{
-              position: "fixed", bottom: 24, right: 24, zIndex: 200,
+              position: "fixed", bottom: 'calc(24px + var(--fab-offset, 0px))', right: 24, zIndex: 200,
               width: 360, height: 580,
               display: "flex", flexDirection: "column",
               borderRadius: 24, overflow: "hidden",

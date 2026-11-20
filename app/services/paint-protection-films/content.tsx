@@ -2,6 +2,7 @@
 
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
+import PpfMobileStickyBar from '@/components/PpfMobileStickyBar'
 import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight, Phone, Shield, Star } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -876,6 +877,7 @@ export default function PPFPage() {
         </div>
       </section>
 <Footer/>
+      <PpfMobileStickyBar />
     </main>
   )
 }
