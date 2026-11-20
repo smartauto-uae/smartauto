@@ -187,16 +187,16 @@ export const testimonials = [
 export const branches = [
   {
     city: 'Dubai',
-    address: 'Motorcity, Dubai, UAE',
+    address: 'First Avenue Mall, Basement Pink Parking, Tourin Boulevard Road, Motor City, Dubai',
     phone: '+971 567 269 666',
-    hours: 'Mon – Sun: 9:00 AM – 9:00 PM',
-    mapsUrl: 'https://maps.app.goo.gl/QT1zHa2LztgD7tbU7',
+    hours: 'Mon – Sun: 11:00 AM – 9:00 PM',
+    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Smart+Auto+Motorcity+First+Avenue+Mall+Dubai',
   },
   {
     city: 'Sharjah',
     address: 'Sharjah, UAE',
     phone: '+971 567 269 666',
-    hours: 'Mon – Sun: 9:00 AM – 9:00 PM',
+    hours: 'Mon – Sun: 10:00 AM – 10:00 PM',
     mapsUrl: 'https://maps.app.goo.gl/6RoVE97RGNunSFXd9',
   },
 ]

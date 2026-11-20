@@ -220,17 +220,17 @@ const testimonials = [
 const branches = [
   {
     city: 'Dubai', name: 'Smart Auto MotorCity',
-    address: 'MotorCity, Dubai- near Dubai Autodrome',
+    address: 'First Avenue Mall, Basement Pink Parking, Tourin Boulevard Road, Motor City, Dubai',
     phone: '+971 56 726 9666',
-    mapUrl: 'https://maps.app.goo.gl/EWFALRVyktTJiXDP9',
-    hours: '11:00 AM – 10:00 PM · Every Day',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Smart+Auto+Motorcity+First+Avenue+Mall+Dubai',
+    hours: '11:00 AM – 9:00 PM · Every Day',
   },
   {
     city: 'Dubai', name: 'Smart Auto Al Quoz',
-    address: 'Al Quoz Industrial Area 4, Dubai',
+    address: 'D16, Warehouse 6, behind Jotun, Al Quoz 4, Dubai, UAE',
     phone: '+971 56 726 9666',
     mapUrl: 'https://maps.app.goo.gl/dMBKEHxWbMEHH3ZAA',
-    hours: '11:00 AM – 10:00 PM · Every Day',
+    hours: '11:00 AM – 9:30 PM · Every Day',
   },
   {
     city: 'Dubai', name: 'Smart Auto Mirdif',
@@ -254,7 +254,7 @@ const faqs = [
   { q: 'How long does ceramic coating last in Dubai?', a: "A professional 9H ceramic coating lasts 2–5 years in Dubai's climate, depending on the product tier. We use Sirius USA, Totalgard, 3M and Sirius USA- all formulated for high UV and heat environments." },
   { q: 'Does Smart Auto UAE have a branch in Sharjah?', a: 'Yes. Smart Auto UAE has a branch at Central Mall, Sharjah, offering window tinting, PPF, ceramic coating, car detailing, and car wrapping services.' },
   { q: 'How long does a full car wrap take?', a: 'A full vinyl car wrap takes 2–4 days depending on vehicle size and finish complexity. Partial wraps and accents can be completed in a single day.' },
-  { q: "How to Visit or Contact Smart Auto for PPF, Window tinting near me?", a: 'Smart Auto have branches across Dubai & Sharjah. Call +971 56 425 5770, WhatsApp us, or email info@smartautouae.com. Open 7 days a week.'},
+  { q: "How to Visit or Contact Smart Auto for PPF, Window tinting near me?", a: 'Smart Auto have branches across Dubai & Sharjah. Call +971 56 726 9666, WhatsApp us, or email info@smartautouae.com. Open 7 days a week.'},
 ]
 
 const contactItems = [

@@ -155,8 +155,8 @@ const faqs = [
 ]
 
 const branches = [
-  { name: 'Smart Auto MotorCity', address: 'MotorCity, Dubai',                phone: '+971 56 726 9666' },
-  { name: 'Smart Auto Al Quoz',   address: 'Al Quoz Industrial Area, Dubai',  phone: '+971 56 726 9666' },
+  { name: 'Smart Auto MotorCity', address: 'First Avenue Mall, Basement Pink Parking, Tourin Boulevard Road, Motor City, Dubai', phone: '+971 56 726 9666' },
+  { name: 'Smart Auto Al Quoz',   address: 'D16, Warehouse 6, behind Jotun, Al Quoz, Dubai, UAE',  phone: '+971 56 726 9666' },
   { name: 'Smart Auto Mirdif',    address: 'Uptown Mirdif Mall, Dubai',       phone: '+971 55 782 3731' },
   { name: 'Smart Auto Sharjah',   address: 'Central Mall, Sharjah',           phone: '+971 56 425 5770' },
 ]

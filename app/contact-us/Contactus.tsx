@@ -21,12 +21,12 @@ const branches = [
     name: 'MotorCity',
     badge: 'Main Branch',
     city: 'Dubai',
-    address: 'MotorCity, Dubai, UAE',
+    address: 'First Avenue Mall, Basement Pink Parking, Tourin Boulevard Road, Motor City, Dubai',
     phone: '+971 56 726 9666',
     whatsapp: '971567269666',
     hours: '11:00 AM – 9:00 PM',
     days: 'Every Day',
-    mapsUrl: 'https://maps.app.goo.gl/y3fMGRgHvRkYdw7W9',
+    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Smart+Auto+Motorcity+First+Avenue+Mall+Dubai',
   },
   {
     name: 'Al Quoz',
@@ -89,15 +89,17 @@ export default function ContactPage() {
       return
     }
     setFormError('')
+    const branchSelect = e.currentTarget.elements.namedItem('branch') as HTMLSelectElement | null
+    const branchLabel = branchSelect?.selectedOptions[0]?.text && branchSelect.value ? branchSelect.selectedOptions[0].text : ''
     submitLeadToWhatsApp({
       formName: 'contact_page',
       service: data.getAll('service').join(', '),
-      branch: String(data.get('branch') || ''),
+      branch: branchLabel,
       fields: {
         'Name': name,
         'Phone': phone,
         'Email': String(data.get('email') || ''),
-        'Branch': String(data.get('branch') || ''),
+        'Branch': branchLabel,
         'Service': data.getAll('service').join(', '),
         'Message': String(data.get('message') || ''),
       },

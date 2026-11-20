@@ -15,7 +15,7 @@ const SCHEMA_TEMPLATES: Record<string, (route: string) => Record<string, unknown
     '@type': 'AutoRepair',
     name: 'Smart Auto UAE',
     url: `https://smartautouae.com${route}`,
-    telephone: '+971524403677',
+    telephone: '+971567269666',
     address: { '@type': 'PostalAddress', addressLocality: 'Dubai', addressCountry: 'AE' },
     priceRange: '$$',
   }),

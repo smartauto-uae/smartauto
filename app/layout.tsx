@@ -110,7 +110,7 @@ const structuredData = [
     "email": "info@smartautouae.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "MotorCity",
+      "streetAddress": "First Avenue Mall, Basement Pink Parking, Tourin Boulevard Road, Motor City",
       "addressLocality": "Dubai",
       "addressRegion": "Dubai",
       "addressCountry": "AE",
@@ -166,7 +166,7 @@ const structuredData = [
     "telephone": "+971567269666",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Al Quoz Industrial Area 4, D16 Road",
+      "streetAddress": "D16 Road, Warehouse 6, behind Jotun, Al Quoz Industrial Area 4",
       "addressLocality": "Dubai",
       "addressRegion": "Dubai",
       "addressCountry": "AE",
@@ -189,7 +189,7 @@ const structuredData = [
     "image": "https://smartautouae.com/og-image.jpg",
     "description": "Smart Auto UAE Mirdif branch inside Uptown Mall- window tinting, PPF, ceramic coating, car detailing and car wrapping.",
     "url": "https://smartautouae.com",
-    "telephone": "+971567269666",
+    "telephone": "+971557823731",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Uptown Mall, Mirdif",
@@ -215,7 +215,7 @@ const structuredData = [
     "image": "https://smartautouae.com/og-image.jpg",
     "description": "Smart Auto UAE Sharjah branch at Central Mall- window tinting, PPF, ceramic coating, car detailing and car wrapping in Sharjah.",
     "url": "https://smartautouae.com",
-    "telephone": "+971567269666",
+    "telephone": "+971564255770",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Central Mall",

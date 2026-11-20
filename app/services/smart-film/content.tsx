@@ -944,9 +944,10 @@ export default function SmartFilmPage() {
         {
           name: "Al Quoz",
           city: "Dubai",
-          address: "Al Quoz Industrial Area 4, D16 Road, Dubai",
-          hours: "Sat–Thu 11AM–9:30PM\nFri 2PM–9:30PM",
+          address: "D16, Warehouse 6, behind Jotun, Al Quoz Industrial Area 4, Dubai",
+          hours: "Daily 11AM–9:30PM",
           maps: "https://maps.app.goo.gl/7fhEUsrUvGfxG8fPA",
+          phone: "971567269666",
         },
         {
           name: "Central Mall",
@@ -954,6 +955,7 @@ export default function SmartFilmPage() {
           address: "Central Mall, Sharjah",
           hours: "Daily 10AM–10PM",
           maps: "https://maps.app.goo.gl/6RoVE97RGNunSFXd9",
+          phone: "971564255770",
         },
       ].map((branch) => (
         <div
@@ -993,7 +995,7 @@ export default function SmartFilmPage() {
           {/* Actions */}
           <div className="flex gap-2 mt-auto pt-2">
             <a
-              href={`tel:+971567269666`}
+              href={`tel:+${branch.phone}`}
               className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[12px] font-semibold no-underline border transition-all"
               style={{ borderColor: "rgba(201,168,76,0.2)", color: gold, background: "rgba(201,168,76,0.05)" }}
             >
