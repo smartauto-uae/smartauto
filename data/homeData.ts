@@ -247,8 +247,8 @@ export const contactItems = [
   },
   {
     label: 'Dubai Branch',
-    value: 'Motorcity, Dubai, UAE',
-    href: 'https://maps.app.goo.gl/QT1zHa2LztgD7tbU7',
+    value: 'First Avenue Mall, Basement Pink Parking, Tourin Boulevard Road, Motor City, Dubai',
+    href: 'https://www.google.com/maps/search/?api=1&query=Smart+Auto+Motorcity+First+Avenue+Mall+Dubai',
   },
   {
     label: 'Sharjah Branch',
