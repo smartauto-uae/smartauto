@@ -26,26 +26,32 @@ const stats = [
 
 const milestones = [
   {
-    title: 'Started in Dubai',
+    year: '2004',
+    title: 'Founded in Dubai',
     desc: 'Smart Auto started as a specialist window film installer in Dubai, serving early adopters of automotive tinting when the concept was new to the UAE market.',
   },
   {
+    year: '2010',
     title: '3M ',
     desc: 'Smart Auto became a applicator for 3M USA window films and protection products across the UAE- a recognition of installation quality and volume.',
   },
   {
+    year: '2014',
     title: 'Totalgard & Residential Expansion',
     desc: 'Added Totalgard as an authorised brand partner and expanded into residential, commercial, and architectural window film- bringing the same quality standard from automotive into homes and buildings.',
   },
   {
+    year: '2018',
     title: 'PPF & Ceramic Coating',
     desc: 'Launched full Paint Protection Film (PPF) and nano ceramic coating services to complement the window film offering- becoming a complete vehicle and surface protection centre.',
   },
   {
+    year: '2021',
     title: 'Marine & Smart Film',
     desc: 'Extended services to marine vessels- boats, yachts, and commercial craft- and introduced Smart Film (switchable privacy glass) for residential and commercial spaces.',
   },
   {
+    year: '2024',
     title: '4 Branches · 50,000 Customers',
     desc: 'Operating across 4 branches in MotorCity, Al Quoz, Mirdif, and Sharjah. Trusted by over 50,000 customers. Recognised as one of the UAE\'s leading protection specialists.',
   },
@@ -307,7 +313,7 @@ export default function AboutPage() {
                 const isLeft = i % 2 === 0
                 return (
                   <motion.div
-                    key={m.title}
+                    key={m.year}
                     variants={fadeUp} custom={i}
                     initial="hidden" whileInView="show" viewport={{ once: true }}
                     className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${isLeft ? '' : 'md:[direction:rtl]'}`}
@@ -318,6 +324,12 @@ export default function AboutPage() {
                         className="rounded-2xl p-8"
                         style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.1)' }}
                       >
+                        <span
+                          className="inline-block text-[11px] tracking-[0.25em] uppercase font-bold px-3 py-1 rounded-full mb-4"
+                          style={{ background: 'rgba(201,168,76,0.1)', color: GOLD, border: '1px solid rgba(201,168,76,0.2)' }}
+                        >
+                          {m.year}
+                        </span>
                         <h3 className="text-white font-bold text-xl mb-2.5" style={{ fontFamily: 'var(--font-playfair),serif' }}>
                           {m.title}
                         </h3>
