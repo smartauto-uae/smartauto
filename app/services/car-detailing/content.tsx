@@ -527,7 +527,7 @@ export default function CarDetailingPage() {
               { value: '4',       label: 'Branches- Dubai & Sharjah' },
               { value: 'AED 299', label: 'Starting Price' },
               { value: '600+',    label: 'Google Reviews' },
-              { value: '20+',     label: 'Years in UAE' },
+              { value: '15+',     label: 'Years in UAE' },
             ].map((stat, i) => (
               <motion.div key={stat.label} variants={fadeUp} custom={i} initial="hidden" whileInView="show" viewport={{ once: true }}>
                 <p className="font-bold leading-none mb-1.5" style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.6rem,2.5vw,2.2rem)', background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>

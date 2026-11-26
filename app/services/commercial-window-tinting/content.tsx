@@ -592,7 +592,7 @@ export default function CommercialTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto">
-              Since 2014, Smart Auto UAE has delivered commercial window film installations across offices, retail, hospitality, and industrial buildings throughout Dubai and Sharjah. Authorised by Totalgard, 3M, and Global USA.
+              For 15+ years, Smart Auto UAE has delivered commercial window film installations across offices, retail, hospitality, and industrial buildings throughout Dubai and Sharjah. Authorised by Totalgard, 3M, and Global USA.
             </p>
           </motion.div>
 

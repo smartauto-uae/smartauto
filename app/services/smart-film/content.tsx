@@ -819,7 +819,7 @@ export default function SmartFilmPage() {
                 />
                 <div className="absolute bottom-6 left-6 flex gap-3">
                   {[
-                    { val: "20+",  label: "Yrs Exp." },
+                    { val: "15+",  label: "Yrs Exp." },
                     { val: "4",    label: "Branches" },
                     { val: "600+", label: "Reviews" },
                   ].map((s) => (
@@ -858,7 +858,7 @@ export default function SmartFilmPage() {
                 </h2>
                 <p className="text-[13px] leading-[1.85] mb-8" style={{ color: "rgba(255,255,255,0.45)" }}>
                   Smart Auto UAE has been installing architectural window films across Dubai and Sharjah for
-                  over 20 years. We are Applicators for SmartFilm, 3M, TotalGard, and Global USA-
+                  15+ years. We are Applicators for SmartFilm, 3M, TotalGard, and Global USA-
                   using only genuine manufacturer products backed by full warranties. Our certified installation
                   team handles everything from the free site visit to final handover, with no subcontracting.
                 </p>

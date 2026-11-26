@@ -515,7 +515,7 @@ export default function MarineTintingPage() {
                 </span>
               </h2>
               <p className="text-white/50 text-base leading-[1.85] mb-7">
-                Smart Auto UAE has been the trusted window tinting partner for boat and yacht owners across Dubai and Sharjah since 2014. When it comes to marine window tinting, there is no room for error- salt air, constant sun exposure, and the critical safety requirements of marine glass demand specialist knowledge and materials. Our team is trained specifically in marine installation techniques and uses only films engineered for maritime environments.
+                Smart Auto UAE has been the trusted window tinting partner for boat and yacht owners across Dubai and Sharjah for 15+ years. When it comes to marine window tinting, there is no room for error- salt air, constant sun exposure, and the critical safety requirements of marine glass demand specialist knowledge and materials. Our team is trained specifically in marine installation techniques and uses only films engineered for maritime environments.
               </p>
               <div className="flex flex-col gap-3">
                 {[

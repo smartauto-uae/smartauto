@@ -18,7 +18,7 @@ const fadeRight = { hidden: { opacity: 0, x: 28 },  show: { opacity: 1, x: 0, tr
 // ─── DATA ──────────────────────────────────────────────────────────────────
 
 const stats = [
-  { value: '20+',  label: 'Years in UAE',        desc: 'Serving Dubai & Sharjah since 2004' },
+  { value: '15+',  label: 'Years in UAE',        desc: 'Trusted for 15+ years across Dubai & Sharjah' },
   { value: '50K+', label: 'Happy Customers',      desc: 'Trusted by vehicle and homeowners across UAE' },
   { value: '600+', label: '5-Star Reviews',       desc: 'Verified Google reviews from real UAE customers' },
   { value: '4',    label: 'Branches',             desc: 'MotorCity · Al Quoz · Mirdif · Sharjah' },
@@ -26,32 +26,26 @@ const stats = [
 
 const milestones = [
   {
-    year: '2004',
-    title: 'Founded in Dubai',
+    title: 'Started in Dubai',
     desc: 'Smart Auto started as a specialist window film installer in Dubai, serving early adopters of automotive tinting when the concept was new to the UAE market.',
   },
   {
-    year: '2010',
     title: '3M ',
     desc: 'Smart Auto became a applicator for 3M USA window films and protection products across the UAE- a recognition of installation quality and volume.',
   },
   {
-    year: '2014',
     title: 'Totalgard & Residential Expansion',
     desc: 'Added Totalgard as an authorised brand partner and expanded into residential, commercial, and architectural window film- bringing the same quality standard from automotive into homes and buildings.',
   },
   {
-    year: '2018',
     title: 'PPF & Ceramic Coating',
     desc: 'Launched full Paint Protection Film (PPF) and nano ceramic coating services to complement the window film offering- becoming a complete vehicle and surface protection centre.',
   },
   {
-    year: '2021',
     title: 'Marine & Smart Film',
     desc: 'Extended services to marine vessels- boats, yachts, and commercial craft- and introduced Smart Film (switchable privacy glass) for residential and commercial spaces.',
   },
   {
-    year: '2024',
     title: '4 Branches · 50,000 Customers',
     desc: 'Operating across 4 branches in MotorCity, Al Quoz, Mirdif, and Sharjah. Trusted by over 50,000 customers. Recognised as one of the UAE\'s leading protection specialists.',
   },
@@ -107,7 +101,7 @@ const values = [
   {
     icon: Zap,
     title: 'No Compromise on Quality',
-    desc: 'We have been doing this for over 20 years because we have never compromised. The same attention to detail on a single-window job as on a full superyacht or commercial building.',
+    desc: 'We have been doing this for 15+ years because we have never compromised. The same attention to detail on a single-window job as on a full superyacht or commercial building.',
   },
   {
     icon: Heart,
@@ -172,7 +166,7 @@ export default function AboutPage() {
         <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeLeft} initial="hidden" animate="show">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-4" style={{ color: GOLD }}>
-              Established 2004 · Dubai, UAE
+              15+ Years · Dubai, UAE
             </p>
             <h1
               className="font-bold text-white leading-[1.1] mb-5"
@@ -191,7 +185,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-white/50 text-base leading-[1.9] mb-6 max-w-xl">
-              Smart Auto UAE has been the most trusted name in window tinting, paint protection film, and ceramic coating across Dubai and Sharjah for over 20 years. From a single automotive tinting bay in 2004 to four branches, 50,000 customers, and authorised partnerships with 3M, Totalgard, Global USA, and Global USA- our story is one of consistent quality and earned trust.
+              Smart Auto UAE has been the most trusted name in window tinting, paint protection film, and ceramic coating across Dubai and Sharjah for 15+ years. From a single automotive tinting bay to four branches, 50,000 customers, and authorised partnerships with 3M, Totalgard, Global USA, and Global USA- our story is one of consistent quality and earned trust.
             </p>
             <p className="text-white/40 text-base leading-[1.9] mb-8 max-w-xl">
               We protect cars, homes, offices, yachts, and commercial spaces across the UAE. Whatever surface needs protecting, Smart Auto has the product, the brand authority, and the certified team to do it right.
@@ -282,7 +276,7 @@ export default function AboutPage() {
               className="font-bold text-white text-center"
               style={{ fontFamily: 'var(--font-playfair),serif', fontSize: 'clamp(1.8rem,3vw,2.8rem)' }}
             >
-              20 Years of{' '}
+              15+ Years of{' '}
               <span
                 style={{
                   background: goldGrad,
@@ -313,7 +307,7 @@ export default function AboutPage() {
                 const isLeft = i % 2 === 0
                 return (
                   <motion.div
-                    key={m.year}
+                    key={m.title}
                     variants={fadeUp} custom={i}
                     initial="hidden" whileInView="show" viewport={{ once: true }}
                     className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${isLeft ? '' : 'md:[direction:rtl]'}`}
@@ -324,12 +318,6 @@ export default function AboutPage() {
                         className="rounded-2xl p-8"
                         style={{ background: 'rgba(17,17,17,0.85)', border: '1px solid rgba(201,168,76,0.1)' }}
                       >
-                        <span
-                          className="inline-block text-[11px] tracking-[0.25em] uppercase font-bold px-3 py-1 rounded-full mb-4"
-                          style={{ background: 'rgba(201,168,76,0.1)', color: GOLD, border: '1px solid rgba(201,168,76,0.2)' }}
-                        >
-                          {m.year}
-                        </span>
                         <h3 className="text-white font-bold text-xl mb-2.5" style={{ fontFamily: 'var(--font-playfair),serif' }}>
                           {m.title}
                         </h3>
@@ -531,7 +519,7 @@ export default function AboutPage() {
                 </span>
               </h2>
               <p className="text-white/50 text-base leading-[1.85] mb-7">
-                Smart Auto UAE is not a window tinting shop- it is a complete protection specialist. Over 20 years, we have built the team, product range, and brand authorisations to handle every protection requirement across automotive, residential, commercial, and marine segments.
+                Smart Auto UAE is not a window tinting shop- it is a complete protection specialist. For 15+ years, we have built the team, product range, and brand authorisations to handle every protection requirement across automotive, residential, commercial, and marine segments.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {services.map((svc) => (

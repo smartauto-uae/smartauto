@@ -366,7 +366,7 @@ export default function HomeClient() {
             <strong className="text-white/75 font-medium">nano ceramic coating</strong>, car detailing, and car
             wrapping- serving car owners across{' '}
             <strong className="text-white/75 font-medium">MotorCity, Al Quoz, Mirdif</strong> and{' '}
-            <strong className="text-white/75 font-medium">Sharjah</strong> since 2014.
+            <strong className="text-white/75 font-medium">Sharjah</strong> for 15+ years.
           </motion.p>
 
           <motion.div
@@ -405,7 +405,7 @@ export default function HomeClient() {
             {[
               { value: '600+', label: 'Google Reviews' },
               { value: '4',    label: 'Branches' },
-              { value: '20+',  label: 'Years in UAE' },
+              { value: '15+',  label: 'Years in UAE' },
               { value: '5★',   label: 'Avg Rating' },
             ].map((s, i) => (
               <div key={s.label} className={`text-center px-3 ${i !== 3 ? 'border-r' : ''}`} style={{ borderColor: 'rgba(201,168,76,0.15)' }}>
@@ -499,7 +499,7 @@ export default function HomeClient() {
                 <span style={{ background: goldGrad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>in the UAE</span>
               </h2>
               <p className="text-white/50 text-base leading-[1.8] mb-7">
-                Smart Auto has been the trusted car protection centre for thousands of vehicle owners in Dubai, Sharjah and across the UAE since 2014. Whether you need the{' '}
+                Smart Auto has been the trusted car protection centre for thousands of vehicle owners in Dubai, Sharjah and across the UAE for 15+ years. Whether you need the{' '}
                 <strong className="text-white/70 font-medium">best PPF installer in Dubai</strong>, professional{' '}
                 <strong className="text-white/70 font-medium">ceramic coating for luxury cars</strong>, or affordable{' '}
                 <strong className="text-white/70 font-medium">window tinting</strong>- we deliver premium results with manufacturer-backed warranties.

@@ -306,7 +306,7 @@ const faqs: {
     id: 'general-experience',
     category: 'general',
     q: 'How long has Smart Auto UAE been in business?',
-    a: 'Smart Auto UAE has been operating in Dubai since 2004- over 20 years of experience in window tinting, PPF, ceramic coating, and surface protection. We have served over 50,000 customers across automotive, residential, commercial, and marine segments and hold over 600 verified 5-star Google reviews.',
+    a: 'Smart Auto UAE has 15+ years of experience in window tinting, PPF, ceramic coating, and surface protection. We have served over 50,000 customers across automotive, residential, commercial, and marine segments and hold over 600 verified 5-star Google reviews.',
     tags: ['experience', 'history', 'established'],
   },
 ]
@@ -456,7 +456,7 @@ export default function FAQPage() {
                 </span>
               </h1>
               <p className="text-white/50 text-base leading-[1.85] max-w-2xl mx-auto mb-8">
-                Everything you need to know about window tinting laws in Dubai, PPF, ceramic coating, car wrapping, marine and residential tinting- answered by Smart Auto UAE, authorised 3M and TotalGard installer with 20+ years in the UAE.
+                Everything you need to know about window tinting laws in Dubai, PPF, ceramic coating, car wrapping, marine and residential tinting- answered by Smart Auto UAE, authorised 3M and TotalGard installer with 15+ years in the UAE.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <a
@@ -490,7 +490,7 @@ export default function FAQPage() {
               {[
                 { v: `${faqs.length}+`, l: 'Questions Answered' },
                 { v: '7',              l: 'Service Categories' },
-                { v: '20+',            l: 'Years Experience' },
+                { v: '15+',            l: 'Years Experience' },
                 { v: '50K+',           l: 'UAE Customers Served' },
               ].map((s) => (
                 <div key={s.l}>

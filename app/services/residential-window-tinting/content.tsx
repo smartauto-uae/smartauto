@@ -498,7 +498,7 @@ export default function ResidentialWindowTintingPage() {
               </span>
             </h2>
             <p className="text-white/40 text-sm text-center mt-4 max-w-2xl mx-auto leading-relaxed">
-              Smart Auto UAE has been installing window film in Dubai and Sharjah homes since 2014. We are an authorised distributor and installer for 3M, Totalgard, and Global USA- using only genuine manufacturer products backed by full warranties.
+              Smart Auto UAE has been installing window film in Dubai and Sharjah homes for 15+ years. We are an authorised distributor and installer for 3M, Totalgard, and Global USA- using only genuine manufacturer products backed by full warranties.
             </p>
           </motion.div>
 
